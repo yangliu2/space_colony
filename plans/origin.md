@@ -12,5 +12,7 @@ So this repository will be dealing with practical issues regarding surviving on 
 * [plan](./) - documents regarding concepts and ideas
   * [origin.md](origin.md) - backend stories of why I started this project
   * [space_habitat_study_plan.md](space_habitat_study_plan.md) - study plan of what to build
+  * [issues.md](issues.md) - issues to be solved or managed by models
+  * [centripetal_acceleration_oneill_cylinder.md](centripetal_acceleration_oneill_cylinder.md) - explanation of centripital acceleartion and simulation of gravity
 * [models](../models) - physical models of limits of what may not work
 * [conclusions](../conclusions/) - distilled rules from physical models

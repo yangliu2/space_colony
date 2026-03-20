@@ -1,5 +1,7 @@
 """Shared fixtures for habitat constraint tests."""
 
+from __future__ import annotations
+
 import pytest
 
 from habitat_constraints.core.parameters import (
@@ -13,6 +15,11 @@ from habitat_constraints.constraints.gravity_level import (
 from habitat_constraints.constraints.gravity_gradient import (
     GravityGradientConstraint,
 )
+from habitat_constraints.constraints.coriolis import CoriolisConstraint
+from habitat_constraints.constraints.cross_coupling import (
+    CrossCouplingConstraint,
+)
+from habitat_constraints.constraints.rim_speed import RimSpeedConstraint
 
 
 @pytest.fixture
@@ -41,11 +48,21 @@ def medium_habitat_params() -> HabitatParameters:
 
 @pytest.fixture
 def all_constraints() -> (
-    list[VestibularConstraint | GravityLevelConstraint | GravityGradientConstraint]
+    list[
+        VestibularConstraint
+        | GravityLevelConstraint
+        | GravityGradientConstraint
+        | CoriolisConstraint
+        | CrossCouplingConstraint
+        | RimSpeedConstraint
+    ]
 ):
-    """All Phase 1 constraints."""
+    """All constraints (Phase 1 + Phase 2)."""
     return [
         VestibularConstraint(),
         GravityLevelConstraint(),
         GravityGradientConstraint(),
+        CoriolisConstraint(),
+        CrossCouplingConstraint(),
+        RimSpeedConstraint(),
     ]

@@ -86,6 +86,27 @@ class HumanAssumptions(BaseModel):
         gt=0,
         description="Max Coriolis-to-gravity acceleration ratio",
     )
+    max_cross_coupling_deg_s2: float = Field(
+        default=6.0,
+        gt=0,
+        description=(
+            "Max cross-coupled angular acceleration (deg/s^2) "
+            "from head turns during rotation. "
+            "~3 for unadapted, ~6 for adapted crew."
+        ),
+    )
+    head_turn_rate_deg_s: float = Field(
+        default=60.0,
+        gt=0,
+        description="Typical head turn rate (deg/s)",
+    )
+    max_rim_speed_m_s: float = Field(
+        default=300.0,
+        gt=0,
+        description=(
+            "Max tangential rim speed (m/s) — " "structural and aerodynamic limit"
+        ),
+    )
 
 
 class ParameterBound(BaseModel):

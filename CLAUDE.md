@@ -31,3 +31,17 @@ uv run mypy src/
 - black & flake8: line-length=89
 - mypy: strict mode
 - pytest: with coverage
+
+### Document Style (`plans/`)
+- **All equations and formulas** use LaTeX (`$$` blocks for display, `$...$` for inline)
+  - Never use code blocks (`` ``` ``) for formulas
+  - Variables in prose must also be LaTeX: `$r$`, `$\omega$`, `$\sigma_y$`
+- Source citations use **MLA format**
+- Section is named **"References"** (not "Sources")
+- Inline citations use **(Author Year)** format, e.g. `(Clément and Bukley 2015)`
+  - Two authors: `(Lackner and DiZio 1998)`
+  - Three+ authors: `(Hallgren et al. 2025)`
+  - Never use bare PMC IDs, DOIs, or URLs as inline citations
+- Every inline citation must have a corresponding full entry in the References section
+- References section entries follow MLA 9th edition:
+  - `Author(s). "Title." *Journal*, vol. X, no. Y, Year, pp. Z. *Database*, URL.`

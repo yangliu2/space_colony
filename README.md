@@ -16,7 +16,13 @@ So this repository will be dealing with practical issues regarding surviving on 
   * [intuition_angular_velocity.md](plans/intuition_angular_velocity.md) - intuitions of angular velocity
   * [intuition_centripetal_acceleration.md](plans/intuition_centripetal_acceleration.md) - intutions of centripetal acceleration and derivations
   * [intuition_artificial_gravity.md](plans/intuition_artificial_gravity.md) - intution of how is artifical gravity generated using newton's second law.
-  * [general_relativity_and_artificial_gravity.md](plans/general_relativity_and_artificial_gravity.md) - if you ever wondered what equations are all classical Newton formulas, and if modern physics around gravity affect anything, here are some questions and explanations
+  * [general_relativity_and_artificial_gravity.md](plans/general_relativity_and_artificial_gravity.md) - if you ever wondered why equations are all classical Newton formulas, and if modern physics around gravity affect anything, here are some questions and explanations
+  * [constraint_vestibular.md](plans/constraint_vestibular.md) - deep dive into effects related to vestibular contraint for humans. Including possible ways to mitigate it and author's past history on vestibular research with Dr. Thomas A. Houpt
+  * [constraint_gravity_gradient.md](plans/constraint_gravity_gradient.md) - deep dive for gravity gradient, basically the head and toe gravity difference. Not a limiting constraint
+  * [constraint_cross_coupling.md](plans/constraint_cross_coupling.md) - deep dive for cross coupling, the combined effect of cylindar rotation and head rotation in daily activity. This might be most limiting constraint for human comfort. 
+  * [constraint_coriolis.md](plans/constraint_coriolis.md) - deep dive on Coriolis, the real life of having additional forces perpendicular to the simulated gravity direction. Also included speculations for how people born on that system would understand physics. 
+  * [constraint_gravity_minimum.md](plans/constraint_gravity_minimum.md) - another deed dive on minimal gravity required for habitation. Because achieving 1g is not a limiting constraint, it should be the default option. 
+  * [constraint_rim_speed.md](plans/constraint_rim_speed.md) - talks about the upper limit of cylinder because of the rim speed and structural limit due to material engineering
 * [models](models/) - physical models of limits of what may not work
   * [todos.md](models/todos.md) - list of models to make
 * [conclusions](conclusions/) - distilled rules from physical models

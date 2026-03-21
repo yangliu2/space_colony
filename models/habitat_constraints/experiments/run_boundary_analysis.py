@@ -104,7 +104,11 @@ def experiment_1_sweep_at_1g() -> dict:
     }
     print(f"  Min feasible radius: {min_r:.1f}m")
     for cname, r in transitions.items():
-        print(f"  {cname} becomes feasible at: {r:.0f}m" if r else f"  {cname}: never feasible")
+        print(
+            f"  {cname} becomes feasible at: {r:.0f}m"
+            if r
+            else f"  {cname}: never feasible"
+        )
     return result
 
 

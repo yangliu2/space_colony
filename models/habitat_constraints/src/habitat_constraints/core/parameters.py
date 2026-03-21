@@ -19,6 +19,32 @@ class HabitatParameters(BaseModel):
 
     radius_m: float = Field(gt=0, description="Cylinder inner radius (m)")
     angular_velocity_rad_s: float = Field(gt=0, description="Angular velocity (rad/s)")
+    length_m: float = Field(
+        default=0.0,
+        ge=0,
+        description="Cylinder length (m). 0 = not specified.",
+    )
+    population: int = Field(
+        default=0,
+        ge=0,
+        description="Habitat population. 0 = not specified.",
+    )
+    internal_pressure_kpa: float = Field(
+        default=101.3,
+        gt=0,
+        description="Internal atmospheric pressure (kPa)",
+    )
+    o2_fraction: float = Field(
+        default=0.21,
+        gt=0,
+        le=1.0,
+        description="O2 mole fraction in atmosphere",
+    )
+    shielding_areal_density_kg_m2: float = Field(
+        default=4500.0,
+        ge=0,
+        description="Radiation shielding areal density (kg/m²)",
+    )
 
     @property
     def gravity_g(self) -> float:
@@ -40,16 +66,62 @@ class HabitatParameters(BaseModel):
         """Rotation period (seconds per revolution)."""
         return 2.0 * math.pi / self.angular_velocity_rad_s
 
+    @property
+    def o2_partial_pressure_kpa(self) -> float:
+        """Oxygen partial pressure (kPa)."""
+        return self.internal_pressure_kpa * self.o2_fraction
+
+    @property
+    def barrel_area_m2(self) -> float:
+        """Barrel (cylindrical) surface area (m²). 0 if length not set."""
+        if self.length_m <= 0:
+            return 0.0
+        return 2.0 * math.pi * self.radius_m * self.length_m
+
+    @property
+    def endcap_area_m2(self) -> float:
+        """Combined end-cap area (m²)."""
+        return 2.0 * math.pi * self.radius_m**2
+
+    @property
+    def total_shell_area_m2(self) -> float:
+        """Total outer shell area (barrel + end caps) (m²)."""
+        return self.barrel_area_m2 + self.endcap_area_m2
+
+    @property
+    def interior_volume_m3(self) -> float:
+        """Interior volume (m³). 0 if length not set."""
+        if self.length_m <= 0:
+            return 0.0
+        return math.pi * self.radius_m**2 * self.length_m
+
+    @property
+    def volume_per_person_m3(self) -> float:
+        """Interior volume per person (m³). 0 if not calculable."""
+        if self.population <= 0 or self.interior_volume_m3 <= 0:
+            return 0.0
+        return self.interior_volume_m3 / self.population
+
     @staticmethod
     def from_radius_and_gravity(
         radius_m: float,
         target_gravity_g: float = 1.0,
+        length_m: float = 0.0,
+        population: int = 0,
+        internal_pressure_kpa: float = 101.3,
+        o2_fraction: float = 0.21,
+        shielding_areal_density_kg_m2: float = 4500.0,
     ) -> HabitatParameters:
         """Create parameters for a given radius that achieves target gravity."""
         omega = math.sqrt(target_gravity_g * EARTH_G / radius_m)
         return HabitatParameters(
             radius_m=radius_m,
             angular_velocity_rad_s=omega,
+            length_m=length_m,
+            population=population,
+            internal_pressure_kpa=internal_pressure_kpa,
+            o2_fraction=o2_fraction,
+            shielding_areal_density_kg_m2=shielding_areal_density_kg_m2,
         )
 
 
@@ -105,6 +177,42 @@ class HumanAssumptions(BaseModel):
         gt=0,
         description=(
             "Max tangential rim speed (m/s) — " "structural and aerodynamic limit"
+        ),
+    )
+
+    # --- Phase 3: Biological constraints ---
+    min_o2_partial_pressure_kpa: float = Field(
+        default=16.0,
+        gt=0,
+        description="Minimum O2 partial pressure (kPa) to avoid hypoxia",
+    )
+    max_o2_partial_pressure_kpa: float = Field(
+        default=50.0,
+        gt=0,
+        description=("Maximum O2 partial pressure (kPa) " "to avoid pulmonary toxicity"),
+    )
+    min_shielding_areal_density_kg_m2: float = Field(
+        default=4500.0,
+        gt=0,
+        description=(
+            "Minimum radiation shielding areal density (kg/m²). "
+            "SP-413: 4500 for <0.5 rem/yr."
+        ),
+    )
+    min_population: int = Field(
+        default=98,
+        gt=0,
+        description=(
+            "Minimum viable population for genetic diversity. "
+            "98 = bare survival (Marin & Beluffi 2020)."
+        ),
+    )
+    min_volume_per_person_m3: float = Field(
+        default=100.0,
+        gt=0,
+        description=(
+            "Minimum habitable volume per person (m³). "
+            "NASA: 25 minimum, 100+ for >1 year."
         ),
     )
 

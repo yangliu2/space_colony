@@ -1,0 +1,371 @@
+/* ── Reset & Base ── */
+:root {
+  --bg: #0f0f1a;
+  --surface: #1a1a2e;
+  --border: #2a2a40;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --green: #22c55e;
+  --red: #ef4444;
+  --orange: #f97316;
+  --blue: #3b82f6;
+  --purple: #818cf8;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* ── Layout ── */
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.app-header h1 {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.loading-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--orange);
+  animation: pulse 0.8s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+  from { opacity: 0.3; }
+  to { opacity: 1; }
+}
+
+.main-grid {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 320px;
+  min-width: 280px;
+  overflow-y: auto;
+  border-right: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.top-row {
+  display: flex;
+  gap: 16px;
+}
+
+.top-row > * { flex: 1; }
+
+/* ── Panels ── */
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.panel h2 {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.muted { color: var(--muted); font-style: italic; }
+
+/* ── Sliders ── */
+.sliders-panel {
+  padding: 16px;
+}
+
+.sliders-panel h2 {
+  margin-top: 16px;
+}
+
+.sliders-panel h2:first-child {
+  margin-top: 0;
+}
+
+.slider-row {
+  margin-bottom: 10px;
+}
+
+.slider-row label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin-bottom: 2px;
+}
+
+.slider-label { color: var(--text); }
+.slider-value { color: var(--muted); font-variant-numeric: tabular-nums; }
+
+.slider-row input[type="range"] {
+  width: 100%;
+  height: 4px;
+  appearance: none;
+  background: var(--border);
+  border-radius: 2px;
+  outline: none;
+}
+
+.slider-row input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--blue);
+  cursor: pointer;
+}
+
+/* ── Constraint Panel ── */
+.status-banner {
+  text-align: center;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  margin-bottom: 10px;
+}
+
+.status-banner[data-ok="true"] {
+  background: rgba(34, 197, 94, 0.15);
+  color: var(--green);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.status-banner[data-ok="false"] {
+  background: rgba(239, 68, 68, 0.15);
+  color: var(--red);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.derived {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+  font-size: 12px;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.derived span {
+  background: var(--bg);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.constraint-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.constraint-card {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  background: var(--bg);
+}
+
+.card-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.constraint-card[data-feasible="true"] .card-indicator {
+  background: var(--green);
+  box-shadow: 0 0 6px rgba(34, 197, 94, 0.4);
+}
+
+.constraint-card[data-feasible="false"] .card-indicator {
+  background: var(--red);
+  box-shadow: 0 0 6px rgba(239, 68, 68, 0.4);
+}
+
+.card-body {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.card-name { font-size: 12px; }
+.card-detail { font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+
+/* ── Chart ── */
+.chart-panel {
+  min-height: 320px;
+}
+
+.band-label {
+  font-size: 13px;
+  color: var(--green);
+  margin-bottom: 8px;
+}
+
+/* ── 3D Scene ── */
+.scene-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.scene-header h2 { margin-bottom: 0; }
+
+.toggle-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--muted);
+  cursor: pointer;
+  user-select: none;
+}
+
+.toggle-label input[type="checkbox"] {
+  accent-color: var(--blue);
+  cursor: pointer;
+}
+
+.scene-panel canvas {
+  border-radius: 6px;
+}
+
+/* ── Recharts tooltip fix ── */
+.recharts-tooltip-wrapper {
+  font-size: 12px;
+}
+
+/* ── Full-page 3D view ── */
+.scene3d-layout {
+  display: flex;
+  height: 100vh;
+  background: var(--bg);
+}
+
+.scene3d-main {
+  flex: 1;
+  overflow: hidden;
+}
+
+.scene3d-sidebar {
+  width: 200px;
+  padding: 16px;
+  background: var(--surface);
+  border-left: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.scene3d-sidebar h3 {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+.scene3d-sidebar .back-link {
+  color: var(--blue);
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.scene3d-sidebar .back-link:hover {
+  text-decoration: underline;
+}
+
+.status-pill {
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.status-pill.pass {
+  background: rgba(34, 197, 94, 0.15);
+  color: var(--green);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.status-pill.fail {
+  background: rgba(239, 68, 68, 0.15);
+  color: var(--red);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.scene-fullpage {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.scene-fullpage .scene-header {
+  padding: 8px 16px;
+  flex-shrink: 0;
+}
+
+.scene-fullpage canvas {
+  flex: 1;
+}
+
+/* ── Scene controls row ── */
+.scene-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.fullpage-link {
+  font-size: 12px;
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.fullpage-link:hover {
+  text-decoration: underline;
+}

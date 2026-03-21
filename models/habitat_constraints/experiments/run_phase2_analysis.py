@@ -102,8 +102,20 @@ def experiment_1_full_constraint_map() -> dict:
     solver = FeasibleRegionSolver(constraints=all_constraints())
 
     sample_radii = [
-        100, 200, 300, 500, 750, 981, 1000,
-        1500, 2000, 3200, 5000, 8000, 9177, 10000,
+        100,
+        200,
+        300,
+        500,
+        750,
+        981,
+        1000,
+        1500,
+        2000,
+        3200,
+        5000,
+        8000,
+        9177,
+        10000,
     ]
     samples = []
     for r in sample_radii:
@@ -154,18 +166,23 @@ def experiment_2_constraint_contribution() -> dict:
         params = HabitatParameters.from_radius_and_gravity(r)
         results = solver.evaluate_point(params)
         failing = [cr.constraint_name for cr in results if not cr.feasible]
-        binding_map.append({
-            "radius_m": r,
-            "rpm": round(params.rpm, 3),
-            "failing_constraints": failing,
-            "n_failing": len(failing),
-        })
+        binding_map.append(
+            {
+                "radius_m": r,
+                "rpm": round(params.rpm, 3),
+                "failing_constraints": failing,
+                "n_failing": len(failing),
+            }
+        )
 
     # Find transition points
     transitions = {}
     constraint_names = [
-        "vestibular", "gravity_gradient", "coriolis",
-        "cross_coupling", "rim_speed",
+        "vestibular",
+        "gravity_gradient",
+        "coriolis",
+        "cross_coupling",
+        "rim_speed",
     ]
     for cname in constraint_names:
         prev_failing = True
@@ -243,21 +260,25 @@ def experiment_4_sensitivity() -> dict:
             f"[{t.low_value:.2f}, {t.high_value:.2f}] → "
             f"radius [{r_lo}, {r_hi}]m (spread={spread}m)"
         )
-        tornado_data.append({
-            "parameter": t.parameter_name,
-            "baseline_value": t.baseline_value,
-            "low_value": round(t.low_value, 4),
-            "high_value": round(t.high_value, 4),
-            "radius_at_low": round(t.radius_at_low, 1) if t.radius_at_low else None,
-            "radius_at_high": round(t.radius_at_high, 1) if t.radius_at_high else None,
-            "spread_m": round(t.spread, 1) if t.spread != float("inf") else None,
-        })
+        tornado_data.append(
+            {
+                "parameter": t.parameter_name,
+                "baseline_value": t.baseline_value,
+                "low_value": round(t.low_value, 4),
+                "high_value": round(t.high_value, 4),
+                "radius_at_low": round(t.radius_at_low, 1) if t.radius_at_low else None,
+                "radius_at_high": (
+                    round(t.radius_at_high, 1) if t.radius_at_high else None
+                ),
+                "spread_m": round(t.spread, 1) if t.spread != float("inf") else None,
+            }
+        )
 
     return {
         "name": "Sensitivity analysis",
-        "baseline_min_radius_m": round(report.baseline_min_radius, 1)
-        if report.baseline_min_radius
-        else None,
+        "baseline_min_radius_m": (
+            round(report.baseline_min_radius, 1) if report.baseline_min_radius else None
+        ),
         "perturbation_pct": 20.0,
         "tornado": tornado_data,
     }
@@ -290,8 +311,7 @@ def experiment_5_cross_coupling_deep_dive() -> dict:
             results.append(entry)
             r_str = f"{r_min:.0f}m" if r_min else "infeasible"
             print(
-                f"  head={head_rate}°/s, threshold={threshold}°/s²: "
-                f"r_min = {r_str}"
+                f"  head={head_rate}°/s, threshold={threshold}°/s²: " f"r_min = {r_str}"
             )
 
     return {

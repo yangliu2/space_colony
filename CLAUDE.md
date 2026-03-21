@@ -45,3 +45,21 @@ uv run mypy src/
 - Every inline citation must have a corresponding full entry in the References section
 - References section entries follow MLA 9th edition:
   - `Author(s). "Title." *Journal*, vol. X, no. Y, Year, pp. Z. *Database*, URL.`
+
+## Interactive Demo
+
+Located at `demo/`. React + Three.js + Recharts frontend, FastAPI backend.
+
+```bash
+# Terminal 1 — API server (port 8042)
+conda activate space
+cd models/habitat_constraints
+uv run uvicorn habitat_constraints.api.main:app --host 127.0.0.1 --port 8042 --reload
+
+# Terminal 2 — Frontend dev server (port 5173)
+cd demo
+npm install   # first time only
+npm run dev
+```
+
+Open http://localhost:5173 in browser. Both servers must be running.

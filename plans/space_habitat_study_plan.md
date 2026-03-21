@@ -101,8 +101,9 @@
 **Focus:** Systems engineering constraints beyond rotation and biology
 
 **TODO:**
+- **Rotational stability & spin-up energy** — the cylinder spins about its long axis (minimum $I$), but energy dissipation from internal activity (people, weather, machinery) drives rotation toward the maximum-$I$ axis (Explorer 1 problem). Requires active stabilization. Also: spin-up energy budget ($E = \frac{1}{2}I\omega^2$ with $I \approx mr^2$ for a thin shell) and how long it takes with realistic thrust
 - Thermal management (radiator area vs. waste heat)
-- Structural dynamics (vibration modes, seismic equivalent)
+- Structural dynamics (vibration modes, seismic equivalent, precession/nutation from internal mass redistribution)
 - Agriculture area vs. population (food self-sufficiency)
 - Water recycling efficiency
 - Energy budget (solar panel area, power distribution)

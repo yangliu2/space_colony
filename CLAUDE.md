@@ -1,5 +1,9 @@
 # Space Colony Project
 
+## File Reading
+Since you cannot read files more than 10,000 tokens, don't create any file 
+more than 10,000 tokens. 
+
 ## Environment
 
 - **Python:** 3.14.2 (via homebrew)

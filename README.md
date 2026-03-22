@@ -96,7 +96,8 @@ A React + Three.js web dashboard for real-time constraint exploration with a cou
   * [constraint_biological.md](plans/constraint_biological.md) — biological constraints: radiation, atmosphere, population, ecosystem
   * [construction_material_estimates.md](plans/construction_material_estimates.md) — mass budget estimates for minimum viable and O'Neill-scale cylinders
   * [structural_engineering.md](plans/structural_engineering.md) — structural design, materials, counter-rotating pair, mirror constraints
-  * [mirror_geometry.md](plans/mirror_geometry.md) — mirror optics, ray tracing, Three.js implementation
+  * [mirror_geometry.md](plans/mirror_geometry.md) — mirror optics: flexible reflective surface, 0–45° tilt, hinge at window center, side-view diagrams, Three.js implementation
+  * [draw_mirror_diagram.py](plans/draw_mirror_diagram.py) — generates mirror diagrams (law of reflection, side view, day/night cycle)
   * [interior_space_utilization.md](plans/interior_space_utilization.md) — gravity zones, agriculture area, livable surface
   * [qa_structural_design.md](plans/qa_structural_design.md) — structural quality assurance
 * [models/](models/) — parametric constraint model (Python, uv-managed)

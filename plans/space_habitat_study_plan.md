@@ -100,13 +100,51 @@
 ## Phase 6: Advanced Constraints ← NEXT
 **Focus:** Systems engineering constraints beyond rotation and biology
 
-**TODO:**
-- **Rotational stability & spin-up energy** — the cylinder spins about its long axis (minimum $I$), but energy dissipation from internal activity (people, weather, machinery) drives rotation toward the maximum-$I$ axis (Explorer 1 problem). Requires active stabilization. Also: spin-up energy budget ($E = \frac{1}{2}I\omega^2$ with $I \approx mr^2$ for a thin shell) and how long it takes with realistic thrust
-- Thermal management (radiator area vs. waste heat)
-- Structural dynamics (vibration modes, seismic equivalent, precession/nutation from internal mass redistribution)
-- Agriculture area vs. population (food self-sufficiency)
-- Water recycling efficiency
-- Energy budget (solar panel area, power distribution)
+**Research completed:**
+- `structural_engineering.md` — hoop stress analysis, tension-dominant architecture,
+  material selection (steel vs CFRP vs CNT), Monte Carlo reliability framework,
+  safety factors (NASA-STD-5001B), micrometeorite cumulative damage modeling
+- `interior_space_utilization.md` — O'Neill's interior zoning (rim habitation,
+  mid-zone industry, zero-g axis), external agriculture modules, gravity gradient
+  utilization, counter-rotating pair design, psychological considerations
+
+**Research completed:**
+- `constraint_cylinder_length.md` — maximum cylinder length depends on radius via
+  bending mode resonance ($L_\text{max} \propto r^{5/4}$). O'Neill's $L/D = 5$ as
+  upper limit. Our minimum viable cylinder ($L/D = 1.0$) is well within limits.
+  Proposed soft constraint: $L \leq 2.74 \cdot r^{5/4}$
+
+**TODO — Constraints to implement:**
+- [ ] **Cylinder length limit** — implement $L_\text{max} = C \cdot r^{5/4}$ constraint
+  in the solver based on bending mode analysis (see `constraint_cylinder_length.md`)
+- [ ] **Rotational stability & spin-up energy** — the cylinder spins about its long
+  axis (minimum $I$), but energy dissipation from internal activity (people, weather,
+  machinery) drives rotation toward the maximum-$I$ axis (Explorer 1 problem).
+  Requires active stabilization. Also: spin-up energy budget
+  ($E = \frac{1}{2}I\omega^2$ with $I \approx mr^2$ for a thin shell) and how long
+  it takes with realistic thrust
+- [ ] **Structural hoop stress** — verify that chosen material can sustain
+  $\sigma = \rho \omega^2 r^2 + Pr/t$ with safety factor ≥ 2.0. Integrate into
+  constraint solver as `StructuralConstraint`
+- [ ] **Agriculture area vs. population** — food self-sufficiency requires ~0.2 ha/person
+  (open field) or ~0.02–0.04 ha/person (hydroponics). External module mass estimate
+- [ ] **Thermal management** — radiator area vs. waste heat. Solar input through
+  windows vs. radiated output from exterior
+- [ ] **Energy budget** — solar panel area, power distribution, day-night cycle from
+  mirror system
+- [ ] **Water recycling efficiency** — closed-loop water budget, required recycling
+  rate vs. population
+- [ ] **Micrometeorite reliability** — Monte Carlo simulation of cumulative impact
+  damage over 50–100 year lifespan (Poisson arrival, Whipple shield effectiveness)
+- [ ] **Mirror diagrams** - all wrong from previous explorations, need correction.
+- [ ] **The L5 (fifth Lagrangian) point** - document why it's good and what other points are available
+
+**TODO — 3D model enhancements:**
+- [ ] Ring ribs (circumferential frames every ~50–100 m)
+- [ ] Gravity gradient shading (color gradient from rim to axis)
+- [ ] External mirrors (3 hinged panels outside windows)
+- [ ] Axial spine / docking ports
+- [ ] Parameters and 3d page don't sync model anymore. need to fix
 
 ---
 

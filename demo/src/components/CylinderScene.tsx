@@ -839,6 +839,7 @@ function getHotspots(r: number, l: number): HotspotDef[] {
         "Floating at the rotation axis. Weightless zone for recreation (human-powered flight!) and zero-g manufacturing. Docking ports at each end.",
       icon: "🚀",
       promptFile: "03_zero_g_axis.md",
+      image: "/viewpoints/zero_g_axis.png",
     },
     {
       id: "mid-zone",
@@ -848,6 +849,7 @@ function getHotspots(r: number, l: number): HotspotDef[] {
         "Industry and services zone at half gravity. Easier material handling, medical rehabilitation facilities, water reservoirs.",
       icon: "🏭",
       promptFile: "04_mid_zone.md",
+      image: "/viewpoints/mid_zone.png",
     },
     {
       id: "endcap",
@@ -857,6 +859,7 @@ function getHotspots(r: number, l: number): HotspotDef[] {
         "Hemispherical end cap with docking port. Spacecraft arrive along the rotation axis where relative velocity is minimal. Agriculture pods visible nearby.",
       icon: "🛸",
       promptFile: "05_end_cap.md",
+      image: "/viewpoints/end_cap.png",
     },
     {
       id: "looking-up",
@@ -866,6 +869,7 @@ function getHotspots(r: number, l: number): HotspotDef[] {
         "The iconic O'Neill view: looking 'up' you see the opposite land strip curving overhead ~2 km away. Between land strips, window strips show sky/space.",
       icon: "👀",
       promptFile: "06_looking_up.md",
+      image: "/viewpoints/looking_up.png",
     },
   ];
 }

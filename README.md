@@ -17,6 +17,26 @@ So then I started to ask questions about how possible is the cylinder structure 
 
 ![Window View](demo/public/viewpoints/window_view_2.png)
 
+**Looking up from the surface** — the iconic O'Neill view: the opposite land strip curves overhead ~2 km away, with window strips showing space between:
+
+![Looking Up](demo/public/viewpoints/looking_up.png)
+
+**Floating at the zero-g axis** — weightless at the center, the interior landscape wraps 360° around you, 982 m away in every direction:
+
+![Zero-G Axis](demo/public/viewpoints/zero_g_axis.png)
+
+**End cap & docking** — hemispherical end cap with docking port, looking inward along the full 2 km cylinder length:
+
+![End Cap](demo/public/viewpoints/end_cap.png)
+
+**Mid-zone (0.5g)** — industrial platform at half-radius, half gravity:
+
+![Mid Zone](demo/public/viewpoints/mid_zone.png)
+
+**Exterior view** — counter-rotating cylinder pair in space (note: mirror orientation in this image is not yet accurate — see [07_exterior.md](demo/prompts/07_exterior.md) for corrections):
+
+![Exterior](demo/public/viewpoints/exterior.png)
+
 ## Goal
 This repository deals with practical issues regarding surviving on an O'Neill cylinder, and other issues related to space expansion. The approach is **constraint discovery and sensitivity analysis** — bounding the problem, understanding limits, and reducing unknowns.
 

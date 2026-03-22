@@ -36,10 +36,17 @@ export default function FeasibleRegionChart({ sweep, currentRadius }: Props) {
           {sweep.feasible_max_radius.toLocaleString(undefined, { maximumFractionDigits: 0 })} m
         </p>
       )}
-      <ResponsiveContainer width="100%" height={260}>
-        <ComposedChart data={data} margin={{ top: 10, right: 20, bottom: 0, left: 0 }}>
+      <ResponsiveContainer width="100%" height={280}>
+        <ComposedChart data={data} margin={{ top: 10, right: 20, bottom: 20, left: 0 }}>
           <CartesianGrid strokeDasharray="3 3" stroke="#333" />
-          <XAxis dataKey="radius" label={{ value: "Radius (m)", position: "insideBottom", offset: -4, fill: "#aaa" }} tick={{ fill: "#aaa", fontSize: 11 }} />
+          <XAxis
+            dataKey="radius"
+            type="number"
+            domain={[0, 'auto']}
+            tickCount={10}
+            label={{ value: "Radius (m)", position: "insideBottom", offset: -8, fill: "#aaa" }}
+            tick={{ fill: "#aaa", fontSize: 11 }}
+          />
           <YAxis domain={[0, 1.1]} hide />
           <Tooltip
             contentStyle={{ background: "#1a1a2e", border: "1px solid #444", borderRadius: 6 }}

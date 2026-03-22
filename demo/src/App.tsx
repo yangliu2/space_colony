@@ -1,17 +1,18 @@
-import { useState, useMemo } from "react";
+import { useMemo } from "react";
 import ParameterSliders from "./components/ParameterSliders";
 import ConstraintPanel from "./components/ConstraintPanel";
+import StatsPanel from "./components/StatsPanel";
 import FeasibleRegionChart from "./components/FeasibleRegionChart";
 import CylinderScene from "./components/CylinderScene";
 import { useConstraintSolver } from "./hooks/useConstraintSolver";
 import { useSceneToggles } from "./hooks/useSceneToggles";
-import { DEFAULT_PARAMS, type DesignParams } from "./types/api";
+import { useDesignParams } from "./hooks/useDesignParams";
 import "./App.css";
 
 const EARTH_G = 9.80665;
 
 function App() {
-  const [params, setParams] = useState<DesignParams>(DEFAULT_PARAMS);
+  const { params, setParams } = useDesignParams();
   const { evalResult, sweepResult, loading } = useConstraintSolver(params);
   const { toggles } = useSceneToggles();
 
@@ -43,6 +44,7 @@ function App() {
               toggles={toggles}
             />
           </div>
+          <StatsPanel params={params} result={evalResult} compact />
           <FeasibleRegionChart sweep={sweepResult} currentRadius={params.radius_m} />
         </main>
       </div>

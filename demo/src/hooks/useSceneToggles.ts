@@ -10,6 +10,13 @@ export interface SceneToggles {
   showGravityLabel: boolean;
   showAxis: boolean;
   showEndCaps: boolean;
+  showCables: boolean;
+  showMirrors: boolean;
+  showAgriculture: boolean;
+  showInteriorZones: boolean;
+  showBearing: boolean;
+  showHotspots: boolean;
+  showInteriorLighting: boolean;
 }
 
 const DEFAULTS: SceneToggles = {
@@ -20,6 +27,13 @@ const DEFAULTS: SceneToggles = {
   showGravityLabel: false,
   showAxis: false,
   showEndCaps: false,
+  showCables: false,
+  showMirrors: false,
+  showAgriculture: false,
+  showInteriorZones: false,
+  showBearing: true,
+  showHotspots: false,
+  showInteriorLighting: false,
 };
 
 function load(): SceneToggles {

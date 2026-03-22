@@ -7,6 +7,16 @@ One thing after another, I started to ask LLM what's the most likely space expan
 
 So then I started to ask questions about how possible is the cylinder structure and what we need to build it. I first thought about doing hard calculus and quantum physic classes. But quickly realize that it's mostly for theoretical physics and not going to be rewarding for me to keep going. I probably be better off to make models and solve stuff I know. Think like what condition would human be comfortable living in.
 
+## What It Looks Like
+
+**Standing on the rim surface** — looking up at the curved interior landscape, with window strips letting reflected sunlight pour in:
+
+![Rim Surface View](demo/public/viewpoints/rim_surface.png)
+
+**Looking through a window strip** — external mirrors at 45° redirect axial sunlight into the habitat through the transparent window panels:
+
+![Window View](demo/public/viewpoints/window_view_2.png)
+
 ## Goal
 This repository deals with practical issues regarding surviving on an O'Neill cylinder, and other issues related to space expansion. The approach is **constraint discovery and sensitivity analysis** — bounding the problem, understanding limits, and reducing unknowns.
 
@@ -42,13 +52,13 @@ A parametric constraint model that evaluates O'Neill cylinder designs across 9 i
 
 ### Interactive Demo
 
-A React + Three.js web dashboard for real-time constraint exploration with a 3D rotating O'Neill cylinder.
+A React + Three.js web dashboard for real-time constraint exploration with a counter-rotating O'Neill cylinder pair.
 
 **Main dashboard** — parameter sliders, 9-constraint status panel, feasible region chart, and 3D habitat view:
 
 ![Dashboard](demo/src/assets/demo_dashboard.png)
 
-**3D habitat** — toggleable land/window strips (O'Neill 3+3 pattern), human figure, Coriolis arrows, end caps, gravity label, and rotation axis:
+**3D habitat** — counter-rotating cylinder pair with 60° stagger, external mirrors at 45°, hemispherical end caps, land/window strips, agriculture pods, interior zones, tension cables, bearing framework, human figure with Coriolis arrow:
 
 ![3D Model](demo/src/assets/demo_3d.png)
 
@@ -68,39 +78,82 @@ A React + Three.js web dashboard for real-time constraint exploration with a 3D 
 
 ## Folder Structure
 
-* [plans](plans/) - physics derivations, constraint deep dives, and study plan
-  * [space_habitat_study_plan.md](plans/space_habitat_study_plan.md) - study plan with phase tracking (phases 1–5 complete)
-  * [issues.md](plans/issues.md) - issues to be solved or managed by models
-  * [centripetal_acceleration.md](plans/centripetal_acceleration.md) - explanation of centripetal acceleration and simulation of gravity
-  * [intuition_angular_velocity.md](plans/intuition_angular_velocity.md) - intuitions of angular velocity
-  * [intuition_centripetal_acceleration.md](plans/intuition_centripetal_acceleration.md) - intuitions of centripetal acceleration and derivations
-  * [intuition_artificial_gravity.md](plans/intuition_artificial_gravity.md) - intuition of how artificial gravity is generated using Newton's second law
-  * [general_relativity_and_artificial_gravity.md](plans/general_relativity_and_artificial_gravity.md) - why classical Newton formulas suffice and where modern physics around gravity would matter
-  * [constraint_vestibular.md](plans/constraint_vestibular.md) - deep dive into vestibular constraint, including mitigation strategies and author's past vestibular research with Dr. Thomas A. Houpt
-  * [constraint_gravity_gradient.md](plans/constraint_gravity_gradient.md) - deep dive for gravity gradient (head-to-foot difference); not a limiting constraint
-  * [constraint_cross_coupling.md](plans/constraint_cross_coupling.md) - deep dive for cross-coupling; the most limiting constraint for human comfort
-  * [constraint_coriolis.md](plans/constraint_coriolis.md) - deep dive on Coriolis effects, plus speculations on growing up in curved physics
-  * [constraint_gravity_minimum.md](plans/constraint_gravity_minimum.md) - minimum gravity required for habitation; 1g should be the default
-  * [constraint_rim_speed.md](plans/constraint_rim_speed.md) - upper limit of cylinder size due to rim speed and structural material limits
-  * [constraint_biological.md](plans/constraint_biological.md) - biological constraints survey: radiation, atmosphere, population, ecosystem
-  * [construction_material_estimates.md](plans/construction_material_estimates.md) - mass budget estimates for minimum viable and O'Neill-scale cylinders
-* [models](models/) - parametric constraint model (Python, uv-managed)
-  * [habitat_constraints](models/habitat_constraints/) - 9-constraint feasibility solver
-    * [src/habitat_constraints/core/](models/habitat_constraints/src/habitat_constraints/core/) - parameters, constraint protocol, solver
-    * [src/habitat_constraints/constraints/](models/habitat_constraints/src/habitat_constraints/constraints/) - 9 constraint implementations
-    * [src/habitat_constraints/analysis/](models/habitat_constraints/src/habitat_constraints/analysis/) - sensitivity analysis, Monte Carlo simulation
-    * [src/habitat_constraints/visualization/](models/habitat_constraints/src/habitat_constraints/visualization/) - matplotlib plots
-    * [src/habitat_constraints/api/](models/habitat_constraints/src/habitat_constraints/api/) - FastAPI backend
-    * [experiments/](models/habitat_constraints/experiments/) - phase 1–3 experiment scripts and output plots
-    * [tests/](models/habitat_constraints/tests/) - full test suite for all constraints
-  * [todos.md](models/todos.md) - list of models to make
-* [conclusions](conclusions/) - distilled findings from constraint analysis
-  * [001_human_comfort_boundaries.md](conclusions/001_human_comfort_boundaries.md) - Phase 1: minimum radius 224 m (vestibular-dominated)
-  * [002_full_constraint_analysis.md](conclusions/002_full_constraint_analysis.md) - Phase 2: feasible band [982 m, 9,177 m] (cross-coupling dominated)
-  * [003_biological_constraints_and_monte_carlo.md](conclusions/003_biological_constraints_and_monte_carlo.md) - Phase 3: biological constraints orthogonal, radiation shielding 95% of mass
-  * [feasible_habitat_design_space.md](conclusions/feasible_habitat_design_space.md) - comprehensive design space summary across all phases
-* [demo](demo/) - React + Three.js interactive web dashboard
-  * [README.md](demo/README.md) - demo setup instructions and limitations
+* [plans/](plans/) — physics derivations, constraint deep dives, and study plan
+  * [space_habitat_study_plan.md](plans/space_habitat_study_plan.md) — study plan with phase tracking (phases 1–5 complete)
+  * [issues.md](plans/issues.md) — issues to be solved or managed by models
+  * [centripetal_acceleration.md](plans/centripetal_acceleration.md) — centripetal acceleration and simulation of gravity
+  * [intuition_angular_velocity.md](plans/intuition_angular_velocity.md) — intuitions of angular velocity
+  * [intuition_centripetal_acceleration.md](plans/intuition_centripetal_acceleration.md) — intuitions of centripetal acceleration and derivations
+  * [intuition_artificial_gravity.md](plans/intuition_artificial_gravity.md) — how artificial gravity is generated using Newton's second law
+  * [general_relativity_and_artificial_gravity.md](plans/general_relativity_and_artificial_gravity.md) — why classical Newton formulas suffice
+  * [constraint_vestibular.md](plans/constraint_vestibular.md) — vestibular constraint deep dive, including author's past research with Dr. Thomas A. Houpt
+  * [constraint_gravity_gradient.md](plans/constraint_gravity_gradient.md) — gravity gradient (head-to-foot difference); not a limiting constraint
+  * [constraint_cross_coupling.md](plans/constraint_cross_coupling.md) — cross-coupling; the most limiting constraint for human comfort
+  * [constraint_coriolis.md](plans/constraint_coriolis.md) — Coriolis effects, plus speculations on growing up in curved physics
+  * [constraint_gravity_minimum.md](plans/constraint_gravity_minimum.md) — minimum gravity required for habitation; 1g should be the default
+  * [constraint_rim_speed.md](plans/constraint_rim_speed.md) — upper limit of cylinder size due to rim speed and structural material limits
+  * [constraint_cylinder_length.md](plans/constraint_cylinder_length.md) — length constraint from bending mode resonance
+  * [constraint_biological.md](plans/constraint_biological.md) — biological constraints: radiation, atmosphere, population, ecosystem
+  * [construction_material_estimates.md](plans/construction_material_estimates.md) — mass budget estimates for minimum viable and O'Neill-scale cylinders
+  * [structural_engineering.md](plans/structural_engineering.md) — structural design, materials, counter-rotating pair, mirror constraints
+  * [mirror_geometry.md](plans/mirror_geometry.md) — mirror optics, ray tracing, Three.js implementation
+  * [interior_space_utilization.md](plans/interior_space_utilization.md) — gravity zones, agriculture area, livable surface
+  * [qa_structural_design.md](plans/qa_structural_design.md) — structural quality assurance
+* [models/](models/) — parametric constraint model (Python, uv-managed)
+  * [habitat_constraints/](models/habitat_constraints/) — 9-constraint feasibility solver
+    * [src/habitat_constraints/core/](models/habitat_constraints/src/habitat_constraints/core/) — parameters, constraint protocol, solver
+    * [src/habitat_constraints/constraints/](models/habitat_constraints/src/habitat_constraints/constraints/) — 9 constraint implementations
+    * [src/habitat_constraints/analysis/](models/habitat_constraints/src/habitat_constraints/analysis/) — sensitivity analysis, Monte Carlo simulation
+    * [src/habitat_constraints/visualization/](models/habitat_constraints/src/habitat_constraints/visualization/) — matplotlib plots
+    * [src/habitat_constraints/api/](models/habitat_constraints/src/habitat_constraints/api/) — FastAPI backend (port 8042)
+    * [experiments/](models/habitat_constraints/experiments/) — phase 1–3 experiment scripts and [output plots](models/habitat_constraints/experiments/output/)
+    * [tests/](models/habitat_constraints/tests/) — full pytest suite for all constraints
+  * [todos.md](models/todos.md) — list of models to make
+* [demo/](demo/) — React + Three.js interactive web dashboard
+  * [src/components/CylinderScene.tsx](demo/src/components/CylinderScene.tsx) — main 3D scene (counter-rotating pair, mirrors, strips, interior)
+  * [src/lib/sceneGeometry.ts](demo/src/lib/sceneGeometry.ts) — extracted pure geometry/physics functions (testable)
+  * [src/__tests__/](demo/src/__tests__/) — 12 vitest test files (106 tests) covering geometry, physics, connectivity
+  * [src/components/](demo/src/components/) — ConstraintPanel, ParameterSliders, FeasibleRegionChart, StatsPanel
+  * [src/hooks/](demo/src/hooks/) — useDesignParams, useSceneToggles, useConstraintSolver
+  * [public/viewpoints/](demo/public/viewpoints/) — AI-generated interior viewpoint images
+  * [prompts/](demo/prompts/) — scene prompt files for AI image generation
+  * [README.md](demo/README.md) — demo setup instructions and limitations
+* [conclusions/](conclusions/) — distilled findings from constraint analysis
+  * [001_human_comfort_boundaries.md](conclusions/001_human_comfort_boundaries.md) — Phase 1: minimum radius 224 m (vestibular-dominated)
+  * [002_full_constraint_analysis.md](conclusions/002_full_constraint_analysis.md) — Phase 2: feasible band [982 m, 9,177 m] (cross-coupling dominated)
+  * [003_biological_constraints_and_monte_carlo.md](conclusions/003_biological_constraints_and_monte_carlo.md) — Phase 3: biological constraints orthogonal, radiation shielding 95% of mass
+  * [feasible_habitat_design_space.md](conclusions/feasible_habitat_design_space.md) — comprehensive design space summary across all phases
+* [investments/](investments/) — space technology portfolio strategy
+  * [space_portfolio_long_horizon_strategy.md](investments/space_portfolio_long_horizon_strategy.md) — long-horizon investment strategy
+  * [space_portfolio_abandon_criteria.md](investments/space_portfolio_abandon_criteria.md) — portfolio abandon criteria
+
+## Testing
+
+### 3D Rendering Tests (TypeScript/Vitest)
+106 tests across 12 files validate the 3D scene geometry against physics documents:
+- **Strip layout** — O'Neill 3+3 alternating pattern, contiguous coverage
+- **Mirror geometry** — 45° diagonal via custom BufferGeometry, R_Y(-θ) sign convention
+- **Light path physics** — reflection law verification, mirror-to-window alignment
+- **Inter-cylinder spacing** — gap formula, no mirror collision with 60° stagger
+- **Scene scale** — normalization, length capping
+- **Camera presets** — dynamic framing, finite coordinates, correct targets
+- **Structural connectivity** — nothing floats in space, all components attached
+- **Plans cross-validation** — cross-coupling threshold, rim speed, Coriolis ratio, gravity gradient, feasible band [982m, 9177m]
+- **Coordinate system** — R_Y rotation sign, local vs. world transforms
+- **Rotation hierarchy** — which components rotate vs. stay static
+- **Edge cases** — extreme parameter values
+
+### Pre-commit Hook
+Runs automatically on every commit:
+1. TypeScript type checking (`tsc --noEmit`)
+2. Vitest (12 test files, 106 tests)
+3. Python pytest (13 test files, all constraints)
+
+```bash
+# Run tests manually
+cd demo && npx vitest run          # TypeScript/geometry tests
+cd models/habitat_constraints && uv run pytest  # Python/constraint tests
+```
 
 ## Running the Project
 

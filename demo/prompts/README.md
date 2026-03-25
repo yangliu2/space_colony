@@ -38,5 +38,5 @@ habitat. Each prompt encodes the actual physics and geometry from our model.
 | `04_mid_zone.md` | 🏭 Mid-zone industry | Half-gravity industrial/services area |
 | `05_end_cap.md` | 🛸 End cap & docking | Spacecraft arrival at the rotation axis |
 | `06_looking_up.md` | 👀 Looking up from surface | The iconic O'Neill overhead landscape view |
-| `07_exterior.md` | — | External view of the full colony in space |
-| `08_mirror_daylight.md` | — | Mirrors reflecting sunlight through windows |
+| `07_exterior.md` | — | External view of the full colony in space (no hotspot — hard to get physics right with image generation) |
+| `08_mirror_daylight.md` | ☀️ Mirror daylight | Mirrors reflecting sunlight through windows |

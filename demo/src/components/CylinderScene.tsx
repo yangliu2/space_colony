@@ -871,6 +871,16 @@ function getHotspots(r: number, l: number): HotspotDef[] {
       promptFile: "06_looking_up.md",
       image: "/viewpoints/looking_up.png",
     },
+    {
+      id: "mirror-daylight",
+      localPos: [r * 0.5, l * 0.3, r * 0.75],
+      label: "Mirror daylight",
+      description:
+        "Simulated sunrise: an external mirror pivots open, reflecting sunlight through the window strip. Golden light floods the land strip as the 2 km-long mirror gradually tilts to full 45°.",
+      icon: "☀️",
+      promptFile: "08_mirror_daylight.md",
+      image: "/viewpoints/mirror_daylight.png",
+    },
   ];
 }
 

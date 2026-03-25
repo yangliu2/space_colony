@@ -211,3 +211,6 @@ __marimo__/
 
 # Mac specific
 .DS_Store
+
+# kindle files
+*.azw

@@ -33,10 +33,6 @@ So then I started to ask questions about how possible is the cylinder structure 
 
 ![Mid Zone](demo/public/viewpoints/mid_zone.png)
 
-**Exterior view** — counter-rotating cylinder pair in space (note: mirror orientation in this image is not yet accurate — see [07_exterior.md](demo/prompts/07_exterior.md) for corrections):
-
-![Exterior](demo/public/viewpoints/exterior.png)
-
 ## Goal
 This repository deals with practical issues regarding surviving on an O'Neill cylinder, and other issues related to space expansion. The approach is **constraint discovery and sensitivity analysis** — bounding the problem, understanding limits, and reducing unknowns.
 

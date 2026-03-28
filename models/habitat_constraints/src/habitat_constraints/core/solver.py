@@ -105,15 +105,20 @@ class FeasibleRegionSolver:
         r_max: float,
         n_points: int = 200,
         target_gravity_g: float = 1.0,
+        extra_params: dict[str, float | int] | None = None,
     ) -> list[SweepPoint]:
         """Sweep radius range at a fixed gravity target.
 
         For each radius, compute the omega that achieves target_gravity_g,
-        then evaluate all constraints. Returns a list of SweepPoint
-        results ordered by radius.
+        then evaluate all constraints. Extra design parameters
+        (wall_thickness_m, length_m, population, etc.) can be passed
+        via extra_params and will be applied at each sweep point.
+
+        Returns a list of SweepPoint results ordered by radius.
         """
         results: list[SweepPoint] = []
         step = (r_max - r_min) / max(n_points - 1, 1)
+        kw = dict(extra_params) if extra_params else {}
 
         for i in range(n_points):
             r = r_min + i * step
@@ -121,6 +126,7 @@ class FeasibleRegionSolver:
             params = HabitatParameters(
                 radius_m=r,
                 angular_velocity_rad_s=omega,
+                **kw,
             )
             constraint_results = self.evaluate_point(params)
             all_feasible = all(cr.feasible for cr in constraint_results)

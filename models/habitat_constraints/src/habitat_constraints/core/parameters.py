@@ -45,6 +45,16 @@ class HabitatParameters(BaseModel):
         ge=0,
         description="Radiation shielding areal density (kg/m²)",
     )
+    wall_thickness_m: float = Field(
+        default=0.2,
+        gt=0,
+        description="Structural hull wall thickness (m). Default 200mm.",
+    )
+    hull_density_kg_m3: float = Field(
+        default=7900.0,
+        gt=0,
+        description="Hull material density (kg/m³). Default: steel.",
+    )
 
     @property
     def gravity_g(self) -> float:
@@ -111,6 +121,8 @@ class HabitatParameters(BaseModel):
         internal_pressure_kpa: float = 101.3,
         o2_fraction: float = 0.21,
         shielding_areal_density_kg_m2: float = 4500.0,
+        wall_thickness_m: float = 0.2,
+        hull_density_kg_m3: float = 7900.0,
     ) -> HabitatParameters:
         """Create parameters for a given radius that achieves target gravity."""
         omega = math.sqrt(target_gravity_g * EARTH_G / radius_m)
@@ -122,6 +134,8 @@ class HabitatParameters(BaseModel):
             internal_pressure_kpa=internal_pressure_kpa,
             o2_fraction=o2_fraction,
             shielding_areal_density_kg_m2=shielding_areal_density_kg_m2,
+            wall_thickness_m=wall_thickness_m,
+            hull_density_kg_m3=hull_density_kg_m3,
         )
 
 
@@ -213,6 +227,51 @@ class HumanAssumptions(BaseModel):
         description=(
             "Minimum habitable volume per person (m³). "
             "NASA: 25 minimum, 100+ for >1 year."
+        ),
+    )
+
+    # --- Phase 6: Structural constraints ---
+    max_length_coefficient: float = Field(
+        default=1.33,
+        gt=0,
+        description=(
+            "Coefficient C in L_max = C * r^(5/4). "
+            "Calibrated to O'Neill: L=32km at r=3.2km."
+        ),
+    )
+    max_length_to_radius_ratio: float = Field(
+        default=1.3,
+        gt=0,
+        description=(
+            "Max L/r for passive rotational stability. "
+            "Iz/Ix >= 1.2 requires L < 1.3r for flat caps "
+            "(Globus and Arora 2007). Counter-rotating pairs "
+            "can exceed this limit."
+        ),
+    )
+    counter_rotating_pair: bool = Field(
+        default=False,
+        description=(
+            "Whether the habitat uses counter-rotating pairs "
+            "(O'Neill design). If True, the rotational stability "
+            "constraint is relaxed to L/r < 10."
+        ),
+    )
+    yield_strength_mpa: float = Field(
+        default=1200.0,
+        gt=0,
+        description=(
+            "Hull material yield strength (MPa). "
+            "Default: high-strength structural steel."
+        ),
+    )
+    structural_safety_factor: float = Field(
+        default=2.0,
+        gt=1.0,
+        description=(
+            "Structural safety factor (ultimate FoS). "
+            "NASA-STD-5001B: 1.4 for spacecraft, "
+            "2.0+ recommended for permanent colony."
         ),
     )
 

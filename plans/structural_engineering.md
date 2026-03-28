@@ -21,8 +21,11 @@ The total hoop stress is:
 $$\sigma_{\text{hoop}} = \rho \, \omega^2 \, r^2 + \frac{P \cdot r}{t}$$
 
 For the minimum viable cylinder ($r = 982$ m, 1g, steel shell), the rotational
-component alone reaches ~600 MPa — near the yield strength of structural steel.
-This is why material selection is the single most consequential structural decision.
+component alone reaches ~76 MPa ($\sigma_{\text{rot}} = \rho g r = 7900 \times 9.81 \times 982$).
+However, the pressure component at full atmosphere with $t = 0.2$ m wall is ~497 MPa,
+dominating the total (~573 MPa). At O'Neill scale ($r = 3{,}200$ m), the rotational
+component rises to ~248 MPa. Material selection — specifically **specific strength**
+($\sigma_y / \rho$) — is the single most consequential structural decision.
 
 
 ## 2. Structural Architecture: Tension over Compression
@@ -98,6 +101,51 @@ shell is fighting its own weight under centrifugal load:
 For our minimum viable cylinder ($r = 982$ m), CFRP reduces structural shell mass
 from ~15–25 Mt (steel) to ~2–5 Mt — a 5–10× savings that propagates through the
 entire mass budget (see `construction_material_estimates.md`).
+
+### 3.2 CFRP as Recommended Hull Material
+
+**Recommendation:** CFRP (carbon fiber reinforced polymer) should be the baseline
+hull material for the minimum viable cylinder. The specific strength advantage
+(2,250–4,500 kN·m/kg vs. 50–150 for steel) transforms the design space:
+
+| Property | Steel ($t = 0.2$ m) | CFRP ($t = 0.2$ m) |
+|----------|---------------------|---------------------|
+| $\sigma_{\text{rot}}$ at $r = 982$ m | 76 MPa | 15 MPa |
+| Pressure term ($P r / t$, 101 kPa) | 497 MPa | 497 MPa |
+| Total $\sigma_{\text{hoop}}$ | 573 MPa | 512 MPa |
+| $\sigma_y$ (design allowable) | 1,200 MPa | 3,500 MPa |
+| Margin | 2.09× | 6.84× |
+| $R_{\max}$ (FoS = 2) | 2.5–8 km | 115–230 km |
+
+**Key insight:** The pressure term ($P r / t$) is material-independent — it depends
+only on geometry and internal pressure. At small radii where pressure dominates,
+CFRP's advantage comes from its higher $\sigma_y$ providing more margin, not from
+lower rotational stress. At large radii where the rotational term grows, CFRP's
+lower density ($\rho = 1{,}550$ kg/m³ vs. 7,900) becomes decisive.
+
+**Design implications:**
+
+1. **Wider feasible radius band.** With CFRP at $t = 0.2$ m, hoop stress stays
+   within allowable limits up to $r \approx 115$ km (FoS = 2). The practical
+   upper bound becomes population density or other non-structural constraints.
+2. **Thinner walls viable.** CFRP's high strength allows thinner walls at the
+   same safety margin, further reducing mass. A $t = 0.1$ m CFRP shell at
+   $r = 982$ m has $\sigma_{\text{hoop}} \approx 1{,}007$ MPa — still within
+   allowable at FoS = 3.5.
+3. **Anisotropy requires careful layup.** CFRP is strongest along fiber
+   directions. A quasi-isotropic layup (0°/±45°/90°) handles combined hoop
+   and axial loads but at ~60% of unidirectional strength. A hoop-dominant
+   layup optimized for the primary stress direction is preferred.
+4. **Manufacturing.** Filament winding is the natural process for cylindrical
+   pressure vessels. Automated fiber placement on a rotating mandrel scales
+   to large diameters. In-space manufacturing from asteroidal carbon is
+   speculative but not impossible (Bernal 2020).
+
+**Conclusion:** For the minimum viable cylinder, CFRP with $t = 0.2$–$0.5$ m
+provides ample margin at steel-equivalent or lower mass. Steel remains a
+fallback for lunar-resource-only scenarios. Wall thickness should be treated
+as a **tunable design parameter** — thicker walls widen the feasible radius
+band at the cost of mass.
 
 
 ## 4. Monte Carlo Structural Reliability

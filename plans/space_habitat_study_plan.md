@@ -112,20 +112,22 @@
 - `constraint_cylinder_length.md` — maximum cylinder length depends on radius via
   bending mode resonance ($L_\text{max} \propto r^{5/4}$). O'Neill's $L/D = 5$ as
   upper limit. Our minimum viable cylinder ($L/D = 1.0$) is well within limits.
-  Proposed soft constraint: $L \leq 2.74 \cdot r^{5/4}$
+  Proposed soft constraint: $L \leq 1.33 \cdot r^{5/4}$
 
 **TODO — Constraints to implement:**
-- [ ] **Cylinder length limit** — implement $L_\text{max} = C \cdot r^{5/4}$ constraint
+- [x] **Cylinder length limit** — implement $L_\text{max} = C \cdot r^{5/4}$ constraint
   in the solver based on bending mode analysis (see `constraint_cylinder_length.md`)
-- [ ] **Rotational stability & spin-up energy** — the cylinder spins about its long
-  axis (minimum $I$), but energy dissipation from internal activity (people, weather,
-  machinery) drives rotation toward the maximum-$I$ axis (Explorer 1 problem).
-  Requires active stabilization. Also: spin-up energy budget
+- [x] **Rotational stability** — passive stability requires $I_z/I_x \geq 1.2$,
+  limiting single cylinders to $L < 1.3r$ (Globus and Arora 2007). Implemented as
+  `RotationalStabilityConstraint` with `counter_rotating_pair` option for O'Neill
+  designs. This is the literature's primary length constraint, complementing our
+  bending mode analysis.
+- [ ] **Spin-up energy** — energy budget
   ($E = \frac{1}{2}I\omega^2$ with $I \approx mr^2$ for a thin shell) and how long
   it takes with realistic thrust
-- [ ] **Structural hoop stress** — verify that chosen material can sustain
-  $\sigma = \rho \omega^2 r^2 + Pr/t$ with safety factor ≥ 2.0. Integrate into
-  constraint solver as `StructuralConstraint`
+- [x] **Structural hoop stress** — verify that chosen material can sustain
+  $\sigma = \rho \omega^2 r^2 + Pr/t$ with safety factor ≥ 2.0. Implemented as
+  `HoopStressConstraint` with configurable material properties
 - [ ] **Agriculture area vs. population** — food self-sufficiency requires ~0.2 ha/person
   (open field) or ~0.02–0.04 ha/person (hydroponics). External module mass estimate
 - [ ] **Thermal management** — radiator area vs. waste heat. Solar input through
@@ -144,7 +146,7 @@
 - [ ] Gravity gradient shading (color gradient from rim to axis)
 - [ ] External mirrors (3 hinged panels outside windows)
 - [ ] Axial spine / docking ports
-- [ ] Parameters and 3d page don't sync model anymore. need to fix
+- [x] Parameters and 3d page don't sync model anymore. need to fix
 
 ---
 

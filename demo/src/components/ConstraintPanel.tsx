@@ -11,6 +11,9 @@ const META: Record<string, { label: string; detail: string; format: (v: number) 
   radiation_shielding: { label: "Radiation Shield", detail: "shielding_kg_m2", format: (v) => `${v.toFixed(0)} kg/m²` },
   atmosphere: { label: "Atmosphere (pO₂)", detail: "o2_partial_pressure_kpa", format: (v) => `${v.toFixed(1)} kPa` },
   population: { label: "Population", detail: "population", format: (v) => `${v.toLocaleString()}` },
+  cylinder_length: { label: "Cylinder Length", detail: "length_to_diameter", format: (v) => `L/D = ${v.toFixed(2)}` },
+  hoop_stress: { label: "Hoop Stress", detail: "sigma_hoop_mpa", format: (v) => `${v.toFixed(0)} MPa` },
+  rotational_stability: { label: "Rotational Stability", detail: "length_to_radius", format: (v) => `L/r = ${v.toFixed(2)}` },
 };
 
 interface Props {

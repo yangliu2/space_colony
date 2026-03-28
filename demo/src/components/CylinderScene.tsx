@@ -1,6 +1,6 @@
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { OrbitControls, Text, Html } from "@react-three/drei";
-import { useRef, useMemo, useState, useCallback, useImperativeHandle, forwardRef } from "react";
+import { useRef, useMemo, useState, useCallback, useImperativeHandle, forwardRef, useEffect } from "react";
 import * as THREE from "three";
 import type { EvaluateResponse } from "../types/api";
 import type { SceneToggles } from "../hooks/useSceneToggles";
@@ -775,9 +775,78 @@ export interface CameraControlHandle {
   goToPreset: (preset: CameraPreset) => void;
 }
 
+const CAMERA_STORAGE_KEY = "habitat-camera-state";
+
+interface CameraState {
+  position: [number, number, number];
+  target: [number, number, number];
+}
+
+function saveCameraState(state: CameraState) {
+  localStorage.setItem(CAMERA_STORAGE_KEY, JSON.stringify(state));
+}
+
+function loadCameraState(): CameraState | null {
+  try {
+    const raw = localStorage.getItem(CAMERA_STORAGE_KEY);
+    if (raw) return JSON.parse(raw);
+  } catch {
+    // ignore
+  }
+  return null;
+}
+
 const CameraController = forwardRef<CameraControlHandle>(function CameraController(_, ref) {
   const { camera } = useThree();
   const controlsRef = useRef<any>(null);
+  const skipNextSave = useRef(false);
+
+  // Restore saved camera state on mount
+  useEffect(() => {
+    const saved = loadCameraState();
+    if (saved) {
+      camera.position.set(...saved.position);
+      if (controlsRef.current) {
+        controlsRef.current.target.set(...saved.target);
+        controlsRef.current.update();
+      }
+    }
+  }, [camera]);
+
+  // Listen for camera changes from other tabs
+  useEffect(() => {
+    const handler = (e: StorageEvent) => {
+      if (e.key === CAMERA_STORAGE_KEY && e.newValue) {
+        const state: CameraState = JSON.parse(e.newValue);
+        skipNextSave.current = true;
+        camera.position.set(...state.position);
+        if (controlsRef.current) {
+          controlsRef.current.target.set(...state.target);
+          controlsRef.current.update();
+        }
+      }
+    };
+    window.addEventListener("storage", handler);
+    return () => window.removeEventListener("storage", handler);
+  }, [camera]);
+
+  // Persist camera state on each frame (throttled)
+  const lastSave = useRef(0);
+  useFrame(() => {
+    if (skipNextSave.current) {
+      skipNextSave.current = false;
+      return;
+    }
+    const now = performance.now();
+    if (now - lastSave.current < 300) return;
+    lastSave.current = now;
+    const target = controlsRef.current?.target;
+    if (!target) return;
+    saveCameraState({
+      position: [camera.position.x, camera.position.y, camera.position.z],
+      target: [target.x, target.y, target.z],
+    });
+  });
 
   const goToPreset = useCallback(
     (preset: CameraPreset) => {
@@ -786,6 +855,7 @@ const CameraController = forwardRef<CameraControlHandle>(function CameraControll
         controlsRef.current.target.set(...preset.target);
         controlsRef.current.update();
       }
+      saveCameraState({ position: preset.position, target: preset.target });
     },
     [camera],
   );

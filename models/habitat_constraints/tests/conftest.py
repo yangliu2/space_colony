@@ -31,6 +31,12 @@ from habitat_constraints.constraints.atmosphere import (
 from habitat_constraints.constraints.population import (
     PopulationConstraint,
 )
+from habitat_constraints.constraints.cylinder_length import (
+    CylinderLengthConstraint,
+)
+from habitat_constraints.constraints.hoop_stress import (
+    HoopStressConstraint,
+)
 
 
 @pytest.fixture
@@ -91,9 +97,11 @@ def all_constraints() -> (
         | RadiationConstraint
         | AtmosphereConstraint
         | PopulationConstraint
+        | CylinderLengthConstraint
+        | HoopStressConstraint
     ]
 ):
-    """All constraints (Phase 1 + Phase 2 + Phase 3)."""
+    """All constraints (Phase 1–3 + Phase 6 structural)."""
     return [
         VestibularConstraint(),
         GravityLevelConstraint(),
@@ -104,4 +112,6 @@ def all_constraints() -> (
         RadiationConstraint(),
         AtmosphereConstraint(),
         PopulationConstraint(),
+        CylinderLengthConstraint(),
+        HoopStressConstraint(),
     ]

@@ -13,7 +13,7 @@ const EARTH_G = 9.80665;
 
 function App() {
   const { params, setParams } = useDesignParams();
-  const { evalResult, sweepResult, loading } = useConstraintSolver(params);
+  const { evalResult, sweepResult, feasibleRanges, loading } = useConstraintSolver(params);
   const { toggles } = useSceneToggles();
 
   const omega = useMemo(
@@ -30,7 +30,7 @@ function App() {
 
       <div className="main-grid">
         <aside className="sidebar">
-          <ParameterSliders params={params} onChange={setParams} />
+          <ParameterSliders params={params} onChange={setParams} feasibleRanges={feasibleRanges} />
         </aside>
 
         <main className="content">

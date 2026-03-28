@@ -1,8 +1,8 @@
 # Feasible Habitat Design Space
 
-## Summary of Current Model (Phases 1–5)
+## Summary of Current Model (Phases 1–6)
 
-This document synthesizes all constraint analysis performed to date into a single reference for the feasible design space of an O'Neill-type rotating space habitat. The model evaluates 9 independent constraints across rotational dynamics, human physiology, and environmental life support.
+This document synthesizes all constraint analysis performed to date into a single reference for the feasible design space of an O'Neill-type rotating space habitat. The model evaluates 12 independent constraints across rotational dynamics, human physiology, environmental life support, and structural engineering.
 
 ---
 
@@ -27,20 +27,48 @@ This document synthesizes all constraint analysis performed to date into a singl
 | 8 | Atmosphere | $p_{\text{O}_2}$ | $16$–$50$ kPa | Partial pressure of oxygen for human respiration |
 | 9 | Population | Inhabitants | $\geq 98$ | Minimum viable population for genetic diversity |
 
+### Structural Engineering (Phase 6)
+
+| # | Constraint | Parameter | Threshold | Physics |
+|---|-----------|-----------|-----------|---------|
+| 10 | Hoop stress | $\sigma_{\text{hoop}} \cdot \text{FoS} \leq \sigma_y$ | Material-dependent | Combined rotational + pressure vessel stress |
+| 11 | Cylinder length (bending) | $L \leq C \cdot r^{5/4}$ | $C = 1.33$ | Bending mode resonance avoidance |
+| 12 | Rotational stability | $L/r$ | $\leq 1.3$ (single), $\leq 10$ (paired) | $I_z/I_x \geq 1.2$ for passive spin stability |
+
 ---
 
 ## 2. Feasible Design Band
 
-### At 1g Target Gravity
+### At 1g Target Gravity (Rotational + Biological Only, Phases 1–3)
 
-$$\boxed{r_{\min} = 982 \text{ m}, \quad r_{\max} = 9{,}177 \text{ m}}$$
+$$r_{\min} = 982 \text{ m}, \quad r_{\max} = 9{,}177 \text{ m}$$
 
-| Boundary | Value | Binding Constraint |
-|----------|-------|-------------------|
-| Lower (minimum radius) | 982 m | Cross-coupling (6.0 °/s²) |
-| Upper (maximum radius) | 9,177 m | Rim speed (300 m/s) |
+### At 1g With Structural Constraints (Phase 6, updated 2026-03-28)
 
-The feasible band spans nearly one order of magnitude. Below 982 m, crew members performing normal head turns while rotating experience disorienting cross-coupled angular accelerations. Above 9,177 m, rim velocity exceeds what steel structures can sustain against hoop stress.
+The upper bound depends on **wall thickness** and **material choice**:
+
+| Boundary | $t = 0.2$ m steel | $t = 0.5$ m steel | $t = 1.0$ m steel | $t = 0.2$ m CFRP |
+|----------|------------------|------------------|------------------|-----------------|
+| $r_{\min}$ | 982 m | 982 m | 982 m | 982 m |
+| $r_{\max}$ | ~1,000 m | ~2,100 m | ~3,100 m | ~3,200 m |
+| Band width | ~18 m | ~1,100 m | ~2,100 m | ~2,200 m |
+
+| Boundary | Binding Constraint |
+|----------|-------------------|
+| Lower (minimum radius) | Cross-coupling (6.0 °/s²) |
+| Upper (maximum radius) | Hoop stress ($\sigma_p = Pr/t$) |
+| Max length (single) | $1.3r$ (rotational stability) |
+| Max length (paired) | $\min(10r, \; 1.33 r^{5/4})$ (bending) |
+| Atmosphere (min) | ~76 kPa (hoop stress driven) |
+
+Wall thickness is the primary design lever for widening the feasible
+band. The pressure term ($Pr/t$) dominates hoop stress at moderate
+radii — doubling $t$ roughly doubles $r_{\max}$. Half-atmosphere
+(50 kPa) has the same effect as doubling wall thickness.
+
+**Recommended baseline:** CFRP hull with $t = 0.2$–$0.5$ m provides
+ample margin at lower mass than steel. See `structural_engineering.md`
+§3.2 for material comparison.
 
 ### Across Gravity Levels
 
@@ -73,7 +101,7 @@ Cross-coupling is the last constraint to be satisfied as radius grows, making it
 
 ## 4. Reference Design Scorecard
 
-### O'Neill Island Three ($r = 3{,}200$ m, $L = 32$ km)
+### O'Neill Island Three ($r = 3{,}200$ m, $L = 32$ km, counter-rotating pair)
 
 | Constraint | Value | Threshold | Margin |
 |---|---|---|---|
@@ -85,11 +113,15 @@ Cross-coupling is the last constraint to be satisfied as radius grows, making it
 | Rim speed | 177 m/s | 300 m/s | 41% |
 | Radiation shielding | 4,500 kg/m² | 4,500 kg/m² | 0% (by design) |
 | Atmosphere ($p_{\text{O}_2}$) | 21.3 kPa | 16–50 kPa | pass |
-| Population | 8,000 | 98 | 8,000% |
+| Population | 1,000,000 | 98 | pass |
+| Hoop stress (steel) | 1,869 MPa | 600 MPa | **FAIL (−211%)** |
+| Cylinder length | 32 km | 32 km | ~0% |
+| Rotational stability | $L/r = 10$ | $\leq 10$ (paired) | ~0% |
 
-Cross-coupling and rim speed have the tightest margins at 45% and 41% respectively. All other constraints are satisfied with wide margins.
+**O'Neill fails hoop stress with steel** at $t = 0.2$ m. CFRP passes
+with 4.6% margin. Counter-rotating pair is required for $L/r = 10$.
 
-### Minimum Viable Cylinder ($r = 982$ m, $L = 2$ km)
+### Minimum Viable Cylinder ($r = 982$ m, $L = 1{,}276$ m, single)
 
 | Constraint | Value | Threshold | Margin |
 |---|---|---|---|
@@ -101,8 +133,14 @@ Cross-coupling and rim speed have the tightest margins at 45% and 41% respective
 | Radiation shielding | 4,500 kg/m² | 4,500 kg/m² | 0% (by design) |
 | Atmosphere ($p_{\text{O}_2}$) | 21.3 kPa | 16–50 kPa | pass |
 | Population | 8,000 | 98 | pass |
+| Hoop stress (HS steel) | 574 MPa | 600 MPa | **4.4%** |
+| Cylinder length | 1,276 m | 7,311 m | 83% |
+| Rotational stability | $L/r = 1.3$ | $\leq 1.3$ | **~0%** |
 
-At the minimum viable radius, cross-coupling has **near-zero margin** — this is the binding constraint that defines the lower boundary.
+Cross-coupling and rotational stability are both at the boundary.
+Hoop stress passes with only 4.4% margin — the tightest structural
+constraint. The previous $L = 2{,}000$ m design now **fails**
+rotational stability ($L/r = 2.04 > 1.3$).
 
 ---
 
@@ -149,7 +187,7 @@ The P5–P95 range for minimum radius spans **286 m to 3,630 m** (12.7× spread)
 
 Radiation shielding dominates the mass budget at every scale.
 
-### Minimum Viable Cylinder ($r = 982$ m, $L = 2$ km)
+### Minimum Viable Cylinder ($r = 982$ m, $L = 1{,}276$ m)
 
 | Component | Mass (Mt) | Fraction |
 |---|---|---|
@@ -178,7 +216,7 @@ Radiation shielding dominates the mass budget at every scale.
 
 1. **Cross-coupling dominates the lower bound.** The minimum feasible radius is set by vestibular cross-coupling, not RPM comfort or gravity gradient. This was not obvious before Phase 2 analysis.
 
-2. **The feasible band is robust.** At 1g, the band spans 982–9,177 m with a 96.4% Monte Carlo feasibility rate. The O'Neill reference design (3,200 m) sits comfortably within this range.
+2. **The feasible band is tunable.** At 1g with steel, the band ranges from ~18 m wide ($t = 0.2$ m) to ~2,100+ m wide ($t = 1.0$ m). With CFRP, the band exceeds 2,200 m at $t = 0.2$ m. Wall thickness and material choice are the primary design levers.
 
 3. **Only two parameters matter for the lower bound.** Cross-coupling threshold and head turn rate account for all sensitivity. Every other parameter is non-binding.
 
@@ -194,17 +232,20 @@ Radiation shielding dominates the mass budget at every scale.
 
 ## 9. What This Model Does Not Cover
 
-The following are identified for Phase 6 but not yet implemented:
+**Phase 6 structural constraints are now implemented** (hoop stress,
+cylinder length, rotational stability). Remaining future work:
 
 | Domain | Why It Matters |
 |---|---|
 | Thermal management | Radiator area scales with population and sunlight exposure |
-| Structural dynamics | Vibration modes, wobble, seismic-equivalent loads |
 | Agriculture | Food self-sufficiency constrains minimum land area |
 | Water recycling | Closed-loop efficiency determines water mass budget |
 | Energy budget | Solar collection area, power distribution, day/night cycle |
+| Spin-up energy | Time and fuel to reach operating rotation rate |
 
-These would add constraints to the model but are unlikely to change the rotational feasible band, which is dominated by human vestibular physiology. They will primarily affect mass budget and minimum cylinder length.
+These would add constraints but are unlikely to change the rotational
+feasible band. They will primarily affect mass budget, minimum cylinder
+length, and population capacity.
 
 ---
 
@@ -223,9 +264,13 @@ npm run dev
 ```
 
 The dashboard provides:
-- **Parameter sliders** for all 9 constraints with real-time evaluation
+- **Parameter sliders** with **green feasible-range indicators** showing
+  viable values for radius, wall thickness, cylinder length, and
+  atmosphere pressure in real time
 - **Constraint status panel** showing pass/fail with computed values
-- **2D feasible region chart** showing the radius sweep
-- **3D rotating O'Neill cylinder** with toggleable land/window strips, human figure, Coriolis arrows, gravity gradient rings, and rotation axis
-
-The 3D model visualizes all constraint effects: cylinder color (green = feasible, red = infeasible), rotation speed proportional to $\omega$, human figure lean proportional to Coriolis ratio, and the O'Neill 3-land / 3-window alternating strip pattern.
+  for all 12 constraints
+- **2D feasible region chart** showing the radius sweep (responsive to
+  wall thickness and all design parameters)
+- **3D rotating O'Neill cylinder** with toggleable land/window strips,
+  human figure, Coriolis arrows, gravity gradient rings, and rotation
+  axis

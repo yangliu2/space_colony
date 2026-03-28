@@ -106,22 +106,22 @@ $$L_\text{max} = C \cdot r^{5/4}$$
 
 where $C$ is calibrated so that $L_\text{max} = 32{,}000$ m when $r = 3{,}200$ m:
 
-$$C = \frac{32{,}000}{3{,}200^{5/4}} \approx 2.74$$
+$$C = \frac{32{,}000}{3{,}200^{5/4}} \approx 1.33$$
 
 This gives:
 
 | $r$ (m) | $L_\text{max}$ (m) | $L/D_\text{max}$ |
 |---------|-------------------|-----------------|
-| 500     | 2,900             | 2.9             |
-| 982     | 6,800             | 3.5             |
-| 2,000   | 16,300            | 4.1             |
+| 500     | 3,144             | 3.1             |
+| 982     | 7,309             | 3.7             |
+| 2,000   | 17,783            | 4.4             |
 | 3,200   | 32,000            | 5.0             |
 
-Our minimum viable cylinder ($r = 982$ m, $L = 2{,}000$ m) is well within limits — we could extend to ~6.8 km safely.
+Our minimum viable cylinder ($r = 982$ m, $L = 2{,}000$ m) is well within limits — we could extend to ~7.3 km safely.
 
 ## Recommendation
 
-Add a **soft constraint** to the model that warns when $L > C \cdot r^{5/4}$ with $C \approx 2.74$. This is not a hard biological limit like the vestibular constraints, but a structural feasibility boundary.
+Add a **soft constraint** to the model that warns when $L > C \cdot r^{5/4}$ with $C \approx 1.33$. This is not a hard biological limit like the vestibular constraints, but a structural feasibility boundary.
 
 The constraint does not affect the existing 9 rotational/biological constraints but should appear as a separate structural constraint in the evaluation panel.
 
@@ -133,7 +133,7 @@ $$A_\text{land} = 3 \times \frac{\pi}{3} r \times L = \pi r L$$
 
 For our minimum viable cylinder: $A_\text{land} = \pi \times 982 \times 2{,}000 \approx 6.17 \text{ km}^2$
 
-At the maximum safe length: $A_\text{land} = \pi \times 982 \times 6{,}800 \approx 20.97 \text{ km}^2$
+At the maximum safe length: $A_\text{land} = \pi \times 982 \times 7{,}309 \approx 22.54 \text{ km}^2$
 
 This is significant — tripling the length triples the population capacity without changing any rotational constraint.
 

@@ -178,6 +178,12 @@ def _build_assumptions(req: EvaluateRequest | SweepRequest) -> HumanAssumptions:
 # ── Endpoints ────────────────────────────────────────────────────
 
 
+@app.get("/")
+def root() -> dict[str, str]:
+    """Health check / API index."""
+    return {"status": "ok", "docs": "/docs", "api": "/api/evaluate | /api/sweep | /api/feasible_ranges | /api/defaults"}
+
+
 @app.post("/api/evaluate", response_model=EvaluateResponse)
 def evaluate(req: EvaluateRequest) -> Any:
     """Evaluate all constraints at a single design point."""

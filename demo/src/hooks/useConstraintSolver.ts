@@ -6,7 +6,7 @@ import type {
   SweepResponse,
 } from "../types/api";
 
-const API = "http://127.0.0.1:8042";
+const API = import.meta.env.VITE_API_URL ?? "http://127.0.0.1:8042";
 
 export function useConstraintSolver(params: DesignParams) {
   const [evalResult, setEvalResult] = useState<EvaluateResponse | null>(null);

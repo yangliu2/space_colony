@@ -1,0 +1,52 @@
+site_name: Space Colony — Constraint Study
+site_description: Physics-based feasibility analysis for O'Neill cylinder habitats
+repo_url: https://github.com/fangfanglai/space_colony
+
+theme:
+  name: material
+  palette:
+    scheme: slate
+    primary: indigo
+    accent: light blue
+  features:
+    - navigation.sections
+    - navigation.top
+    - toc.integrate
+
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.superfences
+  - admonition
+  - toc:
+      permalink: true
+
+extra_javascript:
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+nav:
+  - Overview: conclusions/feasible_habitat_design_space.md
+  - Conclusions:
+    - "001: Human Comfort Boundaries": conclusions/001_human_comfort_boundaries.md
+    - "002: Full Constraint Analysis": conclusions/002_full_constraint_analysis.md
+    - "003: Biological Constraints & Monte Carlo": conclusions/003_biological_constraints_and_monte_carlo.md
+    - "004: Structural Constraints": conclusions/004_structural_constraints.md
+  - Constraint Plans:
+    - Study Plan: plans/space_habitat_study_plan.md
+    - Vestibular: plans/constraint_vestibular.md
+    - Gravity Minimum: plans/constraint_gravity_minimum.md
+    - Gravity Gradient: plans/constraint_gravity_gradient.md
+    - Coriolis: plans/constraint_coriolis.md
+    - Cross-Coupling: plans/constraint_cross_coupling.md
+    - Rim Speed: plans/constraint_rim_speed.md
+    - Cylinder Length: plans/constraint_cylinder_length.md
+    - Rotational Stability: plans/constraint_rotational_stability.md
+    - Spin-Up Energy: plans/constraint_spinup_energy.md
+    - Biological: plans/constraint_biological.md
+  - Literature Reviews:
+    - Structural: plans/literature_review_structural.md
+    - Human Factors: plans/literature_review_human_factors.md
+  - Physics Intuition:
+    - Artificial Gravity: plans/intuition_artificial_gravity.md
+    - Centripetal Acceleration: plans/intuition_centripetal_acceleration.md
+    - Angular Velocity: plans/intuition_angular_velocity.md

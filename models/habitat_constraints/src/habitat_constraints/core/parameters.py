@@ -275,6 +275,21 @@ class HumanAssumptions(BaseModel):
         ),
     )
 
+    # --- Phase 6: Spin-up energy ---
+    available_spinup_power_w: float = Field(
+        default=1e10,
+        gt=0,
+        description=(
+            "Available power for spin-up (W). "
+            "Default: 10 GW (~37 km² solar at L5, 20% eff)."
+        ),
+    )
+    max_spinup_time_years: float = Field(
+        default=1.0,
+        gt=0,
+        description=("Maximum acceptable spin-up duration (years). " "Default: 1 year."),
+    )
+
 
 class ParameterBound(BaseModel):
     """A bound on a single design parameter produced by a constraint."""

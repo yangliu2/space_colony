@@ -165,6 +165,42 @@ colony design.
 | Long-term developmental effects | Unknown | No multigenerational studies exist |
 
 
+## 4. Spin-Up Energy — Confirmed
+
+The rotational kinetic energy formula $E = \frac{1}{2} I \omega^2$ is
+standard physics and needs no validation. The key question is whether
+our mass estimates and moment of inertia calculations are reasonable.
+
+### Mass Components — Consistent with Published Estimates
+
+Our model computes rotating mass from hull, shielding, and atmosphere.
+NASA SP-413 (ch. 5) and the *Masses of Space Habitats* (Reassembly)
+analysis use similar decompositions, with radiation shielding dominating
+at 90–95% of total mass.
+
+### Spin-Up Time — Consistent with O'Neill
+
+O'Neill (1977) and NASA SP-413 treat spin-up as a straightforward
+engineering task, not a limiting constraint. At 10 GW available power:
+
+| Habitat | $E_{\text{rot}}$ | Spin-up time |
+|---------|-------------------|-------------|
+| Reference ($r = 982$ m) | ~279 TJ | ~8 hours |
+| O'Neill ($r = 3{,}200$ m) | ~94 PJ | ~109 days |
+
+These timescales are short relative to construction time (years to
+decades), confirming that spin-up energy is rarely binding. It becomes
+relevant only for very large habitats with limited power infrastructure.
+
+### Power Source Scale — Plausible
+
+A 10 GW solar installation at L5 requires ~37 km² of panels at 20%
+efficiency. This is large but consistent with the scale of construction
+already implied by building a colony-class habitat. The ISS solar arrays
+generate ~240 kW from ~2,500 m² — scaling to 10 GW requires 100 km²
+at ISS efficiency, or 37 km² with modern high-efficiency cells.
+
+
 ## References
 
 Beall, Cynthia M. "Adaptation to High Altitude: Phenotypes and

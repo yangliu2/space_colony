@@ -16,6 +16,9 @@ from habitat_constraints.constraints.cylinder_length import (
 from habitat_constraints.constraints.rotational_stability import (
     RotationalStabilityConstraint,
 )
+from habitat_constraints.constraints.spinup_energy import (
+    SpinUpEnergyConstraint,
+)
 from habitat_constraints.constraints.hoop_stress import (
     HoopStressConstraint,
 )
@@ -62,6 +65,7 @@ ALL_CONSTRAINTS = [
     CylinderLengthConstraint(),
     HoopStressConstraint(),
     RotationalStabilityConstraint(),
+    SpinUpEnergyConstraint(),
 ]
 
 

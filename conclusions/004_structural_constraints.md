@@ -2,8 +2,8 @@
 
 **Date:** 2026-03-28 (updated from 2026-03-27)
 **Model version:** habitat-constraints 0.1.0 (Phase 6)
-**Constraints:** 12 total — Phase 3's 9 + hoop stress, cylinder length,
-rotational stability
+**Constraints:** 13 total — Phase 3's 9 + hoop stress, cylinder length,
+rotational stability, spin-up energy
 **Experiment script:**
 `models/habitat_constraints/experiments/run_phase6_analysis.py`
 
@@ -195,7 +195,8 @@ captures this constraint explicitly.
 | `RotationalStabilityConstraint` | New — enforces $L < 1.3r$ (single) or $L < 10r$ (paired) |
 | `CylinderLengthConstraint` | Existing — $L < C \cdot r^{5/4}$ (bending mode) |
 | `HoopStressConstraint` | Existing — $\sigma_{\text{hoop}} \cdot \text{FoS} \leq \sigma_y$ |
-| Total constraints | 9 → **12** |
+| `SpinUpEnergyConstraint` | New — spin-up time $\leq$ max at available power |
+| Total constraints | 9 → **13** |
 
 ---
 
@@ -209,8 +210,10 @@ captures this constraint explicitly.
    titanium, CFRP) rather than raw $\sigma_y$ and $\rho$
 4. **CFRP as default material** — documented in `structural_engineering.md`
    §3.2; needs API integration
-5. **Spin-up energy budget** — $E = \frac{1}{2} I \omega^2$, time to
-   spin up with ion thrusters or solar sails
+5. ~~Spin-up energy budget~~ — **DONE** (2026-03-29). Constraint
+   `SpinUpEnergyConstraint` computes $E = \frac{1}{2} I \omega^2$ and
+   spin-up time at available power. Reference design: 279 TJ, ~8 hours
+   at 10 GW. O'Neill class: 94 PJ, ~109 days at 10 GW.
 6. **Half-atmosphere reproduction safety** — literature review
    (§3.1 of `literature_review_structural.md`) shows likely safe,
    but animal studies needed before committing to colony design

@@ -1,0 +1,974 @@
+{
+  "phase": 6,
+  "n_constraints": 12,
+  "experiments": [
+    {
+      "name": "Full 12-constraint scorecard",
+      "data": [
+        {
+          "design": "Min viable (single)",
+          "radius_m": 982.0,
+          "length_m": 1276.0,
+          "population": 8000,
+          "counter_rotating": false,
+          "rpm": 0.954,
+          "rim_speed_m_s": 98.1,
+          "all_pass": true,
+          "constraints": {
+            "vestibular": {
+              "feasible": true,
+              "details": {
+                "current_rpm": 0.9543,
+                "max_rpm": 2.0,
+                "margin_rpm": 1.0457
+              }
+            },
+            "gravity_level": {
+              "feasible": true,
+              "details": {
+                "gravity_g": 1.0,
+                "min_gravity_g": 0.3,
+                "max_gravity_g": 1.0
+              }
+            },
+            "gravity_gradient": {
+              "feasible": true,
+              "details": {
+                "gradient_pct": 0.1833,
+                "max_gradient_pct": 1.0,
+                "gravity_at_feet_g": 1.0,
+                "gravity_at_head_g": 0.9982
+              }
+            },
+            "coriolis": {
+              "feasible": true,
+              "details": {
+                "coriolis_walking_m_s2": 0.2798,
+                "coriolis_running_m_s2": 0.5996,
+                "coriolis_to_gravity_walking": 0.0285,
+                "coriolis_to_gravity_running": 0.0611,
+                "max_coriolis_ratio": 0.25
+              }
+            },
+            "cross_coupling": {
+              "feasible": true,
+              "details": {
+                "cross_coupled_deg_s2": 5.9959,
+                "max_cross_coupled_deg_s2": 6.0,
+                "margin_deg_s2": 0.0041,
+                "habitat_rpm": 0.9543,
+                "head_turn_rate_deg_s": 60.0
+              }
+            },
+            "rim_speed": {
+              "feasible": true,
+              "details": {
+                "rim_speed_m_s": 98.1332,
+                "max_rim_speed_m_s": 300.0,
+                "margin_pct": 67.2889,
+                "rim_speed_km_h": 353.2796
+              }
+            },
+            "radiation_shielding": {
+              "feasible": true,
+              "details": {
+                "shielding_kg_m2": 4500.0,
+                "required_kg_m2": 4500.0,
+                "margin_pct": 0.0,
+                "shielding_mass_mt": 62.6943
+              }
+            },
+            "atmosphere": {
+              "feasible": true,
+              "details": {
+                "o2_partial_pressure_kpa": 21.273,
+                "min_o2_kpa": 16.0,
+                "max_o2_kpa": 50.0,
+                "total_pressure_kpa": 101.3,
+                "o2_fraction": 0.21,
+                "margin_kpa": 5.273
+              }
+            },
+            "population": {
+              "feasible": true,
+              "details": {
+                "population": 8000.0,
+                "min_population": 98.0,
+                "pop_margin": 7902.0,
+                "volume_per_person_m3": 483207.3545,
+                "min_volume_m3": 100.0,
+                "vol_margin_m3": 483107.3545
+              }
+            },
+            "cylinder_length": {
+              "feasible": true,
+              "details": {
+                "length_m": 1276.0,
+                "max_length_m": 7311.2,
+                "coefficient": 1.33,
+                "margin_pct": 82.5,
+                "length_to_diameter": 0.65
+              }
+            },
+            "hoop_stress": {
+              "feasible": true,
+              "details": {
+                "sigma_rot_mpa": 76.1,
+                "sigma_pressure_mpa": 497.4,
+                "sigma_hoop_mpa": 573.5,
+                "allowable_mpa": 600.0,
+                "safety_factor": 2.0,
+                "margin_pct": 4.4
+              }
+            },
+            "rotational_stability": {
+              "feasible": true,
+              "details": {
+                "length_m": 1276.0,
+                "max_length_m": 1276.6,
+                "length_to_radius": 1.299,
+                "max_length_to_radius": 1.3,
+                "margin_pct": 0.0,
+                "counter_rotating": 0.0
+              }
+            }
+          }
+        },
+        {
+          "design": "Min viable (old L)",
+          "radius_m": 982.0,
+          "length_m": 2000.0,
+          "population": 8000,
+          "counter_rotating": false,
+          "rpm": 0.954,
+          "rim_speed_m_s": 98.1,
+          "all_pass": false,
+          "constraints": {
+            "vestibular": {
+              "feasible": true,
+              "details": {
+                "current_rpm": 0.9543,
+                "max_rpm": 2.0,
+                "margin_rpm": 1.0457
+              }
+            },
+            "gravity_level": {
+              "feasible": true,
+              "details": {
+                "gravity_g": 1.0,
+                "min_gravity_g": 0.3,
+                "max_gravity_g": 1.0
+              }
+            },
+            "gravity_gradient": {
+              "feasible": true,
+              "details": {
+                "gradient_pct": 0.1833,
+                "max_gradient_pct": 1.0,
+                "gravity_at_feet_g": 1.0,
+                "gravity_at_head_g": 0.9982
+              }
+            },
+            "coriolis": {
+              "feasible": true,
+              "details": {
+                "coriolis_walking_m_s2": 0.2798,
+                "coriolis_running_m_s2": 0.5996,
+                "coriolis_to_gravity_walking": 0.0285,
+                "coriolis_to_gravity_running": 0.0611,
+                "max_coriolis_ratio": 0.25
+              }
+            },
+            "cross_coupling": {
+              "feasible": true,
+              "details": {
+                "cross_coupled_deg_s2": 5.9959,
+                "max_cross_coupled_deg_s2": 6.0,
+                "margin_deg_s2": 0.0041,
+                "habitat_rpm": 0.9543,
+                "head_turn_rate_deg_s": 60.0
+              }
+            },
+            "rim_speed": {
+              "feasible": true,
+              "details": {
+                "rim_speed_m_s": 98.1332,
+                "max_rim_speed_m_s": 300.0,
+                "margin_pct": 67.2889,
+                "rim_speed_km_h": 353.2796
+              }
+            },
+            "radiation_shielding": {
+              "feasible": true,
+              "details": {
+                "shielding_kg_m2": 4500.0,
+                "required_kg_m2": 4500.0,
+                "margin_pct": 0.0,
+                "shielding_mass_mt": 82.7964
+              }
+            },
+            "atmosphere": {
+              "feasible": true,
+              "details": {
+                "o2_partial_pressure_kpa": 21.273,
+                "min_o2_kpa": 16.0,
+                "max_o2_kpa": 50.0,
+                "total_pressure_kpa": 101.3,
+                "o2_fraction": 0.21,
+                "margin_kpa": 5.273
+              }
+            },
+            "population": {
+              "feasible": true,
+              "details": {
+                "population": 8000.0,
+                "min_population": 98.0,
+                "pop_margin": 7902.0,
+                "volume_per_person_m3": 757378.2985,
+                "min_volume_m3": 100.0,
+                "vol_margin_m3": 757278.2985
+              }
+            },
+            "cylinder_length": {
+              "feasible": true,
+              "details": {
+                "length_m": 2000.0,
+                "max_length_m": 7311.2,
+                "coefficient": 1.33,
+                "margin_pct": 72.6,
+                "length_to_diameter": 1.02
+              }
+            },
+            "hoop_stress": {
+              "feasible": true,
+              "details": {
+                "sigma_rot_mpa": 76.1,
+                "sigma_pressure_mpa": 497.4,
+                "sigma_hoop_mpa": 573.5,
+                "allowable_mpa": 600.0,
+                "safety_factor": 2.0,
+                "margin_pct": 4.4
+              }
+            },
+            "rotational_stability": {
+              "feasible": false,
+              "details": {
+                "length_m": 2000.0,
+                "max_length_m": 1276.6,
+                "length_to_radius": 2.037,
+                "max_length_to_radius": 1.3,
+                "margin_pct": -56.7,
+                "counter_rotating": 0.0
+              }
+            }
+          }
+        },
+        {
+          "design": "Kalpana One",
+          "radius_m": 250.0,
+          "length_m": 325.0,
+          "population": 500,
+          "counter_rotating": false,
+          "rpm": 1.891,
+          "rim_speed_m_s": 49.5,
+          "all_pass": false,
+          "constraints": {
+            "vestibular": {
+              "feasible": true,
+              "details": {
+                "current_rpm": 1.8913,
+                "max_rpm": 2.0,
+                "margin_rpm": 0.1087
+              }
+            },
+            "gravity_level": {
+              "feasible": true,
+              "details": {
+                "gravity_g": 1.0,
+                "min_gravity_g": 0.3,
+                "max_gravity_g": 1.0
+              }
+            },
+            "gravity_gradient": {
+              "feasible": true,
+              "details": {
+                "gradient_pct": 0.72,
+                "max_gradient_pct": 1.0,
+                "gravity_at_feet_g": 1.0,
+                "gravity_at_head_g": 0.9928
+              }
+            },
+            "coriolis": {
+              "feasible": true,
+              "details": {
+                "coriolis_walking_m_s2": 0.5546,
+                "coriolis_running_m_s2": 1.1883,
+                "coriolis_to_gravity_walking": 0.0565,
+                "coriolis_to_gravity_running": 0.1212,
+                "max_coriolis_ratio": 0.25
+              }
+            },
+            "cross_coupling": {
+              "feasible": false,
+              "details": {
+                "cross_coupled_deg_s2": 11.8834,
+                "max_cross_coupled_deg_s2": 6.0,
+                "margin_deg_s2": -5.8834,
+                "habitat_rpm": 1.8913,
+                "head_turn_rate_deg_s": 60.0
+              }
+            },
+            "rim_speed": {
+              "feasible": true,
+              "details": {
+                "rim_speed_m_s": 49.5143,
+                "max_rim_speed_m_s": 300.0,
+                "margin_pct": 83.4952,
+                "rim_speed_km_h": 178.2514
+              }
+            },
+            "radiation_shielding": {
+              "feasible": true,
+              "details": {
+                "shielding_kg_m2": 4500.0,
+                "required_kg_m2": 4500.0,
+                "margin_pct": 0.0,
+                "shielding_mass_mt": 4.0644
+              }
+            },
+            "atmosphere": {
+              "feasible": true,
+              "details": {
+                "o2_partial_pressure_kpa": 21.273,
+                "min_o2_kpa": 16.0,
+                "max_o2_kpa": 50.0,
+                "total_pressure_kpa": 101.3,
+                "o2_fraction": 0.21,
+                "margin_kpa": 5.273
+              }
+            },
+            "population": {
+              "feasible": true,
+              "details": {
+                "population": 500.0,
+                "min_population": 98.0,
+                "pop_margin": 402.0,
+                "volume_per_person_m3": 127627.2016,
+                "min_volume_m3": 100.0,
+                "vol_margin_m3": 127527.2016
+              }
+            },
+            "cylinder_length": {
+              "feasible": true,
+              "details": {
+                "length_m": 325.0,
+                "max_length_m": 1322.1,
+                "coefficient": 1.33,
+                "margin_pct": 75.4,
+                "length_to_diameter": 0.65
+              }
+            },
+            "hoop_stress": {
+              "feasible": true,
+              "details": {
+                "sigma_rot_mpa": 19.4,
+                "sigma_pressure_mpa": 126.6,
+                "sigma_hoop_mpa": 146.0,
+                "allowable_mpa": 600.0,
+                "safety_factor": 2.0,
+                "margin_pct": 75.7
+              }
+            },
+            "rotational_stability": {
+              "feasible": true,
+              "details": {
+                "length_m": 325.0,
+                "max_length_m": 325.0,
+                "length_to_radius": 1.3,
+                "max_length_to_radius": 1.3,
+                "margin_pct": 0.0,
+                "counter_rotating": 0.0
+              }
+            }
+          }
+        },
+        {
+          "design": "O'Neill (paired)",
+          "radius_m": 3200.0,
+          "length_m": 32000.0,
+          "population": 1000000,
+          "counter_rotating": true,
+          "rpm": 0.529,
+          "rim_speed_m_s": 177.1,
+          "all_pass": false,
+          "constraints": {
+            "vestibular": {
+              "feasible": true,
+              "details": {
+                "current_rpm": 0.5286,
+                "max_rpm": 2.0,
+                "margin_rpm": 1.4714
+              }
+            },
+            "gravity_level": {
+              "feasible": true,
+              "details": {
+                "gravity_g": 1.0,
+                "min_gravity_g": 0.3,
+                "max_gravity_g": 1.0
+              }
+            },
+            "gravity_gradient": {
+              "feasible": true,
+              "details": {
+                "gradient_pct": 0.0563,
+                "max_gradient_pct": 1.0,
+                "gravity_at_feet_g": 1.0,
+                "gravity_at_head_g": 0.9994
+              }
+            },
+            "coriolis": {
+              "feasible": true,
+              "details": {
+                "coriolis_walking_m_s2": 0.155,
+                "coriolis_running_m_s2": 0.3322,
+                "coriolis_to_gravity_walking": 0.0158,
+                "coriolis_to_gravity_running": 0.0339,
+                "max_coriolis_ratio": 0.25
+              }
+            },
+            "cross_coupling": {
+              "feasible": true,
+              "details": {
+                "cross_coupled_deg_s2": 3.3215,
+                "max_cross_coupled_deg_s2": 6.0,
+                "margin_deg_s2": 2.6785,
+                "habitat_rpm": 0.5286,
+                "head_turn_rate_deg_s": 60.0
+              }
+            },
+            "rim_speed": {
+              "feasible": true,
+              "details": {
+                "rim_speed_m_s": 177.1476,
+                "max_rim_speed_m_s": 300.0,
+                "margin_pct": 40.9508,
+                "rim_speed_km_h": 637.7314
+              }
+            },
+            "radiation_shielding": {
+              "feasible": true,
+              "details": {
+                "shielding_kg_m2": 4500.0,
+                "required_kg_m2": 4500.0,
+                "margin_pct": 0.0,
+                "shielding_mass_mt": 3184.821
+              }
+            },
+            "atmosphere": {
+              "feasible": true,
+              "details": {
+                "o2_partial_pressure_kpa": 21.273,
+                "min_o2_kpa": 16.0,
+                "max_o2_kpa": 50.0,
+                "total_pressure_kpa": 101.3,
+                "o2_fraction": 0.21,
+                "margin_kpa": 5.273
+              }
+            },
+            "population": {
+              "feasible": true,
+              "details": {
+                "population": 1000000.0,
+                "min_population": 98.0,
+                "pop_margin": 999902.0,
+                "volume_per_person_m3": 1029437.0807,
+                "min_volume_m3": 100.0,
+                "vol_margin_m3": 1029337.0807
+              }
+            },
+            "cylinder_length": {
+              "feasible": true,
+              "details": {
+                "length_m": 32000.0,
+                "max_length_m": 32010.3,
+                "coefficient": 1.33,
+                "margin_pct": 0.0,
+                "length_to_diameter": 5.0
+              }
+            },
+            "hoop_stress": {
+              "feasible": false,
+              "details": {
+                "sigma_rot_mpa": 247.9,
+                "sigma_pressure_mpa": 1620.8,
+                "sigma_hoop_mpa": 1868.7,
+                "allowable_mpa": 600.0,
+                "safety_factor": 2.0,
+                "margin_pct": -211.5
+              }
+            },
+            "rotational_stability": {
+              "feasible": true,
+              "details": {
+                "length_m": 32000.0,
+                "max_length_m": 32000.0,
+                "length_to_radius": 10.0,
+                "max_length_to_radius": 10.0,
+                "margin_pct": 0.0,
+                "counter_rotating": 1.0
+              }
+            }
+          }
+        },
+        {
+          "design": "O'Neill (single)",
+          "radius_m": 3200.0,
+          "length_m": 32000.0,
+          "population": 1000000,
+          "counter_rotating": false,
+          "rpm": 0.529,
+          "rim_speed_m_s": 177.1,
+          "all_pass": false,
+          "constraints": {
+            "vestibular": {
+              "feasible": true,
+              "details": {
+                "current_rpm": 0.5286,
+                "max_rpm": 2.0,
+                "margin_rpm": 1.4714
+              }
+            },
+            "gravity_level": {
+              "feasible": true,
+              "details": {
+                "gravity_g": 1.0,
+                "min_gravity_g": 0.3,
+                "max_gravity_g": 1.0
+              }
+            },
+            "gravity_gradient": {
+              "feasible": true,
+              "details": {
+                "gradient_pct": 0.0563,
+                "max_gradient_pct": 1.0,
+                "gravity_at_feet_g": 1.0,
+                "gravity_at_head_g": 0.9994
+              }
+            },
+            "coriolis": {
+              "feasible": true,
+              "details": {
+                "coriolis_walking_m_s2": 0.155,
+                "coriolis_running_m_s2": 0.3322,
+                "coriolis_to_gravity_walking": 0.0158,
+                "coriolis_to_gravity_running": 0.0339,
+                "max_coriolis_ratio": 0.25
+              }
+            },
+            "cross_coupling": {
+              "feasible": true,
+              "details": {
+                "cross_coupled_deg_s2": 3.3215,
+                "max_cross_coupled_deg_s2": 6.0,
+                "margin_deg_s2": 2.6785,
+                "habitat_rpm": 0.5286,
+                "head_turn_rate_deg_s": 60.0
+              }
+            },
+            "rim_speed": {
+              "feasible": true,
+              "details": {
+                "rim_speed_m_s": 177.1476,
+                "max_rim_speed_m_s": 300.0,
+                "margin_pct": 40.9508,
+                "rim_speed_km_h": 637.7314
+              }
+            },
+            "radiation_shielding": {
+              "feasible": true,
+              "details": {
+                "shielding_kg_m2": 4500.0,
+                "required_kg_m2": 4500.0,
+                "margin_pct": 0.0,
+                "shielding_mass_mt": 3184.821
+              }
+            },
+            "atmosphere": {
+              "feasible": true,
+              "details": {
+                "o2_partial_pressure_kpa": 21.273,
+                "min_o2_kpa": 16.0,
+                "max_o2_kpa": 50.0,
+                "total_pressure_kpa": 101.3,
+                "o2_fraction": 0.21,
+                "margin_kpa": 5.273
+              }
+            },
+            "population": {
+              "feasible": true,
+              "details": {
+                "population": 1000000.0,
+                "min_population": 98.0,
+                "pop_margin": 999902.0,
+                "volume_per_person_m3": 1029437.0807,
+                "min_volume_m3": 100.0,
+                "vol_margin_m3": 1029337.0807
+              }
+            },
+            "cylinder_length": {
+              "feasible": true,
+              "details": {
+                "length_m": 32000.0,
+                "max_length_m": 32010.3,
+                "coefficient": 1.33,
+                "margin_pct": 0.0,
+                "length_to_diameter": 5.0
+              }
+            },
+            "hoop_stress": {
+              "feasible": false,
+              "details": {
+                "sigma_rot_mpa": 247.9,
+                "sigma_pressure_mpa": 1620.8,
+                "sigma_hoop_mpa": 1868.7,
+                "allowable_mpa": 600.0,
+                "safety_factor": 2.0,
+                "margin_pct": -211.5
+              }
+            },
+            "rotational_stability": {
+              "feasible": false,
+              "details": {
+                "length_m": 32000.0,
+                "max_length_m": 4160.0,
+                "length_to_radius": 10.0,
+                "max_length_to_radius": 1.3,
+                "margin_pct": -669.2,
+                "counter_rotating": 0.0
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Length limit comparison",
+      "data": [
+        {
+          "radius_m": 250,
+          "rot_stability_max_m": 325.0,
+          "bending_mode_max_m": 1322.1,
+          "binding": "rotational",
+          "ratio": 4.07
+        },
+        {
+          "radius_m": 500,
+          "rot_stability_max_m": 650.0,
+          "bending_mode_max_m": 3144.6,
+          "binding": "rotational",
+          "ratio": 4.84
+        },
+        {
+          "radius_m": 982,
+          "rot_stability_max_m": 1276.6,
+          "bending_mode_max_m": 7311.2,
+          "binding": "rotational",
+          "ratio": 5.73
+        },
+        {
+          "radius_m": 1500,
+          "rot_stability_max_m": 1950.0,
+          "bending_mode_max_m": 12415.5,
+          "binding": "rotational",
+          "ratio": 6.37
+        },
+        {
+          "radius_m": 2000,
+          "rot_stability_max_m": 2600.0,
+          "bending_mode_max_m": 17788.5,
+          "binding": "rotational",
+          "ratio": 6.84
+        },
+        {
+          "radius_m": 3200,
+          "rot_stability_max_m": 4160.0,
+          "bending_mode_max_m": 32010.3,
+          "binding": "rotational",
+          "ratio": 7.69
+        },
+        {
+          "radius_m": 5000,
+          "rot_stability_max_m": 6500.0,
+          "bending_mode_max_m": 55919.6,
+          "binding": "rotational",
+          "ratio": 8.6
+        }
+      ]
+    },
+    {
+      "name": "Material comparison",
+      "data": [
+        {
+          "material": "Structural steel",
+          "radius_m": 982,
+          "sigma_rot_mpa": 76.1,
+          "sigma_pressure_mpa": 497.4,
+          "sigma_hoop_mpa": 573.5,
+          "allowable_mpa": 200.0,
+          "margin_pct": -186.7,
+          "feasible": false
+        },
+        {
+          "material": "Structural steel",
+          "radius_m": 3200,
+          "sigma_rot_mpa": 247.9,
+          "sigma_pressure_mpa": 1620.8,
+          "sigma_hoop_mpa": 1868.7,
+          "allowable_mpa": 200.0,
+          "margin_pct": -834.4,
+          "feasible": false
+        },
+        {
+          "material": "Structural steel",
+          "radius_m": 5000,
+          "sigma_rot_mpa": 387.4,
+          "sigma_pressure_mpa": 2532.5,
+          "sigma_hoop_mpa": 2919.9,
+          "allowable_mpa": 200.0,
+          "margin_pct": -1359.9,
+          "feasible": false
+        },
+        {
+          "material": "Structural steel",
+          "radius_m": 8000,
+          "sigma_rot_mpa": 619.8,
+          "sigma_pressure_mpa": 4052.0,
+          "sigma_hoop_mpa": 4671.8,
+          "allowable_mpa": 200.0,
+          "margin_pct": -2235.9,
+          "feasible": false
+        },
+        {
+          "material": "Structural steel",
+          "radius_m": 15000,
+          "sigma_rot_mpa": 1162.1,
+          "sigma_pressure_mpa": 7597.5,
+          "sigma_hoop_mpa": 8759.6,
+          "allowable_mpa": 200.0,
+          "margin_pct": -4279.8,
+          "feasible": false
+        },
+        {
+          "material": "High-strength steel",
+          "radius_m": 982,
+          "sigma_rot_mpa": 76.1,
+          "sigma_pressure_mpa": 497.4,
+          "sigma_hoop_mpa": 573.5,
+          "allowable_mpa": 600.0,
+          "margin_pct": 4.4,
+          "feasible": true
+        },
+        {
+          "material": "High-strength steel",
+          "radius_m": 3200,
+          "sigma_rot_mpa": 247.9,
+          "sigma_pressure_mpa": 1620.8,
+          "sigma_hoop_mpa": 1868.7,
+          "allowable_mpa": 600.0,
+          "margin_pct": -211.5,
+          "feasible": false
+        },
+        {
+          "material": "High-strength steel",
+          "radius_m": 5000,
+          "sigma_rot_mpa": 387.4,
+          "sigma_pressure_mpa": 2532.5,
+          "sigma_hoop_mpa": 2919.9,
+          "allowable_mpa": 600.0,
+          "margin_pct": -386.6,
+          "feasible": false
+        },
+        {
+          "material": "High-strength steel",
+          "radius_m": 8000,
+          "sigma_rot_mpa": 619.8,
+          "sigma_pressure_mpa": 4052.0,
+          "sigma_hoop_mpa": 4671.8,
+          "allowable_mpa": 600.0,
+          "margin_pct": -678.6,
+          "feasible": false
+        },
+        {
+          "material": "High-strength steel",
+          "radius_m": 15000,
+          "sigma_rot_mpa": 1162.1,
+          "sigma_pressure_mpa": 7597.5,
+          "sigma_hoop_mpa": 8759.6,
+          "allowable_mpa": 600.0,
+          "margin_pct": -1359.9,
+          "feasible": false
+        },
+        {
+          "material": "Titanium Ti-6Al-4V",
+          "radius_m": 982,
+          "sigma_rot_mpa": 43.7,
+          "sigma_pressure_mpa": 497.4,
+          "sigma_hoop_mpa": 541.1,
+          "allowable_mpa": 450.0,
+          "margin_pct": -20.2,
+          "feasible": false
+        },
+        {
+          "material": "Titanium Ti-6Al-4V",
+          "radius_m": 3200,
+          "sigma_rot_mpa": 142.5,
+          "sigma_pressure_mpa": 1620.8,
+          "sigma_hoop_mpa": 1763.3,
+          "allowable_mpa": 450.0,
+          "margin_pct": -291.8,
+          "feasible": false
+        },
+        {
+          "material": "Titanium Ti-6Al-4V",
+          "radius_m": 5000,
+          "sigma_rot_mpa": 222.6,
+          "sigma_pressure_mpa": 2532.5,
+          "sigma_hoop_mpa": 2755.1,
+          "allowable_mpa": 450.0,
+          "margin_pct": -512.2,
+          "feasible": false
+        },
+        {
+          "material": "Titanium Ti-6Al-4V",
+          "radius_m": 8000,
+          "sigma_rot_mpa": 356.2,
+          "sigma_pressure_mpa": 4052.0,
+          "sigma_hoop_mpa": 4408.2,
+          "allowable_mpa": 450.0,
+          "margin_pct": -879.6,
+          "feasible": false
+        },
+        {
+          "material": "Titanium Ti-6Al-4V",
+          "radius_m": 15000,
+          "sigma_rot_mpa": 667.8,
+          "sigma_pressure_mpa": 7597.5,
+          "sigma_hoop_mpa": 8265.3,
+          "allowable_mpa": 450.0,
+          "margin_pct": -1736.7,
+          "feasible": false
+        },
+        {
+          "material": "CFRP",
+          "radius_m": 982,
+          "sigma_rot_mpa": 14.9,
+          "sigma_pressure_mpa": 497.4,
+          "sigma_hoop_mpa": 512.3,
+          "allowable_mpa": 1750.0,
+          "margin_pct": 70.7,
+          "feasible": true
+        },
+        {
+          "material": "CFRP",
+          "radius_m": 3200,
+          "sigma_rot_mpa": 48.6,
+          "sigma_pressure_mpa": 1620.8,
+          "sigma_hoop_mpa": 1669.4,
+          "allowable_mpa": 1750.0,
+          "margin_pct": 4.6,
+          "feasible": true
+        },
+        {
+          "material": "CFRP",
+          "radius_m": 5000,
+          "sigma_rot_mpa": 76.0,
+          "sigma_pressure_mpa": 2532.5,
+          "sigma_hoop_mpa": 2608.5,
+          "allowable_mpa": 1750.0,
+          "margin_pct": -49.1,
+          "feasible": false
+        },
+        {
+          "material": "CFRP",
+          "radius_m": 8000,
+          "sigma_rot_mpa": 121.6,
+          "sigma_pressure_mpa": 4052.0,
+          "sigma_hoop_mpa": 4173.6,
+          "allowable_mpa": 1750.0,
+          "margin_pct": -138.5,
+          "feasible": false
+        },
+        {
+          "material": "CFRP",
+          "radius_m": 15000,
+          "sigma_rot_mpa": 228.0,
+          "sigma_pressure_mpa": 7597.5,
+          "sigma_hoop_mpa": 7825.5,
+          "allowable_mpa": 1750.0,
+          "margin_pct": -347.2,
+          "feasible": false
+        }
+      ]
+    },
+    {
+      "name": "Single vs. counter-rotating",
+      "data": [
+        {
+          "radius_m": 982,
+          "mode": "single",
+          "max_length_m": 1276.0,
+          "land_area_km2": 3.94,
+          "population_at_40m2": 98384
+        },
+        {
+          "radius_m": 982,
+          "mode": "paired",
+          "max_length_m": 7306.0,
+          "land_area_km2": 22.54,
+          "population_at_40m2": 563475
+        },
+        {
+          "radius_m": 2000,
+          "mode": "single",
+          "max_length_m": 2594.0,
+          "land_area_km2": 16.3,
+          "population_at_40m2": 407463
+        },
+        {
+          "radius_m": 2000,
+          "mode": "paired",
+          "max_length_m": 17786.0,
+          "land_area_km2": 111.75,
+          "population_at_40m2": 2793760
+        },
+        {
+          "radius_m": 3200,
+          "mode": "single",
+          "max_length_m": 4156.0,
+          "land_area_km2": 41.79,
+          "population_at_40m2": 1044640
+        },
+        {
+          "radius_m": 3200,
+          "mode": "paired",
+          "max_length_m": 31995.0,
+          "land_area_km2": 321.64,
+          "population_at_40m2": 8041120
+        }
+      ]
+    },
+    {
+      "name": "Radius sweep with structural constraints",
+      "feasible_min_m": 1000,
+      "feasible_max_m": 1000,
+      "binding_at_min": [
+        "cross_coupling"
+      ],
+      "binding_at_max": [
+        "hoop_stress"
+      ],
+      "n_points": 299
+    }
+  ]
+}

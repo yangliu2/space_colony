@@ -2,7 +2,7 @@
 
 ## Summary of Current Model (Phases 1–6)
 
-This document synthesizes all constraint analysis performed to date into a single reference for the feasible design space of an O'Neill-type rotating space habitat. The model evaluates 12 independent constraints across rotational dynamics, human physiology, environmental life support, and structural engineering.
+This document synthesizes all constraint analysis performed to date into a single reference for the feasible design space of an O'Neill-type rotating space habitat. The model evaluates 13 independent constraints across rotational dynamics, human physiology, environmental life support, and structural engineering.
 
 ---
 
@@ -34,6 +34,7 @@ This document synthesizes all constraint analysis performed to date into a singl
 | 10 | Hoop stress | $\sigma_{\text{hoop}} \cdot \text{FoS} \leq \sigma_y$ | Material-dependent | Combined rotational + pressure vessel stress |
 | 11 | Cylinder length (bending) | $L \leq C \cdot r^{5/4}$ | $C = 1.33$ | Bending mode resonance avoidance |
 | 12 | Rotational stability | $L/r$ | $\leq 1.3$ (single), $\leq 10$ (paired) | $I_z/I_x \geq 1.2$ for passive spin stability |
+| 13 | Spin-up energy | $E / P_{\text{avail}}$ | $\leq 1$ year | Rotational KE must be deliverable in reasonable time |
 
 ---
 
@@ -117,6 +118,7 @@ Cross-coupling is the last constraint to be satisfied as radius grows, making it
 | Hoop stress (steel) | 1,869 MPa | 600 MPa | **FAIL (−211%)** |
 | Cylinder length | 32 km | 32 km | ~0% |
 | Rotational stability | $L/r = 10$ | $\leq 10$ (paired) | ~0% |
+| Spin-up energy | ~109 days | 365 days | 70% |
 
 **O'Neill fails hoop stress with steel** at $t = 0.2$ m. CFRP passes
 with 4.6% margin. Counter-rotating pair is required for $L/r = 10$.
@@ -136,6 +138,7 @@ with 4.6% margin. Counter-rotating pair is required for $L/r = 10$.
 | Hoop stress (HS steel) | 574 MPa | 600 MPa | **4.4%** |
 | Cylinder length | 1,276 m | 7,311 m | 83% |
 | Rotational stability | $L/r = 1.3$ | $\leq 1.3$ | **~0%** |
+| Spin-up energy | ~0.3 days | 365 days | 99.9% |
 
 Cross-coupling and rotational stability are both at the boundary.
 Hoop stress passes with only 4.4% margin — the tightest structural
@@ -241,11 +244,14 @@ cylinder length, rotational stability). Remaining future work:
 | Agriculture | Food self-sufficiency constrains minimum land area |
 | Water recycling | Closed-loop efficiency determines water mass budget |
 | Energy budget | Solar collection area, power distribution, day/night cycle |
-| Spin-up energy | Time and fuel to reach operating rotation rate |
 
-These would add constraints but are unlikely to change the rotational
-feasible band. They will primarily affect mass budget, minimum cylinder
-length, and population capacity.
+Spin-up energy was implemented in Phase 6 (constraint #13). For the
+reference design it is non-binding (~8 hours at 10 GW), but it becomes
+relevant for O'Neill-class habitats at lower power levels.
+
+The remaining constraints are unlikely to change the rotational feasible
+band. They will primarily affect mass budget, minimum cylinder length,
+and population capacity.
 
 ---
 
@@ -268,7 +274,7 @@ The dashboard provides:
   viable values for radius, wall thickness, cylinder length, and
   atmosphere pressure in real time
 - **Constraint status panel** showing pass/fail with computed values
-  for all 12 constraints
+  for all 13 constraints
 - **2D feasible region chart** showing the radius sweep (responsive to
   wall thickness and all design parameters)
 - **3D rotating O'Neill cylinder** with toggleable land/window strips,

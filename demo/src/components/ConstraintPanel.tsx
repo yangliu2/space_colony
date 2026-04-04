@@ -14,6 +14,7 @@ const META: Record<string, { label: string; detail: string; format: (v: number) 
   cylinder_length: { label: "Cylinder Length", detail: "length_to_diameter", format: (v) => `L/D = ${v.toFixed(2)}` },
   hoop_stress: { label: "Hoop Stress", detail: "sigma_hoop_mpa", format: (v) => `${v.toFixed(0)} MPa` },
   rotational_stability: { label: "Rotational Stability", detail: "length_to_radius", format: (v) => `L/r = ${v.toFixed(2)}` },
+  spinup_energy: { label: "Spin-Up Energy", detail: "spinup_time_days", format: (v) => `${v.toFixed(1)} days` },
 };
 
 interface Props {

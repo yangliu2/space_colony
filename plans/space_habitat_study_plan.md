@@ -122,9 +122,10 @@
   `RotationalStabilityConstraint` with `counter_rotating_pair` option for O'Neill
   designs. This is the literature's primary length constraint, complementing our
   bending mode analysis.
-- [ ] **Spin-up energy** — energy budget
+- [x] **Spin-up energy** — energy budget
   ($E = \frac{1}{2}I\omega^2$ with $I \approx mr^2$ for a thin shell) and how long
-  it takes with realistic thrust
+  it takes with realistic thrust. Implemented as `SpinUpEnergyConstraint`
+  with configurable power and time budget
 - [x] **Structural hoop stress** — verify that chosen material can sustain
   $\sigma = \rho \omega^2 r^2 + Pr/t$ with safety factor ≥ 2.0. Implemented as
   `HoopStressConstraint` with configurable material properties

@@ -33,6 +33,16 @@ So then I started to ask questions about how possible is the cylinder structure 
 
 ![Mid Zone](demo/public/viewpoints/mid_zone.png)
 
+## Live
+
+| Service | URL |
+|---------|-----|
+| Docs | https://yangliu2.github.io/space_colony/ |
+| Demo (React + Three.js) | Vercel — auto-deploys from `main` |
+| API (FastAPI) | Fly.io — auto-deploys from `main` when `models/habitat_constraints/` changes |
+
+Deploy: push to `main`. GitHub Actions and Vercel handle the rest.
+
 ## Goal
 This repository deals with practical issues regarding surviving on an O'Neill cylinder, and other issues related to space expansion. The approach is **constraint discovery and sensitivity analysis** — bounding the problem, understanding limits, and reducing unknowns.
 

@@ -1,4 +1,5 @@
 site_name: Space Colony — Constraint Study
+site_url: https://yangliu2.github.io/space_colony/
 docs_dir: .
 site_description: Physics-based feasibility analysis for O'Neill cylinder habitats
 repo_url: https://github.com/fangfanglai/space_colony

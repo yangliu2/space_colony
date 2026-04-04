@@ -52,7 +52,7 @@ export default function FeasibleRegionChart({ sweep, currentRadius }: Props) {
             contentStyle={{ background: "#1a1a2e", border: "1px solid #444", borderRadius: 6 }}
             labelStyle={{ color: "#ccc" }}
             itemStyle={{ color: "#ccc" }}
-            formatter={(_: unknown, name: string, props: { payload: { binding: string } }) => {
+            formatter={(_: unknown, name: string | undefined, props: { payload: { binding: string } }) => {
               if (name === "feasible") {
                 return props.payload.binding === "none" ? "PASS" : `FAIL: ${props.payload.binding}`;
               }

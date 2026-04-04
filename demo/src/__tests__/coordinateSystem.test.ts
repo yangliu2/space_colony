@@ -1,11 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import {
   computeMirrorGroupRotation,
-  computeMirrorHingePosition,
-  computeMirrorVertices,
   computeMirrorCenterAngle,
-  STRIP_ANGLE,
-  LAND_STRIP_CENTER,
 } from '../lib/sceneGeometry';
 
 describe('coordinate system invariants', () => {
@@ -41,7 +37,7 @@ describe('coordinate system invariants', () => {
     it('cylinder axis is along Y (rotation axis)', () => {
       // Cylinder extends from -length/2 to +length/2 along Y
       const endPositions = [-length / 2, length / 2];
-      for (const y of endPositions) {
+      for (const _y of endPositions) {
         // Points at both ends, same radial position, differ only in Y
         const p1 = [radius, endPositions[0], 0];
         const p2 = [radius, endPositions[1], 0];
@@ -68,7 +64,6 @@ describe('coordinate system invariants', () => {
       const theta = Math.PI / 2; // 90°
       const alpha = theta; // WRONG sign
       const x = 1, z = 0;
-      const xPrime = x * Math.cos(alpha) + z * Math.sin(alpha);
       const zPrime = -x * Math.sin(alpha) + z * Math.cos(alpha);
       // This maps (1,0,0) to (cos90°, 0, -sin90°) = (0, 0, -1)
       // But radial outward at 90° is (0, 0, +1)

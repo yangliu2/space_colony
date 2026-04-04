@@ -7,12 +7,9 @@ import type { SceneToggles } from "../hooks/useSceneToggles";
 import {
   sceneScale,
   getCameraPresets,
-  computeInterCylinderSpacing,
   STRIP_ANGLE,
   STAGGER_ANGLE,
   LAND_STRIP_CENTER,
-  MIRROR_TANGENT_FRACTION,
-  HINGE_OFFSET,
   type CameraPreset,
 } from "../lib/sceneGeometry";
 

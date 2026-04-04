@@ -17,7 +17,6 @@ import {
   omegaToRPM,
   isInsideCylinder,
   reflectVector,
-  STRIP_ANGLE,
   HINGE_OFFSET,
 } from '../lib/sceneGeometry';
 

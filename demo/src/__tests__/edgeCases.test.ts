@@ -4,7 +4,6 @@ import {
   getCameraPresets,
   computeInterCylinderSpacing,
   computeMirrorVertices,
-  computeMirrorCenterAngle,
 } from '../lib/sceneGeometry';
 
 describe('edge cases — extreme parameters', () => {

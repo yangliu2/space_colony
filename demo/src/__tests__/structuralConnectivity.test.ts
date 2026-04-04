@@ -9,7 +9,6 @@ import {
   computeInterCylinderSpacing,
   HINGE_OFFSET,
   MIRROR_TANGENT_FRACTION,
-  ENDCAP_DEPTH_FRACTION,
 } from '../lib/sceneGeometry';
 
 describe('structural connectivity — nothing floats in space', () => {

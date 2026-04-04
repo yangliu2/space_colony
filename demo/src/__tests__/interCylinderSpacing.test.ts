@@ -1,7 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import {
   computeInterCylinderSpacing,
-  getCameraPresets,
   STAGGER_ANGLE,
 } from '../lib/sceneGeometry';
 

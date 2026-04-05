@@ -1111,7 +1111,7 @@ export default function CylinderScene({
       </div>
       <Canvas
         camera={{ position: [4, 3, 6], fov: 45, near: 0.05, far: 500 }}
-        style={{ height: fullPage ? "100%" : 400 }}
+        style={{ height: fullPage ? "100%" : "var(--scene-canvas-height, 400px)" }}
       >
         <color attach="background" args={["#0f0f1a"]} />
         <ambientLight intensity={0.5} />

@@ -1,7 +1,7 @@
 """Cylinder length constraint based on bending mode resonance.
 
-Maximum safe length scales as L_max = C * r^(5/4), where C is
-calibrated to O'Neill's design (L=32 km at r=3.2 km, giving C≈1.33).
+Maximum safe length scales as L_max = C * r^(3/4), where C is
+calibrated to O'Neill's design (L=32 km at r=3.2 km, giving C≈75.2).
 See plans/constraint_cylinder_length.md for derivation.
 """
 
@@ -24,10 +24,7 @@ class CylinderLengthConstraint:
 
     @property
     def description(self) -> str:
-        return (
-            "Cylinder length limited by bending mode resonance: "
-            "L <= C * r^(5/4)"
-        )
+        return "Cylinder length limited by bending mode resonance: " "L <= C * r^(3/4)"
 
     def evaluate(
         self,
@@ -37,7 +34,7 @@ class CylinderLengthConstraint:
         C = assumptions.max_length_coefficient
         r = params.radius_m
         L = params.length_m
-        L_max = C * r ** 1.25
+        L_max = C * r**0.75
 
         feasible = L <= L_max if L > 0 else True
         margin_pct = ((L_max - L) / L_max * 100.0) if L_max > 0 else 0.0
@@ -52,9 +49,7 @@ class CylinderLengthConstraint:
                 "max_length_m": round(L_max, 1),
                 "coefficient": C,
                 "margin_pct": round(margin_pct, 1),
-                "length_to_diameter": (
-                    round(L / (2 * r), 2) if r > 0 else 0.0
-                ),
+                "length_to_diameter": (round(L / (2 * r), 2) if r > 0 else 0.0),
             },
         )
 
@@ -68,9 +63,6 @@ class CylinderLengthConstraint:
                 parameter_name="length_m",
                 upper=None,  # depends on radius, not a fixed bound
                 constraint_name=self.name,
-                description=(
-                    f"L <= {C} * r^(5/4) "
-                    f"(bending mode resonance limit)"
-                ),
+                description=(f"L <= {C} * r^(3/4) " f"(bending mode resonance limit)"),
             ),
         ]

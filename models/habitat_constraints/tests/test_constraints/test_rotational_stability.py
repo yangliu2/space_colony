@@ -55,22 +55,22 @@ class TestRotationalStabilityConstraint:
     def test_long_single_cylinder_infeasible(
         self,
         constraint: RotationalStabilityConstraint,
-        assumptions: HumanAssumptions,
     ) -> None:
-        """r=982m, L=2000m, L/r≈2.04 — exceeds 1.3 limit."""
+        """r=982m, L=2000m, L/r≈2.04 — exceeds 1.3 limit for single cylinder."""
+        single = HumanAssumptions(counter_rotating_pair=False)
         params = HabitatParameters.from_radius_and_gravity(982.0, length_m=2000.0)
-        result = constraint.evaluate(params, assumptions)
+        result = constraint.evaluate(params, single)
         assert not result.feasible
 
     def test_oneill_single_cylinder_infeasible(
         self,
         constraint: RotationalStabilityConstraint,
-        assumptions: HumanAssumptions,
     ) -> None:
         """O'Neill: r=3200m, L=32000m, L/r=10 — infeasible without
         counter-rotating pair."""
+        single = HumanAssumptions(counter_rotating_pair=False)
         params = HabitatParameters.from_radius_and_gravity(3200.0, length_m=32000.0)
-        result = constraint.evaluate(params, assumptions)
+        result = constraint.evaluate(params, single)
         assert not result.feasible
 
     def test_oneill_counter_rotating_feasible(
@@ -96,10 +96,11 @@ class TestRotationalStabilityConstraint:
     def test_details_include_ratio(
         self,
         constraint: RotationalStabilityConstraint,
-        assumptions: HumanAssumptions,
     ) -> None:
+        """Single-cylinder mode returns L/r limit of 1.3."""
+        single = HumanAssumptions(counter_rotating_pair=False)
         params = HabitatParameters.from_radius_and_gravity(1000.0, length_m=1200.0)
-        result = constraint.evaluate(params, assumptions)
+        result = constraint.evaluate(params, single)
         assert result.details["length_to_radius"] == pytest.approx(1.2, rel=0.01)
         assert result.details["max_length_to_radius"] == 1.3
 
@@ -115,9 +116,10 @@ class TestRotationalStabilityConstraint:
     def test_bounds_structure(
         self,
         constraint: RotationalStabilityConstraint,
-        assumptions: HumanAssumptions,
     ) -> None:
-        bounds = constraint.compute_bounds(assumptions)
+        """Single-cylinder bounds description mentions 1.3 limit."""
+        single = HumanAssumptions(counter_rotating_pair=False)
+        bounds = constraint.compute_bounds(single)
         assert len(bounds) == 1
         assert bounds[0].parameter_name == "length_m"
         assert bounds[0].constraint_name == "rotational_stability"
@@ -144,11 +146,11 @@ class TestRotationalStabilityConstraint:
     def test_manual_calculation(
         self,
         constraint: RotationalStabilityConstraint,
-        assumptions: HumanAssumptions,
     ) -> None:
-        """Hand-verify: r=1000m, max_ratio=1.3 → max_L=1300m."""
+        """Hand-verify single cylinder: r=1000m, max_ratio=1.3 → max_L=1300m."""
+        single = HumanAssumptions(counter_rotating_pair=False)
         params = HabitatParameters.from_radius_and_gravity(1000.0, length_m=1300.0)
-        result = constraint.evaluate(params, assumptions)
+        result = constraint.evaluate(params, single)
         assert result.feasible
         assert result.details["max_length_m"] == 1300.0
         assert result.details["margin_pct"] == pytest.approx(0.0, abs=0.1)

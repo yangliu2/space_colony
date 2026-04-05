@@ -232,10 +232,10 @@ class HumanAssumptions(BaseModel):
 
     # --- Phase 6: Structural constraints ---
     max_length_coefficient: float = Field(
-        default=1.33,
+        default=75.22,
         gt=0,
         description=(
-            "Coefficient C in L_max = C * r^(5/4). "
+            "Coefficient C in L_max = C * r^(3/4). "
             "Calibrated to O'Neill: L=32km at r=3.2km."
         ),
     )

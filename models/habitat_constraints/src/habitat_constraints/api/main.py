@@ -181,7 +181,11 @@ def _build_assumptions(req: EvaluateRequest | SweepRequest) -> HumanAssumptions:
 @app.get("/")
 def root() -> dict[str, str]:
     """Health check / API index."""
-    return {"status": "ok", "docs": "/docs", "api": "/api/evaluate | /api/sweep | /api/feasible_ranges | /api/defaults"}
+    return {
+        "status": "ok",
+        "docs": "/docs",
+        "api": "/api/evaluate | /api/sweep | /api/feasible_ranges | /api/defaults",
+    }
 
 
 @app.post("/api/evaluate", response_model=EvaluateResponse)
@@ -322,7 +326,7 @@ def feasible_ranges(req: EvaluateRequest) -> Any:
             "length_m",
             100,
             # 20% above bending resonance limit for current radius
-            round(1.33 * req.radius_m**1.25 * 1.2),
+            round(75.22 * req.radius_m**0.75 * 1.2),
         ),
         internal_pressure_kpa=_sweep("internal_pressure_kpa", 50, 150),
     )

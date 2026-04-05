@@ -37,9 +37,7 @@ class TestCylinderLengthConstraint:
         assumptions: HumanAssumptions,
     ) -> None:
         """O'Neill: r=3200m, L=32000m — this is the calibration point."""
-        params = HabitatParameters.from_radius_and_gravity(
-            3200.0, length_m=32000.0
-        )
+        params = HabitatParameters.from_radius_and_gravity(3200.0, length_m=32000.0)
         result = constraint.evaluate(params, assumptions)
         assert result.feasible
 
@@ -49,9 +47,7 @@ class TestCylinderLengthConstraint:
         assumptions: HumanAssumptions,
     ) -> None:
         """Our baseline: r=982m, L=2000m — well within limits."""
-        params = HabitatParameters.from_radius_and_gravity(
-            982.0, length_m=2000.0
-        )
+        params = HabitatParameters.from_radius_and_gravity(982.0, length_m=2000.0)
         result = constraint.evaluate(params, assumptions)
         assert result.feasible
         assert result.details["margin_pct"] > 50
@@ -61,10 +57,8 @@ class TestCylinderLengthConstraint:
         constraint: CylinderLengthConstraint,
         assumptions: HumanAssumptions,
     ) -> None:
-        """r=500m can support ~2900m, so 10000m should fail."""
-        params = HabitatParameters.from_radius_and_gravity(
-            500.0, length_m=10000.0
-        )
+        """r=500m can support ~7954m, so 20000m should fail."""
+        params = HabitatParameters.from_radius_and_gravity(500.0, length_m=20000.0)
         result = constraint.evaluate(params, assumptions)
         assert not result.feasible
 
@@ -83,25 +77,22 @@ class TestCylinderLengthConstraint:
         constraint: CylinderLengthConstraint,
         assumptions: HumanAssumptions,
     ) -> None:
-        """Doubling radius should more than double max length."""
-        p1 = HabitatParameters.from_radius_and_gravity(
-            1000.0, length_m=1000.0
-        )
-        p2 = HabitatParameters.from_radius_and_gravity(
-            2000.0, length_m=1000.0
-        )
+        """Max length scales as r^(3/4): doubling r gives ~1.68x L_max."""
+        p1 = HabitatParameters.from_radius_and_gravity(1000.0, length_m=1000.0)
+        p2 = HabitatParameters.from_radius_and_gravity(2000.0, length_m=1000.0)
         r1 = constraint.evaluate(p1, assumptions)
         r2 = constraint.evaluate(p2, assumptions)
-        assert r2.details["max_length_m"] > 2 * r1.details["max_length_m"]
+        expected_ratio = (2000.0 / 1000.0) ** 0.75  # ≈ 1.68
+        assert r2.details["max_length_m"] == pytest.approx(
+            r1.details["max_length_m"] * expected_ratio, rel=0.01
+        )
 
     def test_details_include_length_to_diameter(
         self,
         constraint: CylinderLengthConstraint,
         assumptions: HumanAssumptions,
     ) -> None:
-        params = HabitatParameters.from_radius_and_gravity(
-            982.0, length_m=2000.0
-        )
+        params = HabitatParameters.from_radius_and_gravity(982.0, length_m=2000.0)
         result = constraint.evaluate(params, assumptions)
         expected_ld = 2000.0 / (2 * 982.0)
         assert result.details["length_to_diameter"] == pytest.approx(
@@ -124,9 +115,7 @@ class TestCylinderLengthConstraint:
     ) -> None:
         """Stricter coefficient should reject more designs."""
         strict = HumanAssumptions(max_length_coefficient=0.5)
-        params = HabitatParameters.from_radius_and_gravity(
-            982.0, length_m=5000.0
-        )
+        params = HabitatParameters.from_radius_and_gravity(982.0, length_m=5000.0)
         result = constraint.evaluate(params, strict)
         assert not result.feasible
 
@@ -135,10 +124,8 @@ class TestCylinderLengthConstraint:
         constraint: CylinderLengthConstraint,
         assumptions: HumanAssumptions,
     ) -> None:
-        """C=1.33 should give L_max ≈ 32000m at r=3200m."""
-        params = HabitatParameters.from_radius_and_gravity(
-            3200.0, length_m=1.0
-        )
+        """C=75.22 should give L_max ≈ 32000m at r=3200m."""
+        params = HabitatParameters.from_radius_and_gravity(3200.0, length_m=1.0)
         result = constraint.evaluate(params, assumptions)
         L_max = result.details["max_length_m"]
         assert L_max == pytest.approx(32000, rel=0.03)

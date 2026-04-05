@@ -13,10 +13,11 @@ describe('sceneScale', () => {
     expect(sceneScale(500, 1000).s).toBeCloseTo(0.004);
   });
 
-  it('caps length at r × 6 = 12 when scaled length exceeds cap', () => {
-    // 1000m radius, 8000m length: rawL = 8000 * 0.002 = 16 > 12
-    const { l } = sceneScale(1000, 8000);
-    expect(l).toBe(12);
+  it('caps length at bending resonance limit when length exceeds physics bound', () => {
+    // r=1000m, bending limit = 75.22 * 1000^0.75 * 1.2 ≈ 16,052m
+    // l=20000m exceeds limit → capped at 16052 * (2/1000) ≈ 32.1 scene units
+    const { l } = sceneScale(1000, 20000);
+    expect(l).toBeCloseTo(32.1, 0);
   });
 
   it('does not cap length when scaled length is within limit', () => {

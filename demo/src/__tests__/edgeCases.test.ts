@@ -24,11 +24,12 @@ describe('edge cases — extreme parameters', () => {
     }
   });
 
-  it('large radius (r=5000m) caps length correctly', () => {
+  it('large radius (r=5000m) within bending limit is not capped', () => {
     const { r, l } = sceneScale(5000, 40000);
     expect(r).toBe(2);
-    // rawL = 40000 * (2/5000) = 16 > 12, should be capped
-    expect(l).toBe(12);
+    // r=5000m: bending limit = 75.22 * 5000^0.75 * 1.2 ≈ 95,218m
+    // 40000m < 95218m → not capped; rawL = 40000 * (2/5000) = 16
+    expect(l).toBeCloseTo(16, 1);
   });
 
   it('length exactly at cap boundary (rawL = 12)', () => {
@@ -48,13 +49,14 @@ describe('edge cases — extreme parameters', () => {
     const { r, l } = sceneScale(1000, 1000);
     expect(r).toBe(2);
     expect(l).toBeCloseTo(2);
-    expect(l).toBeLessThan(12); // well under cap
+    expect(l).toBeLessThan(10); // well under bending cap
   });
 
-  it('very large length-to-radius ratio caps length', () => {
+  it('very large length-to-radius ratio caps at bending resonance limit', () => {
+    // r=100m: bending limit = 75.22 * 100^0.75 * 1.2 ≈ 2853m
+    // l=10000m >> 2853m → capped; cap in scene units = 2853 * (2/100) ≈ 57.1
     const { l } = sceneScale(100, 10000);
-    // rawL = 10000 * (2/100) = 200, way over cap
-    expect(l).toBe(12);
+    expect(l).toBeCloseTo(57.1, 0);
   });
 
   it('mirror geometry valid for extreme dimensions', () => {

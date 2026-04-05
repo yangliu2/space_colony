@@ -41,15 +41,24 @@ export const ENDCAP_DEPTH_FRACTION = 0.3;
 // ── Scene Scale ────────────────────────────────────────────────────
 
 /**
+ * Bending resonance coefficient — must match ParameterSliders.tsx and api/main.py.
+ * L_max = C_BENDING * r^0.75 (see plans/constraint_cylinder_length.md).
+ */
+const C_BENDING_SCENE = 75.22;
+
+/**
  * Normalize real-world meters to scene units.
- * Radius maps to ~2 scene units; length capped for readability.
+ * Radius maps to ~2 scene units; length capped at 1.2× the bending resonance
+ * limit so the full feasible range is always visible in the 3D model.
  */
 export function sceneScale(radius_m: number, length_m: number) {
   const targetR = 2;
   const s = targetR / radius_m;
   const r = targetR;
   const rawL = length_m * s;
-  const l = Math.min(rawL, r * 6);
+  // Cap at 20% above the physics limit so the slider's full range renders correctly
+  const maxPhysicalLength = C_BENDING_SCENE * Math.pow(radius_m, 0.75) * 1.2;
+  const l = Math.min(rawL, maxPhysicalLength * s);
   return { r, l, s };
 }
 

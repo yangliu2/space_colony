@@ -9,11 +9,11 @@ interface SliderDef {
   unit: string;
 }
 
-// Bending resonance limit: L_max = 1.33 * r^1.25 (see plans/constraint_cylinder_length.md)
+// Bending resonance limit: L_max = 75.22 * r^0.75 (see plans/constraint_cylinder_length.md)
 // Slider max = 20% above limit, rounded to nearest 500m, so the green bar end is visible.
-const C_BENDING = 1.33;
+const C_BENDING = 75.22;
 function lengthSliderMax(radiusM: number): number {
-  const bendingMax = C_BENDING * Math.pow(radiusM, 1.25);
+  const bendingMax = C_BENDING * Math.pow(radiusM, 0.75);
   return Math.ceil((bendingMax * 1.2) / 500) * 500;
 }
 function lengthSliderStep(max: number): number {

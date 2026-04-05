@@ -20,7 +20,7 @@ export default function StatsPanel({ params, result, compact }: Props) {
   const totalSurface = 2 * Math.PI * params.radius_m * params.length_m;
   const volume = Math.PI * params.radius_m * params.radius_m * params.length_m;
   const areaPerCapita = landArea / params.population;
-  const maxLength = 2.74 * Math.pow(params.radius_m, 5 / 4);
+  const maxLength = 75.22 * Math.pow(params.radius_m, 0.75);
 
   // Coriolis ratio from result
   const coriolisRatio =

@@ -146,7 +146,16 @@ Globus, Al, and Nitin Arora. "Kalpana One." *National Space Society*, 2007.
 
 Globus, Al. "Design Limits on Large Space Stations." *arXiv:2408.00152*, 2024.
 
+Jensen, Jared. "Space Station Rotational Stability." *arXiv:2408.00155*, 2024.
+— Most rigorous formal treatment of the $I_z/I_x$ stability criterion for multiple geometries.
+
 Johnson, Richard D., and Charles Holbrow, editors. *Space Settlements: A Design Study*.
 NASA SP-413, 1977.
 
 O'Neill, Gerard K. *The High Frontier: Human Colonies in Space*. William Morrow, 1976.
+
+> **Note on novelty:** The rigid-body tumbling instability (Step 1) and the counter-rotating
+> pair solution (Step 2) are established engineering — O'Neill (1976), Globus & Arora (2007),
+> Jensen (2024). The bending resonance formula $L_\text{max} = 1.33 \cdot r^{5/4}$ (Step 3)
+> does not appear in any published space-habitat paper found. It should be treated as
+> original analysis pending independent verification.

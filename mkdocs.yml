@@ -26,28 +26,34 @@ extra_javascript:
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 
 nav:
-  - Overview: conclusions/feasible_habitat_design_space.md
-  - Conclusions:
+  - Home: index.md
+
+  - "1. How Does It Work?":
+    - Artificial Gravity: plans/intuition_artificial_gravity.md
+    - Centripetal Acceleration: plans/intuition_centripetal_acceleration.md
+    - Angular Velocity: plans/intuition_angular_velocity.md
+
+  - "2. Can Humans Live There?":
+    - Vestibular (RPM limit): plans/constraint_vestibular.md
+    - Gravity Level: plans/constraint_gravity_minimum.md
+    - Gravity Gradient (head-to-foot): plans/constraint_gravity_gradient.md
+    - Coriolis Effect: plans/constraint_coriolis.md
+    - Cross-Coupling: plans/constraint_cross_coupling.md
+    - Atmosphere: plans/constraint_biological.md
+
+  - "3. Will the Structure Hold?":
+    - Rim Speed (material limit): plans/constraint_rim_speed.md
+    - "Cylinder Length — The Surprise": plans/constraint_cylinder_length.md
+    - Rotational Stability: plans/constraint_rotational_stability.md
+    - Spin-Up Energy: plans/constraint_spinup_energy.md
+
+  - "4. Findings":
     - "001: Human Comfort Boundaries": conclusions/001_human_comfort_boundaries.md
     - "002: Full Constraint Analysis": conclusions/002_full_constraint_analysis.md
     - "003: Biological Constraints & Monte Carlo": conclusions/003_biological_constraints_and_monte_carlo.md
     - "004: Structural Constraints": conclusions/004_structural_constraints.md
-  - Constraint Plans:
-    - Study Plan: plans/space_habitat_study_plan.md
-    - Vestibular: plans/constraint_vestibular.md
-    - Gravity Minimum: plans/constraint_gravity_minimum.md
-    - Gravity Gradient: plans/constraint_gravity_gradient.md
-    - Coriolis: plans/constraint_coriolis.md
-    - Cross-Coupling: plans/constraint_cross_coupling.md
-    - Rim Speed: plans/constraint_rim_speed.md
-    - Cylinder Length: plans/constraint_cylinder_length.md
-    - Rotational Stability: plans/constraint_rotational_stability.md
-    - Spin-Up Energy: plans/constraint_spinup_energy.md
-    - Biological: plans/constraint_biological.md
-  - Literature Reviews:
-    - Structural: plans/literature_review_structural.md
-    - Human Factors: plans/literature_review_human_factors.md
-  - Physics Intuition:
-    - Artificial Gravity: plans/intuition_artificial_gravity.md
-    - Centripetal Acceleration: plans/intuition_centripetal_acceleration.md
-    - Angular Velocity: plans/intuition_angular_velocity.md
+    - Feasible Design Space: conclusions/feasible_habitat_design_space.md
+
+  - Reference:
+    - Literature — Human Factors: plans/literature_review_human_factors.md
+    - Literature — Structural: plans/literature_review_structural.md

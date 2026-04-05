@@ -2,26 +2,31 @@
 
 ## Rule
 
-Always stop all preview/dev servers immediately after verification is complete.
-Never leave a server running at the end of a task.
+For any UI/frontend task: **verify → commit → stop**. Always in that order.
+Stop all preview/dev servers as the final action of the turn, after committing.
+Never leave a server running between turns.
 
 ## Why
 
 Running servers consume resources in the background and can interfere with future
-sessions. The user can always restart a server when needed — it costs nothing to
-reopen. Leaving servers running is wasteful and clutters the environment.
+sessions. The user can always restart a server when needed. Leaving servers running
+is wasteful and clutters the environment.
+
+The verify-before-commit order also matters: never commit code that hasn't been
+visually confirmed working in the browser. Stopping the server is the last step,
+not something done before committing.
 
 ## How to apply
 
-1. After every `preview_start` + verification workflow, call `preview_stop` on
-   every server that was started.
-2. Before ending your turn after any UI/frontend task, call `preview_list` to
-   confirm no servers are still running.
-3. If `preview_stop` returns "not found", call `preview_list` to verify — the
-   server may have already stopped or the ID may have changed.
-4. This applies to all servers: frontend dev servers, backend API servers, etc.
+1. Edit code.
+2. `preview_start` → verify with screenshots.
+3. Commit the verified code.
+4. `preview_stop` on every server started this turn.
+5. `preview_list` to confirm `[]` — this is the last action before ending the turn.
 
-## Checklist (end of any preview verification)
+## Checklist (end of any frontend task)
 
-- [ ] `preview_stop` called for each server started this session
+- [ ] Changes verified with screenshot before committing
+- [ ] Code committed
+- [ ] `preview_stop` called for each running server
 - [ ] `preview_list` returns `[]`

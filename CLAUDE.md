@@ -3,7 +3,8 @@
 ## Guiding Principles
 Read and follow all rules in `guiding_principles/` before starting any task.
 Key principles: `progressive_disclosure.md` · `document_evaluation.md` ·
-`model_3d_sync.md` · `parameter_dependencies.md`
+`model_3d_sync.md` · `parameter_dependencies.md` · `epistemic_humility.md` ·
+`formula_sync.md` · `commit_often.md`
 
 ## File Reading
 Keep all files under 10,000 tokens.

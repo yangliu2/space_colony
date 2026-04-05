@@ -61,9 +61,17 @@ A long rotating cylinder behaves like a spinning shaft. Every shaft has critical
 rotational frequencies that excite structural bending modes. Operating at or above a
 critical speed causes catastrophic vibration.
 
-The first bending natural frequency of a thin-walled cylinder:
+The first bending natural frequency of a thin-walled cylinder (Euler–Bernoulli beam):
 
-$$f_1 \approx \frac{\pi}{2 L^2} \sqrt{\frac{E I}{\rho A}} \propto \frac{r^{3/2}}{L^2}$$
+$$f_1 \approx \frac{\pi}{2 L^2} \sqrt{\frac{E I}{\rho A}}$$
+
+For a thin-walled cylinder of radius $r$ and wall thickness $t$:
+$I = \pi r^3 t$ and $A = 2\pi r t$, so $I/A = r^2/2$ — the wall thickness cancels.
+Therefore:
+
+$$\sqrt{\frac{E I}{\rho A}} = r \sqrt{\frac{E}{2\rho}} \propto r
+\quad \Longrightarrow \quad
+f_1 \propto \frac{r}{L^2}$$
 
 The spin frequency (from $\omega = \sqrt{g/r}$):
 
@@ -71,25 +79,30 @@ $$f_\text{rot} \propto \frac{1}{\sqrt{r}}$$
 
 Requiring $f_1 > k \cdot f_\text{rot}$ with safety factor $k \geq 3$ gives:
 
-$$\boxed{L_\text{max} = C \cdot r^{5/4}}$$
+$$\frac{r}{L^2} > C \cdot \frac{1}{\sqrt{r}}
+\quad \Longrightarrow \quad
+r^{3/2} > C' \cdot L^2
+\quad \Longrightarrow \quad
+\boxed{L_\text{max} = C \cdot r^{3/4}}$$
 
 **This formula is original to this study** — it does not appear in prior published literature
-(see literature_review_structural.md §2). It is calibrated to O'Neill's design:
+on space habitats (see `literature_review_structural.md` §2). It should be treated as
+original analysis pending independent verification. It is calibrated to O'Neill's design:
 
-$$C = \frac{32{,}000}{3{,}200^{5/4}} \approx 1.33$$
+$$C = \frac{32{,}000}{3{,}200^{3/4}} \approx 75.22$$
 
 ---
 
 ## Step 4 — O'Neill Is at the Limit
 
-Applying the bending formula:
+Applying the bending formula $L_\text{max} = 75.22 \cdot r^{3/4}$:
 
 | $r$ (m) | $L_\text{max}$ bending (m) | $L/D_\text{max}$ | Notes |
 |---------|---------------------------|-----------------|-------|
-| 500     | 3,144                     | 3.1             | |
-| 982     | 7,309                     | 3.7             | Minimum viable habitat |
-| 2,000   | 17,783                    | 4.4             | |
-| 3,200   | **32,010**                | **5.0**         | O'Neill Island Three |
+| 500     | 7,954                     | 7.95            | |
+| 982     | 13,194                    | 6.72            | Minimum viable habitat |
+| 2,000   | 22,494                    | 5.62            | |
+| 3,200   | **32,000**                | **5.00**        | O'Neill Island Three |
 
 O'Neill's design ($L = 32{,}000$ m at $r = 3{,}200$ m) sits **exactly at the bending
 resonance limit**. This is not a coincidence — O'Neill's team iterated to this geometry.
@@ -110,20 +123,20 @@ For our minimum viable radius ($r = 982$ m):
 |------------|-------|---------|
 | Rotational stability (single cylinder) | $L < 1{,}277$ m | Only if unpaired |
 | Rotational stability (counter-rotating) | $L < 9{,}820$ m | Not binding |
-| Bending resonance | $L < 7{,}309$ m | **Yes — binding limit** |
+| Bending resonance | $L < 13{,}194$ m | **Yes — binding limit** |
 
-With two cylinders, the minimum viable habitat can safely reach **7.3 km** — roughly
-3.7× the diameter. At maximum safe length, the livable land area triples:
+With two cylinders, the minimum viable habitat can safely reach **13.2 km** — roughly
+6.7× the diameter. At maximum safe length, the livable land area increases substantially:
 
 $$A_\text{land} = \pi r L$$
 
 | $L$ (m) | $A_\text{land}$ (km²) | Notes |
 |---------|----------------------|-------|
 | 1,276   | 3.9                  | Current demo default |
-| 7,309   | 22.5                 | Structural limit |
+| 13,194  | 40.7                 | Structural limit |
 
 The demo default (1,276 m) is conservative — chosen for visual proportion, not structural
-necessity. Any length up to 7.3 km is structurally valid for $r = 982$ m.
+necessity. Any length up to 13.2 km is structurally valid for $r = 982$ m.
 
 ---
 
@@ -156,6 +169,8 @@ O'Neill, Gerard K. *The High Frontier: Human Colonies in Space*. William Morrow,
 
 > **Note on novelty:** The rigid-body tumbling instability (Step 1) and the counter-rotating
 > pair solution (Step 2) are established engineering — O'Neill (1976), Globus & Arora (2007),
-> Jensen (2024). The bending resonance formula $L_\text{max} = 1.33 \cdot r^{5/4}$ (Step 3)
-> does not appear in any published space-habitat paper found. It should be treated as
-> original analysis pending independent verification.
+> Jensen (2024). The bending resonance formula $L_\text{max} = 75.22 \cdot r^{3/4}$ (Step 3)
+> does not appear in any published space-habitat paper found. The derivation follows from
+> standard Euler–Bernoulli beam theory applied to a thin-walled cylinder; the key result
+> is that wall thickness cancels in $I/A = r^2/2$, giving $f_1 \propto r/L^2$. It should
+> still be treated as original analysis pending independent verification by a structural engineer.

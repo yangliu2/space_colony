@@ -110,12 +110,12 @@
 
 **Research completed:**
 - `constraint_cylinder_length.md` — maximum cylinder length depends on radius via
-  bending mode resonance ($L_\text{max} \propto r^{5/4}$). O'Neill's $L/D = 5$ as
+  bending mode resonance ($L_\text{max} \propto r^{3/4}$). O'Neill's $L/D = 5$ as
   upper limit. Our minimum viable cylinder ($L/D = 1.0$) is well within limits.
-  Proposed soft constraint: $L \leq 1.33 \cdot r^{5/4}$
+  Constraint: $L \leq 75.22 \cdot r^{3/4}$
 
 **TODO — Constraints to implement:**
-- [x] **Cylinder length limit** — implement $L_\text{max} = C \cdot r^{5/4}$ constraint
+- [x] **Cylinder length limit** — implement $L_\text{max} = C \cdot r^{3/4}$ constraint
   in the solver based on bending mode analysis (see `constraint_cylinder_length.md`)
 - [x] **Rotational stability** — passive stability requires $I_z/I_x \geq 1.2$,
   limiting single cylinders to $L < 1.3r$ (Globus and Arora 2007). Implemented as

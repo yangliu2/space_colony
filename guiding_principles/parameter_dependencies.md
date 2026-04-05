@@ -10,7 +10,7 @@ Never use a fixed slider max when the physics imposes a variable one.
 
 | Parameter | Depends on | Formula | Source |
 |-----------|-----------|---------|--------|
-| `length_m` max | `radius_m` | $L_\text{max} = 1.33 \cdot r^{5/4}$ | `plans/constraint_cylinder_length.md` |
+| `length_m` max | `radius_m` | $L_\text{max} = 75.22 \cdot r^{3/4}$ | `plans/constraint_cylinder_length.md` |
 
 ## How to implement
 

@@ -72,13 +72,15 @@ O'Neill Island Three: $L/D = 5.0$ (at $D = 6.4$ km) or $L/D = 4.0$ (at
 $D = 8.0$ km — the 1974 Physics Today value). Both are published variants.
 Kalpana One revised: $L/D = 0.65$ (Globus and Arora 2007).
 
-### Our $L_{\max} = C \cdot r^{5/4}$ Formula — Original to This Project
+### Our $L_{\max} = 75.22 \cdot r^{3/4}$ Formula — Original to This Project
 
-This formula derives from combining beam bending frequency
-($f_1 \propto r^{3/2}/L^2$) with rotation frequency
-($f_{\text{rot}} \propto 1/\sqrt{r}$). The derivation is physically sound,
-but **this specific formula does not appear in published literature**. It
-should be labeled as original work calibrated to O'Neill's design point.
+This formula derives from combining beam bending frequency with rotation
+frequency. For a thin-walled cylinder $I/A = r^2/2$ (wall thickness cancels),
+so $f_1 \propto r/L^2$. Combined with $f_{\text{rot}} \propto 1/\sqrt{r}$,
+the safety condition $f_1 > k \cdot f_\text{rot}$ gives $L < C \cdot r^{3/4}$.
+Calibrated to O'Neill's design point ($r = 3200$ m, $L = 32000$ m): $C \approx 75.22$.
+**This specific formula does not appear in published literature** and should be
+treated as original analysis pending independent verification by a structural engineer.
 
 ### Primary Length Constraint: Rotational Stability, Not Bending Modes
 
@@ -97,7 +99,7 @@ stability** as the dominant length constraint, not bending mode resonance:
 **Implemented:** `RotationalStabilityConstraint` enforces $L < 1.3r$ for
 passively stable single cylinders, with a `counter_rotating_pair` option
 that relaxes the limit to $L < 10r$ for O'Neill-style paired designs. The
-bending mode constraint ($C \cdot r^{5/4}$) remains as a secondary
+bending mode constraint ($L \leq 75.22 \cdot r^{3/4}$) remains as a secondary
 structural check.
 
 ### Citation Correction

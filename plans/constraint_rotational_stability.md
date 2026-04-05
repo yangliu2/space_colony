@@ -118,12 +118,12 @@ With the default $L/r \leq 1.3$ for a single passively stable cylinder:
 | 2,000 | 2,600 | 16.34 | 408,400 |
 | 3,200 | 4,160 | 41.82 | 1,045,500 |
 
-Compare with the bending mode limit ($L_{\max} = 1.33 \cdot r^{5/4}$):
+Compare with the bending mode limit ($L_{\max} = 75.22 \cdot r^{3/4}$):
 
 | $r$ (m) | Rotational stability | Bending mode | Binding constraint |
 |---------|---------------------|-------------|-------------------|
-| 982 | 1,277 m | 7,309 m | **Rotational stability** |
-| 2,000 | 2,600 m | 17,783 m | **Rotational stability** |
+| 982 | 1,277 m | 13,194 m | **Rotational stability** |
+| 2,000 | 2,600 m | 22,494 m | **Rotational stability** |
 | 3,200 | 4,160 m | 32,000 m | **Rotational stability** |
 
 **Rotational stability is always the binding length constraint** for

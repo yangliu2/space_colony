@@ -318,7 +318,12 @@ def feasible_ranges(req: EvaluateRequest) -> Any:
     return FeasibleRangesResponse(
         radius_m=_sweep("radius_m", 50, 15000, recalc_omega=True),
         wall_thickness_m=_sweep("wall_thickness_m", 0.05, 3.0),
-        length_m=_sweep("length_m", 100, 10000),
+        length_m=_sweep(
+            "length_m",
+            100,
+            # 20% above bending resonance limit for current radius
+            round(1.33 * req.radius_m**1.25 * 1.2),
+        ),
         internal_pressure_kpa=_sweep("internal_pressure_kpa", 50, 150),
     )
 

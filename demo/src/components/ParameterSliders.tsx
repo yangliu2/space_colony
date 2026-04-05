@@ -9,10 +9,21 @@ interface SliderDef {
   unit: string;
 }
 
-const DESIGN_SLIDERS: SliderDef[] = [
+// Bending resonance limit: L_max = 1.33 * r^1.25 (see plans/constraint_cylinder_length.md)
+// Slider max = 20% above limit, rounded to nearest 500m, so the green bar end is visible.
+const C_BENDING = 1.33;
+function lengthSliderMax(radiusM: number): number {
+  const bendingMax = C_BENDING * Math.pow(radiusM, 1.25);
+  return Math.ceil((bendingMax * 1.2) / 500) * 500;
+}
+function lengthSliderStep(max: number): number {
+  // ~200 steps across the range, rounded to nearest 50m
+  return Math.max(50, Math.round(max / 200 / 50) * 50);
+}
+
+const STATIC_DESIGN_SLIDERS: SliderDef[] = [
   { key: "radius_m", label: "Radius", min: 50, max: 15000, step: 10, unit: "m" },
   { key: "target_gravity_g", label: "Target gravity", min: 0.1, max: 1.5, step: 0.05, unit: "g" },
-  { key: "length_m", label: "Cylinder length", min: 100, max: 10000, step: 50, unit: "m" },
   { key: "population", label: "Population", min: 50, max: 100000, step: 100, unit: "" },
   { key: "wall_thickness_m", label: "Wall thickness", min: 0.05, max: 3.0, step: 0.05, unit: "m" },
   { key: "internal_pressure_kpa", label: "Atmosphere", min: 50, max: 150, step: 1, unit: "kPa" },
@@ -93,10 +104,27 @@ export default function ParameterSliders({ params, onChange, feasibleRanges }: P
   const set = (key: keyof DesignParams, v: number) =>
     onChange({ ...params, [key]: key === "population" ? Math.round(v) : v });
 
+  const lMax = lengthSliderMax(params.radius_m);
+  const lengthSlider: SliderDef = {
+    key: "length_m",
+    label: "Cylinder length",
+    min: 100,
+    max: lMax,
+    step: lengthSliderStep(lMax),
+    unit: "m",
+  };
+
+  // Insert length slider after radius (index 0)
+  const designSliders = [
+    STATIC_DESIGN_SLIDERS[0],
+    lengthSlider,
+    ...STATIC_DESIGN_SLIDERS.slice(1),
+  ];
+
   return (
     <div className="panel sliders-panel">
       <h2>Design Parameters</h2>
-      {DESIGN_SLIDERS.map((d) => (
+      {designSliders.map((d) => (
         <SliderRow
           key={d.key}
           def={d}

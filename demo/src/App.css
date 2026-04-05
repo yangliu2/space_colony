@@ -703,6 +703,11 @@ body {
     height: 24px;
   }
 
+  .slider-track-wrapper input[type="range"] {
+    /* Prevent accidental slider changes while scrolling the panel */
+    touch-action: none;
+  }
+
   .slider-track-wrapper input[type="range"]::-webkit-slider-thumb {
     width: 22px;
     height: 22px;

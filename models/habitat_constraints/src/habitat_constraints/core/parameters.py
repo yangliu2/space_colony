@@ -250,11 +250,14 @@ class HumanAssumptions(BaseModel):
         ),
     )
     counter_rotating_pair: bool = Field(
-        default=False,
+        default=True,
         description=(
             "Whether the habitat uses counter-rotating pairs "
-            "(O'Neill design). If True, the rotational stability "
-            "constraint is relaxed to L/r < 10."
+            "(O'Neill design). True reflects the baseline design: "
+            "two counter-rotating cylinders cancel net angular momentum, "
+            "relaxing rotational stability from L/r < 1.3 to L/r < 10. "
+            "The 3D model already shows two cylinders — this default "
+            "matches that geometry."
         ),
     )
     yield_strength_mpa: float = Field(

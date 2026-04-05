@@ -32,6 +32,7 @@ nav:
     - Artificial Gravity: plans/intuition_artificial_gravity.md
     - Centripetal Acceleration: plans/intuition_centripetal_acceleration.md
     - Angular Velocity: plans/intuition_angular_velocity.md
+    - Does General Relativity Matter?: plans/general_relativity_and_artificial_gravity.md
 
   - "2. Can Humans Live There?":
     - Vestibular (RPM limit): plans/constraint_vestibular.md
@@ -42,12 +43,18 @@ nav:
     - Atmosphere: plans/constraint_biological.md
 
   - "3. Will the Structure Hold?":
+    - Hoop Stress & Materials: plans/structural_engineering.md
     - Rim Speed (material limit): plans/constraint_rim_speed.md
-    - "Cylinder Length — The Surprise": plans/constraint_cylinder_length.md
+    - Cylinder Length & Counter-Rotation: plans/constraint_cylinder_length.md
     - Rotational Stability: plans/constraint_rotational_stability.md
     - Spin-Up Energy: plans/constraint_spinup_energy.md
 
-  - "4. Findings":
+  - "4. The Design":
+    - External Mirrors: plans/mirror_geometry.md
+    - Interior Space: plans/interior_space_utilization.md
+    - Material Estimates: plans/construction_material_estimates.md
+
+  - "5. Findings":
     - "001: Human Comfort Boundaries": conclusions/001_human_comfort_boundaries.md
     - "002: Full Constraint Analysis": conclusions/002_full_constraint_analysis.md
     - "003: Biological Constraints & Monte Carlo": conclusions/003_biological_constraints_and_monte_carlo.md
@@ -57,3 +64,4 @@ nav:
   - Reference:
     - Literature — Human Factors: plans/literature_review_human_factors.md
     - Literature — Structural: plans/literature_review_structural.md
+    - Q&A — Structural Design: plans/qa_structural_design.md

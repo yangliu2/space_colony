@@ -12,10 +12,10 @@ interface SliderDef {
 const DESIGN_SLIDERS: SliderDef[] = [
   { key: "radius_m", label: "Radius", min: 50, max: 15000, step: 10, unit: "m" },
   { key: "target_gravity_g", label: "Target gravity", min: 0.1, max: 1.5, step: 0.05, unit: "g" },
-  { key: "length_m", label: "Cylinder length", min: 100, max: 5000, step: 50, unit: "m" },
+  { key: "length_m", label: "Cylinder length", min: 100, max: 10000, step: 50, unit: "m" },
   { key: "population", label: "Population", min: 50, max: 100000, step: 100, unit: "" },
-  { key: "wall_thickness_m", label: "Wall thickness", min: 0.05, max: 2.0, step: 0.05, unit: "m" },
-  { key: "internal_pressure_kpa", label: "Atmosphere", min: 50, max: 101.3, step: 1, unit: "kPa" },
+  { key: "wall_thickness_m", label: "Wall thickness", min: 0.05, max: 3.0, step: 0.05, unit: "m" },
+  { key: "internal_pressure_kpa", label: "Atmosphere", min: 50, max: 150, step: 1, unit: "kPa" },
 ];
 
 const ASSUMPTION_SLIDERS: SliderDef[] = [

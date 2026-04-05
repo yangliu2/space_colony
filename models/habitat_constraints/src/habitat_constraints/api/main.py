@@ -317,9 +317,9 @@ def feasible_ranges(req: EvaluateRequest) -> Any:
 
     return FeasibleRangesResponse(
         radius_m=_sweep("radius_m", 50, 15000, recalc_omega=True),
-        wall_thickness_m=_sweep("wall_thickness_m", 0.05, 2.0),
-        length_m=_sweep("length_m", 100, 5000),
-        internal_pressure_kpa=_sweep("internal_pressure_kpa", 50, 101.3),
+        wall_thickness_m=_sweep("wall_thickness_m", 0.05, 3.0),
+        length_m=_sweep("length_m", 100, 10000),
+        internal_pressure_kpa=_sweep("internal_pressure_kpa", 50, 150),
     )
 
 

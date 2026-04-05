@@ -4,7 +4,7 @@
 Read and follow all rules in `guiding_principles/` before starting any task.
 Key principles: `progressive_disclosure.md` · `document_evaluation.md` ·
 `model_3d_sync.md` · `parameter_dependencies.md` · `epistemic_humility.md` ·
-`formula_sync.md` · `commit_often.md`
+`formula_sync.md` · `commit_often.md` · `opportunistic_fixes.md`
 
 ## File Reading
 Keep all files under 10,000 tokens.
@@ -59,3 +59,7 @@ Do not skip steps.
 `demo/` — React + Three.js + Recharts frontend, FastAPI backend.
 3D rendering details: `plans/demo_3d_rendering.md`
 Deployment: `docs/deployment.md`
+
+**Dev server:** use `preview_start` with name `demo` (configured in `.claude/launch.json`).
+Node/npm are at `/opt/homebrew/bin/` — the launch config uses `/bin/sh -c "PATH=/opt/homebrew/bin:$PATH npm run dev"` to ensure they're found.
+For git commits, always prefix: `PATH="/opt/homebrew/bin:$PATH" git commit ...`

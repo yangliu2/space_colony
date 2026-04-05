@@ -5,4 +5,4 @@ This site documents the constraint model, literature review, and experimental re
 
 [Read the overview →](conclusions/feasible_habitat_design_space.md)
 
-[Interactive demo →](https://space-colony.vercel.app)
+[Interactive demo →](https://spinhabitat.com)

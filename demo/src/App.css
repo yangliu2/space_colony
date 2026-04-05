@@ -721,4 +721,40 @@ body {
   .app-header h1 {
     font-size: 15px;
   }
+
+  /* /3d full-page view on mobile */
+  .scene3d-layout {
+    flex-direction: column;
+  }
+
+  .scene3d-mobile-bar {
+    display: flex;
+    align-items: stretch;
+  }
+
+  .scene3d-back-btn {
+    display: flex;
+    align-items: center;
+    padding: 0 14px;
+    color: var(--blue);
+    text-decoration: none;
+    font-size: 18px;
+    border-right: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+
+  .scene3d-stats,
+  .scene3d-sidebar {
+    width: 100%;
+    border-right: none;
+    border-left: none;
+    border-bottom: 1px solid var(--border);
+    overflow-y: visible;
+  }
+
+  /* 3D main fills all remaining height */
+  .scene3d-main {
+    flex: 1;
+    min-height: 0;
+  }
 }

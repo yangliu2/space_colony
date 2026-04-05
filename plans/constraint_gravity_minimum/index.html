@@ -1,0 +1,1951 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Physics-based feasibility analysis for O'Neill cylinder habitats">
+      
+      
+      
+        <link rel="canonical" href="https://docs.spinhabitat.com/plans/constraint_gravity_minimum/">
+      
+      
+        <link rel="prev" href="../constraint_vestibular/">
+      
+      
+        <link rel="next" href="../constraint_gravity_gradient/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Gravity Level - Space Colony — Constraint Study</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#minimum-gravity-for-long-term-human-survival-what-we-know-and-dont-know" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Space Colony — Constraint Study" class="md-header__button md-logo" aria-label="Space Colony — Constraint Study" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Space Colony — Constraint Study
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Gravity Level
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/fangfanglai/space_colony" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Space Colony — Constraint Study" class="md-nav__button md-logo" aria-label="Space Colony — Constraint Study" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Space Colony — Constraint Study
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/fangfanglai/space_colony" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. How Does It Work?
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    1. How Does It Work?
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intuition_artificial_gravity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Artificial Gravity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intuition_centripetal_acceleration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Centripetal Acceleration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intuition_angular_velocity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Angular Velocity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../general_relativity_and_artificial_gravity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Does General Relativity Matter?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Can Humans Live There?
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2. Can Humans Live There?
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_vestibular/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vestibular (RPM limit)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gravity Level
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gravity Level
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-the-central-question" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. The Central Question
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-what-happens-at-0g-microgravity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. What Happens at 0g (Microgravity)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-what-happens-at-partial-gravity-the-data-we-have" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. What Happens at Partial Gravity: The Data We Have
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. What Happens at Partial Gravity: The Data We Have">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-lunar-gravity-016g-insufficient" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Lunar gravity (0.16g) — Insufficient
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-martian-gravity-038g-unknown-possibly-insufficient" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Martian gravity (0.38g) — Unknown, possibly insufficient
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-nasa-iss-centrifuge-rodent-studies-in-progress" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 NASA ISS centrifuge rodent studies — In progress
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-human-centrifuge-studies-on-earth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Human centrifuge studies on Earth
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-estimated-thresholds-by-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Estimated Thresholds by System
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Estimated Thresholds by System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-reproductive-and-developmental-unknowns-are-the-most-critical" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The reproductive and developmental unknowns are the most critical
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-what-the-literature-converges-on" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. What the Literature Converges On
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. What the Literature Converges On">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#02g-almost-certainly-insufficient" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt; 0.2g: Almost certainly insufficient
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0204g-possibly-sufficient-for-healthy-adults-probably-insufficient-for-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.2–0.4g: Possibly sufficient for healthy adults, probably insufficient for development
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0406g-probably-sufficient-for-most-physiological-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.4–0.6g: Probably sufficient for most physiological systems
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0507g-likely-sufficient-for-development-speculative" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.5–0.7g: Likely sufficient for development (speculative)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08g-almost-certainly-sufficient-for-everything" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &gt; 0.8g: Almost certainly sufficient for everything
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-our-models-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Our Model's Approach
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Our Model&#39;s Approach">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-targeting-1g-is-the-safest-engineering-decision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why targeting 1g is the safest engineering decision
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-open-questions-for-future-research" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Open Questions for Future Research
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-the-one-liner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. The One-Liner
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_gravity_gradient/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gravity Gradient (head-to-foot)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_coriolis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coriolis Effect
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_cross_coupling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross-Coupling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_biological/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atmosphere
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Will the Structure Hold?
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3. Will the Structure Hold?
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../structural_engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hoop Stress & Materials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_rim_speed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rim Speed (material limit)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_cylinder_length/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cylinder Length & Counter-Rotation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_rotational_stability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rotational Stability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_spinup_energy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spin-Up Energy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. The Design
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    4. The Design
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mirror_geometry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    External Mirrors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interior_space_utilization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interior Space
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../construction_material_estimates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Material Estimates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Findings
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    5. Findings
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../conclusions/001_human_comfort_boundaries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    001: Human Comfort Boundaries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../conclusions/002_full_constraint_analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    002: Full Constraint Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../conclusions/003_biological_constraints_and_monte_carlo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    003: Biological Constraints & Monte Carlo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../conclusions/004_structural_constraints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    004: Structural Constraints
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../conclusions/feasible_habitat_design_space/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Feasible Design Space
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../literature_review_human_factors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Literature — Human Factors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../literature_review_structural/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Literature — Structural
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qa_structural_design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Q&A — Structural Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="minimum-gravity-for-long-term-human-survival-what-we-know-and-dont-know">Minimum Gravity for Long-Term Human Survival: What We Know and Don't Know<a class="headerlink" href="#minimum-gravity-for-long-term-human-survival-what-we-know-and-dont-know" title="Permanent link">&para;</a></h1>
+<h2 id="1-the-central-question">1. The Central Question<a class="headerlink" href="#1-the-central-question" title="Permanent link">&para;</a></h2>
+<p>What is the minimum gravity level that allows humans to live, work, and reproduce indefinitely without progressive physiological deterioration?</p>
+<p><strong>The honest answer: we don't know.</strong> No human has ever lived for more than brief minutes in any gravity between 0g and 1g. All partial-gravity data comes from animal studies, short-duration centrifuge experiments, and extrapolation from microgravity exposure on the ISS.</p>
+<hr />
+<h2 id="2-what-happens-at-0g-microgravity">2. What Happens at 0g (Microgravity)<a class="headerlink" href="#2-what-happens-at-0g-microgravity" title="Permanent link">&para;</a></h2>
+<p>Decades of ISS experience have thoroughly documented zero-gravity effects:</p>
+<table>
+<thead>
+<tr>
+<th>System</th>
+<th>Effect</th>
+<th>Rate</th>
+<th>Reversible?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bone</td>
+<td>Density loss (especially weight-bearing bones)</td>
+<td>1–2% per month</td>
+<td>Partially; takes years to recover</td>
+</tr>
+<tr>
+<td>Muscle</td>
+<td>Atrophy (especially legs, back)</td>
+<td>Up to 30% over 6 months</td>
+<td>Mostly, with rehabilitation</td>
+</tr>
+<tr>
+<td>Cardiovascular</td>
+<td>Heart remodeling, fluid shift to head, reduced blood volume</td>
+<td>Weeks</td>
+<td>Mostly</td>
+</tr>
+<tr>
+<td>Vision</td>
+<td>Intracranial pressure → optic disc swelling (SANS)</td>
+<td>Months</td>
+<td>Often permanent</td>
+</tr>
+<tr>
+<td>Immune</td>
+<td>Suppressed immune function, reactivation of latent viruses</td>
+<td>Weeks to months</td>
+<td>Unknown</td>
+</tr>
+<tr>
+<td>Balance</td>
+<td>Vestibular deconditioning, difficulty walking post-flight</td>
+<td>Immediate upon return</td>
+<td>Days to weeks</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key point:</strong> Exercise (2.5 hours/day, 6 days/week on ISS) slows but does not prevent all degradation. After 6–12 months, astronauts return with measurable bone loss, vision changes, and cardiovascular deconditioning despite intensive countermeasures.</p>
+<hr />
+<h2 id="3-what-happens-at-partial-gravity-the-data-we-have">3. What Happens at Partial Gravity: The Data We Have<a class="headerlink" href="#3-what-happens-at-partial-gravity-the-data-we-have" title="Permanent link">&para;</a></h2>
+<h3 id="31-lunar-gravity-016g-insufficient">3.1 Lunar gravity (0.16g) — Insufficient<a class="headerlink" href="#31-lunar-gravity-016g-insufficient" title="Permanent link">&para;</a></h3>
+<p>Apollo astronauts spent only hours to days on the Moon. No long-term health data exists. However:</p>
+<ul>
+<li>NASA centrifuge studies concluded: <strong>"Moon gravity (0.16g) is not effective for preventing cardiovascular deconditioning following spaceflight"</strong> (Clément and Bukley 2015)</li>
+<li>Sensorimotor perception thresholds lie between 0.16g and 0.38g — at lunar gravity, your vestibular system may not reliably detect "which way is down"</li>
+<li>Bone loading at 0.16g is approximately 1/6 of Earth, well below the mechanical stimulus threshold for bone maintenance</li>
+</ul>
+<p><strong>Assessment: 0.16g is almost certainly insufficient for long-term health.</strong></p>
+<h3 id="32-martian-gravity-038g-unknown-possibly-insufficient">3.2 Martian gravity (0.38g) — Unknown, possibly insufficient<a class="headerlink" href="#32-martian-gravity-038g-unknown-possibly-insufficient" title="Permanent link">&para;</a></h3>
+<p>Mars is the most studied partial-gravity case, but all data is indirect:</p>
+<ul>
+<li><strong>Bone:</strong> Mechanical loading at 0.38g is roughly 38% of Earth. The bone remodeling threshold (the minimum load needed to maintain bone density) is estimated at 0.2–0.5g depending on the bone and the study. Mars may be below this for some weight-bearing bones.</li>
+<li><strong>Muscle:</strong> 0.38g provides meaningful resistance for daily activities but may be insufficient for maintaining Earth-level muscle mass</li>
+<li><strong>Cardiovascular:</strong> Hydrostatic pressure gradients at 0.38g are about 38% of Earth — enough to maintain head-to-foot pressure differences but with reduced cardiovascular work</li>
+<li><strong>Development:</strong> No data exists for fetal development, childhood growth, or puberty at 0.38g</li>
+</ul>
+<p>From the issues file in this project: <em>"Moon have gravity of 0.166g and Mars have gravity 0.38g... Lower gravity result in multiple problems for humans evolved on earth, including muscle atrophy, bone density loss, heart and blood vessel problem, and most importantly reproductive and developmental concerns."</em></p>
+<p><strong>Assessment: 0.38g might sustain healthy adults for years but is likely inadequate for reproduction and child development. The data is too sparse to be confident.</strong></p>
+<h3 id="33-nasa-iss-centrifuge-rodent-studies-in-progress">3.3 NASA ISS centrifuge rodent studies — In progress<a class="headerlink" href="#33-nasa-iss-centrifuge-rodent-studies-in-progress" title="Permanent link">&para;</a></h3>
+<p>NASA is conducting the most relevant experiment: mice on the ISS exposed to 0.25g, 0.50g, 0.75g, and 1.0g via onboard centrifuge (launched March 2023). This will provide the first dose-response data for bone, muscle, and neuromotor function at partial gravity levels.</p>
+<p><strong>Preliminary findings</strong> (from conference abstracts, not yet peer-reviewed):
+- 1g centrifuge mice showed bone and gait parameters similar to ground controls
+- 0.67g mice showed <strong>lower vertebral strength</strong> than ground controls
+- Artificial gravity effects were "gravity-dose dependent" — more gravity = better outcomes
+- Full results for the 0.25g and 0.50g groups are pending</p>
+<p><strong>Assessment: The most important experiment for answering this question is literally in progress. Full results expected 2025–2026.</strong></p>
+<h3 id="34-human-centrifuge-studies-on-earth">3.4 Human centrifuge studies on Earth<a class="headerlink" href="#34-human-centrifuge-studies-on-earth" title="Permanent link">&para;</a></h3>
+<p>Short-radius centrifuge experiments on Earth can simulate partial gravity, but:
+- Subjects only experience it for minutes to hours
+- Earth's 1g gravity is always present (the centrifuge adds to it, doesn't replace it)
+- No long-term physiological adaptation data</p>
+<p>Key finding: <strong>Humans can perceive gravity between 0.22g and 0.50g</strong> depending on head position (Clément and Bukley 2015). Below 0.22g, the vestibular system may not register gravity at all.</p>
+<hr />
+<h2 id="4-estimated-thresholds-by-system">4. Estimated Thresholds by System<a class="headerlink" href="#4-estimated-thresholds-by-system" title="Permanent link">&para;</a></h2>
+<p>Based on available research, here are our best estimates for minimum gravity by physiological system:</p>
+<table>
+<thead>
+<tr>
+<th>System</th>
+<th>Estimated Minimum</th>
+<th>Confidence</th>
+<th>Basis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bone density maintenance</td>
+<td>0.3–0.5g</td>
+<td>Low</td>
+<td>Bone remodeling threshold extrapolations</td>
+</tr>
+<tr>
+<td>Muscle maintenance</td>
+<td>0.2–0.4g</td>
+<td>Low</td>
+<td>Bed rest studies, animal models</td>
+</tr>
+<tr>
+<td>Cardiovascular function</td>
+<td>0.3–0.5g</td>
+<td>Low</td>
+<td>Centrifuge studies, fluid dynamics models</td>
+</tr>
+<tr>
+<td>Vestibular orientation</td>
+<td>0.2–0.5g</td>
+<td>Medium</td>
+<td>Parabolic flight perception studies</td>
+</tr>
+<tr>
+<td>Immune function</td>
+<td>Unknown</td>
+<td>Very low</td>
+<td>No partial-gravity data</td>
+</tr>
+<tr>
+<td>Vision (SANS prevention)</td>
+<td>Unknown</td>
+<td>Very low</td>
+<td>Fluid shift models suggest &gt; 0.3g</td>
+</tr>
+<tr>
+<td>Fetal development</td>
+<td>Unknown</td>
+<td>Essentially none</td>
+<td>No animal data at partial gravity</td>
+</tr>
+<tr>
+<td>Childhood bone growth</td>
+<td>Unknown</td>
+<td>Essentially none</td>
+<td>No data whatsoever</td>
+</tr>
+<tr>
+<td>Reproductive function</td>
+<td>Unknown</td>
+<td>Essentially none</td>
+<td>Limited rodent data</td>
+</tr>
+</tbody>
+</table>
+<h3 id="the-reproductive-and-developmental-unknowns-are-the-most-critical">The reproductive and developmental unknowns are the most critical<a class="headerlink" href="#the-reproductive-and-developmental-unknowns-are-the-most-critical" title="Permanent link">&para;</a></h3>
+<p>Adults can exercise, take medication, and use countermeasures. A developing fetus cannot. If bone formation, organ development, or neural wiring requires gravity signals above 0.38g, then Mars-level gravity is fundamentally incompatible with human reproduction — not as a matter of comfort, but of biology.</p>
+<p><strong>This is why the issues file correctly identifies developmental concerns as "most importantly."</strong></p>
+<hr />
+<h2 id="5-what-the-literature-converges-on">5. What the Literature Converges On<a class="headerlink" href="#5-what-the-literature-converges-on" title="Permanent link">&para;</a></h2>
+<p>Despite the enormous uncertainties, a rough consensus emerges:</p>
+<h3 id="02g-almost-certainly-insufficient">&lt; 0.2g: Almost certainly insufficient<a class="headerlink" href="#02g-almost-certainly-insufficient" title="Permanent link">&para;</a></h3>
+<p>The vestibular system may not reliably detect gravity. Bone loading is far below the remodeling threshold. Cardiovascular adaptation is minimal.</p>
+<h3 id="0204g-possibly-sufficient-for-healthy-adults-probably-insufficient-for-development">0.2–0.4g: Possibly sufficient for healthy adults, probably insufficient for development<a class="headerlink" href="#0204g-possibly-sufficient-for-healthy-adults-probably-insufficient-for-development" title="Permanent link">&para;</a></h3>
+<p>Mars gravity (0.38g) falls here. Adults might maintain function with exercise. Reproduction and child development are unknown and possibly at risk.</p>
+<h3 id="0406g-probably-sufficient-for-most-physiological-systems">0.4–0.6g: Probably sufficient for most physiological systems<a class="headerlink" href="#0406g-probably-sufficient-for-most-physiological-systems" title="Permanent link">&para;</a></h3>
+<p>Bone loading reaches significant fractions of Earth normal. Cardiovascular work is meaningful. Vestibular function is reliable. This is where partial gravity likely "works" for adults.</p>
+<h3 id="0507g-likely-sufficient-for-development-speculative">0.5–0.7g: Likely sufficient for development (speculative)<a class="headerlink" href="#0507g-likely-sufficient-for-development-speculative" title="Permanent link">&para;</a></h3>
+<p>No direct evidence, but mechanical loading, fluid dynamics, and vestibular signals are all within the range where Earth-evolved systems can plausibly function normally.</p>
+<h3 id="08g-almost-certainly-sufficient-for-everything">&gt; 0.8g: Almost certainly sufficient for everything<a class="headerlink" href="#08g-almost-certainly-sufficient-for-everything" title="Permanent link">&para;</a></h3>
+<p>At 80%+ of Earth gravity, all physiological systems experience near-normal loading. The remaining 20% deficit is comparable to the variation humans experience at different altitudes and latitudes on Earth.</p>
+<hr />
+<h2 id="6-our-models-approach">6. Our Model's Approach<a class="headerlink" href="#6-our-models-approach" title="Permanent link">&para;</a></h2>
+<p>Given the uncertainty, our model uses:
+- <strong>min_gravity_g = 0.3g</strong>: aggressive lower bound, assumes healthy adult crew
+- <strong>max_gravity_g = 1.0g</strong>: no reason to exceed Earth normal</p>
+<p>For a colony with families and children, the responsible engineering choice is probably:
+- <strong>min_gravity_g = 0.5g</strong>: conservative lower bound for development
+- Or better: <strong>target 1.0g and don't take the risk</strong></p>
+<h3 id="why-targeting-1g-is-the-safest-engineering-decision">Why targeting 1g is the safest engineering decision<a class="headerlink" href="#why-targeting-1g-is-the-safest-engineering-decision" title="Permanent link">&para;</a></h3>
+<p>As the issues file noted: <em>"To solve all those problem separate is going to be close to impossible. So creating close to 1g gravity is the most likely solution."</em></p>
+<p>This is sound engineering reasoning. The cost of being wrong about partial gravity is:
+- Irreversible developmental damage to children
+- Bone density loss requiring medical intervention
+- Cardiovascular deconditioning in the elderly
+- Unknown reproductive failures</p>
+<p>The cost of being conservative (building for 1g when 0.5g would suffice) is:
+- A larger radius (more material, more cost)</p>
+<p>Given that the radius is already constrained to &gt; 982 m by cross-coupling, and 1g at 982 m is achievable, <strong>there is no compelling reason to target partial gravity for a permanent habitat.</strong></p>
+<hr />
+<h2 id="7-open-questions-for-future-research">7. Open Questions for Future Research<a class="headerlink" href="#7-open-questions-for-future-research" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>What is the bone remodeling threshold in actual partial gravity?</strong> (NASA ISS rodent experiment will help)</li>
+<li><strong>Can mammals reproduce and develop normally at 0.38g?</strong> (No experiment planned)</li>
+<li><strong>Is there a gravity threshold below which SANS (vision damage) cannot be prevented?</strong></li>
+<li><strong>How does partial gravity interact with radiation exposure for cancer risk?</strong></li>
+<li><strong>Do children need full 1g for normal vestibular and motor development?</strong></li>
+</ol>
+<hr />
+<h2 id="8-the-one-liner">8. The One-Liner<a class="headerlink" href="#8-the-one-liner" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>We know 0g is deadly and 1g is fine. Everything in between is a guess. For a permanent colony with children, the only responsible choice is to target 1g until we have data proving otherwise.</p>
+</blockquote>
+<hr />
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Clément, Gilles, and Angelia P. Bukley. "Artificial Gravity as a Countermeasure for Mitigating Physiological Deconditioning during Long-Duration Space Missions." <em>Frontiers in Systems Neuroscience</em>, vol. 9, 2015. <em>PMC</em>, https://pmc.ncbi.nlm.nih.gov/articles/PMC4470275/.</p>
+</li>
+<li>
+<p>Hall, Theodore W. "Artificial Gravity Design Parameters." <em>SpinCalc</em>, 2006, http://www.artificial-gravity.com/Dissertation/2_2.htm.</p>
+</li>
+<li>
+<p>Stavnichuk, Mariya, et al. "The Effects of Microgravity on Bone Structure and Function." <em>npj Microgravity</em>, vol. 8, no. 45, 2022. <em>Nature</em>, https://www.nature.com/articles/s41526-022-00194-8.</p>
+</li>
+<li>
+<p>Sture, Ola, et al. "Studying Effects of Partial Gravity on Musculoskeletal Systems of Mice — NASA ISS Mission." <em>Micro Photonics</em>, 2023, https://www.microphotonics.com/studying-effects-partial-gravity-musculoskeletal-systems-mice-nasa-iss-mission/.</p>
+</li>
+<li>
+<p>Terry, Hadley. "How Much Artificial Gravity Do We Really Need to Stay Healthy in Space?" <em>H. Terry</em>, 2023, https://hterry.com/science/how-much-artificial-gravity-do-we-really-need-to-stay-healthy-in-space/.</p>
+</li>
+<li>
+<p>Waldie, James M., et al. "The Partial Gravity of the Moon and Mars Appears Insufficient to Prevent Cardiovascular Deconditioning." <em>International Conference on Environmental Systems</em>, ICES-2021-142, NASA, 2021. <em>NTRS</em>, https://ntrs.nasa.gov/api/citations/20210019591/downloads/ICES-2021-142.pdf.</p>
+</li>
+<li>
+<p>Wikipedia contributors. "Effect of Spaceflight on the Human Body." <em>Wikipedia</em>, Wikimedia Foundation, https://en.wikipedia.org/wiki/Effect_of_spaceflight_on_the_human_body.</p>
+</li>
+<li>
+<p>NASA. "Astronaut Physiological Deconditioning Report." NASA SP-20250000273, Jan. 2025, https://nasa.gov/wp-content/uploads/2025/02/sp-20250000273.pdf.</p>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

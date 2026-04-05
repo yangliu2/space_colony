@@ -1,7 +1,7 @@
 """Cylinder length constraint based on bending mode resonance.
 
 Maximum safe length scales as L_max = C * r^(5/4), where C is
-calibrated to O'Neill's design (L=32 km at r=3.2 km, giving C≈2.74).
+calibrated to O'Neill's design (L=32 km at r=3.2 km, giving C≈1.33).
 See plans/constraint_cylinder_length.md for derivation.
 """
 

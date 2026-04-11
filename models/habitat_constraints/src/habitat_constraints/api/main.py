@@ -11,6 +11,7 @@ from pydantic import BaseModel, Field
 
 from habitat_constraints.constraints.agriculture import AgricultureConstraint
 from habitat_constraints.constraints.atmosphere import AtmosphereConstraint
+from habitat_constraints.constraints.thermal import ThermalConstraint
 from habitat_constraints.core.constraint import Constraint
 from habitat_constraints.constraints.cylinder_length import (
     CylinderLengthConstraint,
@@ -69,6 +70,7 @@ ALL_CONSTRAINTS: list[Constraint] = [
     RotationalStabilityConstraint(),
     SpinUpEnergyConstraint(),
     AgricultureConstraint(),
+    ThermalConstraint(),
 ]
 
 
@@ -97,6 +99,7 @@ class EvaluateRequest(BaseModel):
     min_gravity_g: float = Field(default=0.3, gt=0)
     max_gravity_g: float = Field(default=1.0, gt=0)
     diet_land_multiplier: float = Field(default=1.0, ge=1.0)
+    window_solar_transmittance: float = Field(default=0.3, gt=0, le=1.0)
 
 
 class ConstraintStatus(BaseModel):
@@ -138,6 +141,7 @@ class SweepRequest(BaseModel):
     min_gravity_g: float = Field(default=0.3, gt=0)
     max_gravity_g: float = Field(default=1.0, gt=0)
     diet_land_multiplier: float = Field(default=1.0, ge=1.0)
+    window_solar_transmittance: float = Field(default=0.3, gt=0, le=1.0)
 
 
 class SweepPoint(BaseModel):
@@ -180,6 +184,7 @@ def _build_assumptions(req: EvaluateRequest | SweepRequest) -> HumanAssumptions:
         min_gravity_g=req.min_gravity_g,
         max_gravity_g=req.max_gravity_g,
         diet_land_multiplier=req.diet_land_multiplier,
+        window_solar_transmittance=req.window_solar_transmittance,
     )
 
 
@@ -357,6 +362,7 @@ def defaults() -> dict[str, Any]:
         "shielding_areal_density_kg_m2": 4500.0,
         "agriculture_area_m2": 1_600_000.0,
         "diet_land_multiplier": h.diet_land_multiplier,
+        "window_solar_transmittance": h.window_solar_transmittance,
         "max_comfortable_rpm": h.max_comfortable_rpm,
         "max_cross_coupling_deg_s2": h.max_cross_coupling_deg_s2,
         "head_turn_rate_deg_s": h.head_turn_rate_deg_s,

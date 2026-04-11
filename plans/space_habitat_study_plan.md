@@ -131,7 +131,7 @@
   `HoopStressConstraint` with configurable material properties
 - [x] **Agriculture area vs. population** — food self-sufficiency requires ~0.2 ha/person
   (open field) or ~0.02–0.04 ha/person (hydroponics). External module mass estimate
-- [ ] **Thermal management** — radiator area vs. waste heat. Solar input through
+- [x] **Thermal management** — radiator area vs. waste heat. Solar input through
   windows vs. radiated output from exterior
 - [ ] **Energy budget** — solar panel area, power distribution, day-night cycle from
   mirror system

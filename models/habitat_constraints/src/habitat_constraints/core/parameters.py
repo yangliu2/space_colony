@@ -263,6 +263,61 @@ class HumanAssumptions(BaseModel):
         ),
     )
 
+    # --- Phase 6: Thermal management constraint ---
+    solar_irradiance_w_m2: float = Field(
+        default=1361.0,
+        gt=0,
+        description=(
+            "Solar irradiance at the habitat location (W/m²). "
+            "1,361 W/m² at 1 AU (L5). (Kopp and Lean 2011)"
+        ),
+    )
+    window_fraction: float = Field(
+        default=0.5,
+        gt=0,
+        lt=1.0,
+        description=(
+            "Fraction of barrel area occupied by windows. "
+            "O'Neill Island Three: 3 window + 3 land strips → 0.5."
+        ),
+    )
+    window_solar_transmittance: float = Field(
+        default=0.3,
+        gt=0,
+        le=1.0,
+        description=(
+            "Net fraction of incident solar energy transmitted into the "
+            "habitat through mirrors + windows. 0.3 = well-managed mirrors "
+            "reflecting ~70% back to space. Range: 0.1 (near-closed) to "
+            "0.8 (fully open)."
+        ),
+    )
+    waste_heat_per_person_w: float = Field(
+        default=350.0,
+        gt=0,
+        description=(
+            "Internal waste heat per person (W/person): metabolic + "
+            "lighting + equipment. NASA BVAD: ~350 W/person (Hanford 2004)."
+        ),
+    )
+    radiator_temperature_k: float = Field(
+        default=320.0,
+        gt=0,
+        description=(
+            "Operating temperature of radiator panels (K). "
+            "Higher T → smaller required area (scales as T⁴). "
+            "Typical range: 280–400 K."
+        ),
+    )
+    radiator_emissivity: float = Field(
+        default=0.9,
+        gt=0,
+        le=1.0,
+        description=(
+            "Emissivity of radiator surface. " "Coated aluminium / Kapton: 0.85–0.95."
+        ),
+    )
+
     # --- Phase 6: Structural constraints ---
     max_length_coefficient: float = Field(
         default=75.22,

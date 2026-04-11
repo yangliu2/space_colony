@@ -46,7 +46,7 @@ consistent average flux. The end caps are on the non-rotating bearing framework
 
 $$A_\text{avail} = A_\text{endcaps} = 2\pi r^2$$
 
-The barrel surface is unsuitable: it rotates at $\sim$1 RPM, so panels would
+The barrel surface is unsuitable: it rotates at roughly 1 RPM, so panels would
 constantly shadow each other and average less than half the end-cap flux.
 
 ## Constraint

@@ -25,9 +25,12 @@ class ThermalConstraint:
     Heat rejection by radiation only (no convection in space):
         P_rad = emissivity * sigma * A_rad * T^4
 
-    Required radiator area is compared to the non-window hull area
-    (land strips + end caps). The constraint is skipped when geometry
-    is not specified (length_m == 0).
+    Available radiator area = barrel land strips + end caps.
+    End-cap area is shared with solar panels (EnergyConstraint): the solar
+    panel footprint is subtracted first, giving radiators the remainder.
+    Barrel land strips are fully available to radiators.
+
+    The constraint is skipped when geometry is not specified (length_m == 0).
     """
 
     @property
@@ -83,9 +86,19 @@ class ThermalConstraint:
         )
         required_area = total_heat_w / rad_power_per_m2
 
-        # --- Available radiator area (non-window hull) ---
+        # --- Solar panel footprint on end caps (shared with EnergyConstraint) ---
+        # Panels mount on end-cap exterior; radiators get remaining end-cap area.
+        power_per_m2 = (
+            assumptions.solar_panel_efficiency * assumptions.solar_irradiance_w_m2
+        )
+        solar_panel_area = (
+            assumptions.power_per_person_w * pop / power_per_m2 if pop > 0 else 0.0
+        )
+        endcap_for_radiators = max(0.0, params.endcap_area_m2 - solar_panel_area)
+
+        # --- Available radiator area (barrel land strips + remaining end-cap) ---
         land_strip_area = (1.0 - assumptions.window_fraction) * params.barrel_area_m2
-        available_area = land_strip_area + params.endcap_area_m2
+        available_area = land_strip_area + endcap_for_radiators
 
         fraction = required_area / available_area if available_area > 0 else math.inf
         feasible = required_area <= available_area
@@ -100,6 +113,7 @@ class ThermalConstraint:
                 "total_heat_w": total_heat_w,
                 "required_radiator_area_m2": required_area,
                 "available_radiator_area_m2": available_area,
+                "solar_panel_area_m2": solar_panel_area,
                 "radiator_area_fraction": fraction,
             },
         )

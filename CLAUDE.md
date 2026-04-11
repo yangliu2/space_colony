@@ -4,7 +4,7 @@
 Read and follow all rules in `guiding_principles/` before starting any task.
 Key principles: `progressive_disclosure.md` · `document_evaluation.md` ·
 `model_3d_sync.md` · `parameter_dependencies.md` · `epistemic_humility.md` ·
-`formula_sync.md` · `commit_often.md` · `opportunistic_fixes.md` · `stop_servers_after_testing.md` · `fix_all_errors.md` · `readme_sync.md`
+`formula_sync.md` · `commit_often.md` · `opportunistic_fixes.md` · `stop_servers_after_testing.md` · `fix_all_errors.md` · `readme_sync.md` · `resource_sharing.md`
 
 ## File Reading
 Keep all files under 10,000 tokens.

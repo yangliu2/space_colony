@@ -102,9 +102,59 @@ class TestThermalConstraint:
             "total_heat_w",
             "required_radiator_area_m2",
             "available_radiator_area_m2",
+            "solar_panel_area_m2",
             "radiator_area_fraction",
         ):
             assert key in result.details
+
+    def test_solar_panels_reduce_endcap_for_radiators(
+        self,
+        constraint: ThermalConstraint,
+        assumptions: HumanAssumptions,
+    ) -> None:
+        """Higher power per person → more panel area → less end-cap for radiators."""
+        params = HabitatParameters.from_radius_and_gravity(
+            982.0, length_m=1276.0, population=8000
+        )
+        lean = HumanAssumptions(power_per_person_w=1000.0)
+        greedy = HumanAssumptions(power_per_person_w=10000.0)
+        r_lean = constraint.evaluate(params, lean)
+        r_greedy = constraint.evaluate(params, greedy)
+        assert (
+            r_greedy.details["solar_panel_area_m2"]
+            > r_lean.details["solar_panel_area_m2"]
+        )
+        assert (
+            r_greedy.details["available_radiator_area_m2"]
+            < r_lean.details["available_radiator_area_m2"]
+        )
+
+    def test_zero_population_has_no_solar_panel_area(
+        self,
+        constraint: ThermalConstraint,
+        assumptions: HumanAssumptions,
+    ) -> None:
+        params = HabitatParameters.from_radius_and_gravity(
+            982.0, length_m=1276.0, population=0
+        )
+        result = constraint.evaluate(params, assumptions)
+        assert result.details["solar_panel_area_m2"] == pytest.approx(0.0)
+
+    def test_solar_panel_area_formula(
+        self,
+        constraint: ThermalConstraint,
+        assumptions: HumanAssumptions,
+    ) -> None:
+        params = HabitatParameters.from_radius_and_gravity(
+            982.0, length_m=1276.0, population=8000
+        )
+        result = constraint.evaluate(params, assumptions)
+        expected = (
+            assumptions.power_per_person_w
+            * 8000
+            / (assumptions.solar_panel_efficiency * assumptions.solar_irradiance_w_m2)
+        )
+        assert result.details["solar_panel_area_m2"] == pytest.approx(expected, rel=1e-6)
 
     def test_solar_gain_formula(
         self,

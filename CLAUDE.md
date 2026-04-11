@@ -4,7 +4,7 @@
 Read and follow all rules in `guiding_principles/` before starting any task.
 Key principles: `progressive_disclosure.md` · `document_evaluation.md` ·
 `model_3d_sync.md` · `parameter_dependencies.md` · `epistemic_humility.md` ·
-`formula_sync.md` · `commit_often.md` · `opportunistic_fixes.md` · `stop_servers_after_testing.md` · `fix_all_errors.md`
+`formula_sync.md` · `commit_often.md` · `opportunistic_fixes.md` · `stop_servers_after_testing.md` · `fix_all_errors.md` · `readme_sync.md`
 
 ## File Reading
 Keep all files under 10,000 tokens.
@@ -51,6 +51,7 @@ update the relevant review file. Key findings summary: `docs/literature_review_s
 6. **Experiment** — script in `models/habitat_constraints/experiments/`
 7. **Conclusions** — `conclusions/NNN_<topic>.md`, update `conclusions/feasible_habitat_design_space.md`
 8. **Demo update** — add constraint card to UI, update 3D model if geometry changes
+9. **README update** — update constraint count, list, and "What's Next" in README.md (see `readme_sync.md`)
 
 Do not skip steps.
 

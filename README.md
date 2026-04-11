@@ -48,22 +48,32 @@ This repository deals with practical issues regarding surviving on an O'Neill cy
 
 ## What's Been Done
 
-### 9-Constraint Feasibility Model (Phases 1–5 Complete)
+### 15-Constraint Feasibility Model (Phases 1–6 In Progress)
 
-A parametric constraint model that evaluates O'Neill cylinder designs across 9 independent constraints:
+A parametric constraint model that evaluates O'Neill cylinder designs across 15 independent constraints:
 
-**Rotational / Structural:**
+**Rotational / Human Factors:**
 1. **Vestibular comfort** — RPM limit (< 2.0 rpm)
 2. **Gravity level** — centripetal acceleration (0.3g – 1.0g)
 3. **Gravity gradient** — head-to-foot gravity difference (< 1.0%)
 4. **Coriolis effect** — lateral force during walking/running (< 25% of g)
 5. **Cross-coupling** — vestibular cross-coupled angular acceleration (< 6.0 deg/s²)
-6. **Rim speed** — structural hoop stress limit (< 300 m/s)
+6. **Rim speed** — structural material limit (< 300 m/s)
 
 **Biological / Environmental:**
 7. **Radiation shielding** — GCR/SPE attenuation (>= 4,500 kg/m²)
 8. **Atmosphere** — partial pressure of oxygen (16–50 kPa)
 9. **Population** — minimum viable population for genetic diversity (>= 98)
+
+**Structural / Engineering:**
+10. **Cylinder length** — bending mode resonance limit ($L \leq 75.22 \cdot r^{3/4}$)
+11. **Hoop stress** — hull material yield strength with safety factor >= 2.0
+12. **Rotational stability** — moment of inertia ratio $I_z/I_x \geq 1.2$
+13. **Spin-up energy** — time to spin up with available power (< 1 year)
+
+**Systems / Life Support:**
+14. **Agriculture area** — food self-sufficiency (200 m²/person for hydroponics; scales with diet)
+15. **Thermal management** — radiator area must reject solar gain + waste heat via radiation only
 
 ### Key Results
 
@@ -139,7 +149,7 @@ A React + Three.js web dashboard for real-time constraint exploration with a cou
 * [demo/](demo/) — React + Three.js interactive web dashboard
   * [src/components/CylinderScene.tsx](demo/src/components/CylinderScene.tsx) — main 3D scene (counter-rotating pair, mirrors, strips, interior)
   * [src/lib/sceneGeometry.ts](demo/src/lib/sceneGeometry.ts) — extracted pure geometry/physics functions (testable)
-  * [src/__tests__/](demo/src/__tests__/) — 12 vitest test files (106 tests) covering geometry, physics, connectivity
+  * [src/__tests__/](demo/src/__tests__/) — 12 vitest test files (106 tests) covering geometry, physics, connectivity (156 Python tests across 16 test files)
   * [src/components/](demo/src/components/) — ConstraintPanel, ParameterSliders, FeasibleRegionChart, StatsPanel
   * [src/hooks/](demo/src/hooks/) — useDesignParams, useSceneToggles, useConstraintSolver
   * [public/viewpoints/](demo/public/viewpoints/) — AI-generated interior viewpoint images
@@ -174,7 +184,7 @@ A React + Three.js web dashboard for real-time constraint exploration with a cou
 Runs automatically on every commit:
 1. TypeScript type checking (`tsc --noEmit`)
 2. Vitest (12 test files, 106 tests)
-3. Python pytest (13 test files, all constraints)
+3. Python pytest (16 test files, 156 tests, all 15 constraints)
 
 ```bash
 # Run tests manually
@@ -208,14 +218,17 @@ npm run dev
 
 Open http://localhost:5173. Both servers must be running. Standalone 3D view at http://localhost:5173/3d.
 
-## What's Next (Phase 6)
+## What's Next
 
-Future constraints to extend the model into full systems engineering:
-- Thermal management (radiator area vs. waste heat)
-- Structural dynamics (vibration modes, seismic equivalent)
-- Agriculture area vs. population (food self-sufficiency)
-- Water recycling efficiency
-- Energy budget (solar panel area, power distribution)
+Remaining Phase 6 constraints:
+- **Energy budget** — solar panel area, power distribution, day-night cycle from mirror system
+- **Water recycling efficiency** — closed-loop water budget, required recycling rate vs. population
+- **Micrometeorite reliability** — Monte Carlo cumulative impact damage over 50–100 year lifespan
+
+3D model enhancements planned:
+- Ring ribs (circumferential frames every ~50–100 m)
+- Gravity gradient shading (colour gradient from rim to axis)
+- Axial spine / docking ports
 
 ## Limitations
 - **Brave Browser**: Three.js 3D rendering does not work correctly in Brave due to Shields/fingerprinting protection. Use Safari or Chrome.

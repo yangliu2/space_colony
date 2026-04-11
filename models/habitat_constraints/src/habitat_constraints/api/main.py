@@ -11,6 +11,7 @@ from pydantic import BaseModel, Field
 
 from habitat_constraints.constraints.agriculture import AgricultureConstraint
 from habitat_constraints.constraints.atmosphere import AtmosphereConstraint
+from habitat_constraints.constraints.energy import EnergyConstraint
 from habitat_constraints.constraints.thermal import ThermalConstraint
 from habitat_constraints.core.constraint import Constraint
 from habitat_constraints.constraints.cylinder_length import (
@@ -71,6 +72,7 @@ ALL_CONSTRAINTS: list[Constraint] = [
     SpinUpEnergyConstraint(),
     AgricultureConstraint(),
     ThermalConstraint(),
+    EnergyConstraint(),
 ]
 
 
@@ -100,6 +102,8 @@ class EvaluateRequest(BaseModel):
     max_gravity_g: float = Field(default=1.0, gt=0)
     diet_land_multiplier: float = Field(default=1.0, ge=1.0)
     window_solar_transmittance: float = Field(default=0.3, gt=0, le=1.0)
+    power_per_person_w: float = Field(default=5000.0, gt=0)
+    solar_panel_efficiency: float = Field(default=0.20, gt=0, le=1.0)
 
 
 class ConstraintStatus(BaseModel):
@@ -142,6 +146,8 @@ class SweepRequest(BaseModel):
     max_gravity_g: float = Field(default=1.0, gt=0)
     diet_land_multiplier: float = Field(default=1.0, ge=1.0)
     window_solar_transmittance: float = Field(default=0.3, gt=0, le=1.0)
+    power_per_person_w: float = Field(default=5000.0, gt=0)
+    solar_panel_efficiency: float = Field(default=0.20, gt=0, le=1.0)
 
 
 class SweepPoint(BaseModel):
@@ -185,6 +191,8 @@ def _build_assumptions(req: EvaluateRequest | SweepRequest) -> HumanAssumptions:
         max_gravity_g=req.max_gravity_g,
         diet_land_multiplier=req.diet_land_multiplier,
         window_solar_transmittance=req.window_solar_transmittance,
+        power_per_person_w=req.power_per_person_w,
+        solar_panel_efficiency=req.solar_panel_efficiency,
     )
 
 
@@ -363,6 +371,8 @@ def defaults() -> dict[str, Any]:
         "agriculture_area_m2": 1_600_000.0,
         "diet_land_multiplier": h.diet_land_multiplier,
         "window_solar_transmittance": h.window_solar_transmittance,
+        "power_per_person_w": h.power_per_person_w,
+        "solar_panel_efficiency": h.solar_panel_efficiency,
         "max_comfortable_rpm": h.max_comfortable_rpm,
         "max_cross_coupling_deg_s2": h.max_cross_coupling_deg_s2,
         "head_turn_rate_deg_s": h.head_turn_rate_deg_s,

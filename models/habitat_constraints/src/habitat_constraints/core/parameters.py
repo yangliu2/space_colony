@@ -381,6 +381,28 @@ class HumanAssumptions(BaseModel):
         description=("Maximum acceptable spin-up duration (years). " "Default: 1 year."),
     )
 
+    # --- Phase 6: Energy budget ---
+    power_per_person_w: float = Field(
+        default=5000.0,
+        gt=0,
+        description=(
+            "Electrical power demand per person (W/person). "
+            "Covers life support, LED agriculture, lighting, and equipment. "
+            "Default: 5,000 W/person (residential + light-industrial colony). "
+            "ISS: ~12,000 W/person (research station, IEA 2023)."
+        ),
+    )
+    solar_panel_efficiency: float = Field(
+        default=0.20,
+        gt=0,
+        le=1.0,
+        description=(
+            "Photovoltaic panel efficiency (fraction). "
+            "Current commercial silicon: ~0.20; high-efficiency GaAs: ~0.29. "
+            "Default: 0.20 (NREL 2024)."
+        ),
+    )
+
 
 class ParameterBound(BaseModel):
     """A bound on a single design parameter produced by a constraint."""

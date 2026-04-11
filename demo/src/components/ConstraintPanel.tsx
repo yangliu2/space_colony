@@ -17,6 +17,7 @@ const META: Record<string, { label: string; detail: string; format: (v: number) 
   spinup_energy: { label: "Spin-Up Energy", detail: "spinup_time_days", format: (v) => `${v.toFixed(1)} days` },
   agriculture: { label: "Agriculture Area", detail: "area_per_person_m2", format: (v) => `${v.toFixed(0)} m²/person` },
   thermal: { label: "Thermal (Radiators)", detail: "radiator_area_fraction", format: (v) => `${(v * 100).toFixed(1)}% of hull` },
+  energy: { label: "Energy (Solar)", detail: "panel_area_fraction", format: (v) => `${(v * 100).toFixed(1)}% of end caps` },
 };
 
 interface Props {

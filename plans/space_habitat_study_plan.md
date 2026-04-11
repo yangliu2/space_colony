@@ -133,8 +133,8 @@
   (open field) or ~0.02–0.04 ha/person (hydroponics). External module mass estimate
 - [x] **Thermal management** — radiator area vs. waste heat. Solar input through
   windows vs. radiated output from exterior
-- [ ] **Energy budget** — solar panel area, power distribution, day-night cycle from
-  mirror system
+- [x] **Energy budget** — solar panel area on end caps vs. colony demand (5 kW/person,
+  20% efficiency). Not binding at normal designs; trivially feasible at 2–3% coverage.
 - [ ] **Water recycling efficiency** — closed-loop water budget, required recycling
   rate vs. population
 - [ ] **Micrometeorite reliability** — Monte Carlo simulation of cumulative impact

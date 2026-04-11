@@ -33,6 +33,8 @@ const STATIC_DESIGN_SLIDERS: SliderDef[] = [
 const ASSUMPTION_SLIDERS: SliderDef[] = [
   { key: "diet_land_multiplier", label: "Diet land multiplier", min: 1.0, max: 8.0, step: 0.1, unit: "×" },
   { key: "window_solar_transmittance", label: "Solar transmittance", min: 0.05, max: 0.8, step: 0.05, unit: "" },
+  { key: "power_per_person_w", label: "Power per person", min: 500, max: 15000, step: 500, unit: "W" },
+  { key: "solar_panel_efficiency", label: "Solar panel efficiency", min: 0.10, max: 0.40, step: 0.01, unit: "" },
   { key: "max_comfortable_rpm", label: "Max RPM", min: 0.5, max: 6, step: 0.1, unit: "rpm" },
   { key: "max_cross_coupling_deg_s2", label: "Max cross-coupling", min: 1, max: 15, step: 0.5, unit: "°/s²" },
   { key: "head_turn_rate_deg_s", label: "Head turn rate", min: 20, max: 120, step: 5, unit: "°/s" },

@@ -55,6 +55,8 @@ export interface DesignParams {
   agriculture_area_m2: number;
   diet_land_multiplier: number;
   window_solar_transmittance: number;
+  power_per_person_w: number;
+  solar_panel_efficiency: number;
   max_comfortable_rpm: number;
   max_cross_coupling_deg_s2: number;
   head_turn_rate_deg_s: number;
@@ -77,6 +79,8 @@ export const DEFAULT_PARAMS: DesignParams = {
   agriculture_area_m2: 1_600_000,
   diet_land_multiplier: 1.0,
   window_solar_transmittance: 0.3,
+  power_per_person_w: 5000.0,
+  solar_panel_efficiency: 0.20,
   max_comfortable_rpm: 2.0,
   max_cross_coupling_deg_s2: 6.0,
   head_turn_rate_deg_s: 60.0,

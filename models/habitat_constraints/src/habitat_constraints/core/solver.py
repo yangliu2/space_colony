@@ -5,6 +5,7 @@ from __future__ import annotations
 import math
 from collections import defaultdict
 from dataclasses import dataclass, field
+from typing import Any
 
 from habitat_constraints.core.constraint import Constraint
 from habitat_constraints.core.parameters import (
@@ -105,7 +106,7 @@ class FeasibleRegionSolver:
         r_max: float,
         n_points: int = 200,
         target_gravity_g: float = 1.0,
-        extra_params: dict[str, float | int] | None = None,
+        extra_params: dict[str, Any] | None = None,
     ) -> list[SweepPoint]:
         """Sweep radius range at a fixed gravity target.
 

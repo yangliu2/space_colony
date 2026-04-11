@@ -9,7 +9,9 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
+from habitat_constraints.constraints.agriculture import AgricultureConstraint
 from habitat_constraints.constraints.atmosphere import AtmosphereConstraint
+from habitat_constraints.core.constraint import Constraint
 from habitat_constraints.constraints.cylinder_length import (
     CylinderLengthConstraint,
 )
@@ -52,7 +54,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-ALL_CONSTRAINTS = [
+ALL_CONSTRAINTS: list[Constraint] = [
     VestibularConstraint(),
     GravityLevelConstraint(),
     GravityGradientConstraint(),
@@ -66,6 +68,7 @@ ALL_CONSTRAINTS = [
     HoopStressConstraint(),
     RotationalStabilityConstraint(),
     SpinUpEnergyConstraint(),
+    AgricultureConstraint(),
 ]
 
 
@@ -83,6 +86,7 @@ class EvaluateRequest(BaseModel):
     o2_fraction: float = Field(default=0.21, gt=0, le=1.0)
     shielding_areal_density_kg_m2: float = Field(default=4500.0, ge=0)
     wall_thickness_m: float = Field(default=0.2, gt=0)
+    agriculture_area_m2: float = Field(default=1_600_000.0, ge=0)
     # Human assumptions overrides
     max_comfortable_rpm: float = Field(default=2.0, gt=0)
     max_cross_coupling_deg_s2: float = Field(default=6.0, gt=0)
@@ -92,6 +96,7 @@ class EvaluateRequest(BaseModel):
     max_gravity_gradient_pct: float = Field(default=1.0, gt=0)
     min_gravity_g: float = Field(default=0.3, gt=0)
     max_gravity_g: float = Field(default=1.0, gt=0)
+    diet_land_multiplier: float = Field(default=1.0, ge=1.0)
 
 
 class ConstraintStatus(BaseModel):
@@ -122,6 +127,7 @@ class SweepRequest(BaseModel):
     o2_fraction: float = Field(default=0.21, gt=0, le=1.0)
     shielding_areal_density_kg_m2: float = Field(default=4500.0, ge=0)
     wall_thickness_m: float = Field(default=0.2, gt=0)
+    agriculture_area_m2: float = Field(default=1_600_000.0, ge=0)
     # Human assumptions overrides
     max_comfortable_rpm: float = Field(default=2.0, gt=0)
     max_cross_coupling_deg_s2: float = Field(default=6.0, gt=0)
@@ -131,6 +137,7 @@ class SweepRequest(BaseModel):
     max_gravity_gradient_pct: float = Field(default=1.0, gt=0)
     min_gravity_g: float = Field(default=0.3, gt=0)
     max_gravity_g: float = Field(default=1.0, gt=0)
+    diet_land_multiplier: float = Field(default=1.0, ge=1.0)
 
 
 class SweepPoint(BaseModel):
@@ -172,6 +179,7 @@ def _build_assumptions(req: EvaluateRequest | SweepRequest) -> HumanAssumptions:
         max_gravity_gradient_pct=req.max_gravity_gradient_pct,
         min_gravity_g=req.min_gravity_g,
         max_gravity_g=req.max_gravity_g,
+        diet_land_multiplier=req.diet_land_multiplier,
     )
 
 
@@ -201,6 +209,7 @@ def evaluate(req: EvaluateRequest) -> Any:
         o2_fraction=req.o2_fraction,
         shielding_areal_density_kg_m2=req.shielding_areal_density_kg_m2,
         wall_thickness_m=req.wall_thickness_m,
+        agriculture_area_m2=req.agriculture_area_m2,
     )
     assumptions = _build_assumptions(req)
     solver = FeasibleRegionSolver(ALL_CONSTRAINTS, assumptions)
@@ -243,6 +252,7 @@ def sweep(req: SweepRequest) -> Any:
             "o2_fraction": req.o2_fraction,
             "shielding_areal_density_kg_m2": req.shielding_areal_density_kg_m2,
             "wall_thickness_m": req.wall_thickness_m,
+            "agriculture_area_m2": req.agriculture_area_m2,
         },
     )
 
@@ -292,6 +302,7 @@ def feasible_ranges(req: EvaluateRequest) -> Any:
         "o2_fraction": req.o2_fraction,
         "shielding_areal_density_kg_m2": (req.shielding_areal_density_kg_m2),
         "wall_thickness_m": req.wall_thickness_m,
+        "agriculture_area_m2": req.agriculture_area_m2,
     }
 
     def _sweep(
@@ -344,6 +355,8 @@ def defaults() -> dict[str, Any]:
         "internal_pressure_kpa": 101.3,
         "o2_fraction": 0.21,
         "shielding_areal_density_kg_m2": 4500.0,
+        "agriculture_area_m2": 1_600_000.0,
+        "diet_land_multiplier": h.diet_land_multiplier,
         "max_comfortable_rpm": h.max_comfortable_rpm,
         "max_cross_coupling_deg_s2": h.max_cross_coupling_deg_s2,
         "head_turn_rate_deg_s": h.head_turn_rate_deg_s,

@@ -15,6 +15,7 @@ const META: Record<string, { label: string; detail: string; format: (v: number) 
   hoop_stress: { label: "Hoop Stress", detail: "sigma_hoop_mpa", format: (v) => `${v.toFixed(0)} MPa` },
   rotational_stability: { label: "Rotational Stability", detail: "length_to_radius", format: (v) => `L/r = ${v.toFixed(2)}` },
   spinup_energy: { label: "Spin-Up Energy", detail: "spinup_time_days", format: (v) => `${v.toFixed(1)} days` },
+  agriculture: { label: "Agriculture Area", detail: "area_per_person_m2", format: (v) => `${v.toFixed(0)} m²/person` },
 };
 
 interface Props {

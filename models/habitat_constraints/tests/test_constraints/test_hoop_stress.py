@@ -48,9 +48,7 @@ class TestHoopStressConstraint:
         assumptions: HumanAssumptions,
     ) -> None:
         """Very thin wall at r=982m should fail."""
-        params = HabitatParameters.from_radius_and_gravity(
-            982.0, wall_thickness_m=0.01
-        )
+        params = HabitatParameters.from_radius_and_gravity(982.0, wall_thickness_m=0.01)
         result = constraint.evaluate(params, assumptions)
         assert not result.feasible
 
@@ -60,12 +58,8 @@ class TestHoopStressConstraint:
         assumptions: HumanAssumptions,
     ) -> None:
         """σ_rot should be the same regardless of wall thickness."""
-        p1 = HabitatParameters.from_radius_and_gravity(
-            982.0, wall_thickness_m=0.1
-        )
-        p2 = HabitatParameters.from_radius_and_gravity(
-            982.0, wall_thickness_m=1.0
-        )
+        p1 = HabitatParameters.from_radius_and_gravity(982.0, wall_thickness_m=0.1)
+        p2 = HabitatParameters.from_radius_and_gravity(982.0, wall_thickness_m=1.0)
         r1 = constraint.evaluate(p1, assumptions)
         r2 = constraint.evaluate(p2, assumptions)
         assert r1.details["sigma_rot_mpa"] == r2.details["sigma_rot_mpa"]
@@ -76,12 +70,8 @@ class TestHoopStressConstraint:
         assumptions: HumanAssumptions,
     ) -> None:
         """Doubling thickness should halve pressure stress."""
-        p1 = HabitatParameters.from_radius_and_gravity(
-            982.0, wall_thickness_m=0.2
-        )
-        p2 = HabitatParameters.from_radius_and_gravity(
-            982.0, wall_thickness_m=0.4
-        )
+        p1 = HabitatParameters.from_radius_and_gravity(982.0, wall_thickness_m=0.2)
+        p2 = HabitatParameters.from_radius_and_gravity(982.0, wall_thickness_m=0.4)
         r1 = constraint.evaluate(p1, assumptions)
         r2 = constraint.evaluate(p2, assumptions)
         assert r1.details["sigma_pressure_mpa"] == pytest.approx(
@@ -140,9 +130,7 @@ class TestHoopStressConstraint:
         params = HabitatParameters.from_radius_and_gravity(982.0)
         result = constraint.evaluate(params, strict)
         # Default yield is 1200 MPa, FoS=3.0 → 400 MPa
-        assert result.details["allowable_mpa"] == pytest.approx(
-            400.0, rel=0.01
-        )
+        assert result.details["allowable_mpa"] == pytest.approx(400.0, rel=0.01)
 
     def test_manual_calculation(
         self,
@@ -154,10 +142,6 @@ class TestHoopStressConstraint:
         result = constraint.evaluate(params, assumptions)
         # σ_rot = 7900 * (√(9.80665/982))² * 982² = 7900 * 9.80665/982 * 982²
         #       = 7900 * 9.80665 * 982 = 76.1 MPa
-        assert result.details["sigma_rot_mpa"] == pytest.approx(
-            76.1, abs=0.5
-        )
+        assert result.details["sigma_rot_mpa"] == pytest.approx(76.1, abs=0.5)
         # σ_p = 101300 * 982 / 0.2 = 497.4 MPa
-        assert result.details["sigma_pressure_mpa"] == pytest.approx(
-            497.4, abs=1.0
-        )
+        assert result.details["sigma_pressure_mpa"] == pytest.approx(497.4, abs=1.0)

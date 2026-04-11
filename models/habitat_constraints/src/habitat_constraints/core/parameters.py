@@ -55,6 +55,13 @@ class HabitatParameters(BaseModel):
         gt=0,
         description="Hull material density (kg/m³). Default: steel.",
     )
+    agriculture_area_m2: float = Field(
+        default=0.0,
+        ge=0,
+        description=(
+            "Dedicated agriculture area (m²). " "0 = not specified; constraint skipped."
+        ),
+    )
 
     @property
     def gravity_g(self) -> float:
@@ -123,6 +130,7 @@ class HabitatParameters(BaseModel):
         shielding_areal_density_kg_m2: float = 4500.0,
         wall_thickness_m: float = 0.2,
         hull_density_kg_m3: float = 7900.0,
+        agriculture_area_m2: float = 0.0,
     ) -> HabitatParameters:
         """Create parameters for a given radius that achieves target gravity."""
         omega = math.sqrt(target_gravity_g * EARTH_G / radius_m)
@@ -136,6 +144,7 @@ class HabitatParameters(BaseModel):
             shielding_areal_density_kg_m2=shielding_areal_density_kg_m2,
             wall_thickness_m=wall_thickness_m,
             hull_density_kg_m3=hull_density_kg_m3,
+            agriculture_area_m2=agriculture_area_m2,
         )
 
 
@@ -227,6 +236,30 @@ class HumanAssumptions(BaseModel):
         description=(
             "Minimum habitable volume per person (m³). "
             "NASA: 25 minimum, 100+ for >1 year."
+        ),
+    )
+
+    # --- Phase 6: Agriculture constraint ---
+    min_agriculture_area_per_person_m2: float = Field(
+        default=200.0,
+        gt=0,
+        description=(
+            "Minimum agriculture area per person (m²/person) for a "
+            "plant-based diet. NASA BVAD: 200 m²/person for single-tier "
+            "hydroponics (Hanford 2004). Range: 20 (vertical farm) to "
+            "2000 (open field). Multiplied by diet_land_multiplier."
+        ),
+    )
+    diet_land_multiplier: float = Field(
+        default=1.0,
+        ge=1.0,
+        description=(
+            "Multiplier on min_agriculture_area_per_person_m2 to account "
+            "for animal protein in the diet. "
+            "1.0 = plant-only (NASA CELSS baseline); "
+            "1.1 = insects; 1.4 = aquaculture; "
+            "3–4 = poultry/eggs; 5–7 = pork; 15–20 = beef. "
+            "(Poore and Nemecek 2018)"
         ),
     )
 

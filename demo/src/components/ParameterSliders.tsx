@@ -25,11 +25,13 @@ const STATIC_DESIGN_SLIDERS: SliderDef[] = [
   { key: "radius_m", label: "Radius", min: 50, max: 15000, step: 10, unit: "m" },
   { key: "target_gravity_g", label: "Target gravity", min: 0.1, max: 1.5, step: 0.05, unit: "g" },
   { key: "population", label: "Population", min: 50, max: 100000, step: 100, unit: "" },
+  { key: "agriculture_area_m2", label: "Agriculture area", min: 100000, max: 10000000, step: 100000, unit: "m²" },
   { key: "wall_thickness_m", label: "Wall thickness", min: 0.05, max: 3.0, step: 0.05, unit: "m" },
   { key: "internal_pressure_kpa", label: "Atmosphere", min: 50, max: 150, step: 1, unit: "kPa" },
 ];
 
 const ASSUMPTION_SLIDERS: SliderDef[] = [
+  { key: "diet_land_multiplier", label: "Diet land multiplier", min: 1.0, max: 8.0, step: 0.1, unit: "×" },
   { key: "max_comfortable_rpm", label: "Max RPM", min: 0.5, max: 6, step: 0.1, unit: "rpm" },
   { key: "max_cross_coupling_deg_s2", label: "Max cross-coupling", min: 1, max: 15, step: 0.5, unit: "°/s²" },
   { key: "head_turn_rate_deg_s", label: "Head turn rate", min: 20, max: 120, step: 5, unit: "°/s" },

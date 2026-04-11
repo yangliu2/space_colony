@@ -49,8 +49,7 @@ class HoopStressConstraint:
         sigma_hoop_mpa = sigma_hoop / 1e6  # → MPa
 
         allowable_mpa = (
-            assumptions.yield_strength_mpa
-            / assumptions.structural_safety_factor
+            assumptions.yield_strength_mpa / assumptions.structural_safety_factor
         )
         feasible = sigma_hoop_mpa <= allowable_mpa
         margin_pct = (
@@ -78,10 +77,7 @@ class HoopStressConstraint:
         self,
         assumptions: HumanAssumptions,
     ) -> list[ParameterBound]:
-        allowable = (
-            assumptions.yield_strength_mpa
-            / assumptions.structural_safety_factor
-        )
+        allowable = assumptions.yield_strength_mpa / assumptions.structural_safety_factor
         return [
             ParameterBound(
                 parameter_name="radius_m",

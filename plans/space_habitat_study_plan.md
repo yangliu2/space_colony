@@ -129,7 +129,7 @@
 - [x] **Structural hoop stress** — verify that chosen material can sustain
   $\sigma = \rho \omega^2 r^2 + Pr/t$ with safety factor ≥ 2.0. Implemented as
   `HoopStressConstraint` with configurable material properties
-- [ ] **Agriculture area vs. population** — food self-sufficiency requires ~0.2 ha/person
+- [x] **Agriculture area vs. population** — food self-sufficiency requires ~0.2 ha/person
   (open field) or ~0.02–0.04 ha/person (hydroponics). External module mass estimate
 - [ ] **Thermal management** — radiator area vs. waste heat. Solar input through
   windows vs. radiated output from exterior

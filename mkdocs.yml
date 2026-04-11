@@ -49,12 +49,17 @@ nav:
     - Rotational Stability: plans/constraint_rotational_stability.md
     - Spin-Up Energy: plans/constraint_spinup_energy.md
 
-  - "4. The Design":
+  - "4. Life Support":
+    - Agriculture Area: plans/constraint_agriculture.md
+    - Thermal Management: plans/constraint_thermal.md
+    - Energy Budget: plans/constraint_energy.md
+
+  - "5. The Design":
     - External Mirrors: plans/mirror_geometry.md
     - Interior Space: plans/interior_space_utilization.md
     - Material Estimates: plans/construction_material_estimates.md
 
-  - "5. Findings":
+  - "6. Findings":
     - "001: Human Comfort Boundaries": conclusions/001_human_comfort_boundaries.md
     - "002: Full Constraint Analysis": conclusions/002_full_constraint_analysis.md
     - "003: Biological Constraints & Monte Carlo": conclusions/003_biological_constraints_and_monte_carlo.md

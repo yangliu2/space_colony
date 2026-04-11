@@ -4,7 +4,7 @@
 Read and follow all rules in `guiding_principles/` before starting any task.
 Key principles: `progressive_disclosure.md` · `document_evaluation.md` ·
 `model_3d_sync.md` · `parameter_dependencies.md` · `epistemic_humility.md` ·
-`formula_sync.md` · `commit_often.md` · `opportunistic_fixes.md` · `stop_servers_after_testing.md` · `fix_all_errors.md` · `readme_sync.md` · `resource_sharing.md`
+`formula_sync.md` · `commit_often.md` · `opportunistic_fixes.md` · `stop_servers_after_testing.md` · `fix_all_errors.md` · `readme_sync.md` · `resource_sharing.md` · `docs_sync.md`
 
 ## File Reading
 Keep all files under 10,000 tokens.
@@ -47,6 +47,7 @@ update the relevant review file. Key findings summary: `docs/literature_review_s
 2. **Implementation** — constraint class in `src/.../constraints/`, register in `api/main.py`
 3. **Tests** — `tests/test_constraints/`, run pytest + black + flake8 + mypy
 4. **Plan doc** — `plans/constraint_<name>.md` with physics, derivation, thresholds
+4b. **Docs nav** — add entry to correct `mkdocs.yml` nav section (see `docs_sync.md`)
 5. **Literature review** — validate and update the relevant review file
 6. **Experiment** — script in `models/habitat_constraints/experiments/`
 7. **Conclusions** — `conclusions/NNN_<topic>.md`, update `conclusions/feasible_habitat_design_space.md`

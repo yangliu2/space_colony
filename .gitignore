@@ -215,3 +215,6 @@ __marimo__/
 
 # kindle files
 *.azw
+
+# personal learning notes (private, not for publication)
+learnings/

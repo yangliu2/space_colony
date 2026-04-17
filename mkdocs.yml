@@ -66,6 +66,11 @@ nav:
     - "004: Structural Constraints": conclusions/004_structural_constraints.md
     - Feasible Design Space: conclusions/feasible_habitat_design_space.md
 
+  - "7. Open Questions":
+    - Minimum Gravity Level: plans/contested_partial_gravity.md
+    - Maximum Rotation Rate: plans/contested_rotation_rate.md
+    - Radiation Limits & LNT: plans/contested_radiation.md
+
   - Reference:
     - Literature — Human Factors: plans/literature_review_human_factors.md
     - Literature — Structural: plans/literature_review_structural.md

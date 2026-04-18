@@ -13,6 +13,7 @@ from habitat_constraints.constraints.agriculture import AgricultureConstraint
 from habitat_constraints.constraints.atmosphere import AtmosphereConstraint
 from habitat_constraints.constraints.energy import EnergyConstraint
 from habitat_constraints.constraints.thermal import ThermalConstraint
+from habitat_constraints.constraints.micrometeorite import MicrometeoiteConstraint
 from habitat_constraints.constraints.water_recycling import WaterRecyclingConstraint
 from habitat_constraints.core.constraint import Constraint
 from habitat_constraints.constraints.cylinder_length import (
@@ -75,6 +76,7 @@ ALL_CONSTRAINTS: list[Constraint] = [
     ThermalConstraint(),
     EnergyConstraint(),
     WaterRecyclingConstraint(),
+    MicrometeoiteConstraint(),
 ]
 
 
@@ -107,8 +109,11 @@ class EvaluateRequest(BaseModel):
     power_per_person_w: float = Field(default=5000.0, gt=0)
     solar_panel_efficiency: float = Field(default=0.20, gt=0, le=1.0)
     water_per_person_day_liters: float = Field(default=20.0, gt=0)
-    water_recycling_efficiency: float = Field(default=0.90, gt=0, le=1.0)
+    water_recycling_efficiency: float = Field(default=0.98, gt=0, le=1.0)
     min_water_recycling_efficiency: float = Field(default=0.98, gt=0, le=1.0)
+    meteoroid_penetrating_flux_m2_yr: float = Field(default=1e-7, gt=0)
+    habitat_lifespan_years: float = Field(default=100.0, gt=0)
+    max_annual_perforations: float = Field(default=1.0, gt=0)
 
 
 class ConstraintStatus(BaseModel):
@@ -154,8 +159,11 @@ class SweepRequest(BaseModel):
     power_per_person_w: float = Field(default=5000.0, gt=0)
     solar_panel_efficiency: float = Field(default=0.20, gt=0, le=1.0)
     water_per_person_day_liters: float = Field(default=20.0, gt=0)
-    water_recycling_efficiency: float = Field(default=0.90, gt=0, le=1.0)
+    water_recycling_efficiency: float = Field(default=0.98, gt=0, le=1.0)
     min_water_recycling_efficiency: float = Field(default=0.98, gt=0, le=1.0)
+    meteoroid_penetrating_flux_m2_yr: float = Field(default=1e-7, gt=0)
+    habitat_lifespan_years: float = Field(default=100.0, gt=0)
+    max_annual_perforations: float = Field(default=1.0, gt=0)
 
 
 class SweepPoint(BaseModel):
@@ -204,6 +212,9 @@ def _build_assumptions(req: EvaluateRequest | SweepRequest) -> HumanAssumptions:
         water_per_person_day_liters=req.water_per_person_day_liters,
         water_recycling_efficiency=req.water_recycling_efficiency,
         min_water_recycling_efficiency=req.min_water_recycling_efficiency,
+        meteoroid_penetrating_flux_m2_yr=req.meteoroid_penetrating_flux_m2_yr,
+        habitat_lifespan_years=req.habitat_lifespan_years,
+        max_annual_perforations=req.max_annual_perforations,
     )
 
 
@@ -387,6 +398,9 @@ def defaults() -> dict[str, Any]:
         "water_per_person_day_liters": h.water_per_person_day_liters,
         "water_recycling_efficiency": h.water_recycling_efficiency,
         "min_water_recycling_efficiency": h.min_water_recycling_efficiency,
+        "meteoroid_penetrating_flux_m2_yr": h.meteoroid_penetrating_flux_m2_yr,
+        "habitat_lifespan_years": h.habitat_lifespan_years,
+        "max_annual_perforations": h.max_annual_perforations,
         "max_comfortable_rpm": h.max_comfortable_rpm,
         "max_cross_coupling_deg_s2": h.max_cross_coupling_deg_s2,
         "head_turn_rate_deg_s": h.head_turn_rate_deg_s,

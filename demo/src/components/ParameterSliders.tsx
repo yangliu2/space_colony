@@ -37,6 +37,7 @@ const ASSUMPTION_SLIDERS: SliderDef[] = [
   { key: "solar_panel_efficiency", label: "Solar panel efficiency", min: 0.10, max: 0.40, step: 0.01, unit: "" },
   { key: "water_per_person_day_liters", label: "Water per person", min: 5, max: 100, step: 5, unit: "L/day" },
   { key: "water_recycling_efficiency", label: "Water recycling efficiency", min: 0.80, max: 1.0, step: 0.01, unit: "" },
+  { key: "meteoroid_penetrating_flux_m2_yr", label: "Meteoroid flux (shield quality)", min: 1e-10, max: 1e-5, step: 1e-8, unit: "m⁻²yr⁻¹" },
   { key: "max_comfortable_rpm", label: "Max RPM", min: 0.5, max: 6, step: 0.1, unit: "rpm" },
   { key: "max_cross_coupling_deg_s2", label: "Max cross-coupling", min: 1, max: 15, step: 0.5, unit: "°/s²" },
   { key: "head_turn_rate_deg_s", label: "Head turn rate", min: 20, max: 120, step: 5, unit: "°/s" },

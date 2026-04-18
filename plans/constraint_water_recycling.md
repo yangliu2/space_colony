@@ -112,16 +112,18 @@ The Falcon 9 equivalent is based on ~3 t useful payload to orbit.
 | Symbol | Parameter | Default | Source |
 |---|---|---|---|
 | $D_{pp}$ | `water_per_person_day_liters` | 20 L/day | Hanford 2004 |
-| $\eta$ | `water_recycling_efficiency` | 0.90 | Carter et al. 2009 |
+| $\eta$ | `water_recycling_efficiency` | 0.98 | Design target |
 | $\eta_{min}$ | `min_water_recycling_efficiency` | 0.98 | Design target |
 
 ## Key Insight
 
-The constraint fails by default (0.90 < 0.98) — current ISS technology does
-not meet the threshold for permanent habitation. Achieving 0.98 requires two
-advances beyond ECLSS: (1) improved brine drying to recover the last water from
-the UPA brine, and (2) solid-waste water extraction. Both are active NASA
-research areas **(Wieland 1994)**.
+The default (0.98) represents the design target — the minimum required for a
+viable permanent habitat. Current ISS technology (0.93) falls short; reaching
+0.98 requires two advances beyond current ECLSS: (1) improved brine drying to
+recover the last water from the UPA brine, and (2) solid-waste water extraction.
+Both are active NASA research areas **(Wieland 1994)**. Users can slide
+`water_recycling_efficiency` down to 0.90 to see what the ISS-level loss rate
+implies at colony scale.
 
 ## References
 

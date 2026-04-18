@@ -35,19 +35,20 @@ class TestBasicProperties:
 
 
 class TestFeasibility:
-    def test_fails_at_iss_efficiency(self, constraint: WaterRecyclingConstraint) -> None:
-        """Default 0.90 efficiency fails the 0.98 minimum threshold."""
-        result = constraint.evaluate(_params(), _assumptions())
-        assert result.feasible is False
-
-    def test_passes_at_target_efficiency(
+    def test_passes_at_default_efficiency(
         self, constraint: WaterRecyclingConstraint
     ) -> None:
+        """Default 0.98 efficiency meets the 0.98 minimum threshold."""
+        result = constraint.evaluate(_params(), _assumptions())
+        assert result.feasible is True
+
+    def test_fails_at_iss_efficiency(self, constraint: WaterRecyclingConstraint) -> None:
+        """ISS-level 0.90 efficiency fails the 0.98 minimum threshold."""
         result = constraint.evaluate(
             _params(),
-            _assumptions(water_recycling_efficiency=0.98),
+            _assumptions(water_recycling_efficiency=0.90),
         )
-        assert result.feasible is True
+        assert result.feasible is False
 
     def test_passes_above_threshold(self, constraint: WaterRecyclingConstraint) -> None:
         result = constraint.evaluate(

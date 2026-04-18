@@ -415,7 +415,7 @@ class HumanAssumptions(BaseModel):
         ),
     )
     water_recycling_efficiency: float = Field(
-        default=0.90,
+        default=0.98,
         gt=0,
         le=1.0,
         description=(
@@ -431,6 +431,31 @@ class HumanAssumptions(BaseModel):
         description=(
             "Minimum recycling efficiency for long-term self-sufficiency "
             "without routine water resupply."
+        ),
+    )
+
+    # --- Phase 6: Micrometeorite hull penetration ---
+    meteoroid_penetrating_flux_m2_yr: float = Field(
+        default=1e-7,
+        gt=0,
+        description=(
+            "Effective flux of meteoroids that penetrate the habitat shield "
+            "(impacts m⁻² yr⁻¹). ISS basic Whipple: ~6e-5; purpose-built "
+            "multi-layer bumper: ~1e-7; regolith-covered surface: ~1e-10. "
+            "(Grün et al. 1985; Christiansen et al. 2009)"
+        ),
+    )
+    habitat_lifespan_years: float = Field(
+        default=100.0,
+        gt=0,
+        description="Design lifespan of the habitat (years).",
+    )
+    max_annual_perforations: float = Field(
+        default=1.0,
+        gt=0,
+        description=(
+            "Maximum acceptable hull penetrations per year. "
+            "1.0 = one manageable repair event per year."
         ),
     )
 

@@ -137,8 +137,8 @@
   20% efficiency). Not binding at normal designs; trivially feasible at 2–3% coverage.
 - [x] **Water recycling efficiency** — closed-loop water budget, required recycling
   rate vs. population. ISS (90%) fails; habitat needs ≥98%. Fails by default.
-- [ ] **Micrometeorite reliability** — Monte Carlo simulation of cumulative impact
-  damage over 50–100 year lifespan (Poisson arrival, Whipple shield effectiveness)
+- [x] **Micrometeorite reliability** — Poisson model, Grün 1985 flux, Whipple
+  shield calibration. ISS shielding → 600+ hits/yr; purpose-built → ~1/yr.
 - [ ] **Mirror diagrams** - all wrong from previous explorations, need correction.
 - [ ] **The L5 (fifth Lagrangian) point** - document why it's good and what other points are available
 

@@ -48,9 +48,9 @@ This repository deals with practical issues regarding surviving on an O'Neill cy
 
 ## What's Been Done
 
-### 17-Constraint Feasibility Model (Phases 1–6 In Progress)
+### 18-Constraint Feasibility Model (Phase 6 Complete)
 
-A parametric constraint model that evaluates O'Neill cylinder designs across 17 independent constraints:
+A parametric constraint model that evaluates O'Neill cylinder designs across 18 independent constraints:
 
 **Rotational / Human Factors:**
 1. **Vestibular comfort** — RPM limit (< 2.0 rpm)
@@ -76,6 +76,7 @@ A parametric constraint model that evaluates O'Neill cylinder designs across 17 
 15. **Thermal management** — radiator area must reject solar gain + waste heat via radiation only
 16. **Energy budget** — solar panel area on end caps must supply colony power demand (5 kW/person)
 17. **Water recycling** — closed-loop efficiency must meet minimum threshold (≥ 98%); current ISS level (90%) fails
+18. **Micrometeorite impact** — annual hull perforation rate ≤ 1/year; ISS-level shielding produces 600+ hits/yr at colony scale
 
 ### Key Results
 
@@ -151,7 +152,7 @@ A React + Three.js web dashboard for real-time constraint exploration with a cou
 * [demo/](demo/) — React + Three.js interactive web dashboard
   * [src/components/CylinderScene.tsx](demo/src/components/CylinderScene.tsx) — main 3D scene (counter-rotating pair, mirrors, strips, interior)
   * [src/lib/sceneGeometry.ts](demo/src/lib/sceneGeometry.ts) — extracted pure geometry/physics functions (testable)
-  * [src/__tests__/](demo/src/__tests__/) — 12 vitest test files (106 tests) covering geometry, physics, connectivity (191 Python tests across 18 test files)
+  * [src/__tests__/](demo/src/__tests__/) — 12 vitest test files (106 tests) covering geometry, physics, connectivity (214 Python tests across 19 test files)
   * [src/components/](demo/src/components/) — ConstraintPanel, ParameterSliders, FeasibleRegionChart, StatsPanel
   * [src/hooks/](demo/src/hooks/) — useDesignParams, useSceneToggles, useConstraintSolver
   * [public/viewpoints/](demo/public/viewpoints/) — AI-generated interior viewpoint images
@@ -186,7 +187,7 @@ A React + Three.js web dashboard for real-time constraint exploration with a cou
 Runs automatically on every commit:
 1. TypeScript type checking (`tsc --noEmit`)
 2. Vitest (12 test files, 106 tests)
-3. Python pytest (18 test files, 191 tests, all 17 constraints)
+3. Python pytest (19 test files, 214 tests, all 18 constraints)
 
 ```bash
 # Run tests manually
@@ -222,8 +223,9 @@ Open http://localhost:5173. Both servers must be running. Standalone 3D view at 
 
 ## What's Next
 
-Remaining Phase 6 constraints:
-- **Micrometeorite reliability** — Monte Carlo cumulative impact damage over 50–100 year lifespan
+Phase 6 is complete (18 constraints). Possible next directions:
+- **Conclusions update** — synthesise Phase 6 life-support findings into a new conclusions doc
+- **Ring ribs / structural details** — 3D model enhancements
 
 3D model enhancements planned:
 - Ring ribs (circumferential frames every ~50–100 m)

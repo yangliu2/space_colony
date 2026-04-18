@@ -19,6 +19,7 @@ const META: Record<string, { label: string; detail: string; format: (v: number) 
   thermal: { label: "Thermal (Radiators)", detail: "radiator_area_fraction", format: (v) => `${(v * 100).toFixed(1)}% of hull` },
   energy: { label: "Energy (Solar)", detail: "panel_area_fraction", format: (v) => `${(v * 100).toFixed(1)}% of end caps` },
   water_recycling: { label: "Water Recycling", detail: "recycling_efficiency", format: (v) => `η = ${(v * 100).toFixed(1)}%` },
+  micrometeorite: { label: "Micrometeorite", detail: "expected_annual_perforations", format: (v) => `${v.toFixed(2)} hits/yr` },
 };
 
 interface Props {

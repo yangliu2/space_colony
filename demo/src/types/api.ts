@@ -57,6 +57,9 @@ export interface DesignParams {
   window_solar_transmittance: number;
   power_per_person_w: number;
   solar_panel_efficiency: number;
+  water_per_person_day_liters: number;
+  water_recycling_efficiency: number;
+  min_water_recycling_efficiency: number;
   max_comfortable_rpm: number;
   max_cross_coupling_deg_s2: number;
   head_turn_rate_deg_s: number;
@@ -81,6 +84,9 @@ export const DEFAULT_PARAMS: DesignParams = {
   window_solar_transmittance: 0.3,
   power_per_person_w: 5000.0,
   solar_panel_efficiency: 0.20,
+  water_per_person_day_liters: 20.0,
+  water_recycling_efficiency: 0.90,
+  min_water_recycling_efficiency: 0.98,
   max_comfortable_rpm: 2.0,
   max_cross_coupling_deg_s2: 6.0,
   head_turn_rate_deg_s: 60.0,

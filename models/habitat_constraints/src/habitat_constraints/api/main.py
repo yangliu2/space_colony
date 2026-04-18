@@ -13,6 +13,7 @@ from habitat_constraints.constraints.agriculture import AgricultureConstraint
 from habitat_constraints.constraints.atmosphere import AtmosphereConstraint
 from habitat_constraints.constraints.energy import EnergyConstraint
 from habitat_constraints.constraints.thermal import ThermalConstraint
+from habitat_constraints.constraints.water_recycling import WaterRecyclingConstraint
 from habitat_constraints.core.constraint import Constraint
 from habitat_constraints.constraints.cylinder_length import (
     CylinderLengthConstraint,
@@ -73,6 +74,7 @@ ALL_CONSTRAINTS: list[Constraint] = [
     AgricultureConstraint(),
     ThermalConstraint(),
     EnergyConstraint(),
+    WaterRecyclingConstraint(),
 ]
 
 
@@ -104,6 +106,9 @@ class EvaluateRequest(BaseModel):
     window_solar_transmittance: float = Field(default=0.3, gt=0, le=1.0)
     power_per_person_w: float = Field(default=5000.0, gt=0)
     solar_panel_efficiency: float = Field(default=0.20, gt=0, le=1.0)
+    water_per_person_day_liters: float = Field(default=20.0, gt=0)
+    water_recycling_efficiency: float = Field(default=0.90, gt=0, le=1.0)
+    min_water_recycling_efficiency: float = Field(default=0.98, gt=0, le=1.0)
 
 
 class ConstraintStatus(BaseModel):
@@ -148,6 +153,9 @@ class SweepRequest(BaseModel):
     window_solar_transmittance: float = Field(default=0.3, gt=0, le=1.0)
     power_per_person_w: float = Field(default=5000.0, gt=0)
     solar_panel_efficiency: float = Field(default=0.20, gt=0, le=1.0)
+    water_per_person_day_liters: float = Field(default=20.0, gt=0)
+    water_recycling_efficiency: float = Field(default=0.90, gt=0, le=1.0)
+    min_water_recycling_efficiency: float = Field(default=0.98, gt=0, le=1.0)
 
 
 class SweepPoint(BaseModel):
@@ -193,6 +201,9 @@ def _build_assumptions(req: EvaluateRequest | SweepRequest) -> HumanAssumptions:
         window_solar_transmittance=req.window_solar_transmittance,
         power_per_person_w=req.power_per_person_w,
         solar_panel_efficiency=req.solar_panel_efficiency,
+        water_per_person_day_liters=req.water_per_person_day_liters,
+        water_recycling_efficiency=req.water_recycling_efficiency,
+        min_water_recycling_efficiency=req.min_water_recycling_efficiency,
     )
 
 
@@ -373,6 +384,9 @@ def defaults() -> dict[str, Any]:
         "window_solar_transmittance": h.window_solar_transmittance,
         "power_per_person_w": h.power_per_person_w,
         "solar_panel_efficiency": h.solar_panel_efficiency,
+        "water_per_person_day_liters": h.water_per_person_day_liters,
+        "water_recycling_efficiency": h.water_recycling_efficiency,
+        "min_water_recycling_efficiency": h.min_water_recycling_efficiency,
         "max_comfortable_rpm": h.max_comfortable_rpm,
         "max_cross_coupling_deg_s2": h.max_cross_coupling_deg_s2,
         "head_turn_rate_deg_s": h.head_turn_rate_deg_s,

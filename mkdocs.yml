@@ -53,6 +53,7 @@ nav:
     - Agriculture Area: plans/constraint_agriculture.md
     - Thermal Management: plans/constraint_thermal.md
     - Energy Budget: plans/constraint_energy.md
+    - Water Recycling: plans/constraint_water_recycling.md
 
   - "5. The Design":
     - External Mirrors: plans/mirror_geometry.md

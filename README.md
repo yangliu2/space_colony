@@ -48,9 +48,9 @@ This repository deals with practical issues regarding surviving on an O'Neill cy
 
 ## What's Been Done
 
-### 16-Constraint Feasibility Model (Phases 1–6 In Progress)
+### 17-Constraint Feasibility Model (Phases 1–6 In Progress)
 
-A parametric constraint model that evaluates O'Neill cylinder designs across 16 independent constraints:
+A parametric constraint model that evaluates O'Neill cylinder designs across 17 independent constraints:
 
 **Rotational / Human Factors:**
 1. **Vestibular comfort** — RPM limit (< 2.0 rpm)
@@ -75,6 +75,7 @@ A parametric constraint model that evaluates O'Neill cylinder designs across 16 
 14. **Agriculture area** — food self-sufficiency (200 m²/person for hydroponics; scales with diet)
 15. **Thermal management** — radiator area must reject solar gain + waste heat via radiation only
 16. **Energy budget** — solar panel area on end caps must supply colony power demand (5 kW/person)
+17. **Water recycling** — closed-loop efficiency must meet minimum threshold (≥ 98%); current ISS level (90%) fails
 
 ### Key Results
 
@@ -150,7 +151,7 @@ A React + Three.js web dashboard for real-time constraint exploration with a cou
 * [demo/](demo/) — React + Three.js interactive web dashboard
   * [src/components/CylinderScene.tsx](demo/src/components/CylinderScene.tsx) — main 3D scene (counter-rotating pair, mirrors, strips, interior)
   * [src/lib/sceneGeometry.ts](demo/src/lib/sceneGeometry.ts) — extracted pure geometry/physics functions (testable)
-  * [src/__tests__/](demo/src/__tests__/) — 12 vitest test files (106 tests) covering geometry, physics, connectivity (169 Python tests across 17 test files)
+  * [src/__tests__/](demo/src/__tests__/) — 12 vitest test files (106 tests) covering geometry, physics, connectivity (191 Python tests across 18 test files)
   * [src/components/](demo/src/components/) — ConstraintPanel, ParameterSliders, FeasibleRegionChart, StatsPanel
   * [src/hooks/](demo/src/hooks/) — useDesignParams, useSceneToggles, useConstraintSolver
   * [public/viewpoints/](demo/public/viewpoints/) — AI-generated interior viewpoint images
@@ -185,7 +186,7 @@ A React + Three.js web dashboard for real-time constraint exploration with a cou
 Runs automatically on every commit:
 1. TypeScript type checking (`tsc --noEmit`)
 2. Vitest (12 test files, 106 tests)
-3. Python pytest (17 test files, 169 tests, all 16 constraints)
+3. Python pytest (18 test files, 191 tests, all 17 constraints)
 
 ```bash
 # Run tests manually
@@ -222,7 +223,6 @@ Open http://localhost:5173. Both servers must be running. Standalone 3D view at 
 ## What's Next
 
 Remaining Phase 6 constraints:
-- **Water recycling efficiency** — closed-loop water budget, required recycling rate vs. population
 - **Micrometeorite reliability** — Monte Carlo cumulative impact damage over 50–100 year lifespan
 
 3D model enhancements planned:

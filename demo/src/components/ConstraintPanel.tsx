@@ -18,6 +18,7 @@ const META: Record<string, { label: string; detail: string; format: (v: number) 
   agriculture: { label: "Agriculture Area", detail: "area_per_person_m2", format: (v) => `${v.toFixed(0)} m²/person` },
   thermal: { label: "Thermal (Radiators)", detail: "radiator_area_fraction", format: (v) => `${(v * 100).toFixed(1)}% of hull` },
   energy: { label: "Energy (Solar)", detail: "panel_area_fraction", format: (v) => `${(v * 100).toFixed(1)}% of end caps` },
+  water_recycling: { label: "Water Recycling", detail: "recycling_efficiency", format: (v) => `η = ${(v * 100).toFixed(1)}%` },
 };
 
 interface Props {

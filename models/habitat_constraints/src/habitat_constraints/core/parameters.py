@@ -403,6 +403,37 @@ class HumanAssumptions(BaseModel):
         ),
     )
 
+    # --- Phase 6: Water recycling ---
+    water_per_person_day_liters: float = Field(
+        default=20.0,
+        gt=0,
+        description=(
+            "Domestic water demand per person per day (L/day): drinking, "
+            "cooking, hygiene, laundry. NASA BVAD minimum: ~22 L/day "
+            "(Hanford 2004). Does not include agricultural water "
+            "(separate closed loop)."
+        ),
+    )
+    water_recycling_efficiency: float = Field(
+        default=0.90,
+        gt=0,
+        le=1.0,
+        description=(
+            "Fraction of water recovered and reused per cycle. "
+            "ISS ECLSS current: ~0.93; design target for permanent "
+            "habitat: ~0.98. (Carter et al. 2009)"
+        ),
+    )
+    min_water_recycling_efficiency: float = Field(
+        default=0.98,
+        gt=0,
+        le=1.0,
+        description=(
+            "Minimum recycling efficiency for long-term self-sufficiency "
+            "without routine water resupply."
+        ),
+    )
+
 
 class ParameterBound(BaseModel):
     """A bound on a single design parameter produced by a constraint."""

@@ -135,8 +135,8 @@
   windows vs. radiated output from exterior
 - [x] **Energy budget** — solar panel area on end caps vs. colony demand (5 kW/person,
   20% efficiency). Not binding at normal designs; trivially feasible at 2–3% coverage.
-- [ ] **Water recycling efficiency** — closed-loop water budget, required recycling
-  rate vs. population
+- [x] **Water recycling efficiency** — closed-loop water budget, required recycling
+  rate vs. population. ISS (90%) fails; habitat needs ≥98%. Fails by default.
 - [ ] **Micrometeorite reliability** — Monte Carlo simulation of cumulative impact
   damage over 50–100 year lifespan (Poisson arrival, Whipple shield effectiveness)
 - [ ] **Mirror diagrams** - all wrong from previous explorations, need correction.

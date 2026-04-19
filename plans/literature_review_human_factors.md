@@ -150,6 +150,35 @@ soil microbes and chemical sinks (CO₂ reacting with concrete). Even a
 200,000 m³ ecosystem could not passively maintain atmospheric homeostasis.
 
 
+## 9. Water Recycling Efficiency (0.98) — Well-Supported, Demonstrated
+
+| Source | Year | Efficiency | Context |
+|--------|------|-----------|---------|
+| Carter et al. | 2009 | 0.93 | ISS ECLSS before Brine Processor Assembly (BPA) |
+| ISS operational | 2021 | ~0.93–0.94 | UPA + WPA without BPA |
+| Gatens et al. | 2024 | 0.98 | ISS with BPA; stated as Mars mission milestone |
+| NASA official guidance | ongoing | 0.98 | "At least 98%" required for no-resupply missions |
+
+**Verdict:** Our 0.98 threshold is **well-supported and now demonstrated** in
+hardware. The ISS reached 98% total recovery in 2023–2024 with the Brine
+Processor Assembly (BPA), which recovers 95–98% of water from the UPA brine
+output. NASA officially states that 98% is required for permanent missions
+without routine water resupply.
+
+**Key caveat:** The 98% is the ECLSS loop efficiency. Whole-habitat effective
+efficiency is lower because hygiene wipes, contaminated water, and similar
+disposal paths bypass the recovery system. For a permanent colony, minimising
+these non-loop losses is a critical secondary engineering problem not modelled
+here. Some analyses describe the 98% regime as having "too small a margin for
+comfort" without accounting for these disposal paths.
+
+**ISS pre-BPA at colony scale (why 0.93 fails):** At 8,000 people demanding
+20 L/day with η = 0.93, annual water loss is 4,088 t/year — roughly 1,360
+Falcon 9 deliveries per year. Even 0.95 produces 2,044 t/year. Only above
+~0.98 does annual loss drop to a level potentially manageable by in-situ
+resource utilisation (ISRU).
+
+
 ## References
 
 Clark, Carl C., and James D. Hardy. "Gravity Problems in Manned Space
@@ -181,6 +210,14 @@ arXiv:1806.03856.
 
 Salotti, Jean-Marc. "Minimum Number of Settlers for Survival on
 Another Planet." *Scientific Reports*, vol. 10, 2020.
+
+Carter, Layne, et al. "Water Recovery System (WRS) and Urine Processor
+Assembly (UPA) Status." *38th International Conference on Environmental
+Systems*, 2009. — Documents pre-BPA 93% ISS performance.
+
+Gatens, Robyn, et al. "Status of ISS Water Management and Recovery."
+*54th International Conference on Environmental Systems*, NTRS 20240005472,
+2024. — Documents 98% BPA milestone and Mars requirement.
 
 Smith, Cameron M. "Estimation of a Genetically Viable Population for
 Multigenerational Interstellar Voyaging." *Acta Astronautica*, vol.

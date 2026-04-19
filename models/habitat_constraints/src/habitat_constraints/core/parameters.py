@@ -420,8 +420,11 @@ class HumanAssumptions(BaseModel):
         le=1.0,
         description=(
             "Fraction of water recovered and reused per cycle. "
-            "ISS ECLSS current: ~0.93; design target for permanent "
-            "habitat: ~0.98. (Carter et al. 2009)"
+            "ISS pre-BPA (~2009): ~0.93 (Carter et al. 2009). "
+            "ISS with BPA (2024): 0.98 (Gatens et al. 2024). "
+            "0.98 is NASA's stated minimum for Mars / permanent missions. "
+            "Note: effective whole-habitat efficiency may be lower due to "
+            "disposal paths (wipes, hygiene waste) not captured by ECLSS."
         ),
     )
     min_water_recycling_efficiency: float = Field(

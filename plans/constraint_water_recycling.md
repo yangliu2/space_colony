@@ -63,21 +63,41 @@ The model default of 20 L/person/day is close to this figure.
 ## ISS ECLSS Baseline
 
 The International Space Station Environmental Control and Life Support System
-(ECLSS) currently achieves approximately 93% water recovery through two
+(ECLSS) has progressed through two distinct performance eras:
+
+**Pre-BPA era (~2009–2021): ~93% recovery**
+
+Original ECLSS achieved approximately 93% water recovery through two
 subsystems **(Carter et al. 2009)**:
 
 - **Urine Processor Assembly (UPA):** Distils urine to brine; ~85% recovery
 - **Water Recovery System (WRS):** Processes condensate + UPA distillate;
   combined recovery ~93%
 
+**Current era (with BPA, 2024): 98% recovery**
+
+NASA's Brine Processor Assembly (BPA), activated in 2023–2024, recovers
+approximately 95–98% of the residual water from the UPA brine output.
+Combined with an improved UPA achieving ~87–98% urine recovery, the total
+system now achieves **98% water recovery** — the Mars mission threshold
+**(Gatens et al. 2024)**. This was described as a milestone for long-duration
+exploration.
+
 ISS net consumption is approximately 3.6 L/person/day — a result of severe
 rationing, not of high efficiency. A comfortable long-duration colony running
-full sanitation at 20 L/person/day at 93% efficiency would still lose
-1.4 L/person/day.
+full sanitation at 20 L/person/day at the historical 93% efficiency would
+lose 1.4 L/person/day per person.
 
-At 8,000 people, that is 11,200 L/day = **4,088 tonnes/year** of irrecoverable
-water — the equivalent of roughly 1,360 Falcon 9 payload deliveries annually.
-This makes the 93% ISS level entirely non-viable for a permanent colony.
+At 8,000 people, that historical 93% loss rate is 11,200 L/day =
+**4,088 tonnes/year** — roughly 1,360 Falcon 9 payloads annually. Even at the
+current ISS level of 98%, loss is 818 t/year. For a fully isolated habitat,
+any non-zero loss eventually depletes the supply; 98% is viable only if loss
+is covered by local resource extraction (ISRU) or very infrequent resupply.
+
+One analysis of the 98% regime noted the operational margin is **"too small
+for comfort"** when accounting for disposal paths — hygiene towels, wipes,
+and contamination losses — that bypass the recovery system entirely.
+Future designs targeting 99%+ are an active NASA research direction.
 
 ## Required Efficiency for Self-Sufficiency
 
@@ -117,19 +137,29 @@ The Falcon 9 equivalent is based on ~3 t useful payload to orbit.
 
 ## Key Insight
 
-The default (0.98) represents the design target — the minimum required for a
-viable permanent habitat. Current ISS technology (0.93) falls short; reaching
-0.98 requires two advances beyond current ECLSS: (1) improved brine drying to
-recover the last water from the UPA brine, and (2) solid-waste water extraction.
-Both are active NASA research areas **(Wieland 1994)**. Users can slide
-`water_recycling_efficiency` down to 0.90 to see what the ISS-level loss rate
-implies at colony scale.
+The default (0.98) represents NASA's stated minimum for Mars/permanent missions
+and has now been demonstrated on the ISS (2024) with the BPA. It is
+well-supported by the literature.
+
+One important caveat: 98% is the thermodynamic recovery from the active ECLSS
+loop. Actual habitat water loss also includes passive disposal paths (wipes,
+hygiene towels, contaminated water) not captured by the system. The effective
+whole-habitat efficiency may be lower. For a permanent colony, the "system
+efficiency" the model checks is the ECLSS fraction; the designer must separately
+minimise non-loop waste paths.
+
+Users can slide `water_recycling_efficiency` below 0.98 to see what pre-BPA
+ISS-level loss rates imply at colony scale.
 
 ## References
 
 - Carter, Layne, et al. "Water Recovery System (WRS) and Urine Processor Assembly
   (UPA) Status." *38th International Conference on Environmental Systems.* 2009.
-  **(Carter et al. 2009)**
+  **(Carter et al. 2009)** — Documents pre-BPA 93% performance.
+- Gatens, Robyn, et al. "Status of ISS Water Management and Recovery." *54th
+  International Conference on Environmental Systems.* NTRS 20240005472. 2024.
+  **(Gatens et al. 2024)** — Documents 98% BPA achievement and Mars mission
+  requirement.
 - Hanford, Anthony J. *Advanced Life Support Baseline Values and Assumptions
   Document.* NASA/CR-2004-208941. NASA, 2004. **(Hanford 2004)**
 - Hendrickx, Lieve, et al. "Microbial ecology of the closed artificial ecosystem

@@ -190,6 +190,9 @@ class FeasibleRangesResponse(BaseModel):
     wall_thickness_m: ParamRange
     length_m: ParamRange
     internal_pressure_kpa: ParamRange
+    water_recycling_efficiency: ParamRange
+    diet_land_multiplier: ParamRange
+    meteoroid_penetrating_flux_m2_yr: ParamRange
 
 
 # ── Helpers ──────────────────────────────────────────────────────
@@ -365,6 +368,42 @@ def feasible_ranges(req: EvaluateRequest) -> Any:
                 fmax = v
         return ParamRange(min=fmin, max=fmax)
 
+    h_defaults = HumanAssumptions()
+
+    # --- Analytical assumption ranges (no geometry sweep needed) ---
+
+    # Water recycling: passes when efficiency >= min threshold
+    if req.population > 0:
+        water_range = ParamRange(min=req.min_water_recycling_efficiency, max=1.0)
+    else:
+        water_range = ParamRange(min=None, max=None)
+
+    # Diet multiplier: passes when area >= min_area_pp * population * multiplier
+    if req.population > 0 and req.agriculture_area_m2 > 0:
+        max_mult = req.agriculture_area_m2 / (
+            h_defaults.min_agriculture_area_per_person_m2 * req.population
+        )
+        diet_range = (
+            ParamRange(min=1.0, max=max_mult)
+            if max_mult >= 1.0
+            else ParamRange(min=None, max=None)
+        )
+    else:
+        diet_range = ParamRange(min=None, max=None)
+
+    # Meteoroid flux: passes when flux * exposed_area <= max_annual_perforations
+    if req.length_m > 0:
+        barrel = 2 * math.pi * req.radius_m * req.length_m
+        exposed = h_defaults.window_fraction * barrel + 2 * math.pi * req.radius_m**2
+        max_flux = req.max_annual_perforations / exposed if exposed > 0 else None
+        meteo_range = (
+            ParamRange(min=1e-9, max=max_flux)
+            if max_flux is not None
+            else ParamRange(min=None, max=None)
+        )
+    else:
+        meteo_range = ParamRange(min=None, max=None)
+
     return FeasibleRangesResponse(
         radius_m=_sweep("radius_m", 50, 15000, recalc_omega=True),
         wall_thickness_m=_sweep("wall_thickness_m", 0.05, 3.0),
@@ -375,6 +414,9 @@ def feasible_ranges(req: EvaluateRequest) -> Any:
             round(75.22 * req.radius_m**0.75 * 1.2),
         ),
         internal_pressure_kpa=_sweep("internal_pressure_kpa", 50, 150),
+        water_recycling_efficiency=water_range,
+        diet_land_multiplier=diet_range,
+        meteoroid_penetrating_flux_m2_yr=meteo_range,
     )
 
 

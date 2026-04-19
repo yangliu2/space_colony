@@ -40,6 +40,9 @@ export interface FeasibleRangesResponse {
   wall_thickness_m: ParamRange;
   length_m: ParamRange;
   internal_pressure_kpa: ParamRange;
+  water_recycling_efficiency: ParamRange;
+  diet_land_multiplier: ParamRange;
+  meteoroid_penetrating_flux_m2_yr: ParamRange;
 }
 
 /** All tuneable parameters — sent to both /evaluate and /sweep. */

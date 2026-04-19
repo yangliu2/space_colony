@@ -110,6 +110,9 @@ const RANGE_KEYS: Record<string, keyof FeasibleRangesResponse> = {
   wall_thickness_m: "wall_thickness_m",
   length_m: "length_m",
   internal_pressure_kpa: "internal_pressure_kpa",
+  water_recycling_efficiency: "water_recycling_efficiency",
+  diet_land_multiplier: "diet_land_multiplier",
+  meteoroid_penetrating_flux_m2_yr: "meteoroid_penetrating_flux_m2_yr",
 };
 
 export default function ParameterSliders({ params, onChange, feasibleRanges }: Props) {
@@ -148,7 +151,13 @@ export default function ParameterSliders({ params, onChange, feasibleRanges }: P
 
       <h2>Human Assumptions</h2>
       {ASSUMPTION_SLIDERS.map((d) => (
-        <SliderRow key={d.key} def={d} value={params[d.key] as number} onChange={(v) => set(d.key, v)} />
+        <SliderRow
+          key={d.key}
+          def={d}
+          value={params[d.key] as number}
+          onChange={(v) => set(d.key, v)}
+          feasible={RANGE_KEYS[d.key] ? (feasibleRanges?.[RANGE_KEYS[d.key]] ?? null) : null}
+        />
       ))}
     </div>
   );

@@ -111,7 +111,7 @@ class EvaluateRequest(BaseModel):
     water_per_person_day_liters: float = Field(default=20.0, gt=0)
     water_recycling_efficiency: float = Field(default=0.98, gt=0, le=1.0)
     min_water_recycling_efficiency: float = Field(default=0.98, gt=0, le=1.0)
-    meteoroid_penetrating_flux_m2_yr: float = Field(default=1e-7, gt=0)
+    meteoroid_penetrating_flux_m2_yr: float = Field(default=5e-8, gt=0)
     habitat_lifespan_years: float = Field(default=100.0, gt=0)
     max_annual_perforations: float = Field(default=1.0, gt=0)
 
@@ -161,7 +161,7 @@ class SweepRequest(BaseModel):
     water_per_person_day_liters: float = Field(default=20.0, gt=0)
     water_recycling_efficiency: float = Field(default=0.98, gt=0, le=1.0)
     min_water_recycling_efficiency: float = Field(default=0.98, gt=0, le=1.0)
-    meteoroid_penetrating_flux_m2_yr: float = Field(default=1e-7, gt=0)
+    meteoroid_penetrating_flux_m2_yr: float = Field(default=5e-8, gt=0)
     habitat_lifespan_years: float = Field(default=100.0, gt=0)
     max_annual_perforations: float = Field(default=1.0, gt=0)
 

@@ -44,12 +44,13 @@ class TestBasicProperties:
 
 class TestFeasibility:
     def test_passes_at_default_flux(self, constraint: MicrometeoiteConstraint) -> None:
-        """Default 1e-7 flux is at the feasibility boundary for the reference design."""
+        """Default 5e-8 flux passes comfortably (~0.5 hits/yr at reference design)."""
         result = constraint.evaluate(_params(), _assumptions())
-        # At r=982, L=1276, window=0.5: exposed ~10 million m², flux 1e-7 → ~1 hit/yr
+        # At r=982, L=1276, window=0.5: exposed ~10 million m², flux 5e-8 → ~0.5 hit/yr
         assert result.details["expected_annual_perforations"] == pytest.approx(
-            result.details["exposed_area_m2"] * 1e-7
+            result.details["exposed_area_m2"] * 5e-8
         )
+        assert result.feasible is True
 
     def test_fails_at_iss_flux(self, constraint: MicrometeoiteConstraint) -> None:
         """ISS-level flux (6e-5) produces catastrophic perforation rate."""

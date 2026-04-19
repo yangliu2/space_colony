@@ -90,7 +90,7 @@ export const DEFAULT_PARAMS: DesignParams = {
   water_per_person_day_liters: 20.0,
   water_recycling_efficiency: 0.98,
   min_water_recycling_efficiency: 0.98,
-  meteoroid_penetrating_flux_m2_yr: 1e-7,
+  meteoroid_penetrating_flux_m2_yr: 5e-8,
   habitat_lifespan_years: 100.0,
   max_annual_perforations: 1.0,
   max_comfortable_rpm: 2.0,

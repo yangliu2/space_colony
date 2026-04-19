@@ -436,7 +436,7 @@ class HumanAssumptions(BaseModel):
 
     # --- Phase 6: Micrometeorite hull penetration ---
     meteoroid_penetrating_flux_m2_yr: float = Field(
-        default=1e-7,
+        default=5e-8,
         gt=0,
         description=(
             "Effective flux of meteoroids that penetrate the habitat shield "

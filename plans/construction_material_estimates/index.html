@@ -1,0 +1,3251 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Physics-based feasibility analysis for O'Neill cylinder habitats">
+      
+      
+      
+        <link rel="canonical" href="https://docs.spinhabitat.com/plans/construction_material_estimates/">
+      
+      
+        <link rel="prev" href="../interior_space_utilization/">
+      
+      
+        <link rel="next" href="../../conclusions/001_human_comfort_boundaries/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Material Estimates - Space Colony — Constraint Study</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#material-requirements-for-oneill-cylinder-habitats" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Space Colony — Constraint Study" class="md-header__button md-logo" aria-label="Space Colony — Constraint Study" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Space Colony — Constraint Study
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Material Estimates
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/fangfanglai/space_colony" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Space Colony — Constraint Study" class="md-nav__button md-logo" aria-label="Space Colony — Constraint Study" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Space Colony — Constraint Study
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/fangfanglai/space_colony" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. How Does It Work?
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    1. How Does It Work?
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intuition_artificial_gravity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Artificial Gravity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intuition_centripetal_acceleration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Centripetal Acceleration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intuition_angular_velocity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Angular Velocity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../general_relativity_and_artificial_gravity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Does General Relativity Matter?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Can Humans Live There?
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2. Can Humans Live There?
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_vestibular/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vestibular (RPM limit)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_gravity_minimum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gravity Level
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_gravity_gradient/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gravity Gradient (head-to-foot)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_coriolis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coriolis Effect
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_cross_coupling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross-Coupling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_biological/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atmosphere
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Will the Structure Hold?
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3. Will the Structure Hold?
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../structural_engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hoop Stress & Materials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_rim_speed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rim Speed (material limit)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_cylinder_length/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cylinder Length & Counter-Rotation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_rotational_stability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rotational Stability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_spinup_energy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spin-Up Energy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Life Support
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    4. Life Support
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_agriculture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agriculture Area
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_thermal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Thermal Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_energy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Energy Budget
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_water_recycling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Water Recycling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_micrometeorite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Micrometeorite Impact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. The Design
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    5. The Design
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mirror_geometry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    External Mirrors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interior_space_utilization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interior Space
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Material Estimates
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Material Estimates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#design-scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design Scenarios
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Design Scenarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-minimum-viable-length" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        §A. Minimum Viable Length
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-structural-shell-mass" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Structural Shell Mass
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Structural Shell Mass">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hoop-stress-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hoop Stress Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#material-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Material Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wall-thickness-calculations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wall Thickness Calculations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structural-shell-mass-estimates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structural Shell Mass Estimates
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-radiation-shielding-mass" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Radiation Shielding Mass
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Radiation Shielding Mass">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#shielding-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shielding Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shielding-geometry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shielding Geometry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shielding-material-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shielding Material Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shielding-mass-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shielding Mass Summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-atmospheric-mass" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Atmospheric Mass
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Atmospheric Mass">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atmospheric-pressure-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Atmospheric Pressure Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atmospheric-mass-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Atmospheric Mass Calculation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atmospheric-mass-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Atmospheric Mass Summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-soil-and-water-mass" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Soil and Water Mass
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Soil and Water Mass">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#soil-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Soil Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#soil-mass-estimates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Soil Mass Estimates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#water-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Water Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#soil-water-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Soil + Water Summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-interior-mass-buildings-infrastructure-people" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Interior Mass (Buildings, Infrastructure, People)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Interior Mass (Buildings, Infrastructure, People)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sp-413-reference-data-10000-population" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SP-413 Reference Data (10,000 population)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scaled-estimates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scaled Estimates
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-total-mass-estimates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Total Mass Estimates
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Total Mass Estimates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scenario-1-barely-survivable-minimum-cylinder-982m-2km" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scenario 1: "Barely Survivable" Minimum Cylinder (982m × 2km)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-2-most-comfortable-oneill-class-cylinder-3200m-32km" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scenario 2: "Most Comfortable" O'Neill-Class Cylinder (3200m × 32km)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparison-with-literature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparison with Literature
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-material-sourcing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Material Sourcing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Material Sourcing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lunar-regolith-composition-by-mass" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lunar Regolith Composition (by mass)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#source-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-nitrogen-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Nitrogen Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-key-formulas-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Key Formulas Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conclusions
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Findings
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    6. Findings
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../conclusions/001_human_comfort_boundaries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    001: Human Comfort Boundaries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../conclusions/002_full_constraint_analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    002: Full Constraint Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../conclusions/003_biological_constraints_and_monte_carlo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    003: Biological Constraints & Monte Carlo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../conclusions/004_structural_constraints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    004: Structural Constraints
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../conclusions/feasible_habitat_design_space/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Feasible Design Space
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Open Questions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    7. Open Questions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contested_partial_gravity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minimum Gravity Level
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contested_rotation_rate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maximum Rotation Rate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contested_radiation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Radiation Limits & LNT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../literature_review_human_factors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Literature — Human Factors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../literature_review_structural/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Literature — Structural
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qa_structural_design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Q&A — Structural Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="material-requirements-for-oneill-cylinder-habitats">Material Requirements for O'Neill Cylinder Habitats<a class="headerlink" href="#material-requirements-for-oneill-cylinder-habitats" title="Permanent link">&para;</a></h1>
+<p><strong>Date:</strong> 2026-03-20<br />
+<strong>Scope:</strong> Quantitative mass estimates for two cylinder scenarios<br />
+<strong>Inputs from:</strong> Phase 2 constraint analysis (002), NASA SP-413, O'Neill (1977)</p>
+<hr />
+<h2 id="design-scenarios">Design Scenarios<a class="headerlink" href="#design-scenarios" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Scenario 1: Minimum Viable</th>
+<th>Scenario 2: O'Neill-Class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Radius</td>
+<td>982 m</td>
+<td>3,200 m</td>
+</tr>
+<tr>
+<td>Length</td>
+<td>2,000 m (see §A)</td>
+<td>32,000 m</td>
+</tr>
+<tr>
+<td>Target gravity</td>
+<td>1.0 g</td>
+<td>1.0 g</td>
+</tr>
+<tr>
+<td>RPM</td>
+<td>0.95</td>
+<td>0.53</td>
+</tr>
+<tr>
+<td>Rim speed</td>
+<td>98.1 m/s</td>
+<td>177.1 m/s</td>
+</tr>
+<tr>
+<td>Population (est.)</td>
+<td>~8,000</td>
+<td>~1,000,000+</td>
+</tr>
+<tr>
+<td>Surface area (<span class="arithmatex">\(2\pi r L\)</span>)</td>
+<td>12.34 km²</td>
+<td>643.4 km²</td>
+</tr>
+<tr>
+<td>End cap area (<span class="arithmatex">\(2 \times \pi r^2\)</span>)</td>
+<td>6.06 km²</td>
+<td>64.34 km²</td>
+</tr>
+<tr>
+<td>Total shell area</td>
+<td>18.4 km²</td>
+<td>707.7 km²</td>
+</tr>
+<tr>
+<td>Interior volume (<span class="arithmatex">\(\pi r^2 L\)</span>)</td>
+<td><span class="arithmatex">\(6.06 \times 10^9\)</span> m³</td>
+<td><span class="arithmatex">\(1.03 \times 10^{12}\)</span> m³</td>
+</tr>
+<tr>
+<td>Usable floor area (~50% of barrel)</td>
+<td>6.17 km²</td>
+<td>321.7 km²</td>
+</tr>
+</tbody>
+</table>
+<h3 id="a-minimum-viable-length">§A. Minimum Viable Length<a class="headerlink" href="#a-minimum-viable-length" title="Permanent link">&para;</a></h3>
+<p>The NASA SP-413 cylinder design used a 10:1 length-to-radius ratio. For a minimum viable habitat, a 2:1 ratio (L = 2,000 m) is defensible: it provides enough length for a meaningful community while keeping end-cap structural penalties manageable. Below ~1 km length, the end-cap mass fraction becomes prohibitive and the interior feels claustrophobic. A 2 km cylinder at 982 m radius provides ~6 km² of barrel surface, comparable to the Stanford torus's 6.8 × 10⁵ m² projected area but with far more volume.</p>
+<hr />
+<h2 id="1-structural-shell-mass">1. Structural Shell Mass<a class="headerlink" href="#1-structural-shell-mass" title="Permanent link">&para;</a></h2>
+<h3 id="hoop-stress-analysis">Hoop Stress Analysis<a class="headerlink" href="#hoop-stress-analysis" title="Permanent link">&para;</a></h3>
+<p>A rotating cylinder under internal atmospheric pressure and centripetal loading experiences hoop stress. For a thin-walled cylinder:</p>
+<p><strong>Atmospheric hoop stress:</strong></p>
+<div class="arithmatex">\[
+\sigma_{\text{atm}} = \frac{P \cdot r}{t}
+\]</div>
+<p>where <span class="arithmatex">\(P\)</span> = internal pressure, <span class="arithmatex">\(r\)</span> = radius, <span class="arithmatex">\(t\)</span> = wall thickness.</p>
+<p><strong>Centripetal hoop stress</strong> (from the shell's own mass and interior loading):</p>
+<div class="arithmatex">\[
+\sigma_{\text{cent}} = \rho_{\text{shell}} \cdot \omega^2 \cdot r^2
+\]</div>
+<p>where <span class="arithmatex">\(\rho_{\text{shell}}\)</span> is the areal mass density of everything at the rim.</p>
+<p>For the structural shell alone under atmospheric pressure, solving for minimum wall thickness:</p>
+<div class="arithmatex">\[
+t_{\min} = \frac{P \cdot r}{\sigma_y}
+\]</div>
+<h3 id="material-properties">Material Properties<a class="headerlink" href="#material-properties" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Material</th>
+<th>Density (kg/m³)</th>
+<th>Yield Strength (MPa)</th>
+<th>Specific Strength (kN·m/kg)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mild steel (A36)</td>
+<td>7,850</td>
+<td>250</td>
+<td>32</td>
+</tr>
+<tr>
+<td>High-strength steel (maraging)</td>
+<td>8,000</td>
+<td>1,400</td>
+<td>175</td>
+</tr>
+<tr>
+<td>Aluminum 6061-T6</td>
+<td>2,700</td>
+<td>276</td>
+<td>102</td>
+</tr>
+<tr>
+<td>Aluminum 7075-T6</td>
+<td>2,810</td>
+<td>503</td>
+<td>179</td>
+</tr>
+<tr>
+<td>Titanium Ti-6Al-4V</td>
+<td>4,430</td>
+<td>880</td>
+<td>199</td>
+</tr>
+<tr>
+<td>Carbon fiber composite (CFRP)</td>
+<td>1,600</td>
+<td>1,500</td>
+<td>938</td>
+</tr>
+</tbody>
+</table>
+<h3 id="wall-thickness-calculations">Wall Thickness Calculations<a class="headerlink" href="#wall-thickness-calculations" title="Permanent link">&para;</a></h3>
+<p><strong>Scenario 1 (r = 982 m, P = 51 kPa at half-atmosphere per SP-413):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Material</th>
+<th>t_min (mm)</th>
+<th>t with SF=2 (mm)</th>
+<th>t with SF=4 (mm)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mild steel</td>
+<td>200</td>
+<td>400</td>
+<td>800</td>
+</tr>
+<tr>
+<td>High-strength steel</td>
+<td>36</td>
+<td>71</td>
+<td>143</td>
+</tr>
+<tr>
+<td>Aluminum 6061-T6</td>
+<td>181</td>
+<td>361</td>
+<td>722</td>
+</tr>
+<tr>
+<td>Aluminum 7075-T6</td>
+<td>99</td>
+<td>199</td>
+<td>397</td>
+</tr>
+<tr>
+<td>Titanium Ti-6Al-4V</td>
+<td>57</td>
+<td>114</td>
+<td>228</td>
+</tr>
+<tr>
+<td>CFRP</td>
+<td>33</td>
+<td>67</td>
+<td>133</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Scenario 2 (r = 3,200 m, P = 101.3 kPa at full atmosphere):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Material</th>
+<th>t_min (mm)</th>
+<th>t with SF=2 (mm)</th>
+<th>t with SF=4 (mm)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mild steel</td>
+<td>1,297</td>
+<td>2,594</td>
+<td>5,187</td>
+</tr>
+<tr>
+<td>High-strength steel</td>
+<td>231</td>
+<td>463</td>
+<td>926</td>
+</tr>
+<tr>
+<td>Aluminum 6061-T6</td>
+<td>1,174</td>
+<td>2,348</td>
+<td>4,696</td>
+</tr>
+<tr>
+<td>Aluminum 7075-T6</td>
+<td>644</td>
+<td>1,289</td>
+<td>2,578</td>
+</tr>
+<tr>
+<td>Titanium Ti-6Al-4V</td>
+<td>368</td>
+<td>737</td>
+<td>1,473</td>
+</tr>
+<tr>
+<td>CFRP</td>
+<td>216</td>
+<td>432</td>
+<td>864</td>
+</tr>
+</tbody>
+</table>
+<p><em>Note:</em> Full atmosphere (101.3 kPa) doubles the pressure load compared to the SP-413 half-atmosphere design (51 kPa). The "comfortable" scenario uses full atmosphere for Earth-normal conditions.</p>
+<h3 id="structural-shell-mass-estimates">Structural Shell Mass Estimates<a class="headerlink" href="#structural-shell-mass-estimates" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+M_{\text{shell}} = \rho_{\text{material}} \times t_{\text{design}} \times A_{\text{surface}}
+\]</div>
+<p><strong>Scenario 1</strong> (982 m radius, 2 km length, half-atmosphere):
+Using high-strength steel at SF=3 (<span class="arithmatex">\(t = 107\)</span> mm):</p>
+<div class="arithmatex">\[
+M_{\text{shell}} = 8{,}000 \times 0.107 \times 18.4 \times 10^6 = 15.7 \; \text{Mt}
+\]</div>
+<p>This is excessive. The NASA SP-413 found that cylinders require ~4× more structural mass per unit area than tori, which is why they rejected pure cylinders.</p>
+<p>Using the SP-413's preferred aluminum at SF=2, with half-atmosphere:
+For the barrel only (12.34 km²), aluminum 7075-T6, <span class="arithmatex">\(t = 199\)</span> mm:</p>
+<div class="arithmatex">\[
+M_{\text{barrel}} = 2{,}810 \times 0.199 \times 12.34 \times 10^6 = 6.9 \; \text{Mt}
+\]</div>
+<p><strong>However</strong>, the more relevant calculation follows the SP-413 approach. The NASA study found structural masses empirically:</p>
+<table>
+<thead>
+<tr>
+<th>Configuration</th>
+<th>Radius (m)</th>
+<th>Structural Mass (kt)</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stanford torus (r=830m)</td>
+<td>830</td>
+<td>150</td>
+<td>SP-413 Table 4-1</td>
+</tr>
+<tr>
+<td>Cylinder (r=895m, L=8950m)</td>
+<td>895</td>
+<td>42,300</td>
+<td>SP-413 Table 4-1</td>
+</tr>
+<tr>
+<td>Sphere (r=895m)</td>
+<td>895</td>
+<td>3,545</td>
+<td>SP-413 Table 4-1</td>
+</tr>
+<tr>
+<td>SP-413 torus (built)</td>
+<td>895</td>
+<td>156</td>
+<td>SP-413 Table 5-2</td>
+</tr>
+</tbody>
+</table>
+<p>The SP-413 cylinder at r=895m, L=8950m had structural mass 42,300 kt = 42.3 Mt. Scaling:</p>
+<p><strong>Scenario 1</strong> — scaling from SP-413 cylinder by surface area ratio:</p>
+<div class="arithmatex">\[
+A_{\text{SP-413}} = 2\pi \times 895 \times 8{,}950 = 50.3 \; \text{km}^2
+\]</div>
+<div class="arithmatex">\[
+A_{\text{S1}} = 2\pi \times 982 \times 2{,}000 = 12.3 \; \text{km}^2
+\]</div>
+<div class="arithmatex">\[
+M_{\text{struct,1}} \approx 42{,}300 \times \frac{12.3}{50.3} \approx 10{,}350 \; \text{kt} \approx 10.4 \; \text{Mt}
+\]</div>
+<p>But this overestimates because the SP-413 cylinder used full atmosphere. At half-atmosphere:</p>
+<div class="arithmatex">\[
+M_{\text{struct,1}} \approx 10.4 \times 0.5 \approx 5.2 \; \text{Mt}
+\]</div>
+<p><strong>More realistic estimate using the torus shell density as a baseline:</strong>
+The Stanford torus shell was 156,000 t for a surface area of <span class="arithmatex">\(2.1 \times 10^6\)</span> m² = 74 kg/m².
+A cylinder at the same radius faces higher hoop stress (larger radius of curvature in the longitudinal cross-section is infinite vs. 65m for the torus). The SP-413 found cylinders need ~4× more mass per unit projected area. Applying a 2× structural penalty over the torus:</p>
+<div class="arithmatex">\[
+M_{\text{struct,1}} \approx 150 \; \text{kg/m}^2 \times 12.34 \times 10^6 \; \text{m}^2 = 1.85 \; \text{Mt}
+\]</div>
+<p><strong>Best estimate for Scenario 1 structural shell: 2 - 5 Mt</strong> depending on material and safety factor choices.</p>
+<p><strong>Scenario 2</strong> — scaling from SP-413:</p>
+<div class="arithmatex">\[
+A_{\text{S2}} = 2\pi \times 3{,}200 \times 32{,}000 = 643 \; \text{km}^2
+\]</div>
+<p>Direct calculation with high-strength steel, SF=3, full atmosphere, barrel only:</p>
+<div class="arithmatex">\[
+t = \frac{3 \times 101{,}300 \times 3{,}200}{1{,}400 \times 10^6} = 0.695 \; \text{m}
+\]</div>
+<div class="arithmatex">\[
+M_{\text{barrel}} = 8{,}000 \times 0.695 \times 643 \times 10^6 = 3{,}575 \; \text{Mt}
+\]</div>
+<p>With CFRP, SF=3:</p>
+<div class="arithmatex">\[
+t = \frac{3 \times 101{,}300 \times 3{,}200}{1{,}500 \times 10^6} = 0.649 \; \text{m}
+\]</div>
+<div class="arithmatex">\[
+M_{\text{barrel}} = 1{,}600 \times 0.649 \times 643 \times 10^6 = 668 \; \text{Mt}
+\]</div>
+<p>With aluminum 7075-T6, SF=3:</p>
+<div class="arithmatex">\[
+t = \frac{3 \times 101{,}300 \times 3{,}200}{503 \times 10^6} = 1.934 \; \text{m}
+\]</div>
+<div class="arithmatex">\[
+M_{\text{barrel}} = 2{,}810 \times 1.934 \times 643 \times 10^6 = 3{,}493 \; \text{Mt}
+\]</div>
+<p><strong>Best estimate for Scenario 2 structural shell: 700 Mt (CFRP) to 3,500 Mt (steel/aluminum)</strong></p>
+<p><em>Key insight: structural shell mass scales as <span class="arithmatex">\(r^2 \times L \times P / \sigma_y\)</span>. The O'Neill-class cylinder is enormously more massive due to the 3.26× radius increase and 16× length increase combined with doubled pressure.</em></p>
+<hr />
+<h2 id="2-radiation-shielding-mass">2. Radiation Shielding Mass<a class="headerlink" href="#2-radiation-shielding-mass" title="Permanent link">&para;</a></h2>
+<h3 id="shielding-requirements">Shielding Requirements<a class="headerlink" href="#shielding-requirements" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Protection Level</th>
+<th>Areal Density</th>
+<th>Equivalent</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Earth atmosphere</td>
+<td>1,033 g/cm² = 10,330 kg/m²</td>
+<td>10.3 t/m²</td>
+<td>Standard physics</td>
+</tr>
+<tr>
+<td>SP-413 design</td>
+<td>4,500 kg/m²</td>
+<td>4.5 t/m²</td>
+<td>NASA SP-413 Ch. 4</td>
+</tr>
+<tr>
+<td>Minimum for 0.5 rem/yr</td>
+<td>~4,500 kg/m²</td>
+<td>4.5 t/m²</td>
+<td>SP-413 (accounts for oblique incidence)</td>
+</tr>
+<tr>
+<td>Minimum for 5 rem/yr (worker limit)</td>
+<td>~2,000 kg/m²</td>
+<td>2.0 t/m²</td>
+<td>Estimated from SP-413 scaling</td>
+</tr>
+<tr>
+<td>"Barely survivable"</td>
+<td>~1,500 kg/m²</td>
+<td>1.5 t/m²</td>
+<td>See note below</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Critical physics note from SP-413 Chapter 2:</strong> At intermediate shielding depths (a few t/m²), cosmic ray dose <em>increases</em> to ~20 rem/yr due to secondary particle production (spallation). You must push through this "dose bump" to thicker shielding to reach the protective regime. The SP-413 found 4.5 t/m² was the minimum to get below 0.5 rem/yr. Going thinner than ~3 t/m² is actually <em>worse</em> than no shielding at all for cosmic rays.</p>
+<p><strong>"Barely survivable" minimum:</strong> Accepting 5 rem/yr (the radiation worker limit), and using water or hydrogen-rich materials (which produce fewer secondary neutrons than regolith), ~2 t/m² may be acceptable. But this is the occupational limit, not safe for families/children. For a true minimum with children, 4.5 t/m² is the floor.</p>
+<h3 id="shielding-geometry">Shielding Geometry<a class="headerlink" href="#shielding-geometry" title="Permanent link">&para;</a></h3>
+<p>The shielding must cover the projected cross-sectional area against isotropic cosmic rays. For a cylinder, the total surface requiring shielding is the full outer surface (barrel + end caps) since cosmic rays come from all directions.</p>
+<p><strong>Scenario 1</strong> (<span class="arithmatex">\(r = 982\)</span> m, <span class="arithmatex">\(L = 2{,}000\)</span> m):</p>
+<div class="arithmatex">\[
+A_{\text{shield}} = 18.4 \times 10^6 \; \text{m}^2
+\]</div>
+<div class="arithmatex">\[
+\text{At } 4.5 \; \text{t/m}^2: \quad M_{\text{shield}} = 4{,}500 \times 18.4 \times 10^6 = 82.8 \; \text{Mt}
+\]</div>
+<div class="arithmatex">\[
+\text{At } 2.0 \; \text{t/m}^2: \quad M_{\text{shield}} = 2{,}000 \times 18.4 \times 10^6 = 36.8 \; \text{Mt}
+\]</div>
+<p><strong>Scenario 2</strong> (<span class="arithmatex">\(r = 3{,}200\)</span> m, <span class="arithmatex">\(L = 32{,}000\)</span> m):</p>
+<div class="arithmatex">\[
+A_{\text{shield}} = 707.7 \times 10^6 \; \text{m}^2
+\]</div>
+<div class="arithmatex">\[
+\text{At } 4.5 \; \text{t/m}^2: \quad M_{\text{shield}} = 4{,}500 \times 707.7 \times 10^6 = 3{,}185 \; \text{Mt}
+\]</div>
+<div class="arithmatex">\[
+\text{At } 10.3 \; \text{t/m}^2: \quad M_{\text{shield}} = 10{,}330 \times 707.7 \times 10^6 = 7{,}313 \; \text{Mt}
+\]</div>
+<h3 id="shielding-material-options">Shielding Material Options<a class="headerlink" href="#shielding-material-options" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Material</th>
+<th>Density (kg/m³)</th>
+<th>Thickness for 4.5 t/m²</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lunar regolith</td>
+<td>1,500</td>
+<td>3.0 m</td>
+<td>Primary SP-413 choice</td>
+</tr>
+<tr>
+<td>Water</td>
+<td>1,000</td>
+<td>4.5 m</td>
+<td>Better H content, fewer secondaries</td>
+</tr>
+<tr>
+<td>Lunar slag (processed)</td>
+<td>2,500</td>
+<td>1.8 m</td>
+<td>Denser, thinner layer</td>
+</tr>
+<tr>
+<td>Polyethylene</td>
+<td>950</td>
+<td>4.7 m</td>
+<td>Best H density, expensive to produce</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The SP-413 Stanford torus used 9.9 Mt of lunar regolith shielding</strong> — this was by far the dominant mass component (~95% of total). The shielding was 1.7 m thick at the torus surface.</p>
+<h3 id="shielding-mass-summary">Shielding Mass Summary<a class="headerlink" href="#shielding-mass-summary" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Minimum (2 t/m²)</th>
+<th>SP-413 Standard (4.5 t/m²)</th>
+<th>Earth-Equivalent (10.3 t/m²)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1: Minimum</td>
+<td>36.8 Mt</td>
+<td>82.8 Mt</td>
+<td>190 Mt</td>
+</tr>
+<tr>
+<td>2: O'Neill</td>
+<td>1,415 Mt</td>
+<td>3,185 Mt</td>
+<td>7,313 Mt</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-atmospheric-mass">3. Atmospheric Mass<a class="headerlink" href="#3-atmospheric-mass" title="Permanent link">&para;</a></h2>
+<h3 id="atmospheric-pressure-options">Atmospheric Pressure Options<a class="headerlink" href="#atmospheric-pressure-options" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Atmosphere</th>
+<th>Total Pressure</th>
+<th>O₂</th>
+<th>N₂</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SP-413 design</td>
+<td>51 kPa (0.5 atm)</td>
+<td>22.7 kPa</td>
+<td>26.6 kPa</td>
+<td>Half-pressure, safe with enriched O₂</td>
+</tr>
+<tr>
+<td>Earth standard</td>
+<td>101.3 kPa (1 atm)</td>
+<td>21.2 kPa</td>
+<td>79.0 kPa</td>
+<td>Full atmosphere</td>
+</tr>
+</tbody>
+</table>
+<h3 id="atmospheric-mass-calculation">Atmospheric Mass Calculation<a class="headerlink" href="#atmospheric-mass-calculation" title="Permanent link">&para;</a></h3>
+<p>For a cylinder, the atmosphere fills the entire volume. Using the ideal gas law:</p>
+<div class="arithmatex">\[
+M_{\text{atm}} = \frac{P \cdot V \cdot \bar{M}}{R \cdot T}
+\]</div>
+<p>where <span class="arithmatex">\(\bar{M}\)</span> is the mean molar mass (28.97 g/mol for Earth mix, ~26 g/mol for SP-413 mix), <span class="arithmatex">\(R = 8.314\)</span> J/(mol·K), and <span class="arithmatex">\(T \approx 293\)</span> K.</p>
+<p>At sea level density <span class="arithmatex">\(\rho_{\text{air}} = 1.225\)</span> kg/m³ (Earth) or <span class="arithmatex">\(\approx 0.7\)</span> kg/m³ (SP-413 mix at 51 kPa):</p>
+<p><strong>Scenario 1</strong> (<span class="arithmatex">\(V = 6.06 \times 10^9\)</span> m³):</p>
+<div class="arithmatex">\[
+\text{At 51 kPa:} \quad M_{\text{atm}} \approx 0.7 \times 6.06 \times 10^9 = 4.2 \; \text{Mt}
+\]</div>
+<div class="arithmatex">\[
+\text{At 101.3 kPa:} \quad M_{\text{atm}} \approx 1.225 \times 6.06 \times 10^9 = 7.4 \; \text{Mt}
+\]</div>
+<p><strong>Scenario 2</strong> (<span class="arithmatex">\(V = 1.03 \times 10^{12}\)</span> m³):</p>
+<div class="arithmatex">\[
+\text{At 101.3 kPa:} \quad M_{\text{atm}} \approx 1.225 \times 1.03 \times 10^{12} = 1{,}260 \; \text{Mt}
+\]</div>
+<div class="arithmatex">\[
+\text{At 51 kPa:} \quad M_{\text{atm}} \approx 0.7 \times 1.03 \times 10^{12} = 721 \; \text{Mt}
+\]</div>
+<p><strong>Cross-check with SP-413:</strong> The SP-413 cylinder (<span class="arithmatex">\(r = 895\)</span> m, <span class="arithmatex">\(L = 8{,}950\)</span> m, <span class="arithmatex">\(V = 2.25 \times 10^{10}\)</span> m³) had atmospheric mass 14,612 kt = 14.6 Mt at 51 kPa. This gives <span class="arithmatex">\(\rho \approx 0.65\)</span> kg/m³, consistent with the lower molecular weight SP-413 mix.</p>
+<h3 id="atmospheric-mass-summary">Atmospheric Mass Summary<a class="headerlink" href="#atmospheric-mass-summary" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>SP-413 mix (51 kPa)</th>
+<th>Earth standard (101.3 kPa)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1: Minimum (982m × 2km)</td>
+<td>4.2 Mt</td>
+<td>7.4 Mt</td>
+</tr>
+<tr>
+<td>2: O'Neill (3200m × 32km)</td>
+<td>721 Mt</td>
+<td>1,260 Mt</td>
+</tr>
+</tbody>
+</table>
+<p><em>Note: atmospheric mass is large but not dominant compared to shielding. For Scenario 2, it becomes a very significant fraction.</em></p>
+<hr />
+<h2 id="4-soil-and-water-mass">4. Soil and Water Mass<a class="headerlink" href="#4-soil-and-water-mass" title="Permanent link">&para;</a></h2>
+<h3 id="soil-requirements">Soil Requirements<a class="headerlink" href="#soil-requirements" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Minimum</th>
+<th>Comfortable</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Soil depth for agriculture</td>
+<td>0.5 m</td>
+<td>1.0 - 2.0 m</td>
+<td>SP-413, agricultural science</td>
+</tr>
+<tr>
+<td>Dry soil density</td>
+<td>1,300 kg/m³</td>
+<td>1,500 kg/m³</td>
+<td>Typical topsoil</td>
+</tr>
+<tr>
+<td>Water content in soil</td>
+<td>10% by mass</td>
+<td>20% by mass</td>
+<td>Agricultural standard</td>
+</tr>
+<tr>
+<td>Agricultural area per person</td>
+<td>20 m²</td>
+<td>50 m²</td>
+<td>SP-413 Table 5-4</td>
+</tr>
+<tr>
+<td>Residential area per person</td>
+<td>43 m²</td>
+<td>67 m²</td>
+<td>SP-413 Ch. 3 &amp; 4</td>
+</tr>
+</tbody>
+</table>
+<h3 id="soil-mass-estimates">Soil Mass Estimates<a class="headerlink" href="#soil-mass-estimates" title="Permanent link">&para;</a></h3>
+<p><strong>Scenario 1</strong> (usable floor area <span class="arithmatex">\(\approx 6.17\)</span> km², ~50% agricultural):</p>
+<div class="arithmatex">\[
+A_{\text{ag}} = 3.1 \; \text{km}^2 = 3.1 \times 10^6 \; \text{m}^2
+\]</div>
+<div class="arithmatex">\[
+M_{\text{soil}} = 0.5 \times 1{,}300 \times 3.1 \times 10^6 = 2.0 \; \text{Mt}
+\]</div>
+<div class="arithmatex">\[
+M_{\text{water in soil}} = 0.1 \times M_{\text{soil}} = 0.2 \; \text{Mt}
+\]</div>
+<p><strong>Scenario 2</strong> (usable floor area <span class="arithmatex">\(\approx 321.7\)</span> km², generous allocation):</p>
+<div class="arithmatex">\[
+M_{\text{ag soil}} = 1.5 \times 1{,}500 \times 10^8 = 225 \; \text{Mt}
+\]</div>
+<div class="arithmatex">\[
+M_{\text{parks}} = 0.5 \times 1{,}500 \times 10^8 = 75 \; \text{Mt}
+\]</div>
+<div class="arithmatex">\[
+M_{\text{water in soil}} = 0.2 \times 300 = 60 \; \text{Mt}
+\]</div>
+<div class="arithmatex">\[
+M_{\text{soil, total}} = 225 + 75 + 60 = 360 \; \text{Mt}
+\]</div>
+<h3 id="water-requirements">Water Requirements<a class="headerlink" href="#water-requirements" title="Permanent link">&para;</a></h3>
+<p><strong>SP-413 reference:</strong> 42,000 t water (20,000 t free water + 22,000 t in soil) for 10,000 people = 4.2 t/person.</p>
+<table>
+<thead>
+<tr>
+<th>Water Category</th>
+<th>Scenario 1</th>
+<th>Scenario 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Soil moisture</td>
+<td>0.2 Mt</td>
+<td>60 Mt</td>
+</tr>
+<tr>
+<td>Rivers/lakes/reservoirs</td>
+<td>0.5 Mt</td>
+<td>200 Mt</td>
+</tr>
+<tr>
+<td>Industrial/recycling</td>
+<td>0.1 Mt</td>
+<td>50 Mt</td>
+</tr>
+<tr>
+<td>Humidity (in atmosphere)</td>
+<td>~0.1 Mt</td>
+<td>~10 Mt</td>
+</tr>
+<tr>
+<td><strong>Total water</strong></td>
+<td><strong>~1 Mt</strong></td>
+<td><strong>~320 Mt</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="soil-water-summary">Soil + Water Summary<a class="headerlink" href="#soil-water-summary" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Scenario 1</th>
+<th>Scenario 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dry soil</td>
+<td>2.0 Mt</td>
+<td>300 Mt</td>
+</tr>
+<tr>
+<td>Water (all forms)</td>
+<td>1.0 Mt</td>
+<td>320 Mt</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>3.0 Mt</strong></td>
+<td><strong>620 Mt</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-interior-mass-buildings-infrastructure-people">5. Interior Mass (Buildings, Infrastructure, People)<a class="headerlink" href="#5-interior-mass-buildings-infrastructure-people" title="Permanent link">&para;</a></h2>
+<h3 id="sp-413-reference-data-10000-population">SP-413 Reference Data (10,000 population)<a class="headerlink" href="#sp-413-reference-data-10000-population" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Mass (kt)</th>
+<th>Per Capita (t/person)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Structures</td>
+<td>77</td>
+<td>7.7</td>
+</tr>
+<tr>
+<td>Machinery</td>
+<td>40</td>
+<td>4.0</td>
+</tr>
+<tr>
+<td>Biomass (plants)</td>
+<td>5</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td>Furnishings</td>
+<td>25</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>People (avg 70 kg)</td>
+<td>0.7</td>
+<td>0.07</td>
+</tr>
+<tr>
+<td><strong>Total interior</strong></td>
+<td><strong>148</strong></td>
+<td><strong>14.8</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="scaled-estimates">Scaled Estimates<a class="headerlink" href="#scaled-estimates" title="Permanent link">&para;</a></h3>
+<p><strong>Scenario 1</strong> (population ~8,000):</p>
+<div class="arithmatex">\[
+M_{\text{interior}} \approx 8{,}000 \times 14.8 = 118 \; \text{kt} \approx 0.12 \; \text{Mt}
+\]</div>
+<p>Rounding up for safety: <strong>~0.2 Mt</strong></p>
+<p><strong>Scenario 2</strong> (population ~1,000,000):</p>
+<div class="arithmatex">\[
+M_{\text{interior}} \approx 1{,}000{,}000 \times 14.8 = 14{,}800 \; \text{kt} \approx 14.8 \; \text{Mt}
+\]</div>
+<p>With more generous infrastructure (parks, transport, industry): <strong>~30 Mt</strong></p>
+<hr />
+<h2 id="6-total-mass-estimates">6. Total Mass Estimates<a class="headerlink" href="#6-total-mass-estimates" title="Permanent link">&para;</a></h2>
+<h3 id="scenario-1-barely-survivable-minimum-cylinder-982m-2km">Scenario 1: "Barely Survivable" Minimum Cylinder (982m × 2km)<a class="headerlink" href="#scenario-1-barely-survivable-minimum-cylinder-982m-2km" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Minimum Mass</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Structural shell</td>
+<td>2 Mt</td>
+<td>CFRP, SF=2, half-atmosphere</td>
+</tr>
+<tr>
+<td>Radiation shielding</td>
+<td>37 Mt</td>
+<td>2.0 t/m², worker-limit dose</td>
+</tr>
+<tr>
+<td>Atmosphere</td>
+<td>4.2 Mt</td>
+<td>SP-413 mix at 51 kPa</td>
+</tr>
+<tr>
+<td>Soil + water</td>
+<td>3.0 Mt</td>
+<td>Minimal agriculture</td>
+</tr>
+<tr>
+<td>Interior</td>
+<td>0.2 Mt</td>
+<td>Spartan infrastructure</td>
+</tr>
+<tr>
+<td><strong>TOTAL</strong></td>
+<td><strong>~46 Mt</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>With SP-413 standard shielding (4.5 t/m²): <strong>~92 Mt</strong></p>
+<h3 id="scenario-2-most-comfortable-oneill-class-cylinder-3200m-32km">Scenario 2: "Most Comfortable" O'Neill-Class Cylinder (3200m × 32km)<a class="headerlink" href="#scenario-2-most-comfortable-oneill-class-cylinder-3200m-32km" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Mass</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Structural shell</td>
+<td>700 Mt (CFRP) to 3,500 Mt (metal)</td>
+<td>SF=3, full atmosphere</td>
+</tr>
+<tr>
+<td>Radiation shielding</td>
+<td>3,185 Mt (SP-413) to 7,313 Mt (Earth-equiv.)</td>
+<td>4.5 - 10.3 t/m²</td>
+</tr>
+<tr>
+<td>Atmosphere</td>
+<td>1,260 Mt</td>
+<td>Full Earth atmosphere</td>
+</tr>
+<tr>
+<td>Soil + water</td>
+<td>620 Mt</td>
+<td>Deep soil, lakes, rivers</td>
+</tr>
+<tr>
+<td>Interior</td>
+<td>30 Mt</td>
+<td>Full urban infrastructure</td>
+</tr>
+<tr>
+<td><strong>TOTAL (CFRP + SP-413 shielding)</strong></td>
+<td><strong>~5,800 Mt</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>TOTAL (metal + Earth-equiv. shielding)</strong></td>
+<td><strong>~12,700 Mt</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="comparison-with-literature">Comparison with Literature<a class="headerlink" href="#comparison-with-literature" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Reference</th>
+<th>Design</th>
+<th>Total Mass</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SP-413 (1975)</td>
+<td>Stanford torus (r=830m)</td>
+<td>~10.5 Mt</td>
+<td>Dominated by 9.9 Mt shielding</td>
+</tr>
+<tr>
+<td>SP-413 (1975)</td>
+<td>Cylinder (r=895m, L=8950m)</td>
+<td>~80+ Mt</td>
+<td>42.3 Mt structure + 23.3 Mt shield + 14.6 Mt atmo</td>
+</tr>
+<tr>
+<td>O'Neill (1977)</td>
+<td>Island Three (r=3200m, L=32km)</td>
+<td>~several thousand Mt</td>
+<td>Order-of-magnitude consistent</td>
+</tr>
+<tr>
+<td>ISS</td>
+<td>LEO station</td>
+<td>0.00042 Mt (420 t)</td>
+<td>For scale reference</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The ISS comparison:</strong> The "barely survivable" minimum cylinder is approximately <strong>100,000× the mass of the ISS</strong>. The O'Neill-class cylinder is roughly <strong>10 million × the ISS mass</strong>. This illustrates the extraordinary scale difference between current space construction and permanent habitats.</p>
+<hr />
+<h2 id="7-material-sourcing">7. Material Sourcing<a class="headerlink" href="#7-material-sourcing" title="Permanent link">&para;</a></h2>
+<h3 id="lunar-regolith-composition-by-mass">Lunar Regolith Composition (by mass)<a class="headerlink" href="#lunar-regolith-composition-by-mass" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Oxide</th>
+<th>Fraction</th>
+<th>Useful Elements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SiO₂</td>
+<td>45%</td>
+<td>Silicon, oxygen</td>
+</tr>
+<tr>
+<td>Al₂O₃</td>
+<td>15%</td>
+<td>Aluminum</td>
+</tr>
+<tr>
+<td>FeO</td>
+<td>15%</td>
+<td>Iron</td>
+</tr>
+<tr>
+<td>CaO</td>
+<td>10%</td>
+<td>Calcium</td>
+</tr>
+<tr>
+<td>MgO</td>
+<td>10%</td>
+<td>Magnesium</td>
+</tr>
+<tr>
+<td>TiO₂</td>
+<td>5%</td>
+<td>Titanium</td>
+</tr>
+</tbody>
+</table>
+<p>Lunar regolith provides: structural metals (Al, Fe, Ti), radiation shielding (bulk regolith/slag), oxygen (for atmosphere), silicon (for glass/solar cells). What it lacks: hydrogen (for water), carbon, nitrogen — these must come from asteroids, comets, or Earth.</p>
+<h3 id="source-requirements">Source Requirements<a class="headerlink" href="#source-requirements" title="Permanent link">&para;</a></h3>
+<p><strong>Scenario 1 (46 Mt minimum):</strong>
+- Shielding (37 Mt): Lunar regolith, minimally processed
+- Structure (2 Mt): Lunar aluminum or asteroid iron/nickel
+- Atmosphere N₂ (2.6 Mt): Asteroid volatiles or Earth import
+- Atmosphere O₂ (1.6 Mt): Lunar regolith extraction
+- Water (1 Mt): Asteroid ice or lunar polar ice
+- Soil (2 Mt): Lunar regolith with organic amendments from asteroidal carbon</p>
+<p><strong>Scenario 2 (5,800 Mt minimum):</strong>
+- Shielding (3,185 Mt): Lunar regolith — at SP-413's 1.2 Mt/yr extraction rate, this alone would take <strong>2,654 years</strong>. Multiple orders of magnitude increase in mining infrastructure required, or asteroid capture.
+- Atmosphere N₂ (~1,000 Mt): Cannot come from the Moon (nitrogen-poor). Requires massive asteroidal/cometary sources.
+- Water (320 Mt): Asteroid ice capture on industrial scale.</p>
+<h3 id="the-nitrogen-problem">The Nitrogen Problem<a class="headerlink" href="#the-nitrogen-problem" title="Permanent link">&para;</a></h3>
+<p>Earth's atmosphere is 78% N₂ by volume. The SP-413 half-atmosphere design reduces N₂ requirements, but even so, the Moon contains negligible nitrogen. For Scenario 2, ~1,000 Mt of nitrogen is needed. Carbonaceous chondrite asteroids contain 1-3% nitrogen by mass, so capturing and processing <strong>30,000 - 100,000 Mt of asteroid material</strong> would be required for nitrogen alone.</p>
+<hr />
+<h2 id="8-key-formulas-summary">8. Key Formulas Summary<a class="headerlink" href="#8-key-formulas-summary" title="Permanent link">&para;</a></h2>
+<p><strong>Hoop stress (thin-walled cylinder):</strong></p>
+<div class="arithmatex">\[
+\sigma = \frac{P \cdot r}{t}, \qquad t_{\min} = \frac{P \cdot r}{\sigma_y}, \qquad t_{\text{design}} = \frac{\text{SF} \cdot P \cdot r}{\sigma_y}
+\]</div>
+<p><strong>Shell mass:</strong></p>
+<div class="arithmatex">\[
+M_{\text{shell}} = \rho_{\text{material}} \cdot t_{\text{design}} \cdot A_{\text{surface}}
+\]</div>
+<div class="arithmatex">\[
+A_{\text{barrel}} = 2\pi r L, \qquad A_{\text{endcaps}} = 2\pi r^2
+\]</div>
+<p><strong>Atmospheric mass:</strong></p>
+<div class="arithmatex">\[
+M_{\text{atm}} = \rho_{\text{air}} \cdot V = \rho_{\text{air}} \cdot \pi r^2 L, \qquad \rho_{\text{air}} = \frac{P \cdot \bar{M}}{R \cdot T}
+\]</div>
+<p>At 101.3 kPa, 293 K: <span class="arithmatex">\(\rho_{\text{air}} = 1.225\)</span> kg/m³. At 51 kPa, 293 K: <span class="arithmatex">\(\rho_{\text{air}} \approx 0.65\)</span> kg/m³.</p>
+<p><strong>Shielding mass:</strong></p>
+<div class="arithmatex">\[
+M_{\text{shield}} = \sigma_{\text{areal}} \cdot A_{\text{total}}
+\]</div>
+<p>where <span class="arithmatex">\(\sigma_{\text{areal}}\)</span> is the areal density requirement (kg/m²).</p>
+<p><strong>Centripetal acceleration (artificial gravity):</strong></p>
+<div class="arithmatex">\[
+a = \omega^2 r = g_{\text{target}}, \qquad \omega = \sqrt{\frac{g}{r}}
+\]</div>
+<hr />
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Johnson, Richard D., and Charles Holbrow, editors. <em>Space Settlements: A Design Study</em>. NASA SP-413, National Aeronautics and Space Administration, 1977. Chapter 4 (habitat selection), Chapter 5 (colony design), Chapter 6 (construction).</p>
+</li>
+<li>
+<p>O'Neill, Gerard K. <em>The High Frontier: Human Colonies in Space</em>. William Morrow and Company, 1977. Island Three specifications: paired cylinders, 3.2 km radius, 32 km length, ~1 million population.</p>
+</li>
+<li>
+<p>O'Neill, Gerard K. "The Colonization of Space." <em>Physics Today</em>, vol. 27, no. 9, 1974, pp. 32-40. Original proposal for L5 colonies using lunar materials.</p>
+</li>
+<li>
+<p>NASA SP-413, Chapter 2: "Physical Properties of Space." Cosmic ray flux of ~10 rem/yr unshielded; secondary particle production at intermediate shielding depths; 4.5 t/m² minimum for 0.5 rem/yr.</p>
+</li>
+<li>
+<p>NASA SP-413, Chapter 3: "Human Needs in Space." Atmospheric requirements (51 kPa total, 22.7 kPa O₂, 26.6 kPa N₂), gravity (0.95 ± 0.05 g), radiation (&lt;0.5 rem/yr), area per person (67 m²).</p>
+</li>
+<li>
+<p>NASA SP-413, Chapter 4, Table 4-1: Comparison of habitat configurations — structural mass, shielding mass, and atmospheric mass for torus, cylinder, sphere, and dumbbell geometries at 1 rpm, 0.95g.</p>
+</li>
+<li>
+<p>NASA SP-413, Chapter 5, Tables 5-2 and 5-3: Stanford torus mass breakdown — 9.9 Mt shielding, 156 kt shell, 220 kt soil, 42 kt water, 530 kt interior total.</p>
+</li>
+<li>
+<p>Globus, Al, and Tom Marotta. "The High Frontier: An Easier Way." <em>NSS Space Settlement Journal</em>, 2018. Updated analysis arguing for smaller habitats at lower Earth orbits within the Van Allen belts (reducing shielding requirements).</p>
+</li>
+</ul>
+<hr />
+<h2 id="conclusions">Conclusions<a class="headerlink" href="#conclusions" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p><strong>Shielding dominates everything.</strong> In both scenarios, radiation shielding is the largest or second-largest mass component. The SP-413 found this in 1975, and it remains true. Any design optimization must start with shielding.</p>
+</li>
+<li>
+<p><strong>The structural shell is the second crisis.</strong> At O'Neill-class scales with full atmosphere, even CFRP requires ~700 Mt of structural shell. The hoop stress scales linearly with both radius and pressure. The SP-413's decision to use half-atmosphere (51 kPa) and a torus (smaller radius of curvature) were driven by this structural reality.</p>
+</li>
+<li>
+<p><strong>Atmospheric mass is non-trivial.</strong> The O'Neill cylinder contains 1,260 Mt of air at full atmosphere — more than the structural shell in some material scenarios. The nitrogen sourcing problem is severe.</p>
+</li>
+<li>
+<p><strong>The minimum viable cylinder (~46 Mt) is achievable with lunar resources</strong> in principle, though it requires industrial-scale lunar mining far beyond current capabilities.</p>
+</li>
+<li>
+<p><strong>The O'Neill-class cylinder (~5,800 Mt minimum) requires asteroid mining</strong> in addition to lunar resources, particularly for nitrogen and water. At current launch costs (~$2,700/kg to LEO with Starship), even moving 1 Mt from Earth would cost $2.7 trillion. All mass must come from space resources.</p>
+</li>
+<li>
+<p><strong>The SP-413 torus at 10.5 Mt was the most mass-efficient design</strong> among the options studied in 1975. It achieved comparable living area to much larger cylinders at a fraction of the mass. The cylinder's structural penalty is severe.</p>
+</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

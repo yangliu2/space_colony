@@ -1,0 +1,2095 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Physics-based feasibility analysis for O'Neill cylinder habitats">
+      
+      
+      
+        <link rel="canonical" href="https://docs.spinhabitat.com/plans/contested_rotation_rate/">
+      
+      
+        <link rel="prev" href="../contested_partial_gravity/">
+      
+      
+        <link rel="next" href="../contested_radiation/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Maximum Rotation Rate - Space Colony — Constraint Study</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#contested-maximum-tolerable-rotation-rate" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Space Colony — Constraint Study" class="md-header__button md-logo" aria-label="Space Colony — Constraint Study" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Space Colony — Constraint Study
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Maximum Rotation Rate
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/fangfanglai/space_colony" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Space Colony — Constraint Study" class="md-nav__button md-logo" aria-label="Space Colony — Constraint Study" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Space Colony — Constraint Study
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/fangfanglai/space_colony" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. How Does It Work?
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    1. How Does It Work?
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intuition_artificial_gravity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Artificial Gravity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intuition_centripetal_acceleration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Centripetal Acceleration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intuition_angular_velocity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Angular Velocity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../general_relativity_and_artificial_gravity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Does General Relativity Matter?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Can Humans Live There?
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2. Can Humans Live There?
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_vestibular/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vestibular (RPM limit)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_gravity_minimum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gravity Level
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_gravity_gradient/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gravity Gradient (head-to-foot)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_coriolis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coriolis Effect
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_cross_coupling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross-Coupling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_biological/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atmosphere
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Will the Structure Hold?
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3. Will the Structure Hold?
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../structural_engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hoop Stress & Materials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_rim_speed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rim Speed (material limit)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_cylinder_length/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cylinder Length & Counter-Rotation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_rotational_stability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rotational Stability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_spinup_energy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spin-Up Energy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Life Support
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    4. Life Support
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_agriculture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agriculture Area
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_thermal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Thermal Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_energy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Energy Budget
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_water_recycling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Water Recycling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_micrometeorite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Micrometeorite Impact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. The Design
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    5. The Design
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mirror_geometry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    External Mirrors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interior_space_utilization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interior Space
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../construction_material_estimates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Material Estimates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Findings
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    6. Findings
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../conclusions/001_human_comfort_boundaries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    001: Human Comfort Boundaries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../conclusions/002_full_constraint_analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    002: Full Constraint Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../conclusions/003_biological_constraints_and_monte_carlo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    003: Biological Constraints & Monte Carlo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../conclusions/004_structural_constraints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    004: Structural Constraints
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../conclusions/feasible_habitat_design_space/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Feasible Design Space
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Open Questions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    7. Open Questions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contested_partial_gravity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minimum Gravity Level
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maximum Rotation Rate
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maximum Rotation Rate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-question" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Question
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-it-matters-so-much" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why It Matters So Much
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-primary-data-source-graybiel-19691977" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Primary Data Source: Graybiel (1969–1977)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#camp-1-2-rpm-maximum-nasa-conservative-standard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Camp 1: 2 RPM Maximum (NASA / Conservative Standard)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#camp-2-4-rpm-is-supportable-globus-and-hall-2017" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Camp 2: 4 RPM Is Supportable (Globus and Hall 2017)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-unresolved-issue-short-duration-studies-and-long-term-stability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Unresolved Issue: Short-Duration Studies and Long-Term Stability
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implications-for-this-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implications for This Model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contested_radiation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Radiation Limits & LNT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../literature_review_human_factors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Literature — Human Factors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../literature_review_structural/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Literature — Structural
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qa_structural_design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Q&A — Structural Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="contested-maximum-tolerable-rotation-rate">Contested: Maximum Tolerable Rotation Rate<a class="headerlink" href="#contested-maximum-tolerable-rotation-rate" title="Permanent link">&para;</a></h1>
+<h2 id="the-question">The Question<a class="headerlink" href="#the-question" title="Permanent link">&para;</a></h2>
+<p>What is the highest rotation rate (RPM) at which humans can live and work
+comfortably over months and years? This single number determines the minimum
+viable radius of any rotating habitat — and therefore its entire economics.</p>
+<h2 id="why-it-matters-so-much">Why It Matters So Much<a class="headerlink" href="#why-it-matters-so-much" title="Permanent link">&para;</a></h2>
+<p>At <span class="arithmatex">\(1g\)</span> target gravity, minimum radius scales as:</p>
+<div class="arithmatex">\[r_{\min} = \frac{g}{\omega^2} = \frac{9.81}{(n \cdot 2\pi/60)^2}\]</div>
+<table>
+<thead>
+<tr>
+<th>RPM limit</th>
+<th>Minimum radius at 1g</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 RPM</td>
+<td>895 m</td>
+</tr>
+<tr>
+<td>2 RPM</td>
+<td>224 m</td>
+</tr>
+<tr>
+<td>3 RPM</td>
+<td>99 m</td>
+</tr>
+<tr>
+<td>4 RPM</td>
+<td>56 m</td>
+</tr>
+<tr>
+<td>6 RPM</td>
+<td>25 m</td>
+</tr>
+</tbody>
+</table>
+<p>The difference between accepting 2 RPM and accepting 4 RPM is a factor of 4
+in radius — roughly <span class="arithmatex">\(16\times\)</span> in interior floor area, and the difference
+between a structure that requires asteroid mining to build and one that could
+plausibly be assembled in low Earth orbit with near-term technology.</p>
+<h2 id="the-primary-data-source-graybiel-19691977">The Primary Data Source: Graybiel (1969–1977)<a class="headerlink" href="#the-primary-data-source-graybiel-19691977" title="Permanent link">&para;</a></h2>
+<p>Ashton Graybiel's experiments at the Naval Aerospace Medical Research
+Laboratory remain the foundational dataset <strong>(Graybiel 1969; Graybiel et al.
+1977)</strong>. Subjects were exposed to rotating rooms at various RPMs:</p>
+<table>
+<thead>
+<tr>
+<th>Rotation rate</th>
+<th>Reported effects</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 RPM</td>
+<td>No symptoms. Universal tolerance.</td>
+</tr>
+<tr>
+<td>3 RPM</td>
+<td>Initial nausea and disorientation during head movements; most subjects adapted within days</td>
+</tr>
+<tr>
+<td>5.4 RPM</td>
+<td>Significant symptoms; minority adapted, majority did not</td>
+</tr>
+<tr>
+<td>10 RPM</td>
+<td>Intolerable; no adaptation observed</td>
+</tr>
+</tbody>
+</table>
+<p>The physiological mechanism is well understood. When a person moves their head
+inside a rotating environment, the Coriolis force creates an unexpected
+cross-axis angular acceleration:</p>
+<div class="arithmatex">\[\vec{a}_{\text{Coriolis}} = -2\,\vec{\omega} \times \vec{v}_{\text{head}}\]</div>
+<p>The vestibular system interprets this as an unexpected tilt or rotation.
+Lackner and DiZio (1998) quantified the relationship precisely: the
+disturbance magnitude scales linearly with <span class="arithmatex">\(\omega\)</span> and with the angular
+velocity of the head movement <strong>(Lackner and DiZio 1998)</strong>. Slower rotation →
+smaller Coriolis disturbance → less disorientation.</p>
+<h2 id="camp-1-2-rpm-maximum-nasa-conservative-standard">Camp 1: 2 RPM Maximum (NASA / Conservative Standard)<a class="headerlink" href="#camp-1-2-rpm-maximum-nasa-conservative-standard" title="Permanent link">&para;</a></h2>
+<p><strong>Position:</strong> The Graybiel data shows reliable symptoms emerging above 3 RPM,
+and individual variation is large. A conservative engineering standard of
+2 RPM protects the most sensitive individuals and leaves margin for unplanned
+head movements (sneezing, stumbling, rapid turns).</p>
+<p><strong>The habituation caveat:</strong> Proponents acknowledge that 3 RPM showed
+adaptation in most subjects — but note that Graybiel's experiments lasted
+days to weeks. Long-term stability of that adaptation is unknown. Symptoms
+could return at month 6 or year 2 in ways the short studies could not detect.</p>
+<p><strong>Supporting evidence for caution:</strong>
+- The linear <span class="arithmatex">\(\omega\)</span>-scaling means that as rotation rises, every head
+  movement costs more vestibular disruption
+- Individual variation in Graybiel's 3 RPM trials was substantial — some
+  subjects never adapted. A habitat cannot be designed for the median tolerance
+  if the worst-case 10% experience chronic nausea
+- Lackner and DiZio's work shows that adaptation acquired in one rotating
+  environment does not fully transfer when the environment changes (speed,
+  direction) — suggesting adaptation may be context-specific</p>
+<h2 id="camp-2-4-rpm-is-supportable-globus-and-hall-2017">Camp 2: 4 RPM Is Supportable (Globus and Hall 2017)<a class="headerlink" href="#camp-2-4-rpm-is-supportable-globus-and-hall-2017" title="Permanent link">&para;</a></h2>
+<p><strong>Position:</strong> The Graybiel data has been over-conservatively interpreted.
+Careful re-analysis supports 4 RPM as a workable standard.</p>
+<p><strong>Key arguments:</strong></p>
+<ol>
+<li>
+<p><strong>Adaptation was observed at 3 RPM.</strong> Most subjects in Graybiel's 3 RPM
+   trials adapted fully within 4–12 days. The 2 RPM standard was set below
+   the adaptation threshold, leaving substantial tolerance unexploited.</p>
+</li>
+<li>
+<p><strong>The critical experiment has not been done.</strong> No study has exposed subjects
+   to 3–4 RPM for 6+ months. The adaptation observed at shorter timescales is
+   encouraging; the absence of long-term data is not evidence of failure.</p>
+</li>
+<li>
+<p><strong>Gradual habituation protocols.</strong> Lackner and DiZio's work suggests that
+   incremental exposure — starting at low RPM and gradually increasing —
+   produces more robust adaptation than sudden exposure to the target rate.
+   Graybiel's studies did not use graduated protocols.</p>
+</li>
+<li>
+<p><strong>Head movement restriction.</strong> At 4 RPM, simply training residents to move
+   their heads more slowly when changing orientation may be sufficient to
+   eliminate acute symptoms. Lackner and DiZio showed that Coriolis disturbance
+   is proportional to head angular velocity; at slow head movements even 6 RPM
+   may be tolerable <strong>(Lackner and DiZio 1998)</strong>.</p>
+</li>
+</ol>
+<p>Globus and Hall (2017) propose a design standard of 4 RPM based on this
+evidence, which reduces minimum viable radius at <span class="arithmatex">\(1g\)</span> to 56 m — potentially
+enabling orbital habitats buildable with current heavy-lift launch vehicles.</p>
+<h2 id="the-unresolved-issue-short-duration-studies-and-long-term-stability">The Unresolved Issue: Short-Duration Studies and Long-Term Stability<a class="headerlink" href="#the-unresolved-issue-short-duration-studies-and-long-term-stability" title="Permanent link">&para;</a></h2>
+<p>Both camps accept the same underlying data. The disagreement is about inference:</p>
+<table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Conservative answer</th>
+<th>Globus answer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Is adaptation at 3 RPM real?</td>
+<td>Yes, but short-term</td>
+<td>Yes, and likely stable</td>
+</tr>
+<tr>
+<td>Is 4 RPM tolerable with training?</td>
+<td>Possibly, but unproven</td>
+<td>Probably yes</td>
+</tr>
+<tr>
+<td>Does adaptation persist for months?</td>
+<td>Unknown — requires study</td>
+<td>Plausibly yes</td>
+</tr>
+<tr>
+<td>What about sensitive individuals?</td>
+<td>Must design for worst case</td>
+<td>Train or screen</td>
+</tr>
+</tbody>
+</table>
+<p>The "worst-case individual" framing is an important philosophical split. NASA
+habitually designs for the most sensitive 5th-percentile astronaut. A
+permanent colony of 10,000 people might adopt a population-health framing
+instead — accepting that some residents experience minor chronic symptoms while
+the majority are comfortable — in the same way Earth's rotating amusement parks
+are not designed to the motion-sickness sensitivity of the most susceptible 5%.</p>
+<h2 id="implications-for-this-model">Implications for This Model<a class="headerlink" href="#implications-for-this-model" title="Permanent link">&para;</a></h2>
+<p>This model uses a default <code>max_comfortable_rpm</code> of <strong>2.0 RPM</strong>, consistent
+with the conservative NASA standard. The slider permits exploration up to
+6 RPM. The cross-coupling constraint — which evaluates the angular acceleration
+experienced during a head turn at the habitat's rotation rate — is the
+binding lower-radius constraint in most designs; this is the formalized
+version of the Graybiel/Lackner physics.</p>
+<p>The empirical question of whether 4 RPM is acceptable for months-to-years
+duration remains open. Its resolution would shift the minimum viable habitat
+radius from <span class="arithmatex">\(\sim 980\ \text{m}\)</span> to <span class="arithmatex">\(\sim 56\ \text{m}\)</span> — a change with
+civilization-scale economic implications.</p>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Graybiel, Ashton. "Structural Elements in the Concept of Motion Sickness."
+  <em>Aerospace Medicine</em> 40.4 (1969): 351–367. <strong>(Graybiel 1969)</strong></li>
+<li>Graybiel, Ashton, et al. "Experiment M-131: Human vestibular function."
+  <em>Biomedical Results from Skylab</em> (1977): 74–103. <strong>(Graybiel et al. 1977)</strong></li>
+<li>Globus, Al, and Theodore Hall. "Space Settlement: An Easier Way."
+  <em>NSS Space Settlement Journal</em> (2017). <strong>(Globus and Hall 2017)</strong></li>
+<li>Lackner, James R., and Paul DiZio. "Adaptation in a rotating artificial
+  gravity environment." <em>Brain Research Reviews</em> 28.1–2 (1998): 194–202.
+  <strong>(Lackner and DiZio 1998)</strong></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

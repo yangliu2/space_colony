@@ -1,0 +1,1980 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Physics-based feasibility analysis for O'Neill cylinder habitats">
+      
+      
+      
+        <link rel="canonical" href="https://docs.spinhabitat.com/plans/centripetal_acceleration/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Deriving Centripetal Acceleration & Artificial Gravity in an O'Neill Cylinder - Space Colony — Constraint Study</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#deriving-centripetal-acceleration-artificial-gravity-in-an-oneill-cylinder" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Space Colony — Constraint Study" class="md-header__button md-logo" aria-label="Space Colony — Constraint Study" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Space Colony — Constraint Study
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Deriving Centripetal Acceleration &amp; Artificial Gravity in an O'Neill Cylinder
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/fangfanglai/space_colony" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Space Colony — Constraint Study" class="md-nav__button md-logo" aria-label="Space Colony — Constraint Study" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Space Colony — Constraint Study
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/fangfanglai/space_colony" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. How Does It Work?
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    1. How Does It Work?
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intuition_artificial_gravity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Artificial Gravity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intuition_centripetal_acceleration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Centripetal Acceleration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intuition_angular_velocity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Angular Velocity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../general_relativity_and_artificial_gravity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Does General Relativity Matter?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Can Humans Live There?
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2. Can Humans Live There?
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_vestibular/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vestibular (RPM limit)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_gravity_minimum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gravity Level
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_gravity_gradient/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gravity Gradient (head-to-foot)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_coriolis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coriolis Effect
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_cross_coupling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross-Coupling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_biological/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atmosphere
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Will the Structure Hold?
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3. Will the Structure Hold?
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../structural_engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hoop Stress & Materials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_rim_speed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rim Speed (material limit)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_cylinder_length/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cylinder Length & Counter-Rotation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_rotational_stability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rotational Stability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_spinup_energy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spin-Up Energy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Life Support
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    4. Life Support
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_agriculture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agriculture Area
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_thermal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Thermal Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_energy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Energy Budget
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_water_recycling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Water Recycling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_micrometeorite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Micrometeorite Impact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. The Design
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    5. The Design
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mirror_geometry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    External Mirrors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interior_space_utilization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interior Space
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../construction_material_estimates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Material Estimates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Findings
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    6. Findings
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../conclusions/001_human_comfort_boundaries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    001: Human Comfort Boundaries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../conclusions/002_full_constraint_analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    002: Full Constraint Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../conclusions/003_biological_constraints_and_monte_carlo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    003: Biological Constraints & Monte Carlo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../conclusions/004_structural_constraints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    004: Structural Constraints
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../conclusions/feasible_habitat_design_space/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Feasible Design Space
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Open Questions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    7. Open Questions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contested_partial_gravity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minimum Gravity Level
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contested_rotation_rate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maximum Rotation Rate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contested_radiation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Radiation Limits & LNT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../literature_review_human_factors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Literature — Human Factors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../literature_review_structural/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Literature — Structural
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qa_structural_design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Q&A — Structural Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="deriving-centripetal-acceleration-artificial-gravity-in-an-oneill-cylinder">Deriving Centripetal Acceleration &amp; Artificial Gravity in an O'Neill Cylinder<a class="headerlink" href="#deriving-centripetal-acceleration-artificial-gravity-in-an-oneill-cylinder" title="Permanent link">&para;</a></h1>
+<h2 id="1-starting-point-uniform-circular-motion">1. Starting Point: Uniform Circular Motion<a class="headerlink" href="#1-starting-point-uniform-circular-motion" title="Permanent link">&para;</a></h2>
+<p>When an object moves in a circle at constant speed, it continuously changes direction. That change in direction <strong>is</strong> acceleration — centripetal acceleration, directed radially inward.</p>
+<hr />
+<h2 id="2-the-derivation">2. The Derivation<a class="headerlink" href="#2-the-derivation" title="Permanent link">&para;</a></h2>
+<h3 id="21-angular-velocity">2.1 Angular Velocity<a class="headerlink" href="#21-angular-velocity" title="Permanent link">&para;</a></h3>
+<p>An object on a circular path of radius <span class="arithmatex">\(r\)</span> with tangential speed <span class="arithmatex">\(v\)</span> has angular velocity:</p>
+<div class="arithmatex">\[
+\omega = \frac{v}{r}
+\]</div>
+<p>Rearranging:</p>
+<div class="arithmatex">\[
+v = \omega \cdot r
+\]</div>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Unit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\omega\)</span></td>
+<td>Angular velocity</td>
+<td>rad/s</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(v\)</span></td>
+<td>Tangential (linear) speed</td>
+<td>m/s</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(r\)</span></td>
+<td>Radius of circular path</td>
+<td>m</td>
+</tr>
+</tbody>
+</table>
+<h3 id="22-centripetal-acceleration-in-terms-of-v">2.2 Centripetal Acceleration (in terms of <span class="arithmatex">\(v\)</span>)<a class="headerlink" href="#22-centripetal-acceleration-in-terms-of-v" title="Permanent link">&para;</a></h3>
+<p>From kinematics of circular motion:</p>
+<div class="arithmatex">\[
+a_c = \frac{v^2}{r}
+\]</div>
+<p>This is the magnitude of acceleration required to keep an object on a curved path. Direction is <strong>radially inward</strong>.</p>
+<h3 id="23-substitution-v-omega-r">2.3 Substitution: <span class="arithmatex">\(v = \omega r\)</span><a class="headerlink" href="#23-substitution-v-omega-r" title="Permanent link">&para;</a></h3>
+<p>Replace <span class="arithmatex">\(v\)</span>:</p>
+<div class="arithmatex">\[
+a_c = \frac{v^2}{r} = \frac{(\omega \cdot r)^2}{r} = \frac{\omega^2 \cdot r^2}{r}
+\]</div>
+<div class="arithmatex">\[
+\boxed{a_c = \omega^2 \cdot r}
+\]</div>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Unit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(a_c\)</span></td>
+<td>Centripetal acceleration (felt as "gravity")</td>
+<td>m/s²</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\omega\)</span></td>
+<td>Angular velocity of the cylinder</td>
+<td>rad/s</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(r\)</span></td>
+<td>Radius from the axis of rotation</td>
+<td>m</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-connecting-to-f-ma">3. Connecting to <span class="arithmatex">\(F = ma\)</span><a class="headerlink" href="#3-connecting-to-f-ma" title="Permanent link">&para;</a></h2>
+<p>On the inner surface of a rotating habitat, the hull pushes you inward (normal force). In the rotating reference frame, you experience a fictitious outward "centrifugal force":</p>
+<div class="arithmatex">\[
+F = m \cdot a_c = m \cdot \omega^2 \cdot r
+\]</div>
+<p>This is Newton's second law applied directly. The floor exerts a real contact force of <span class="arithmatex">\(m \omega^2 r\)</span> on you, and you perceive it as <strong>weight</strong>.</p>
+<hr />
+<h2 id="4-application-the-oneill-cylinder">4. Application: The O'Neill Cylinder<a class="headerlink" href="#4-application-the-oneill-cylinder" title="Permanent link">&para;</a></h2>
+<p>An O'Neill cylinder is a proposed space habitat — a large rotating cylinder where inhabitants live on the <strong>inner surface</strong>. The structure's own gravitational pull is negligible. Rotation alone produces the sensation of gravity.</p>
+<h3 id="41-condition-for-1g">4.1 Condition for 1g<a class="headerlink" href="#41-condition-for-1g" title="Permanent link">&para;</a></h3>
+<p>Set <span class="arithmatex">\(a_c\)</span> equal to Earth's surface gravity <span class="arithmatex">\(g\)</span>:</p>
+<div class="arithmatex">\[
+\omega^2 \cdot r = g = 9.81 \; \text{m/s}^2
+\]</div>
+<p>Solving for the required spin rate at a given radius:</p>
+<div class="arithmatex">\[
+\omega = \sqrt{\frac{g}{r}}
+\]</div>
+<p>Solving for the required radius at a given spin rate:</p>
+<div class="arithmatex">\[
+r = \frac{g}{\omega^2}
+\]</div>
+<p>The rotation period <span class="arithmatex">\(T\)</span> (time for one full revolution):</p>
+<div class="arithmatex">\[
+T = \frac{2\pi}{\omega}
+\]</div>
+<h3 id="42-oneills-design-r-3200-m">4.2 O'Neill's Design: <span class="arithmatex">\(r = 3{,}200\)</span> m<a class="headerlink" href="#42-oneills-design-r-3200-m" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+\omega = \sqrt{\frac{9.81}{3200}} = \sqrt{0.003066} \approx 0.0554 \; \text{rad/s}
+\]</div>
+<div class="arithmatex">\[
+T = \frac{2\pi}{0.0554} \approx 113.4 \; \text{s} \approx 1.9 \; \text{min}
+\]</div>
+<blockquote>
+<p>One full rotation roughly every <strong>two minutes</strong> — slow enough that Coriolis effects are manageable.</p>
+</blockquote>
+<h3 id="43-reference-table">4.3 Reference Table<a class="headerlink" href="#43-reference-table" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(r\)</span> (m)</th>
+<th><span class="arithmatex">\(\omega\)</span> (rad/s)</th>
+<th>RPM</th>
+<th><span class="arithmatex">\(T\)</span> (s)</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>100</td>
+<td>0.313</td>
+<td>2.99</td>
+<td>20.1</td>
+<td>Too fast, severe Coriolis</td>
+</tr>
+<tr>
+<td>500</td>
+<td>0.140</td>
+<td>1.34</td>
+<td>44.9</td>
+<td>Near human comfort threshold</td>
+</tr>
+<tr>
+<td>1,000</td>
+<td>0.099</td>
+<td>0.95</td>
+<td>63.5</td>
+<td>Reasonable</td>
+</tr>
+<tr>
+<td>3,200</td>
+<td>0.055</td>
+<td>0.53</td>
+<td>113.4</td>
+<td>O'Neill's original design</td>
+</tr>
+<tr>
+<td>5,000</td>
+<td>0.044</td>
+<td>0.42</td>
+<td>142.3</td>
+<td>Very comfortable</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-why-radius-cant-be-too-small">5. Why Radius Can't Be Too Small<a class="headerlink" href="#5-why-radius-cant-be-too-small" title="Permanent link">&para;</a></h2>
+<p>At small radii you must spin faster to reach 1g. This causes real problems:</p>
+<h3 id="coriolis-effect">Coriolis Effect<a class="headerlink" href="#coriolis-effect" title="Permanent link">&para;</a></h3>
+<p>In a rotating frame, any motion not aligned with the rotation axis produces a Coriolis acceleration:</p>
+<div class="arithmatex">\[
+\vec{a}_{\text{Cor}} = -2\,\vec{\omega} \times \vec{v}_{\text{rel}}
+\]</div>
+<p>Walk in the spin direction → you feel heavier. Walk against it → you feel lighter. At high <span class="arithmatex">\(\omega\)</span>, this is nauseating.</p>
+<h3 id="head-to-foot-gravity-gradient">Head-to-Foot Gravity Gradient<a class="headerlink" href="#head-to-foot-gravity-gradient" title="Permanent link">&para;</a></h3>
+<p>If the cylinder radius is <span class="arithmatex">\(r\)</span> and you stand at height <span class="arithmatex">\(h\)</span>:</p>
+<div class="arithmatex">\[
+\frac{\Delta g}{g} = \frac{h}{r}
+\]</div>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(r\)</span> (m)</th>
+<th><span class="arithmatex">\(h = 2\)</span> m</th>
+<th>Gradient</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>100</td>
+<td>2</td>
+<td>2.0%</td>
+</tr>
+<tr>
+<td>500</td>
+<td>2</td>
+<td>0.4%</td>
+</tr>
+<tr>
+<td>3,200</td>
+<td>2</td>
+<td>0.06%</td>
+</tr>
+</tbody>
+</table>
+<p>At <span class="arithmatex">\(r = 3{,}200\)</span> m, the gradient is negligible. At <span class="arithmatex">\(r = 100\)</span> m, your head is noticeably lighter than your feet.</p>
+<h3 id="accepted-minimums">Accepted Minimums<a class="headerlink" href="#accepted-minimums" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>~500 m</strong> radius at <strong>~1.3 RPM</strong> is generally considered the lower bound for human comfort.</li>
+<li>O'Neill's 3,200 m is conservative by design.</li>
+</ul>
+<hr />
+<h2 id="6-summary">6. Summary<a class="headerlink" href="#6-summary" title="Permanent link">&para;</a></h2>
+<p>The entire derivation is three steps:</p>
+<div class="arithmatex">\[
+F = ma \quad \longrightarrow \quad v = \omega r \quad \longrightarrow \quad \boxed{a = \omega^2 r}
+\]</div>
+<p>Set <span class="arithmatex">\(a = 9.81 \; \text{m/s}^2\)</span>, choose your radius, and you have artificial gravity. The O'Neill cylinder at <span class="arithmatex">\(r \approx 3.2\)</span> km spins once every ~2 minutes to produce a full 1g on the inner surface.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

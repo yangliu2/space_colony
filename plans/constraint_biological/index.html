@@ -1,0 +1,3479 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Physics-based feasibility analysis for O'Neill cylinder habitats">
+      
+      
+      
+        <link rel="canonical" href="https://docs.spinhabitat.com/plans/constraint_biological/">
+      
+      
+        <link rel="prev" href="../constraint_cross_coupling/">
+      
+      
+        <link rel="next" href="../structural_engineering/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Atmosphere - Space Colony — Constraint Study</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#biological-constraints-for-long-term-habitation-in-an-oneill-cylinder" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Space Colony — Constraint Study" class="md-header__button md-logo" aria-label="Space Colony — Constraint Study" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Space Colony — Constraint Study
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Atmosphere
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/fangfanglai/space_colony" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Space Colony — Constraint Study" class="md-nav__button md-logo" aria-label="Space Colony — Constraint Study" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Space Colony — Constraint Study
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/fangfanglai/space_colony" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. How Does It Work?
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    1. How Does It Work?
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intuition_artificial_gravity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Artificial Gravity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intuition_centripetal_acceleration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Centripetal Acceleration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intuition_angular_velocity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Angular Velocity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../general_relativity_and_artificial_gravity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Does General Relativity Matter?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Can Humans Live There?
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2. Can Humans Live There?
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_vestibular/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vestibular (RPM limit)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_gravity_minimum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gravity Level
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_gravity_gradient/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gravity Gradient (head-to-foot)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_coriolis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coriolis Effect
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_cross_coupling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross-Coupling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atmosphere
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atmosphere
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-radiation-exposure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Radiation Exposure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Radiation Exposure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantitative-thresholds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quantitative Thresholds
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shielding-materials-ranked-by-gcr-attenuation-per-unit-mass" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shielding Materials (ranked by GCR attenuation per unit mass)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-gcr-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The GCR Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hard-vs-soft-constraint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hard vs. Soft Constraint
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state-of-knowledge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State of Knowledge
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-atmospheric-pressure-and-composition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Atmospheric Pressure and Composition
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Atmospheric Pressure and Composition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#historical-atmospheres" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Historical Atmospheres
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-trade-offs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Trade-offs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#physiological-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Physiological Limits
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommendation-for-oneill-cylinder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommendation for O'Neill Cylinder
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hard-vs-soft-constraint_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hard vs. Soft Constraint
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state-of-knowledge_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State of Knowledge
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#references_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-circadian-rhythm-and-lighting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Circadian Rhythm and Lighting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Circadian Rhythm and Lighting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantitative-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quantitative Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-wavelengths" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Wavelengths
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vitamin-d-synthesis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vitamin D Synthesis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iss-lighting-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ISS Lighting Solutions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seasonal-variation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seasonal Variation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hard-vs-soft-constraint_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hard vs. Soft Constraint
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state-of-knowledge_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State of Knowledge
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#references_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-psychological-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Psychological Constraints
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Psychological Constraints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minimum-habitable-volume" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Minimum Habitable Volume
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-psychological-stressors-from-ice-research" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Psychological Stressors (from ICE research)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analog-environment-research" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Analog Environment Research
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minimum-population-for-genetic-diversity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Minimum Population for Genetic Diversity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hard-vs-soft-constraint_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hard vs. Soft Constraint
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state-of-knowledge_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State of Knowledge
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#references_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-acoustic-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Acoustic Environment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Acoustic Environment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantitative-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quantitative Standards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iss-noise-experience" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ISS Noise Experience
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cylindrical-habitat-resonance-concerns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cylindrical Habitat Resonance Concerns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hard-vs-soft-constraint_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hard vs. Soft Constraint
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state-of-knowledge_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State of Knowledge
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#references_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-microbiome-and-closed-ecosystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Microbiome and Closed Ecosystem
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Microbiome and Closed Ecosystem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#biosphere-2-lessons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Biosphere 2 Lessons
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iss-microbiome-findings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ISS Microbiome Findings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disease-propagation-risk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disease Propagation Risk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requirements-for-a-stable-ecosystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requirements for a Stable Ecosystem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hard-vs-soft-constraint_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hard vs. Soft Constraint
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state-of-knowledge_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State of Knowledge
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#references_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-reproduction-and-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Reproduction and Development
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Reproduction and Development">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-we-know-from-animal-studies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What We Know from Animal Studies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-unknowns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Unknowns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-rotating-habitat-question" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Rotating Habitat Question
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hard-vs-soft-constraint_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hard vs. Soft Constraint
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state-of-knowledge_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State of Knowledge
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#references_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-magnetic-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Magnetic Field
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Magnetic Field">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#known-biological-effects-of-hypomagnetic-conditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Known Biological Effects of Hypomagnetic Conditions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#human-magnetoreception" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Human Magnetoreception
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-deep-space-question" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Deep Space Question
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mitigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mitigation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hard-vs-soft-constraint_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hard vs. Soft Constraint
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state-of-knowledge_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State of Knowledge
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#references_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-constraint-classification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary: Constraint Classification
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Will the Structure Hold?
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3. Will the Structure Hold?
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../structural_engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hoop Stress & Materials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_rim_speed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rim Speed (material limit)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_cylinder_length/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cylinder Length & Counter-Rotation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_rotational_stability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rotational Stability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_spinup_energy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spin-Up Energy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Life Support
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    4. Life Support
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_agriculture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agriculture Area
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_thermal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Thermal Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_energy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Energy Budget
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_water_recycling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Water Recycling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_micrometeorite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Micrometeorite Impact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. The Design
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    5. The Design
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mirror_geometry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    External Mirrors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interior_space_utilization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interior Space
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../construction_material_estimates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Material Estimates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Findings
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    6. Findings
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../conclusions/001_human_comfort_boundaries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    001: Human Comfort Boundaries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../conclusions/002_full_constraint_analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    002: Full Constraint Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../conclusions/003_biological_constraints_and_monte_carlo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    003: Biological Constraints & Monte Carlo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../conclusions/004_structural_constraints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    004: Structural Constraints
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../conclusions/feasible_habitat_design_space/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Feasible Design Space
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Open Questions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    7. Open Questions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contested_partial_gravity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minimum Gravity Level
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contested_rotation_rate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maximum Rotation Rate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contested_radiation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Radiation Limits & LNT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../literature_review_human_factors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Literature — Human Factors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../literature_review_structural/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Literature — Structural
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qa_structural_design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Q&A — Structural Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="biological-constraints-for-long-term-habitation-in-an-oneill-cylinder">Biological Constraints for Long-Term Habitation in an O'Neill Cylinder<a class="headerlink" href="#biological-constraints-for-long-term-habitation-in-an-oneill-cylinder" title="Permanent link">&para;</a></h1>
+<p>Beyond the rotational-dynamics constraints (vestibular/RPM limits, gravity gradient, cross-coupling, Coriolis, minimum gravity thresholds, rim speed structural limits), humans face a wide range of biological constraints that must be satisfied for permanent habitation. This document surveys eight categories.</p>
+<hr />
+<h2 id="1-radiation-exposure">1. Radiation Exposure<a class="headerlink" href="#1-radiation-exposure" title="Permanent link">&para;</a></h2>
+<h3 id="the-problem">The Problem<a class="headerlink" href="#the-problem" title="Permanent link">&para;</a></h3>
+<p>In deep space, outside Earth's magnetosphere and atmosphere, humans are exposed to two primary radiation threats: <strong>galactic cosmic rays (GCR)</strong> and <strong>solar particle events (SPE)</strong>. Earth's atmosphere provides roughly <strong>1,000 g/cm²</strong> of equivalent shielding. Spacecraft typically provide only 5--30 g/cm².</p>
+<h3 id="quantitative-thresholds">Quantitative Thresholds<a class="headerlink" href="#quantitative-thresholds" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unshielded GCR dose rate (free space)</td>
+<td>~162 mGy/year absorbed; <strong>~523 mSv/year</strong> effective dose equivalent</td>
+<td>Badavi et al. (via NASA)</td>
+</tr>
+<tr>
+<td>NASA career dose limit</td>
+<td><strong>600 mSv</strong> (all ages, all sexes)</td>
+<td>NASA-STD-3001</td>
+</tr>
+<tr>
+<td>NASA annual mission limit</td>
+<td><strong>20 mSv/year</strong> (excluding nuclear power)</td>
+<td>NASA-STD-3001</td>
+</tr>
+<tr>
+<td>Earth surface background</td>
+<td>~2.4 mSv/year</td>
+<td>UNSCEAR</td>
+</tr>
+<tr>
+<td>ISS dose rate (inside, LEO)</td>
+<td>~150--200 mSv/year</td>
+<td>NASA SRAG</td>
+</tr>
+<tr>
+<td>SPE shielding: &gt;10 g/cm² regolith</td>
+<td>Reduces dose below 30-day limits with 2x safety margin</td>
+<td>Matthia et al. 2024</td>
+</tr>
+<tr>
+<td>Polyethylene 20 g/cm²</td>
+<td>Reduces GCR effective dose by ~50%</td>
+<td>NASA studies</td>
+</tr>
+</tbody>
+</table>
+<h3 id="shielding-materials-ranked-by-gcr-attenuation-per-unit-mass">Shielding Materials (ranked by GCR attenuation per unit mass)<a class="headerlink" href="#shielding-materials-ranked-by-gcr-attenuation-per-unit-mass" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Liquid hydrogen</strong> -- best mass-efficiency; impractical for structural use</li>
+<li><strong>Polyethylene / HDPE</strong> -- hydrogen-rich, no secondary neutron production; 5 g/cm² reduces dose steeply, diminishing returns above 15 g/cm²</li>
+<li><strong>Water</strong> -- effective and can serve dual purpose (consumable + shielding)</li>
+<li><strong>Carbon fiber</strong> -- structural + moderate shielding</li>
+<li><strong>Regolith</strong> -- available in-situ; steep attenuation over first ~1 m, then diminishing</li>
+<li><strong>Aluminum</strong> -- traditional but produces secondary neutrons; worst of the common options for GCR</li>
+</ol>
+<h3 id="the-gcr-problem">The GCR Problem<a class="headerlink" href="#the-gcr-problem" title="Permanent link">&para;</a></h3>
+<p>GCR consists of high-energy heavy ions (HZE particles) that cannot be fully stopped by passive shielding at practical thicknesses. Shielding material generates <strong>secondary radiation</strong> (neutron showers) that can paradoxically increase dose at intermediate thicknesses. This is why hydrogen-rich materials (which do not produce secondary neutrons) are preferred.</p>
+<p>To match Earth-equivalent protection (~1,000 g/cm²), an O'Neill cylinder would need roughly <strong>5--10 meters of water</strong> or equivalent mass. The original O'Neill designs proposed using asteroid regolith as bulk shielding material.</p>
+<h3 id="hard-vs-soft-constraint">Hard vs. Soft Constraint<a class="headerlink" href="#hard-vs-soft-constraint" title="Permanent link">&para;</a></h3>
+<p><strong>Hard constraint for GCR</strong> -- physics dictates minimum shielding mass; no biological adaptation possible. Active magnetic shielding is theoretically possible but not yet engineered at habitat scale.</p>
+<p><strong>Soft constraint for SPE</strong> -- storm shelters with &gt;10 g/cm² shielding are adequate.</p>
+<h3 id="state-of-knowledge">State of Knowledge<a class="headerlink" href="#state-of-knowledge" title="Permanent link">&para;</a></h3>
+<p>Well-studied for dose rates and acute effects. <strong>Poorly understood</strong> for chronic low-dose GCR exposure over decades, particularly HZE particle effects on CNS and cancer risk at very low dose rates. NASA's cancer risk models carry large uncertainty factors.</p>
+<h3 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Cucinotta, Francis A., Myung-Hee Y. Kim, and Lei Ren. "Space Radiation Cancer Risk Projections and Uncertainties." <em>NASA TP-2013-217375</em>, 2013.</li>
+<li>Matthia, Daniel, et al. "Radiation Exposure and Shielding Effects on the Lunar Surface." <em>Space Weather</em>, vol. 22, 2024. <em>AGU</em>, https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2024SW004095.</li>
+<li>Chancellor, Jeffery C., et al. "Space Radiation: The Number One Risk to Astronaut Health beyond Low Earth Orbit." <em>Life</em>, vol. 4, no. 3, 2014, pp. 491--510. <em>PMC</em>, https://pmc.ncbi.nlm.nih.gov/articles/PMC4206856/.</li>
+<li>Turner, Ronald. "Radiation Shielding." <em>NASA Three</em>, 2009.. https://three.jsc.nasa.gov/articles/Shielding81109.pdf.</li>
+<li>NASA. "NASA-STD-3001 Technical Brief: Radiation Protection." 2023. <em>NASA</em>, https://www.nasa.gov/wp-content/uploads/2023/03/radiation-protection-technical-brief-ochmo.pdf.</li>
+</ul>
+<hr />
+<h2 id="2-atmospheric-pressure-and-composition">2. Atmospheric Pressure and Composition<a class="headerlink" href="#2-atmospheric-pressure-and-composition" title="Permanent link">&para;</a></h2>
+<h3 id="the-problem_1">The Problem<a class="headerlink" href="#the-problem_1" title="Permanent link">&para;</a></h3>
+<p>Humans require a specific range of oxygen partial pressure, total pressure, and diluent gas composition. Lower total pressure reduces structural mass requirements but increases fire risk at higher O2 percentages.</p>
+<h3 id="historical-atmospheres">Historical Atmospheres<a class="headerlink" href="#historical-atmospheres" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Vehicle</th>
+<th>Total Pressure</th>
+<th>O2 %</th>
+<th>N2 %</th>
+<th>O2 Partial Pressure</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Earth sea level</td>
+<td>14.7 psia (101.3 kPa)</td>
+<td>21%</td>
+<td>78%</td>
+<td>21.2 kPa</td>
+<td>Reference</td>
+</tr>
+<tr>
+<td>Mercury/Gemini/Apollo (flight)</td>
+<td>5.0 psia (34.5 kPa)</td>
+<td>100%</td>
+<td>0%</td>
+<td>34.5 kPa</td>
+<td>Post-Apollo 1 fire, changed to N2/O2 at launch</td>
+</tr>
+<tr>
+<td>Skylab</td>
+<td>5.0 psia (34.5 kPa)</td>
+<td>74%</td>
+<td>26%</td>
+<td>25.5 kPa</td>
+<td>Higher O2 than Earth but lower total pressure</td>
+</tr>
+<tr>
+<td>ISS</td>
+<td>14.7 psia (101.3 kPa)</td>
+<td>21%</td>
+<td>78%</td>
+<td>21.2 kPa</td>
+<td>Earth-normal; compatible with ground equipment</td>
+</tr>
+<tr>
+<td>NASA Exploration Atmosphere</td>
+<td>8.2 psia (56.5 kPa)</td>
+<td>34%</td>
+<td>66%</td>
+<td>19.2 kPa</td>
+<td>Proposed for Moon/Mars missions</td>
+</tr>
+</tbody>
+</table>
+<h3 id="key-trade-offs">Key Trade-offs<a class="headerlink" href="#key-trade-offs" title="Permanent link">&para;</a></h3>
+<p><strong>Lower pressure + higher O2 percentage:</strong>
+- Reduces structural mass (thinner walls)
+- Reduces prebreathe time before EVA (important for frequent EVA operations)
+- <strong>Increases fire risk</strong> -- flammability is driven more by O2 <em>concentration</em> (percentage) than partial pressure
+- Risk of oxygen toxicity at high partial pressures (&gt;50 kPa pO2 for extended periods)</p>
+<p><strong>NASA Exploration Atmosphere (8.2 psia / 34% O2):</strong>
+- Recommended compromise for Moon/Mars habitats
+- Reduces EVA prebreathe from ~130 minutes (from 14.7 psia) to ~15 minutes
+- Decompression sickness risk: ~13% predicted (acceptable for operational scenarios)
+- Fire risk: elevated but manageable with material selection and fire suppression systems</p>
+<h3 id="physiological-limits">Physiological Limits<a class="headerlink" href="#physiological-limits" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Threshold</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>O2 partial pressure minimum</td>
+<td>~16 kPa (12% at sea level)</td>
+<td>Hypoxia, impaired performance</td>
+</tr>
+<tr>
+<td>O2 partial pressure maximum</td>
+<td>~50 kPa (continuous)</td>
+<td>Pulmonary oxygen toxicity</td>
+</tr>
+<tr>
+<td>O2 partial pressure maximum</td>
+<td>~160 kPa (short-term)</td>
+<td>CNS oxygen toxicity</td>
+</tr>
+<tr>
+<td>N2 partial pressure (decompression)</td>
+<td>Must manage N2 loading for EVA</td>
+<td>Decompression sickness</td>
+</tr>
+<tr>
+<td>CO2 maximum</td>
+<td>&lt;5.3 mmHg (0.7 kPa) long-term</td>
+<td>Headaches, cognitive impairment</td>
+</tr>
+<tr>
+<td>Total pressure minimum</td>
+<td>~25 kPa (with adequate pO2)</td>
+<td>Functional lower bound</td>
+</tr>
+</tbody>
+</table>
+<h3 id="recommendation-for-oneill-cylinder">Recommendation for O'Neill Cylinder<a class="headerlink" href="#recommendation-for-oneill-cylinder" title="Permanent link">&para;</a></h3>
+<p>For a permanent habitat where EVA is infrequent and structural mass is less constrained (due to bulk regolith shielding), <strong>Earth-normal atmosphere (14.7 psia, 21% O2)</strong> is optimal. It minimizes fire risk, eliminates decompression concerns, allows use of Earth-standard equipment, and is the best-studied environment for long-term human health.</p>
+<h3 id="hard-vs-soft-constraint_1">Hard vs. Soft Constraint<a class="headerlink" href="#hard-vs-soft-constraint_1" title="Permanent link">&para;</a></h3>
+<p><strong>Hard constraint</strong> -- oxygen partial pressure must be within ~16--50 kPa. Outside this range, physiology fails.</p>
+<p><strong>Soft constraint</strong> -- total pressure and exact composition can be engineered within bounds. Fire risk can be mitigated by material selection.</p>
+<h3 id="state-of-knowledge_1">State of Knowledge<a class="headerlink" href="#state-of-knowledge_1" title="Permanent link">&para;</a></h3>
+<p><strong>Well-studied.</strong> Decades of submarine, aviation, and spaceflight experience. The 8.2 psia / 34% O2 exploration atmosphere has been validated in NASA's human chamber studies.</p>
+<h3 id="references_1">References<a class="headerlink" href="#references_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>NASA. "NASA-STD-3001 Technical Brief: Habitable Atmosphere." 2023. <em>NASA</em>, https://www.nasa.gov/wp-content/uploads/2023/12/ochmo-tb-003-habitable-atmosphere.pdf.</li>
+<li>Henninger, Donald L. "Recommendations for Exploration Spacecraft Internal Atmospheres." <em>NASA/TP-2010-216134</em>, 2010. <em>NASA</em>, https://www.nasa.gov/wp-content/uploads/2023/03/henninger-8.2-34-atm-tp216134-2010.pdf.</li>
+<li>Lange, Kevin E., et al. "Effects of the 8 psia / 32% O2 Atmosphere on the Human in the Spaceflight Environment." <em>NASA/TM-2013-217377</em>, 2013. <em>NTRS</em>, https://ntrs.nasa.gov/api/citations/20130013505/downloads/20130013505.pdf.</li>
+<li>Friedl, Karl. "Fire Safety in Spacecraft: Past Incidents and Deep Space Challenges." <em>Acta Astronautica</em>, 2022. <em>ScienceDirect</em>, https://www.sciencedirect.com/science/article/abs/pii/S0094576522000303.</li>
+</ul>
+<hr />
+<h2 id="3-circadian-rhythm-and-lighting">3. Circadian Rhythm and Lighting<a class="headerlink" href="#3-circadian-rhythm-and-lighting" title="Permanent link">&para;</a></h2>
+<h3 id="the-problem_2">The Problem<a class="headerlink" href="#the-problem_2" title="Permanent link">&para;</a></h3>
+<p>Humans evolved with a ~24-hour day/night cycle driven by sunlight. Without proper light cues, circadian rhythms drift, causing sleep disruption, cognitive impairment, mood disorders, and hormonal dysregulation. On the ISS, astronauts experience a sunrise every 90 minutes, which severely disrupts natural rhythms.</p>
+<h3 id="quantitative-requirements">Quantitative Requirements<a class="headerlink" href="#quantitative-requirements" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Circadian entrainment minimum</td>
+<td>~250 lux melanopic EDI at eye level</td>
+<td>Below this, clock does not reliably entrain</td>
+</tr>
+<tr>
+<td>Optimal daytime illuminance</td>
+<td>250+ melanopic EDI lux (ideally 500--1000+)</td>
+<td>Outdoor daylight = 10,000--100,000 lux</td>
+</tr>
+<tr>
+<td>Pre-sleep illuminance</td>
+<td>&lt;10 melanopic EDI lux</td>
+<td>Minimize melatonin suppression</td>
+</tr>
+<tr>
+<td>Peak melanopsin sensitivity</td>
+<td><strong>480 nm</strong> (blue)</td>
+<td>ipRGC photoreceptors drive circadian system</td>
+</tr>
+<tr>
+<td>Melatonin suppression threshold</td>
+<td>~350 lux significantly lowers melatonin; 1000 lux suppresses to daytime levels</td>
+<td>Wavelength-dependent</td>
+</tr>
+<tr>
+<td>Light therapy dose for SAD</td>
+<td>10,000 lux white light, 30 min/day; or 750 lux blue-enriched</td>
+<td>Clinically validated</td>
+</tr>
+<tr>
+<td>ISS ambient light (pre-upgrade)</td>
+<td>~100--300 lux</td>
+<td>Below circadian threshold</td>
+</tr>
+</tbody>
+</table>
+<h3 id="key-wavelengths">Key Wavelengths<a class="headerlink" href="#key-wavelengths" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>460--495 nm (blue):</strong> Maximum circadian potency; stimulates melanopsin in ipRGCs; promotes alertness, suppresses melatonin</li>
+<li><strong>480 nm:</strong> Peak sensitivity of melanopsin photopigment</li>
+<li><strong>590--630 nm (amber/red):</strong> Minimal circadian disruption; suitable for evening/pre-sleep lighting</li>
+<li><strong>290--315 nm (UV-B):</strong> Required for <strong>vitamin D synthesis</strong> in skin; peak efficiency at 293--298 nm; does not penetrate glass or standard LED output</li>
+</ul>
+<h3 id="vitamin-d-synthesis">Vitamin D Synthesis<a class="headerlink" href="#vitamin-d-synthesis" title="Permanent link">&para;</a></h3>
+<p>Vitamin D3 is produced when UV-B radiation (290--315 nm) converts 7-dehydrocholesterol in the skin to previtamin D3. Standard indoor lighting and window glass block UV-B entirely. Options for a space habitat:</p>
+<ol>
+<li><strong>UV-B LED panels</strong> (293 nm peak) -- 2.4x more efficient than sunlight; ~2--3 minutes exposure of 15% body surface area produces adequate daily vitamin D</li>
+<li><strong>Oral supplementation</strong> -- simpler but less physiologically complete</li>
+<li><strong>UV-transparent windows</strong> in recreation areas (if using solar illumination)</li>
+</ol>
+<h3 id="iss-lighting-solutions">ISS Lighting Solutions<a class="headerlink" href="#iss-lighting-solutions" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>2016: Solid-State Lighting Assembly (SSLA)</strong> -- replaced fluorescent lights with tunable LEDs; three modes: general vision (4500K), high-alertness (blue-enriched, 6500K), pre-sleep (warm, 2700K)</li>
+<li><strong>2023: SAGA Circadian Light Panel</strong> -- seven LED types mimicking natural daylight progression; auto-adjusts to astronaut sleep schedule</li>
+</ul>
+<h3 id="seasonal-variation">Seasonal Variation<a class="headerlink" href="#seasonal-variation" title="Permanent link">&para;</a></h3>
+<p>For a permanent colony, seasonal light variation may be desirable to prevent Seasonal Affective Disorder (SAD), which affects ~5% of the population. Options include programmable seasonal cycles in light duration (e.g., 14h/10h summer, 10h/14h winter) and intensity variation.</p>
+<h3 id="hard-vs-soft-constraint_2">Hard vs. Soft Constraint<a class="headerlink" href="#hard-vs-soft-constraint_2" title="Permanent link">&para;</a></h3>
+<p><strong>Soft constraint</strong> -- entirely engineerable with modern LED technology. The physics of circadian entrainment is well understood. UV-B for vitamin D can be supplemented orally if needed.</p>
+<h3 id="state-of-knowledge_2">State of Knowledge<a class="headerlink" href="#state-of-knowledge_2" title="Permanent link">&para;</a></h3>
+<p><strong>Well-studied.</strong> Circadian biology is a mature field. The specific application to space habitats has been validated on ISS with measurable crew improvements.</p>
+<h3 id="references_2">References<a class="headerlink" href="#references_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Brown, Timothy M., et al. "Recommendations for Daytime, Evening, and Nighttime Indoor Light Exposure to Best Support Physiology, Sleep, and Wakefulness in Healthy Adults." <em>PLOS Biology</em>, vol. 20, no. 3, 2022. <em>PMC</em>, https://pmc.ncbi.nlm.nih.gov/articles/PMC8929548/.</li>
+<li>Brainard, George C., and John P. Hanifin. "Photons, Clocks, and Consciousness." <em>Journal of Biological Rhythms</em>, vol. 20, no. 4, 2005, pp. 314--325.</li>
+<li>Czeisler, Charles A. "Keeping the Right Time in Space." <em>Pflügers Archiv</em>, vol. 463, 2012, pp. 105--116. <em>PMC</em>, https://pmc.ncbi.nlm.nih.gov/articles/PMC4440601/.</li>
+<li>Cios, Konrad J., et al. "Circadian Disruption and Sleep Disorders in Astronauts." <em>Life Sciences in Space Research</em>, 2025. <em>PMC</em>, https://pmc.ncbi.nlm.nih.gov/articles/PMC12155433/.</li>
+<li>Boukens, Bastiaan J., et al. "Ultraviolet B Light Emitting Diodes (LEDs) Are More Efficient and Effective in Producing Vitamin D3 in Human Skin Compared to Natural Sunlight." <em>Scientific Reports</em>, vol. 7, 2017. <em>Nature</em>, https://www.nature.com/articles/s41598-017-11362-2.</li>
+</ul>
+<hr />
+<h2 id="4-psychological-constraints">4. Psychological Constraints<a class="headerlink" href="#4-psychological-constraints" title="Permanent link">&para;</a></h2>
+<h3 id="the-problem_3">The Problem<a class="headerlink" href="#the-problem_3" title="Permanent link">&para;</a></h3>
+<p>Long-term confinement in a closed environment produces a constellation of psychological effects: depression, interpersonal conflict, cognitive decline, anxiety, and reduced motivation. Even in large habitats, the knowledge of being enclosed in space may create unique stressors.</p>
+<h3 id="minimum-habitable-volume">Minimum Habitable Volume<a class="headerlink" href="#minimum-habitable-volume" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Standard</th>
+<th>Volume per Person</th>
+<th>Context</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NASA Mars habitat recommendation</td>
+<td><strong>25 m³/person</strong></td>
+<td>Minimum acceptable net habitable volume</td>
+</tr>
+<tr>
+<td>ISS (total pressurized)</td>
+<td>~68 m³/person (6 crew, 388 m³ usable)</td>
+<td>Functional but psychologically challenging</td>
+</tr>
+<tr>
+<td>Submarine (US Navy)</td>
+<td>~5--10 m³/person</td>
+<td>Tolerated for deployments of ~3--6 months</td>
+</tr>
+<tr>
+<td>NASA long-duration guideline</td>
+<td>&gt;100 m³/person desirable for &gt;1 year</td>
+<td>With private quarters, communal spaces</td>
+</tr>
+</tbody>
+</table>
+<p>For a <strong>permanent settlement</strong>, volumes should far exceed these minimums. An O'Neill cylinder (proposed ~8 km long, ~3.2 km diameter) provides vast interior volumes that largely eliminate volumetric psychological constraints.</p>
+<h3 id="key-psychological-stressors-from-ice-research">Key Psychological Stressors (from ICE research)<a class="headerlink" href="#key-psychological-stressors-from-ice-research" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Social monotony</strong> -- same small group, no new faces</li>
+<li><strong>Autonomy loss</strong> -- constrained by habitat rules and resource limits</li>
+<li><strong>Sensory deprivation</strong> -- limited environmental variety</li>
+<li><strong>Communication delays</strong> -- irrelevant for an L5 O'Neill cylinder (light-delay to Earth ~1.3 seconds)</li>
+<li><strong>Sleep disruption</strong> -- from noise, lighting, stress</li>
+<li><strong>Interpersonal conflict</strong> -- amplified in closed groups; peaks at ~2/3 through mission duration ("third-quarter phenomenon")</li>
+<li><strong>Earth-out-of-view phenomenon</strong> -- psychological impact of not seeing Earth (opposite of "overview effect")</li>
+<li><strong>Privacy deprivation</strong> -- critical for long-duration mental health</li>
+</ol>
+<h3 id="analog-environment-research">Analog Environment Research<a class="headerlink" href="#analog-environment-research" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Mars500 (2010--2011):</strong> 520-day isolation study; 6 crew; documented depression, sleep cycle disruption, and reduced activity over time</li>
+<li><strong>Antarctic winter-over stations:</strong> 8--12 month isolation; documented increased thyroid dysfunction, cognitive "polar T3 syndrome," interpersonal tension, and seasonal depression</li>
+<li><strong>Submarine crews:</strong> 3--6 month deployments; noise, confinement, lack of sunlight; functional but high rates of mood disturbance</li>
+<li><strong>ISS psychological monitoring:</strong> NASA tracks behavioral health; documented asthenia (physical/emotional weakness), interpersonal tension, and homesickness as primary issues</li>
+</ul>
+<h3 id="minimum-population-for-genetic-diversity">Minimum Population for Genetic Diversity<a class="headerlink" href="#minimum-population-for-genetic-diversity" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Study</th>
+<th>Minimum Population</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Marin &amp; Beluffi (2020)</td>
+<td><strong>98</strong></td>
+<td>Agent-based simulation; minimum for survival, assuming managed breeding</td>
+</tr>
+<tr>
+<td>Smith (2014)</td>
+<td><strong>10,000--40,000</strong></td>
+<td>Anthropological analysis for multi-generational interstellar voyage; accounts for catastrophes, genetic drift, founder effect</td>
+</tr>
+<tr>
+<td>Moore (2002)</td>
+<td><strong>150--180</strong></td>
+<td>Based on conservation biology MVP models</td>
+</tr>
+<tr>
+<td>50/500 rule (genetics)</td>
+<td>50 (short-term) / 500 (long-term) effective population</td>
+<td>Classic conservation genetics guideline; effective population &lt;&lt; census population</td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>98-person minimum</strong> is a bare survival threshold. For a healthy, culturally viable, long-term colony, <strong>10,000+</strong> is the consensus recommendation, with <strong>40,000</strong> providing substantial buffer against catastrophic population loss.</p>
+<h3 id="hard-vs-soft-constraint_3">Hard vs. Soft Constraint<a class="headerlink" href="#hard-vs-soft-constraint_3" title="Permanent link">&para;</a></h3>
+<p><strong>Soft constraint</strong> for an O'Neill cylinder -- the habitat is large enough to provide variety, green space, and social complexity. Population genetics is a hard constraint only if the colony is truly isolated (no immigration).</p>
+<h3 id="state-of-knowledge_3">State of Knowledge<a class="headerlink" href="#state-of-knowledge_3" title="Permanent link">&para;</a></h3>
+<p><strong>Moderately well-studied</strong> for isolation effects (analog studies). <strong>Poorly understood</strong> for truly permanent, multi-generational enclosed habitation -- no analog exists.</p>
+<h3 id="references_3">References<a class="headerlink" href="#references_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Landon, Lauren B., et al. "Effects of Isolation and Confinement on Humans -- Implications for Manned Space Explorations." <em>Journal of Applied Physiology</em>, vol. 120, no. 12, 2016, pp. 1449--1457. <em>APS</em>, https://journals.physiology.org/doi/full/10.1152/japplphysiol.00928.2015.</li>
+<li>Marin, Frédéric, and Camille Beluffi. "Minimum Number of Settlers for Survival on Another Planet." <em>Scientific Reports</em>, vol. 10, 2020, article 9700. <em>Nature</em>, https://www.nature.com/articles/s41598-020-66740-0.</li>
+<li>Smith, Cameron M. "Estimation of a Genetically Viable Population for Multigenerational Interstellar Voyaging." <em>Acta Astronautica</em>, vol. 97, 2014, pp. 16--29. <em>ScienceDirect</em>, https://www.sciencedirect.com/science/article/abs/pii/S0094576513004669.</li>
+<li>Simon, Matthew, et al. "NASA HRP Minimum Acceptable Net Habitable Volume for Long-Duration Exploration Missions." <em>NASA/TM-2014-217352</em>, 2014. <em>NTRS</em>, https://ntrs.nasa.gov/api/citations/20140016951/downloads/20140016951.pdf.</li>
+<li>NASA. "Risk of Behavioral Changes and Psychiatric Disorders." 2024. <em>NASA</em>, https://www.nasa.gov/reference/risk-of-behavioral-changes-and-psychiatric-disorders/.</li>
+</ul>
+<hr />
+<h2 id="5-acoustic-environment">5. Acoustic Environment<a class="headerlink" href="#5-acoustic-environment" title="Permanent link">&para;</a></h2>
+<h3 id="the-problem_4">The Problem<a class="headerlink" href="#the-problem_4" title="Permanent link">&para;</a></h3>
+<p>A rotating space habitat generates continuous mechanical noise from life support systems, ventilation, rotation bearings, and other machinery. Cylindrical structures have unique acoustic resonance properties that can amplify certain frequencies. Long-term noise exposure causes hearing loss, sleep disruption, stress, and cognitive impairment.</p>
+<h3 id="quantitative-standards">Quantitative Standards<a class="headerlink" href="#quantitative-standards" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Limit</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ISS 24-hour noise exposure limit</td>
+<td><strong>70 dBA</strong> (WHO-based)</td>
+<td>NASA-STD-3001</td>
+</tr>
+<tr>
+<td>ISS work period limit (16 hr)</td>
+<td><strong>72 dBA</strong></td>
+<td>NASA acoustics standard</td>
+</tr>
+<tr>
+<td>ISS sleep period limit (8 hr)</td>
+<td><strong>62 dBA</strong></td>
+<td>NASA acoustics standard</td>
+</tr>
+<tr>
+<td>Hearing protection required</td>
+<td>&gt;72 dBA</td>
+<td>NASA operational rule</td>
+</tr>
+<tr>
+<td>Ground occupational standard</td>
+<td>85 dBA over 8 hours</td>
+<td>OSHA</td>
+</tr>
+<tr>
+<td>WHO community noise guideline</td>
+<td>&lt;45 dBA nighttime for sleep</td>
+<td>WHO Environmental Noise Guidelines</td>
+</tr>
+<tr>
+<td>Reverberation time (T60)</td>
+<td>&lt;0.6 seconds at 500 Hz, 1 kHz, 2 kHz</td>
+<td>ISS module requirement</td>
+</tr>
+<tr>
+<td>ISS measured average</td>
+<td><strong>~72 dBA continuous</strong></td>
+<td>Measured across modules</td>
+</tr>
+</tbody>
+</table>
+<h3 id="iss-noise-experience">ISS Noise Experience<a class="headerlink" href="#iss-noise-experience" title="Permanent link">&para;</a></h3>
+<p>The ISS averages ~72 dBA continuously -- generated by hundreds of fans, pumps, compressors, and experiment hardware. This is above WHO community noise guidelines but below OSHA occupational damage thresholds for 8-hour exposure. However, the <strong>continuous</strong> nature (24/7 for months) is the concern:</p>
+<ul>
+<li>Russian cosmonauts on Soyuz/Salyut/Mir missions showed <strong>measurable high-frequency hearing loss</strong> after long-duration flights</li>
+<li>Some cosmonauts were <strong>disqualified from future flights</strong> due to noise-induced hearing loss</li>
+<li>Sleep disruption is a consistent complaint; astronauts routinely use earplugs</li>
+</ul>
+<h3 id="cylindrical-habitat-resonance-concerns">Cylindrical Habitat Resonance Concerns<a class="headerlink" href="#cylindrical-habitat-resonance-concerns" title="Permanent link">&para;</a></h3>
+<p>An O'Neill cylinder introduces unique acoustics:
+- <strong>Cylindrical geometry</strong> creates standing wave patterns and focusing effects
+- <strong>Large enclosed volume</strong> has long reverberation times unless acoustically treated
+- <strong>Rotation machinery</strong> (bearings, drives) could produce low-frequency vibration transmitted through the structure
+- <strong>Structural resonance</strong> at the cylinder's natural frequencies could amplify machinery noise</p>
+<h3 id="hard-vs-soft-constraint_4">Hard vs. Soft Constraint<a class="headerlink" href="#hard-vs-soft-constraint_4" title="Permanent link">&para;</a></h3>
+<p><strong>Soft constraint</strong> -- entirely engineerable through acoustic insulation, vibration isolation mounts, active noise cancellation, sound-absorbing interior surfaces, and proper machinery placement (away from habitable areas).</p>
+<h3 id="state-of-knowledge_4">State of Knowledge<a class="headerlink" href="#state-of-knowledge_4" title="Permanent link">&para;</a></h3>
+<p><strong>Well-studied</strong> for enclosed habitats (ISS, submarines). The acoustic properties of very large cylindrical enclosures at the O'Neill scale have <strong>not been studied</strong> and would require modeling.</p>
+<h3 id="references_4">References<a class="headerlink" href="#references_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Goodman, Jerry R. "Acoustics and Noise Control in Space Crew Compartments." <em>NASA/TM-2016-000818</em>, 2016. <em>NTRS</em>, https://ntrs.nasa.gov/api/citations/20160000818/downloads/20160000818.pdf.</li>
+<li>Davis, Jeffrey R., et al. "Hearing Loss in Space Flights: A Review of Noise Regulations and Previous Outcomes." <em>International Archives of Otorhinolaryngology</em>, vol. 28, no. 2, 2024. <em>PMC</em>, https://pmc.ncbi.nlm.nih.gov/articles/PMC11114227/.</li>
+<li>NASA. "NASA-STD-3001 Technical Brief: Acoustics." 2023. <em>NASA</em>, https://www.nasa.gov/wp-content/uploads/2023/12/ochmo-tb-035-acoustics.pdf.</li>
+<li>Baggeroer, A. B. "Guidelines for Noise and Vibration Levels for the Space Station." <em>NASA/CR-178310</em>, 1987. <em>NTRS</em>, https://ntrs.nasa.gov/api/citations/19870014729/downloads/19870014729.pdf.</li>
+</ul>
+<hr />
+<h2 id="6-microbiome-and-closed-ecosystem">6. Microbiome and Closed Ecosystem<a class="headerlink" href="#6-microbiome-and-closed-ecosystem" title="Permanent link">&para;</a></h2>
+<h3 id="the-problem_5">The Problem<a class="headerlink" href="#the-problem_5" title="Permanent link">&para;</a></h3>
+<p>A space habitat is a <strong>closed ecological system</strong> where all air, water, and waste must be recycled. The microbial ecosystem is not optional -- it is essential for soil fertility, waste processing, and atmospheric regulation. But it also poses risks: disease propagation, antibiotic resistance, biofilm formation, and atmospheric instability.</p>
+<h3 id="biosphere-2-lessons">Biosphere 2 Lessons<a class="headerlink" href="#biosphere-2-lessons" title="Permanent link">&para;</a></h3>
+<p>Biosphere 2 (1991--1993) remains the largest closed ecological system experiment. Key quantitative findings:</p>
+<table>
+<thead>
+<tr>
+<th>Issue</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>O2 decline</td>
+<td>From 20.9% to <strong>14.5%</strong> over 16 months (equivalent to 4,080 m altitude)</td>
+</tr>
+<tr>
+<td>CO2 levels</td>
+<td>Winter peaks of <strong>4,000--4,500 ppm</strong>; summer lows ~1,000 ppm; daily swings of ~600 ppm</td>
+</tr>
+<tr>
+<td>Concrete carbonation</td>
+<td>Absorbed ~750 +/- 250 kmol CO2, sequestering both carbon and oxygen; rate 10x faster than outdoors</td>
+</tr>
+<tr>
+<td>Species loss</td>
+<td>Most pollinating insects went extinct; 19 of 25 vertebrate species died</td>
+</tr>
+<tr>
+<td>Crop yields</td>
+<td>Crew on ~1,800 kcal/day diet; chronic hunger</td>
+</tr>
+<tr>
+<td>Atmosphere fix</td>
+<td>Required pumping in <strong>liquid oxygen</strong> to keep crew safe</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key lesson:</strong> Soil microbes metabolized organic matter faster than plants could photosynthesize, consuming O2 and producing CO2. The system was not in steady state. A functioning closed ecosystem requires <strong>precise balancing</strong> of microbial, plant, and atmospheric systems that Biosphere 2 failed to achieve.</p>
+<h3 id="iss-microbiome-findings">ISS Microbiome Findings<a class="headerlink" href="#iss-microbiome-findings" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Finding</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dominant organisms</td>
+<td><em>Staphylococcus</em>, <em>Enterobacter</em>, <em>Bacillus</em>, <em>Aspergillus</em>, <em>Penicillium</em> -- primarily crew-derived</td>
+</tr>
+<tr>
+<td>Antibiotic resistance</td>
+<td><strong>75.8%</strong> of examined bacterial strains (22/29) showed resistance to one or more antibiotics</td>
+</tr>
+<tr>
+<td>Microbial adaptation</td>
+<td>ISS microbes enriched for genes related to metal ion tolerance, dormancy, and antibiotic resistance</td>
+</tr>
+<tr>
+<td>Biofilm formation</td>
+<td>Readily occurs on surfaces; can clog water systems and degrade materials</td>
+</tr>
+<tr>
+<td>Spatial uniformity</td>
+<td>Microbes move readily throughout the sealed habitat; sequestration is difficult</td>
+</tr>
+<tr>
+<td>Immune suppression</td>
+<td>Astronaut immune systems are altered in spaceflight; latent viruses (e.g., herpes simplex, varicella-zoster) reactivate</td>
+</tr>
+</tbody>
+</table>
+<h3 id="disease-propagation-risk">Disease Propagation Risk<a class="headerlink" href="#disease-propagation-risk" title="Permanent link">&para;</a></h3>
+<p>In a closed habitat:
+- <strong>No escape</strong> from airborne pathogens; entire population exposed simultaneously
+- <strong>Microgravity may increase virulence</strong> of some pathogens (though an O'Neill cylinder at 1g may not face this)
+- <strong>Limited pharmaceutical resupply</strong> -- antibiotic resistance is a critical concern
+- <strong>Altered crew microbiomes</strong> after prolonged enclosed living change disease susceptibility
+- Biosphere 2 demonstrated that <strong>intestinal, nasal, and respiratory flora shift</strong> in closed environments</p>
+<h3 id="requirements-for-a-stable-ecosystem">Requirements for a Stable Ecosystem<a class="headerlink" href="#requirements-for-a-stable-ecosystem" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Diverse soil microbiome</strong> -- essential for nutrient cycling, waste decomposition, and atmospheric balance</li>
+<li><strong>Redundant atmospheric recycling</strong> -- both biological (plants/algae) and mechanical (CO2 scrubbers, O2 generators)</li>
+<li><strong>Active atmospheric monitoring</strong> -- CO2, O2, trace gases (methane, ammonia, VOCs)</li>
+<li><strong>Quarantine capability</strong> -- ability to isolate infectious individuals and contaminated areas</li>
+<li><strong>Pharmaceutical production</strong> -- on-site antibiotic and antiviral manufacturing capability for true independence</li>
+</ol>
+<h3 id="hard-vs-soft-constraint_5">Hard vs. Soft Constraint<a class="headerlink" href="#hard-vs-soft-constraint_5" title="Permanent link">&para;</a></h3>
+<p><strong>Hard constraint</strong> on atmospheric balance -- if O2/CO2 ratios drift, crew dies. The margin for error is small.</p>
+<p><strong>Soft constraint</strong> on specific ecosystem composition -- many possible configurations can work; the challenge is stability over decades.</p>
+<h3 id="state-of-knowledge_5">State of Knowledge<a class="headerlink" href="#state-of-knowledge_5" title="Permanent link">&para;</a></h3>
+<p><strong>Poorly understood</strong> for long-term closed ecosystems. Biosphere 2 is the only large-scale test and it failed to maintain atmospheric balance. ISS uses primarily mechanical life support (not biological). No closed biological life support system has operated stably for more than ~2 years.</p>
+<h3 id="references_5">References<a class="headerlink" href="#references_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Nelson, Mark, et al. "Living in Space: Results from Biosphere 2's Initial Closure, an Early Testbed for Closed Ecological Systems on Mars." <em>Life Support &amp; Biosphere Science</em>, vol. 3, 1996.. https://gwern.net/doc/biology/1996-nelson.pdf.</li>
+<li>Allen, John P. "Biosphere 2's Lessons about Living on Earth and in Space." <em>Space: Science &amp; Technology</em>, 2021. <em>Science Partner Journals</em>, https://spj.science.org/doi/10.34133/2021/8067539.</li>
+<li>Dorn, Jonathan L., et al. "The International Space Station Has a Unique and Extreme Microbial and Chemical Environment Driven by Use Patterns." <em>Cell</em>, vol. 188, 2025. <em>Cell Press</em>, https://www.cell.com/cell/fulltext/S0092-8674(25.00108-4)</li>
+<li>Checinska Sielaff, Aleksandra, et al. "Space Station Conditions Are Selective but Do Not Alter Microbial Characteristics Relevant to Human Health." <em>Nature Communications</em>, vol. 10, 2019. <em>Nature</em>, https://www.nature.com/articles/s41467-019-11682-z.</li>
+<li>Severinghaus, Jeff, et al. "Oxygen Loss in Biosphere 2." <em>EOS Transactions</em>, vol. 75, 1994.</li>
+</ul>
+<hr />
+<h2 id="7-reproduction-and-development">7. Reproduction and Development<a class="headerlink" href="#7-reproduction-and-development" title="Permanent link">&para;</a></h2>
+<h3 id="the-problem_6">The Problem<a class="headerlink" href="#the-problem_6" title="Permanent link">&para;</a></h3>
+<p>No human has ever conceived, gestated, or been born in space or in altered gravity. Animal experiments in microgravity show mixed results. Whether mammalian reproduction and child development can proceed normally at partial gravity (or even full simulated gravity in a rotating habitat) is <strong>one of the largest unknowns</strong> for permanent space settlement.</p>
+<h3 id="what-we-know-from-animal-studies">What We Know from Animal Studies<a class="headerlink" href="#what-we-know-from-animal-studies" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Experiment</th>
+<th>Finding</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mouse embryos on ISS (2021, published 2023)</td>
+<td>Frozen embryos thawed and cultured in microgravity developed to <strong>blastocyst stage with normal cell numbers</strong>; but survival rate was lower than Earth controls</td>
+</tr>
+<tr>
+<td>Mouse embryos -- gravity levels</td>
+<td>Embryos cultured at microgravity and simulated partial gravity: blastocyst formation appeared normal; "gravity had no significant effect on blastocyst formation and initial differentiation"</td>
+</tr>
+<tr>
+<td>Mice in early pregnancy (microgravity)</td>
+<td><strong>Failed to develop and produce offspring</strong></td>
+</tr>
+<tr>
+<td>Mice in mid/late pregnancy (spaceflight)</td>
+<td>Successfully produced viable fetuses; gave birth to live pups after landing</td>
+</tr>
+<tr>
+<td>Shenzhou-21 mice (2023)</td>
+<td>4 mice lived in microgravity for 2 weeks; 1 female gave birth to <strong>9 healthy pups</strong> on return to Earth</td>
+</tr>
+<tr>
+<td>Freeze-dried mouse sperm (ISS, 6 years)</td>
+<td>Produced healthy offspring after return to Earth; radiation damage to DNA was repaired after fertilization</td>
+</tr>
+<tr>
+<td>Rat development in simulated microgravity</td>
+<td>Altered vestibular system development; impaired righting reflex</td>
+</tr>
+</tbody>
+</table>
+<h3 id="key-unknowns">Key Unknowns<a class="headerlink" href="#key-unknowns" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Fertilization and implantation in 1g-simulated gravity</strong> -- untested; Coriolis effects on fluid dynamics in the reproductive tract are unknown</li>
+<li><strong>Fetal bone mineralization</strong> -- Earth gravity provides mechanical loading essential for skeletal development; growth plate function depends on mechanical stress</li>
+<li><strong>Fetal brain development</strong> -- vestibular system development requires gravity signals; inner ear fluid dynamics differ in rotating habitats</li>
+<li><strong>Childhood musculoskeletal development</strong> -- bone growth plates respond to mechanical loading; Wolff's law (bone adapts to load) means that children developing in different gravity or with Coriolis perturbations may develop differently</li>
+<li><strong>Puberty and hormonal development</strong> -- completely unstudied in altered gravity</li>
+<li><strong>Epigenetic and transgenerational effects</strong> -- it has been hypothesized that altered gravity during development may cause epigenetic changes passed to subsequent generations</li>
+</ol>
+<h3 id="the-rotating-habitat-question">The Rotating Habitat Question<a class="headerlink" href="#the-rotating-habitat-question" title="Permanent link">&para;</a></h3>
+<p>An O'Neill cylinder at 1g nominal should provide Earth-equivalent mechanical loading. But:
+- The <strong>Coriolis effect</strong> produces different forces on a developing vestibular system
+- The <strong>gravity gradient</strong> means head-to-toe gravity differs (already documented in other constraint plans)
+- The <strong>rotating reference frame</strong> may affect fluid dynamics in ways relevant to embryonic development (e.g., asymmetric fluid flows)</p>
+<h3 id="hard-vs-soft-constraint_6">Hard vs. Soft Constraint<a class="headerlink" href="#hard-vs-soft-constraint_6" title="Permanent link">&para;</a></h3>
+<p><strong>Unknown</strong> -- this may be a hard constraint if mammalian development requires <em>actual</em> (non-rotational) gravitational loading, or it may be fully satisfiable by an O'Neill cylinder's simulated gravity. We do not have enough data to classify it.</p>
+<h3 id="state-of-knowledge_6">State of Knowledge<a class="headerlink" href="#state-of-knowledge_6" title="Permanent link">&para;</a></h3>
+<p><strong>Very poorly understood.</strong> No complete mammalian reproductive cycle has been carried out in space. The 2023 mouse embryo results are encouraging but limited. Human studies are ethically impossible until animal studies demonstrate safety across the full developmental cycle.</p>
+<h3 id="references_6">References<a class="headerlink" href="#references_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Wakayama, Sayaka, et al. "Effect of Microgravity on Mammalian Embryo Development Evaluated at the International Space Station." <em>iScience</em>, vol. 26, no. 11, 2023. <em>Cell Press</em>, https://www.cell.com/iscience/fulltext/S2589-0042(23.02254-X)</li>
+<li>Lei, Xiaohua, et al. "Effects of Gravity, Microgravity or Microgravity Simulation on Early Mammalian Development." <em>Stem Cell Reviews and Reports</em>, vol. 14, 2018, pp. 1--14. <em>PMC</em>, https://pmc.ncbi.nlm.nih.gov/articles/PMC6157341/.</li>
+<li>Zhang, Yingjun, et al. "Effects of Microgravity on Early Embryonic Development and Embryonic Stem Cell Differentiation." <em>Frontiers in Cell and Developmental Biology</em>, vol. 9, 2021. <em>Frontiers</em>, https://www.frontiersin.org/journals/cell-and-developmental-biology/articles/10.3389/fcell.2021.797167/full.</li>
+<li>Ronca, April E. "Advances of Mammalian Reproduction and Embryonic Development Under Microgravity." <em>Life Sciences in Space Research</em>, Springer, 2019. <em>Springer</em>, https://link.springer.com/chapter/10.1007/978-981-13-6325-2_11.</li>
+</ul>
+<hr />
+<h2 id="8-magnetic-field">8. Magnetic Field<a class="headerlink" href="#8-magnetic-field" title="Permanent link">&para;</a></h2>
+<h3 id="the-problem_7">The Problem<a class="headerlink" href="#the-problem_7" title="Permanent link">&para;</a></h3>
+<p>Earth's geomagnetic field (~25--65 uT) has been present throughout the entire evolutionary history of life. Deep space has a hypomagnetic field (HMF) of only ~2--8 nT -- roughly <strong>10,000 times weaker</strong> than Earth's surface field. Whether humans require a geomagnetic-strength field for long-term health is an emerging research question.</p>
+<h3 id="known-biological-effects-of-hypomagnetic-conditions">Known Biological Effects of Hypomagnetic Conditions<a class="headerlink" href="#known-biological-effects-of-hypomagnetic-conditions" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>System</th>
+<th>Observed Effect</th>
+<th>Study Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gene expression</td>
+<td>Altered expression in multiple pathways; most sensitive molecular-level endpoint</td>
+<td>Cell culture, animal models</td>
+</tr>
+<tr>
+<td>Oxidative stress</td>
+<td>Elevated ROS (reactive oxygen species) levels</td>
+<td>Cell culture</td>
+</tr>
+<tr>
+<td>Stem cell proliferation</td>
+<td>Altered self-renewal and differentiation of embryonic stem cells</td>
+<td>In vitro</td>
+</tr>
+<tr>
+<td>Nervous system</td>
+<td>Impaired neurogenesis; altered circadian gene expression; most sensitive organ-level system</td>
+<td>Animal models</td>
+</tr>
+<tr>
+<td>Cytoskeleton</td>
+<td>Reorganized cytoskeletal structures</td>
+<td>Cell culture</td>
+</tr>
+<tr>
+<td>Cognitive function</td>
+<td>Impaired learning and memory in animal models</td>
+<td>Rodent studies</td>
+</tr>
+<tr>
+<td>Cardiovascular</td>
+<td>Altered heart rate variability in some studies</td>
+<td>Limited human data</td>
+</tr>
+<tr>
+<td>DNA integrity</td>
+<td>Possible effects on DNA repair mechanisms</td>
+<td>Cell culture</td>
+</tr>
+<tr>
+<td>Human brain (EEG)</td>
+<td>Measurable alpha-wave response to Earth-strength magnetic field rotations</td>
+<td>Controlled human study (Caltech)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="human-magnetoreception">Human Magnetoreception<a class="headerlink" href="#human-magnetoreception" title="Permanent link">&para;</a></h3>
+<p>A 2019 Caltech study (Wang et al.) demonstrated that human brains produce a measurable, repeatable EEG response (alpha-band suppression) to rotations of Earth-strength magnetic fields. The mechanism appears to involve either:
+1. <strong>Biogenic magnetite (Fe3O4)</strong> crystals that physically rotate in response to the field, potentially opening ion channels
+2. <strong>Cryptochrome proteins</strong> in the retina that respond to both light and magnetic fields via a radical-pair mechanism</p>
+<h3 id="the-deep-space-question">The Deep Space Question<a class="headerlink" href="#the-deep-space-question" title="Permanent link">&para;</a></h3>
+<p>Since some central human systems (cardiovascular, muscular, neural) both generate and respond to magnetic fields, long-term absence of a geomagnetic field is a concern for:
+- <strong>Circadian rhythm stability</strong> -- geomagnetic field may serve as a secondary zeitgeber (time-giver)
+- <strong>Oxidative stress accumulation</strong> -- elevated ROS over years could accelerate aging and disease
+- <strong>Neurological function</strong> -- the nervous system appears most sensitive to HMF conditions
+- <strong>Developmental effects</strong> -- unknown whether embryonic development requires geomagnetic fields</p>
+<h3 id="mitigation">Mitigation<a class="headerlink" href="#mitigation" title="Permanent link">&para;</a></h3>
+<p>Providing an artificial magnetic field of ~50 uT throughout a habitat is technically feasible using electromagnetic coils (Helmholtz coils or similar). The power requirements are modest for the field strengths involved. This would also provide some (minimal) charged-particle deflection, though insufficient for radiation protection.</p>
+<h3 id="hard-vs-soft-constraint_7">Hard vs. Soft Constraint<a class="headerlink" href="#hard-vs-soft-constraint_7" title="Permanent link">&para;</a></h3>
+<p><strong>Likely soft constraint</strong> -- can be engineered with electromagnetic coils. However, the <em>requirement</em> for the field is not firmly established; it may prove unnecessary.</p>
+<h3 id="state-of-knowledge_7">State of Knowledge<a class="headerlink" href="#state-of-knowledge_7" title="Permanent link">&para;</a></h3>
+<p><strong>Poorly understood.</strong> The field is young -- the term "hypomagnetic biology" is emerging only in the 2020s. Whole-body human studies in hypomagnetic conditions are extremely scarce. Gene expression and cellular effects are documented but their long-term health significance is unclear. This is a <strong>known unknown</strong> that deserves precautionary design inclusion.</p>
+<h3 id="references_7">References<a class="headerlink" href="#references_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Wang, Connie X., et al. "Transduction of the Geomagnetic Field as Evidenced from Alpha-Band Activity in the Human Brain." <em>eNeuro</em>, vol. 6, no. 2, 2019. <em>eNeuro</em>, https://www.eneuro.org/content/6/2/ENEURO.0483-18.2019.</li>
+<li>Binhi, Vladimir N., and Frank S. Prato. "Hypomagnetic Conditions and Their Biological Action (Review)." <em>Biology</em>, vol. 12, no. 12, 2023, article 1513. <em>PMC</em>, https://pmc.ncbi.nlm.nih.gov/articles/PMC10740674/.</li>
+<li>Xue, Xin, et al. "Biological Impacts of Hypomagnetic Fields in Space Environment." <em>Frontiers in Space Technologies</em>, vol. 6, 2025. <em>Frontiers</em>, https://www.frontiersin.org/journals/space-technologies/articles/10.3389/frspt.2025.1704391/full.</li>
+<li>Zhang, Bingfang, et al. "Biological Effects of Hypomagnetic Field: Ground-Based Data for Space Exploration." <em>Bioelectromagnetics</em>, vol. 42, 2021, pp. 516--531. <em>Wiley</em>, https://onlinelibrary.wiley.com/doi/10.1002/bem.22360.</li>
+<li>Foley, Lauren E., et al. "Human Magnetic Sense Is Mediated by a Light and Magnetic Field Resonance-Dependent Mechanism." <em>Scientific Reports</em>, vol. 12, 2022. <em>Nature</em>, https://www.nature.com/articles/s41598-022-12460-6.</li>
+</ul>
+<hr />
+<h2 id="summary-constraint-classification">Summary: Constraint Classification<a class="headerlink" href="#summary-constraint-classification" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Constraint</th>
+<th>Type</th>
+<th>Engineerable?</th>
+<th>State of Knowledge</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Radiation (GCR)</strong></td>
+<td>Hard</td>
+<td>Requires massive shielding (~5-10m water equivalent)</td>
+<td>Well-studied for dose; poorly understood for chronic low-dose</td>
+</tr>
+<tr>
+<td><strong>Radiation (SPE)</strong></td>
+<td>Hard</td>
+<td>Storm shelters with &gt;10 g/cm² sufficient</td>
+<td>Well-studied</td>
+</tr>
+<tr>
+<td><strong>Atmosphere (pO2 range)</strong></td>
+<td>Hard</td>
+<td>16--50 kPa pO2 required; well-understood</td>
+<td>Well-studied</td>
+</tr>
+<tr>
+<td><strong>Atmosphere (composition)</strong></td>
+<td>Soft</td>
+<td>Many valid configurations; fire risk manageable</td>
+<td>Well-studied</td>
+</tr>
+<tr>
+<td><strong>Circadian lighting</strong></td>
+<td>Soft</td>
+<td>Fully engineerable with LEDs</td>
+<td>Well-studied</td>
+</tr>
+<tr>
+<td><strong>Vitamin D / UV-B</strong></td>
+<td>Soft</td>
+<td>UV-B LEDs or oral supplementation</td>
+<td>Well-studied</td>
+</tr>
+<tr>
+<td><strong>Psychological (volume)</strong></td>
+<td>Soft</td>
+<td>O'Neill cylinder provides ample volume</td>
+<td>Moderately studied</td>
+</tr>
+<tr>
+<td><strong>Psychological (population)</strong></td>
+<td>Soft*</td>
+<td>Need 10,000+ for genetic viability if isolated</td>
+<td>Moderately studied</td>
+</tr>
+<tr>
+<td><strong>Acoustics</strong></td>
+<td>Soft</td>
+<td>Standard engineering; vibration isolation</td>
+<td>Well-studied</td>
+</tr>
+<tr>
+<td><strong>Closed ecosystem stability</strong></td>
+<td>Hard</td>
+<td>No proven stable system beyond ~2 years</td>
+<td>Poorly understood</td>
+</tr>
+<tr>
+<td><strong>Reproduction / development</strong></td>
+<td>Unknown</td>
+<td>May work at 1g-simulated; untested</td>
+<td>Very poorly understood</td>
+</tr>
+<tr>
+<td><strong>Magnetic field</strong></td>
+<td>Likely soft</td>
+<td>Helmholtz coils; low power requirement</td>
+<td>Poorly understood</td>
+</tr>
+<tr>
+<td><strong>Disease in closed environment</strong></td>
+<td>Soft</td>
+<td>Quarantine, monitoring, pharmaceutical production</td>
+<td>Moderately studied</td>
+</tr>
+</tbody>
+</table>
+<p>*Soft if immigration from Earth continues; hard if colony is truly isolated.</p>
+<hr />
+<h2 id="references_8">References<a class="headerlink" href="#references_8" title="Permanent link">&para;</a></h2>
+<p>Full citations are provided within each section above. Key cross-cutting references:</p>
+<ul>
+<li>NASA. "NASA-STD-3001: NASA Space Flight Human-System Standard." Multiple technical briefs, 2023. <em>NASA</em>, https://www.nasa.gov/wp-content/uploads/2023/12/ochmo-tb-003-habitable-atmosphere.pdf.</li>
+<li>O'Neill, Gerard K. <em>The High Frontier: Human Colonies in Space</em>. William Morrow, 1976.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

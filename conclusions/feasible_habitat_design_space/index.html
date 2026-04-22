@@ -1,0 +1,2807 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Physics-based feasibility analysis for O'Neill cylinder habitats">
+      
+      
+      
+        <link rel="canonical" href="https://docs.spinhabitat.com/conclusions/feasible_habitat_design_space/">
+      
+      
+        <link rel="prev" href="../004_structural_constraints/">
+      
+      
+        <link rel="next" href="../../plans/contested_partial_gravity/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Feasible Design Space - Space Colony — Constraint Study</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#feasible-habitat-design-space" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Space Colony — Constraint Study" class="md-header__button md-logo" aria-label="Space Colony — Constraint Study" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Space Colony — Constraint Study
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Feasible Design Space
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/fangfanglai/space_colony" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Space Colony — Constraint Study" class="md-nav__button md-logo" aria-label="Space Colony — Constraint Study" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Space Colony — Constraint Study
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/fangfanglai/space_colony" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. How Does It Work?
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    1. How Does It Work?
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plans/intuition_artificial_gravity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Artificial Gravity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plans/intuition_centripetal_acceleration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Centripetal Acceleration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plans/intuition_angular_velocity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Angular Velocity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plans/general_relativity_and_artificial_gravity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Does General Relativity Matter?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Can Humans Live There?
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2. Can Humans Live There?
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plans/constraint_vestibular/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vestibular (RPM limit)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plans/constraint_gravity_minimum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gravity Level
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plans/constraint_gravity_gradient/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gravity Gradient (head-to-foot)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plans/constraint_coriolis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coriolis Effect
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plans/constraint_cross_coupling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross-Coupling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plans/constraint_biological/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atmosphere
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Will the Structure Hold?
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3. Will the Structure Hold?
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plans/structural_engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hoop Stress & Materials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plans/constraint_rim_speed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rim Speed (material limit)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plans/constraint_cylinder_length/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cylinder Length & Counter-Rotation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plans/constraint_rotational_stability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rotational Stability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plans/constraint_spinup_energy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spin-Up Energy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Life Support
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    4. Life Support
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plans/constraint_agriculture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agriculture Area
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plans/constraint_thermal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Thermal Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plans/constraint_energy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Energy Budget
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plans/constraint_water_recycling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Water Recycling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plans/constraint_micrometeorite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Micrometeorite Impact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. The Design
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    5. The Design
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plans/mirror_geometry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    External Mirrors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plans/interior_space_utilization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interior Space
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plans/construction_material_estimates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Material Estimates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Findings
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    6. Findings
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../001_human_comfort_boundaries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    001: Human Comfort Boundaries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../002_full_constraint_analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    002: Full Constraint Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../003_biological_constraints_and_monte_carlo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    003: Biological Constraints & Monte Carlo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../004_structural_constraints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    004: Structural Constraints
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Feasible Design Space
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Feasible Design Space
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary-of-current-model-phases-16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary of Current Model (Phases 1–6)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-constraints-implemented" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Constraints Implemented
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Constraints Implemented">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rotational-structural-phase-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rotational / Structural (Phase 1–2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#biological-environmental-phase-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Biological / Environmental (Phase 3)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structural-engineering-phase-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structural Engineering (Phase 6)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-feasible-design-band" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Feasible Design Band
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Feasible Design Band">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#at-1g-target-gravity-rotational-biological-only-phases-13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        At 1g Target Gravity (Rotational + Biological Only, Phases 1–3)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#at-1g-with-structural-constraints-phase-6-updated-2026-03-28" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        At 1g With Structural Constraints (Phase 6, updated 2026-03-28)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#across-gravity-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Across Gravity Levels
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-constraint-activation-waterfall-at-1g" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Constraint Activation Waterfall (at 1g)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-reference-design-scorecard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Reference Design Scorecard
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Reference Design Scorecard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#oneill-island-three-r-3200-m-l-32-km-counter-rotating-pair" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O'Neill Island Three (\(r = 3{,}200\) m, \(L = 32\) km, counter-rotating pair)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minimum-viable-cylinder-r-982-m-l-1276-m-single" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Minimum Viable Cylinder (\(r = 982\) m, \(L = 1{,}276\) m, single)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-sensitivity-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Sensitivity Analysis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Sensitivity Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#which-parameters-matter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Which Parameters Matter?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implication
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-monte-carlo-results-500-trials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Monte Carlo Results (500 Trials)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-mass-budget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Mass Budget
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Mass Budget">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#minimum-viable-cylinder-r-982-m-l-1276-m" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Minimum Viable Cylinder (\(r = 982\) m, \(L = 1{,}276\) m)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oneill-island-three-r-3200-m-l-32-km" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O'Neill Island Three (\(r = 3{,}200\) m, \(L = 32\) km)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-key-findings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Key Findings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-what-this-model-does-not-cover" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. What This Model Does Not Cover
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-interactive-exploration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Interactive Exploration
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Open Questions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    7. Open Questions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plans/contested_partial_gravity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minimum Gravity Level
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plans/contested_rotation_rate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maximum Rotation Rate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plans/contested_radiation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Radiation Limits & LNT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plans/literature_review_human_factors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Literature — Human Factors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plans/literature_review_structural/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Literature — Structural
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plans/qa_structural_design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Q&A — Structural Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="feasible-habitat-design-space">Feasible Habitat Design Space<a class="headerlink" href="#feasible-habitat-design-space" title="Permanent link">&para;</a></h1>
+<h2 id="summary-of-current-model-phases-16">Summary of Current Model (Phases 1–6)<a class="headerlink" href="#summary-of-current-model-phases-16" title="Permanent link">&para;</a></h2>
+<p>This document synthesizes all constraint analysis performed to date into a single reference for the feasible design space of an O'Neill-type rotating space habitat. The model evaluates 13 independent constraints across rotational dynamics, human physiology, environmental life support, and structural engineering.</p>
+<hr />
+<h2 id="1-constraints-implemented">1. Constraints Implemented<a class="headerlink" href="#1-constraints-implemented" title="Permanent link">&para;</a></h2>
+<h3 id="rotational-structural-phase-12">Rotational / Structural (Phase 1–2)<a class="headerlink" href="#rotational-structural-phase-12" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Constraint</th>
+<th>Parameter</th>
+<th>Threshold</th>
+<th>Physics</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Vestibular comfort</td>
+<td>RPM</td>
+<td><span class="arithmatex">\(\leq 2.0\)</span> rpm</td>
+<td>Semicircular canal stimulation from rotation rate</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Gravity level</td>
+<td><span class="arithmatex">\(g_{\text{eff}} = \omega^2 r\)</span></td>
+<td><span class="arithmatex">\(0.3g \leq g \leq 1.0g\)</span></td>
+<td>Centripetal acceleration at rim</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Gravity gradient</td>
+<td><span class="arithmatex">\(\Delta g / g = h/r\)</span></td>
+<td><span class="arithmatex">\(\leq 1.0\%\)</span></td>
+<td>Head-to-foot gravity difference</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Coriolis effect</td>
+<td><span class="arithmatex">\(a_{\text{cor}} / g\)</span></td>
+<td><span class="arithmatex">\(\leq 0.25\)</span></td>
+<td>Lateral force during radial motion</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Cross-coupling</td>
+<td><span class="arithmatex">\(\dot{\alpha} \times \omega\)</span></td>
+<td><span class="arithmatex">\(\leq 6.0\)</span> °/s²</td>
+<td>Vestibular cross-coupled angular acceleration</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Rim speed</td>
+<td><span class="arithmatex">\(v = \omega r\)</span></td>
+<td><span class="arithmatex">\(\leq 300\)</span> m/s</td>
+<td>Hoop stress limited by structural material</td>
+</tr>
+</tbody>
+</table>
+<h3 id="biological-environmental-phase-3">Biological / Environmental (Phase 3)<a class="headerlink" href="#biological-environmental-phase-3" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Constraint</th>
+<th>Parameter</th>
+<th>Threshold</th>
+<th>Physics</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7</td>
+<td>Radiation shielding</td>
+<td>Areal density</td>
+<td><span class="arithmatex">\(\geq 4{,}500\)</span> kg/m²</td>
+<td>GCR/SPE attenuation to <span class="arithmatex">\(&lt; 0.5\)</span> rem/yr</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Atmosphere</td>
+<td><span class="arithmatex">\(p_{\text{O}_2}\)</span></td>
+<td><span class="arithmatex">\(16\)</span>–<span class="arithmatex">\(50\)</span> kPa</td>
+<td>Partial pressure of oxygen for human respiration</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Population</td>
+<td>Inhabitants</td>
+<td><span class="arithmatex">\(\geq 98\)</span></td>
+<td>Minimum viable population for genetic diversity</td>
+</tr>
+</tbody>
+</table>
+<h3 id="structural-engineering-phase-6">Structural Engineering (Phase 6)<a class="headerlink" href="#structural-engineering-phase-6" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Constraint</th>
+<th>Parameter</th>
+<th>Threshold</th>
+<th>Physics</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10</td>
+<td>Hoop stress</td>
+<td><span class="arithmatex">\(\sigma_{\text{hoop}} \cdot \text{FoS} \leq \sigma_y\)</span></td>
+<td>Material-dependent</td>
+<td>Combined rotational + pressure vessel stress</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Cylinder length (bending)</td>
+<td><span class="arithmatex">\(L \leq C \cdot r^{5/4}\)</span></td>
+<td><span class="arithmatex">\(C = 1.33\)</span></td>
+<td>Bending mode resonance avoidance</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Rotational stability</td>
+<td><span class="arithmatex">\(L/r\)</span></td>
+<td><span class="arithmatex">\(\leq 1.3\)</span> (single), <span class="arithmatex">\(\leq 10\)</span> (paired)</td>
+<td><span class="arithmatex">\(I_z/I_x \geq 1.2\)</span> for passive spin stability</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Spin-up energy</td>
+<td><span class="arithmatex">\(E / P_{\text{avail}}\)</span></td>
+<td><span class="arithmatex">\(\leq 1\)</span> year</td>
+<td>Rotational KE must be deliverable in reasonable time</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2-feasible-design-band">2. Feasible Design Band<a class="headerlink" href="#2-feasible-design-band" title="Permanent link">&para;</a></h2>
+<h3 id="at-1g-target-gravity-rotational-biological-only-phases-13">At 1g Target Gravity (Rotational + Biological Only, Phases 1–3)<a class="headerlink" href="#at-1g-target-gravity-rotational-biological-only-phases-13" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[r_{\min} = 982 \text{ m}, \quad r_{\max} = 9{,}177 \text{ m}\]</div>
+<h3 id="at-1g-with-structural-constraints-phase-6-updated-2026-03-28">At 1g With Structural Constraints (Phase 6, updated 2026-03-28)<a class="headerlink" href="#at-1g-with-structural-constraints-phase-6-updated-2026-03-28" title="Permanent link">&para;</a></h3>
+<p>The upper bound depends on <strong>wall thickness</strong> and <strong>material choice</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Boundary</th>
+<th><span class="arithmatex">\(t = 0.2\)</span> m steel</th>
+<th><span class="arithmatex">\(t = 0.5\)</span> m steel</th>
+<th><span class="arithmatex">\(t = 1.0\)</span> m steel</th>
+<th><span class="arithmatex">\(t = 0.2\)</span> m CFRP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(r_{\min}\)</span></td>
+<td>982 m</td>
+<td>982 m</td>
+<td>982 m</td>
+<td>982 m</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(r_{\max}\)</span></td>
+<td>~1,000 m</td>
+<td>~2,100 m</td>
+<td>~3,100 m</td>
+<td>~3,200 m</td>
+</tr>
+<tr>
+<td>Band width</td>
+<td>~18 m</td>
+<td>~1,100 m</td>
+<td>~2,100 m</td>
+<td>~2,200 m</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Boundary</th>
+<th>Binding Constraint</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lower (minimum radius)</td>
+<td>Cross-coupling (6.0 °/s²)</td>
+</tr>
+<tr>
+<td>Upper (maximum radius)</td>
+<td>Hoop stress (<span class="arithmatex">\(\sigma_p = Pr/t\)</span>)</td>
+</tr>
+<tr>
+<td>Max length (single)</td>
+<td><span class="arithmatex">\(1.3r\)</span> (rotational stability)</td>
+</tr>
+<tr>
+<td>Max length (paired)</td>
+<td><span class="arithmatex">\(\min(10r, \; 1.33 r^{5/4})\)</span> (bending)</td>
+</tr>
+<tr>
+<td>Atmosphere (min)</td>
+<td>~76 kPa (hoop stress driven)</td>
+</tr>
+</tbody>
+</table>
+<p>Wall thickness is the primary design lever for widening the feasible
+band. The pressure term (<span class="arithmatex">\(Pr/t\)</span>) dominates hoop stress at moderate
+radii — doubling <span class="arithmatex">\(t\)</span> roughly doubles <span class="arithmatex">\(r_{\max}\)</span>. Half-atmosphere
+(50 kPa) has the same effect as doubling wall thickness.</p>
+<p><strong>Recommended baseline:</strong> CFRP hull with <span class="arithmatex">\(t = 0.2\)</span>–<span class="arithmatex">\(0.5\)</span> m provides
+ample margin at lower mass than steel. See <code>structural_engineering.md</code>
+§3.2 for material comparison.</p>
+<h3 id="across-gravity-levels">Across Gravity Levels<a class="headerlink" href="#across-gravity-levels" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Target Gravity</th>
+<th><span class="arithmatex">\(r_{\min}\)</span> (m)</th>
+<th><span class="arithmatex">\(r_{\max}\)</span> (m)</th>
+<th>Band Width (m)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.3g</td>
+<td>294</td>
+<td>30,591</td>
+<td>30,297</td>
+</tr>
+<tr>
+<td>0.5g</td>
+<td>490</td>
+<td>18,355</td>
+<td>17,864</td>
+</tr>
+<tr>
+<td>0.8g</td>
+<td>786</td>
+<td>11,472</td>
+<td>10,686</td>
+</tr>
+<tr>
+<td>1.0g</td>
+<td>982</td>
+<td>9,177</td>
+<td>8,196</td>
+</tr>
+</tbody>
+</table>
+<p>Lower gravity targets dramatically expand the feasible region. At 0.5g the minimum radius drops to 490 m — less than half of the 1g requirement. Whether 0.5g suffices for long-term human health remains an open question.</p>
+<hr />
+<h2 id="3-constraint-activation-waterfall-at-1g">3. Constraint Activation Waterfall (at 1g)<a class="headerlink" href="#3-constraint-activation-waterfall-at-1g" title="Permanent link">&para;</a></h2>
+<p>As radius increases from small to large, constraints "turn off" in sequence:</p>
+<table>
+<thead>
+<tr>
+<th>Radius Range</th>
+<th>Failing Constraints</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(r &lt; 180\)</span> m</td>
+<td>Vestibular + gravity gradient + cross-coupling</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(180 \leq r &lt; 225\)</span> m</td>
+<td>Vestibular + cross-coupling</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(225 \leq r &lt; 982\)</span> m</td>
+<td>Cross-coupling only</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(982 \leq r \leq 9{,}177\)</span> m</td>
+<td><strong>None — all pass</strong></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(r &gt; 9{,}177\)</span> m</td>
+<td>Rim speed</td>
+</tr>
+</tbody>
+</table>
+<p>Cross-coupling is the last constraint to be satisfied as radius grows, making it the binding lower bound. Rim speed is the first to fail as radius grows large.</p>
+<hr />
+<h2 id="4-reference-design-scorecard">4. Reference Design Scorecard<a class="headerlink" href="#4-reference-design-scorecard" title="Permanent link">&para;</a></h2>
+<h3 id="oneill-island-three-r-3200-m-l-32-km-counter-rotating-pair">O'Neill Island Three (<span class="arithmatex">\(r = 3{,}200\)</span> m, <span class="arithmatex">\(L = 32\)</span> km, counter-rotating pair)<a class="headerlink" href="#oneill-island-three-r-3200-m-l-32-km-counter-rotating-pair" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Constraint</th>
+<th>Value</th>
+<th>Threshold</th>
+<th>Margin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vestibular</td>
+<td>0.53 rpm</td>
+<td>2.0 rpm</td>
+<td>74%</td>
+</tr>
+<tr>
+<td>Gravity level</td>
+<td>1.0g</td>
+<td>0.3–1.0g</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Gravity gradient</td>
+<td>0.056%</td>
+<td>1.0%</td>
+<td>94%</td>
+</tr>
+<tr>
+<td>Coriolis (running)</td>
+<td>3.4% of <span class="arithmatex">\(g\)</span></td>
+<td>25%</td>
+<td>86%</td>
+</tr>
+<tr>
+<td>Cross-coupling</td>
+<td>3.32 °/s²</td>
+<td>6.0 °/s²</td>
+<td>45%</td>
+</tr>
+<tr>
+<td>Rim speed</td>
+<td>177 m/s</td>
+<td>300 m/s</td>
+<td>41%</td>
+</tr>
+<tr>
+<td>Radiation shielding</td>
+<td>4,500 kg/m²</td>
+<td>4,500 kg/m²</td>
+<td>0% (by design)</td>
+</tr>
+<tr>
+<td>Atmosphere (<span class="arithmatex">\(p_{\text{O}_2}\)</span>)</td>
+<td>21.3 kPa</td>
+<td>16–50 kPa</td>
+<td>pass</td>
+</tr>
+<tr>
+<td>Population</td>
+<td>1,000,000</td>
+<td>98</td>
+<td>pass</td>
+</tr>
+<tr>
+<td>Hoop stress (steel)</td>
+<td>1,869 MPa</td>
+<td>600 MPa</td>
+<td><strong>FAIL (−211%)</strong></td>
+</tr>
+<tr>
+<td>Cylinder length</td>
+<td>32 km</td>
+<td>32 km</td>
+<td>~0%</td>
+</tr>
+<tr>
+<td>Rotational stability</td>
+<td><span class="arithmatex">\(L/r = 10\)</span></td>
+<td><span class="arithmatex">\(\leq 10\)</span> (paired)</td>
+<td>~0%</td>
+</tr>
+<tr>
+<td>Spin-up energy</td>
+<td>~109 days</td>
+<td>365 days</td>
+<td>70%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>O'Neill fails hoop stress with steel</strong> at <span class="arithmatex">\(t = 0.2\)</span> m. CFRP passes
+with 4.6% margin. Counter-rotating pair is required for <span class="arithmatex">\(L/r = 10\)</span>.</p>
+<h3 id="minimum-viable-cylinder-r-982-m-l-1276-m-single">Minimum Viable Cylinder (<span class="arithmatex">\(r = 982\)</span> m, <span class="arithmatex">\(L = 1{,}276\)</span> m, single)<a class="headerlink" href="#minimum-viable-cylinder-r-982-m-l-1276-m-single" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Constraint</th>
+<th>Value</th>
+<th>Threshold</th>
+<th>Margin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vestibular</td>
+<td>0.95 rpm</td>
+<td>2.0 rpm</td>
+<td>53%</td>
+</tr>
+<tr>
+<td>Gravity gradient</td>
+<td>0.18%</td>
+<td>1.0%</td>
+<td>82%</td>
+</tr>
+<tr>
+<td>Coriolis (running)</td>
+<td>6.1% of <span class="arithmatex">\(g\)</span></td>
+<td>25%</td>
+<td>76%</td>
+</tr>
+<tr>
+<td>Cross-coupling</td>
+<td>6.0 °/s²</td>
+<td>6.0 °/s²</td>
+<td><strong>~0%</strong></td>
+</tr>
+<tr>
+<td>Rim speed</td>
+<td>98 m/s</td>
+<td>300 m/s</td>
+<td>67%</td>
+</tr>
+<tr>
+<td>Radiation shielding</td>
+<td>4,500 kg/m²</td>
+<td>4,500 kg/m²</td>
+<td>0% (by design)</td>
+</tr>
+<tr>
+<td>Atmosphere (<span class="arithmatex">\(p_{\text{O}_2}\)</span>)</td>
+<td>21.3 kPa</td>
+<td>16–50 kPa</td>
+<td>pass</td>
+</tr>
+<tr>
+<td>Population</td>
+<td>8,000</td>
+<td>98</td>
+<td>pass</td>
+</tr>
+<tr>
+<td>Hoop stress (HS steel)</td>
+<td>574 MPa</td>
+<td>600 MPa</td>
+<td><strong>4.4%</strong></td>
+</tr>
+<tr>
+<td>Cylinder length</td>
+<td>1,276 m</td>
+<td>7,311 m</td>
+<td>83%</td>
+</tr>
+<tr>
+<td>Rotational stability</td>
+<td><span class="arithmatex">\(L/r = 1.3\)</span></td>
+<td><span class="arithmatex">\(\leq 1.3\)</span></td>
+<td><strong>~0%</strong></td>
+</tr>
+<tr>
+<td>Spin-up energy</td>
+<td>~0.3 days</td>
+<td>365 days</td>
+<td>99.9%</td>
+</tr>
+</tbody>
+</table>
+<p>Cross-coupling and rotational stability are both at the boundary.
+Hoop stress passes with only 4.4% margin — the tightest structural
+constraint. The previous <span class="arithmatex">\(L = 2{,}000\)</span> m design now <strong>fails</strong>
+rotational stability (<span class="arithmatex">\(L/r = 2.04 &gt; 1.3\)</span>).</p>
+<hr />
+<h2 id="5-sensitivity-analysis">5. Sensitivity Analysis<a class="headerlink" href="#5-sensitivity-analysis" title="Permanent link">&para;</a></h2>
+<h3 id="which-parameters-matter">Which Parameters Matter?<a class="headerlink" href="#which-parameters-matter" title="Permanent link">&para;</a></h3>
+<p>A ±20% perturbation of each human assumption parameter reveals which ones actually shift the feasible boundary:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th><span class="arithmatex">\(r_{\min}\)</span> Range</th>
+<th>Spread</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>max_cross_coupling_deg_s2</code></td>
+<td>682 – 1,533 m</td>
+<td>851 m</td>
+</tr>
+<tr>
+<td><code>head_turn_rate_deg_s</code></td>
+<td>628 – 1,413 m</td>
+<td>785 m</td>
+</tr>
+<tr>
+<td>All others</td>
+<td>982 m (unchanged)</td>
+<td>0 m</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Only two parameters matter</strong>: the cross-coupling tolerance threshold and the assumed head turn rate during daily activities. All other parameters (RPM limit, gravity gradient, Coriolis ratio, rim speed, person height, running speed) are non-binding at the 1g design point.</p>
+<h3 id="implication">Implication<a class="headerlink" href="#implication" title="Permanent link">&para;</a></h3>
+<p>Research priority should focus on:
+1. Measuring cross-coupling thresholds in long-duration centrifuge studies
+2. Characterizing typical head turn rates during daily life (not just lab conditions)</p>
+<hr />
+<h2 id="6-monte-carlo-results-500-trials">6. Monte Carlo Results (500 Trials)<a class="headerlink" href="#6-monte-carlo-results-500-trials" title="Permanent link">&para;</a></h2>
+<p>Sampling all 6 key human assumption parameters from distributions around their nominal values:</p>
+<table>
+<thead>
+<tr>
+<th>Statistic</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Feasibility rate</td>
+<td>96.4%</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(r_{\min}\)</span> — 5th percentile</td>
+<td>286 m</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(r_{\min}\)</span> — 25th percentile</td>
+<td>~550 m</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(r_{\min}\)</span> — median</td>
+<td>971 m</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(r_{\min}\)</span> — 95th percentile</td>
+<td>3,630 m</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(r_{\max}\)</span> — median</td>
+<td>9,274 m</td>
+</tr>
+</tbody>
+</table>
+<p>The P5–P95 range for minimum radius spans <strong>286 m to 3,630 m</strong> (12.7× spread), driven almost entirely by cross-coupling threshold uncertainty. The median (971 m) closely matches the deterministic result (982 m), confirming model stability.</p>
+<hr />
+<h2 id="7-mass-budget">7. Mass Budget<a class="headerlink" href="#7-mass-budget" title="Permanent link">&para;</a></h2>
+<p>Radiation shielding dominates the mass budget at every scale.</p>
+<h3 id="minimum-viable-cylinder-r-982-m-l-1276-m">Minimum Viable Cylinder (<span class="arithmatex">\(r = 982\)</span> m, <span class="arithmatex">\(L = 1{,}276\)</span> m)<a class="headerlink" href="#minimum-viable-cylinder-r-982-m-l-1276-m" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Mass (Mt)</th>
+<th>Fraction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Structural shell (steel, SF=3)</td>
+<td>3.3</td>
+<td>3.8%</td>
+</tr>
+<tr>
+<td><strong>Radiation shielding</strong></td>
+<td><strong>82.8</strong></td>
+<td><strong>95.0%</strong></td>
+</tr>
+<tr>
+<td>Atmosphere</td>
+<td>0.5</td>
+<td>0.6%</td>
+</tr>
+<tr>
+<td>Soil (50% area, 0.75 m depth)</td>
+<td>0.5</td>
+<td>0.5%</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>~87</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="oneill-island-three-r-3200-m-l-32-km">O'Neill Island Three (<span class="arithmatex">\(r = 3{,}200\)</span> m, <span class="arithmatex">\(L = 32\)</span> km)<a class="headerlink" href="#oneill-island-three-r-3200-m-l-32-km" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Mass (Mt)</th>
+<th>Fraction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Structural shell</td>
+<td>73.4</td>
+<td>2.2%</td>
+</tr>
+<tr>
+<td><strong>Radiation shielding</strong></td>
+<td><strong>3,184.8</strong></td>
+<td><strong>95.6%</strong></td>
+</tr>
+<tr>
+<td>Atmosphere</td>
+<td>17.2</td>
+<td>0.5%</td>
+</tr>
+<tr>
+<td>Soil</td>
+<td>52.4</td>
+<td>1.6%</td>
+</tr>
+<tr>
+<td>Water</td>
+<td>3.1</td>
+<td>0.1%</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>~3,331</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key insight</strong>: Structural optimization is rounding error. The only way to meaningfully reduce habitat mass is to find alternatives to passive radiation shielding (active magnetic shielding, strategic orbital placement in Van Allen belts, or acceptance of higher dose rates).</p>
+<hr />
+<h2 id="8-key-findings">8. Key Findings<a class="headerlink" href="#8-key-findings" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p><strong>Cross-coupling dominates the lower bound.</strong> The minimum feasible radius is set by vestibular cross-coupling, not RPM comfort or gravity gradient. This was not obvious before Phase 2 analysis.</p>
+</li>
+<li>
+<p><strong>The feasible band is tunable.</strong> At 1g with steel, the band ranges from ~18 m wide (<span class="arithmatex">\(t = 0.2\)</span> m) to ~2,100+ m wide (<span class="arithmatex">\(t = 1.0\)</span> m). With CFRP, the band exceeds 2,200 m at <span class="arithmatex">\(t = 0.2\)</span> m. Wall thickness and material choice are the primary design levers.</p>
+</li>
+<li>
+<p><strong>Only two parameters matter for the lower bound.</strong> Cross-coupling threshold and head turn rate account for all sensitivity. Every other parameter is non-binding.</p>
+</li>
+<li>
+<p><strong>Biological constraints are orthogonal.</strong> Radiation, atmosphere, and population constraints do not change the feasible radius band — they are satisfied independently. However, radiation shielding dominates mass.</p>
+</li>
+<li>
+<p><strong>Radiation shielding is 95% of total mass.</strong> This is the single biggest engineering challenge and the primary target for mass reduction research.</p>
+</li>
+<li>
+<p><strong>Lower gravity dramatically opens design space.</strong> If 0.5g is adequate for human health, the minimum radius drops from 982 m to 490 m and the mass budget roughly halves.</p>
+</li>
+<li>
+<p><strong>Crew adaptation is a structural requirement.</strong> Head turn rate training can reduce minimum radius from 3,923 m to 245 m — a 16× reduction. This is not optional comfort training; it is load-bearing for structural sizing.</p>
+</li>
+</ol>
+<hr />
+<h2 id="9-what-this-model-does-not-cover">9. What This Model Does Not Cover<a class="headerlink" href="#9-what-this-model-does-not-cover" title="Permanent link">&para;</a></h2>
+<p><strong>Phase 6 structural constraints are now implemented</strong> (hoop stress,
+cylinder length, rotational stability). Remaining future work:</p>
+<table>
+<thead>
+<tr>
+<th>Domain</th>
+<th>Why It Matters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Thermal management</td>
+<td>Radiator area scales with population and sunlight exposure</td>
+</tr>
+<tr>
+<td>Agriculture</td>
+<td>Food self-sufficiency constrains minimum land area</td>
+</tr>
+<tr>
+<td>Water recycling</td>
+<td>Closed-loop efficiency determines water mass budget</td>
+</tr>
+<tr>
+<td>Energy budget</td>
+<td>Solar collection area, power distribution, day/night cycle</td>
+</tr>
+</tbody>
+</table>
+<p>Spin-up energy was implemented in Phase 6 (constraint #13). For the
+reference design it is non-binding (~8 hours at 10 GW), but it becomes
+relevant for O'Neill-class habitats at lower power levels.</p>
+<p>The remaining constraints are unlikely to change the rotational feasible
+band. They will primarily affect mass budget, minimum cylinder length,
+and population capacity.</p>
+<hr />
+<h2 id="10-interactive-exploration">10. Interactive Exploration<a class="headerlink" href="#10-interactive-exploration" title="Permanent link">&para;</a></h2>
+<p>The full constraint model is available as an interactive web application:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Backend (port 8042)</span>
+<span class="nb">cd</span><span class="w"> </span>models/habitat_constraints
+uv<span class="w"> </span>run<span class="w"> </span>uvicorn<span class="w"> </span>habitat_constraints.api.main:app<span class="w"> </span>--host<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>--port<span class="w"> </span><span class="m">8042</span><span class="w"> </span>--reload
+
+<span class="c1"># Frontend (port 5173)</span>
+<span class="nb">cd</span><span class="w"> </span>demo
+npm<span class="w"> </span>run<span class="w"> </span>dev
+</code></pre></div>
+<p>The dashboard provides:
+- <strong>Parameter sliders</strong> with <strong>green feasible-range indicators</strong> showing
+  viable values for radius, wall thickness, cylinder length, and
+  atmosphere pressure in real time
+- <strong>Constraint status panel</strong> showing pass/fail with computed values
+  for all 13 constraints
+- <strong>2D feasible region chart</strong> showing the radius sweep (responsive to
+  wall thickness and all design parameters)
+- <strong>3D rotating O'Neill cylinder</strong> with toggleable land/window strips,
+  human figure, Coriolis arrows, gravity gradient rings, and rotation
+  axis</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

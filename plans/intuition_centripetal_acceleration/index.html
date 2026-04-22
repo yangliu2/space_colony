@@ -1,0 +1,2306 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Physics-based feasibility analysis for O'Neill cylinder habitats">
+      
+      
+      
+        <link rel="canonical" href="https://docs.spinhabitat.com/plans/intuition_centripetal_acceleration/">
+      
+      
+        <link rel="prev" href="../intuition_artificial_gravity/">
+      
+      
+        <link rel="next" href="../intuition_angular_velocity/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Centripetal Acceleration - Space Colony — Constraint Study</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#centripetal-acceleration-from-intuition-to-calculus" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Space Colony — Constraint Study" class="md-header__button md-logo" aria-label="Space Colony — Constraint Study" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Space Colony — Constraint Study
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Centripetal Acceleration
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/fangfanglai/space_colony" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Space Colony — Constraint Study" class="md-nav__button md-logo" aria-label="Space Colony — Constraint Study" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Space Colony — Constraint Study
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/fangfanglai/space_colony" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. How Does It Work?
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    1. How Does It Work?
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intuition_artificial_gravity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Artificial Gravity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Centripetal Acceleration
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Centripetal Acceleration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-is-centripetal-acceleration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. What Is Centripetal Acceleration?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-why-does-it-point-inward-vector-subtraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Why Does It Point Inward? — Vector Subtraction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Why Does It Point Inward? — Vector Subtraction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Logic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-vector-subtraction-shows-inward-acceleration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Vector Subtraction Shows Inward Acceleration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-why-not-some-other-direction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Why Not Some Other Direction?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-qa-the-questions-you-should-be-asking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Q&amp;A — The Questions You Should Be Asking
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Q&amp;A — The Questions You Should Be Asking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#q-is-centripetal-acceleration-how-fast-the-angle-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: Is centripetal acceleration "how fast the angle changes"?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-in-a-v2r-is-v2-the-tangential-acceleration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: In \(a = v^2/r\), is \(v^2\) the tangential acceleration?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-why-is-it-v2-and-not-just-v-why-does-doubling-speed-quadruple-the-acceleration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: Why is it \(v^2\) and not just \(v\)? Why does doubling speed quadruple the acceleration?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-why-is-the-acceleration-inward-if-the-object-is-rotating-and-changing-direction-all-the-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: Why is the acceleration inward if the object is rotating and changing direction all the time?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-how-does-the-regular-equation-connect-to-the-calculus-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: How does the regular equation connect to the calculus version?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-bridge-from-regular-equations-to-the-calculus-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Bridge: From "Regular" Equations to the Calculus Version
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Bridge: From &#34;Regular&#34; Equations to the Calculus Version">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-the-setup-why-parameterize" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 The Setup — Why Parameterize?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-describing-position-on-a-circle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Describing Position on a Circle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-step-1-velocity-first-derivative-of-position" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Step 1 — Velocity: First Derivative of Position
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-step-2-acceleration-second-derivative-of-position" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 Step 2 — Acceleration: Second Derivative of Position
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55-reading-the-result" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5 Reading the Result
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#56-summary-regular-vs-calculus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.6 Summary: Regular vs. Calculus
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intuition_angular_velocity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Angular Velocity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../general_relativity_and_artificial_gravity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Does General Relativity Matter?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Can Humans Live There?
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2. Can Humans Live There?
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_vestibular/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vestibular (RPM limit)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_gravity_minimum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gravity Level
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_gravity_gradient/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gravity Gradient (head-to-foot)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_coriolis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coriolis Effect
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_cross_coupling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross-Coupling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_biological/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atmosphere
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Will the Structure Hold?
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3. Will the Structure Hold?
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../structural_engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hoop Stress & Materials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_rim_speed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rim Speed (material limit)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_cylinder_length/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cylinder Length & Counter-Rotation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_rotational_stability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rotational Stability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_spinup_energy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spin-Up Energy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Life Support
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    4. Life Support
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_agriculture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agriculture Area
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_thermal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Thermal Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_energy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Energy Budget
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_water_recycling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Water Recycling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_micrometeorite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Micrometeorite Impact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. The Design
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    5. The Design
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mirror_geometry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    External Mirrors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interior_space_utilization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interior Space
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../construction_material_estimates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Material Estimates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Findings
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    6. Findings
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../conclusions/001_human_comfort_boundaries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    001: Human Comfort Boundaries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../conclusions/002_full_constraint_analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    002: Full Constraint Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../conclusions/003_biological_constraints_and_monte_carlo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    003: Biological Constraints & Monte Carlo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../conclusions/004_structural_constraints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    004: Structural Constraints
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../conclusions/feasible_habitat_design_space/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Feasible Design Space
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Open Questions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    7. Open Questions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contested_partial_gravity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minimum Gravity Level
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contested_rotation_rate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maximum Rotation Rate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contested_radiation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Radiation Limits & LNT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../literature_review_human_factors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Literature — Human Factors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../literature_review_structural/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Literature — Structural
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qa_structural_design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Q&A — Structural Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="centripetal-acceleration-from-intuition-to-calculus">Centripetal Acceleration: From Intuition to Calculus<a class="headerlink" href="#centripetal-acceleration-from-intuition-to-calculus" title="Permanent link">&para;</a></h1>
+<hr />
+<h2 id="1-what-is-centripetal-acceleration">1. What Is Centripetal Acceleration?<a class="headerlink" href="#1-what-is-centripetal-acceleration" title="Permanent link">&para;</a></h2>
+<p>An object moving in a circle at constant speed is <strong>accelerating</strong> — not because it's speeding up, but because its <strong>direction is constantly changing</strong>. Velocity is a vector (speed + direction), and any change in that vector, even a pure direction change, counts as acceleration.</p>
+<p>Centripetal acceleration is the name for this direction-changing acceleration. It always points <strong>radially inward</strong>, toward the center of the circle. Its magnitude is:</p>
+<div class="arithmatex">\[
+a_c = \frac{v^2}{r} = \omega^2 r
+\]</div>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Unit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(a_c\)</span></td>
+<td>Centripetal acceleration</td>
+<td>m/s²</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(v\)</span></td>
+<td>Tangential speed (constant)</td>
+<td>m/s</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(r\)</span></td>
+<td>Radius of circular path</td>
+<td>m</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\omega\)</span></td>
+<td>Angular velocity</td>
+<td>rad/s</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2-why-does-it-point-inward-vector-subtraction">2. Why Does It Point Inward? — Vector Subtraction<a class="headerlink" href="#2-why-does-it-point-inward-vector-subtraction" title="Permanent link">&para;</a></h2>
+<h3 id="the-logic">The Logic<a class="headerlink" href="#the-logic" title="Permanent link">&para;</a></h3>
+<p>At time <span class="arithmatex">\(t_1\)</span>, the object has velocity <span class="arithmatex">\(\vec{v}_1\)</span> (tangent to the circle).
+At time <span class="arithmatex">\(t_2\)</span>, the object has velocity <span class="arithmatex">\(\vec{v}_2\)</span> (tangent to the circle at its new position).</p>
+<p>Both vectors have the <strong>same magnitude</strong> <span class="arithmatex">\(v\)</span> (speed is constant), but they point in <strong>different directions</strong> because the object has moved along the curve.</p>
+<p>The change in velocity is:</p>
+<div class="arithmatex">\[
+\Delta \vec{v} = \vec{v}_2 - \vec{v}_1
+\]</div>
+<p>Acceleration is this change divided by time:</p>
+<div class="arithmatex">\[
+\vec{a} = \frac{\Delta \vec{v}}{\Delta t}
+\]</div>
+<p>When you place <span class="arithmatex">\(\vec{v}_1\)</span> and <span class="arithmatex">\(\vec{v}_2\)</span> tail-to-tail and draw the vector from the tip of <span class="arithmatex">\(\vec{v}_1\)</span> to the tip of <span class="arithmatex">\(\vec{v}_2\)</span>, that difference vector <span class="arithmatex">\(\Delta \vec{v}\)</span> points <strong>inward</strong> — toward the center of the circle.</p>
+<h3 id="diagram-vector-subtraction-shows-inward-acceleration">Diagram: Vector Subtraction Shows Inward Acceleration<a class="headerlink" href="#diagram-vector-subtraction-shows-inward-acceleration" title="Permanent link">&para;</a></h3>
+<p><img alt="Vector subtraction diagram for centripetal acceleration" src="../vector_subtraction_diagram.png" /></p>
+<p><strong>Reading the diagram:</strong></p>
+<ul>
+<li><strong>Left:</strong> The object moves from <span class="arithmatex">\(P_1\)</span> to <span class="arithmatex">\(P_2\)</span> along the circle. At each point, the velocity arrow is tangent to the circle. Both arrows are the same length (same speed), but point in different directions.</li>
+<li><strong>Right:</strong> Place both velocity vectors tail-to-tail. The green arrow <span class="arithmatex">\(\Delta \vec{v} = \vec{v}_2 - \vec{v}_1\)</span> goes from the tip of <span class="arithmatex">\(\vec{v}_1\)</span> to the tip of <span class="arithmatex">\(\vec{v}_2\)</span>. It points <strong>inward</strong>, toward the center of the circle. Since <span class="arithmatex">\(\vec{a} = \Delta\vec{v}/\Delta t\)</span>, the acceleration also points inward.</li>
+</ul>
+<hr />
+<h2 id="3-why-not-some-other-direction">3. Why Not Some Other Direction?<a class="headerlink" href="#3-why-not-some-other-direction" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>If acceleration pointed...</th>
+<th>What would happen</th>
+<th>Consistent with uniform circular motion?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tangentially</strong> (along motion)</td>
+<td>Object speeds up or slows down</td>
+<td>No — speed is constant</td>
+</tr>
+<tr>
+<td><strong>Outward</strong> (away from center)</td>
+<td>Object spirals away from the circle</td>
+<td>No — radius is constant</td>
+</tr>
+<tr>
+<td><strong>Inward</strong> (toward center)</td>
+<td>Direction bends without changing speed</td>
+<td><strong>Yes</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The inward direction is the <strong>only</strong> direction that bends the trajectory without changing the speed.</p>
+<hr />
+<h2 id="4-qa-the-questions-you-should-be-asking">4. Q&amp;A — The Questions You Should Be Asking<a class="headerlink" href="#4-qa-the-questions-you-should-be-asking" title="Permanent link">&para;</a></h2>
+<h3 id="q-is-centripetal-acceleration-how-fast-the-angle-changes">Q: Is centripetal acceleration "how fast the angle changes"?<a class="headerlink" href="#q-is-centripetal-acceleration-how-fast-the-angle-changes" title="Permanent link">&para;</a></h3>
+<p><strong>Not exactly.</strong> "How fast the angle changes" is angular velocity <span class="arithmatex">\(\omega\)</span>. Centripetal acceleration is how fast the <strong>velocity vector's direction</strong> is changing. Related, but not the same thing. <span class="arithmatex">\(\omega\)</span> tells you the rotation rate; <span class="arithmatex">\(a_c = \omega^2 r\)</span> tells you how much acceleration that rotation rate demands at a given radius.</p>
+<h3 id="q-in-a-v2r-is-v2-the-tangential-acceleration">Q: In <span class="arithmatex">\(a = v^2/r\)</span>, is <span class="arithmatex">\(v^2\)</span> the tangential acceleration?<a class="headerlink" href="#q-in-a-v2r-is-v2-the-tangential-acceleration" title="Permanent link">&para;</a></h3>
+<p><strong>No.</strong> Tangential acceleration means the object is speeding up or slowing down along its path. In uniform circular motion, tangential acceleration is zero — speed is constant. <span class="arithmatex">\(v^2\)</span> is just speed squared — a scalar quantity. The formula <span class="arithmatex">\(a_c = v^2/r\)</span> tells you the magnitude of the direction-changing acceleration.</p>
+<h3 id="q-why-is-it-v2-and-not-just-v-why-does-doubling-speed-quadruple-the-acceleration">Q: Why is it <span class="arithmatex">\(v^2\)</span> and not just <span class="arithmatex">\(v\)</span>? Why does doubling speed quadruple the acceleration?<a class="headerlink" href="#q-why-is-it-v2-and-not-just-v-why-does-doubling-speed-quadruple-the-acceleration" title="Permanent link">&para;</a></h3>
+<p>There are two separate effects when you increase speed, and they <strong>multiply</strong> together.</p>
+<p><strong>Effect 1 — You sweep through angles faster.</strong></p>
+<p>If you're going faster around the circle, your direction changes more rapidly — you rotate through more angle per second. The rate of direction change is proportional to <span class="arithmatex">\(v\)</span> (since <span class="arithmatex">\(\omega = v/r\)</span>). Doubling <span class="arithmatex">\(v\)</span> doubles how quickly your velocity vector is rotating.</p>
+<p><strong>Effect 2 — The velocity vector you're rotating is bigger.</strong></p>
+<p>Acceleration isn't just "how fast the direction is changing." It's "how fast the velocity <strong>vector</strong> is changing." A vector has both direction and magnitude. Even if two vectors rotate at the same angular rate, the longer one sweeps out a bigger <span class="arithmatex">\(\Delta \vec{v}\)</span> per second because its tip covers more distance.</p>
+<p>Think of a clock. A short hand and a long hand both complete one revolution per hour (same angular rate). But the tip of the long hand moves through space much faster — because the same angle change, applied to a longer arm, produces a bigger displacement.</p>
+<p>So when you double <span class="arithmatex">\(v\)</span>:</p>
+<ul>
+<li>The velocity vector rotates twice as fast (Effect 1: <span class="arithmatex">\(\times 2\)</span>)</li>
+<li>The velocity vector being rotated is twice as long (Effect 2: <span class="arithmatex">\(\times 2\)</span>)</li>
+<li>Total change in velocity per second: <span class="arithmatex">\(\times 4\)</span></li>
+</ul>
+<p>That's <span class="arithmatex">\(v \times v = v^2\)</span>.</p>
+<p><strong>Saying it precisely:</strong></p>
+<p>The magnitude of the change in velocity per unit time is:</p>
+<div class="arithmatex">\[
+a = \underbrace{\omega}_{\text{how fast direction turns}} \times \underbrace{v}_{\text{size of the vector being turned}} = \frac{v}{r} \times v = \frac{v^2}{r}
+\]</div>
+<p>The first <span class="arithmatex">\(v\)</span> gets you <span class="arithmatex">\(\omega\)</span> (how fast the direction turns). The second <span class="arithmatex">\(v\)</span> is the magnitude of the thing being turned. They multiply.</p>
+<p><strong>Analogy:</strong> Imagine spinning a rope with a ball. If you spin faster, the ball's direction changes more rapidly (it comes around more often), <em>and</em> the ball is moving faster at each moment so each direction change involves a bigger velocity being redirected. Both effects scale with speed. Speed shows up twice. Hence <span class="arithmatex">\(v^2\)</span>.</p>
+<h3 id="q-why-is-the-acceleration-inward-if-the-object-is-rotating-and-changing-direction-all-the-time">Q: Why is the acceleration inward if the object is rotating and changing direction all the time?<a class="headerlink" href="#q-why-is-the-acceleration-inward-if-the-object-is-rotating-and-changing-direction-all-the-time" title="Permanent link">&para;</a></h3>
+<p>Because at every single instant, the velocity vector is tangent to the circle, and the <em>change</em> in that vector (from one instant to the next) always points toward the center. The object isn't accelerating "around" the circle — it's accelerating <strong>across</strong> its own direction of motion, toward the center, at every moment. That inward pull is what bends the straight-line trajectory into a curve.</p>
+<p>Think of it this way: without the inward acceleration, the object flies off in a straight line (Newton's first law). The inward acceleration is what <em>prevents</em> straight-line motion and <em>creates</em> the circle.</p>
+<h3 id="q-how-does-the-regular-equation-connect-to-the-calculus-version">Q: How does the regular equation connect to the calculus version?<a class="headerlink" href="#q-how-does-the-regular-equation-connect-to-the-calculus-version" title="Permanent link">&para;</a></h3>
+<p>This is answered in detail in Section 5 below. The short answer: the "regular" equations (<span class="arithmatex">\(v = \omega r\)</span>, <span class="arithmatex">\(a = v^2/r\)</span>) give you <strong>magnitudes only</strong>. The calculus version tracks the full vector (magnitude + direction) at every instant, and when you differentiate twice, the inward direction <strong>falls out automatically</strong> via the negative sign.</p>
+<hr />
+<h2 id="5-bridge-from-regular-equations-to-the-calculus-version">5. Bridge: From "Regular" Equations to the Calculus Version<a class="headerlink" href="#5-bridge-from-regular-equations-to-the-calculus-version" title="Permanent link">&para;</a></h2>
+<h3 id="51-the-setup-why-parameterize">5.1 The Setup — Why Parameterize?<a class="headerlink" href="#51-the-setup-why-parameterize" title="Permanent link">&para;</a></h3>
+<p>The "regular" equations you already know:</p>
+<div class="arithmatex">\[
+v = \omega r, \qquad a_c = \frac{v^2}{r} = \omega^2 r
+\]</div>
+<p>These give you <strong>magnitudes</strong> — how fast, how much acceleration — but they don't tell you the <strong>direction</strong> at each moment. To prove the acceleration points inward (and not tangentially, or at some angle), we need to track the full position <strong>vector</strong> as a function of time, then differentiate.</p>
+<h3 id="52-describing-position-on-a-circle">5.2 Describing Position on a Circle<a class="headerlink" href="#52-describing-position-on-a-circle" title="Permanent link">&para;</a></h3>
+<p>Put the center of the circle at the origin. At any time <span class="arithmatex">\(t\)</span>, the object is at some angle <span class="arithmatex">\(\theta\)</span> measured from the positive <span class="arithmatex">\(x\)</span>-axis.</p>
+<p>For uniform circular motion, the angle increases at a constant rate:</p>
+<div class="arithmatex">\[
+\theta(t) = \omega t
+\]</div>
+<p>This is just the definition of constant angular velocity — the angle equals the rate times time.</p>
+<p>The object is always at distance <span class="arithmatex">\(r\)</span> from the origin, at angle <span class="arithmatex">\(\theta(t)\)</span>. Converting from polar to Cartesian (this is just trigonometry, not calculus yet):</p>
+<div class="arithmatex">\[
+x(t) = r\cos\theta(t) = r\cos(\omega t)
+$$
+$$
+y(t) = r\sin\theta(t) = r\sin(\omega t)
+\]</div>
+<p>Written as a single position vector:</p>
+<div class="arithmatex">\[
+\vec{r}(t) = r\cos(\omega t)\,\hat{x} + r\sin(\omega t)\,\hat{y}
+\]</div>
+<p><strong>What this says in plain language:</strong> at time <span class="arithmatex">\(t\)</span>, the object is at the point <span class="arithmatex">\((r\cos(\omega t),\; r\sin(\omega t))\)</span>. It traces a circle of radius <span class="arithmatex">\(r\)</span>, going around at angular speed <span class="arithmatex">\(\omega\)</span>. This isn't a new equation — it's just the <em>description</em> of circular motion in coordinates.</p>
+<table>
+<thead>
+<tr>
+<th>Piece</th>
+<th>What it means</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(r\)</span></td>
+<td>Radius — constant, the object stays on the circle</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\cos(\omega t)\)</span></td>
+<td><span class="arithmatex">\(x\)</span>-component of the unit circle at angle <span class="arithmatex">\(\omega t\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\sin(\omega t)\)</span></td>
+<td><span class="arithmatex">\(y\)</span>-component of the unit circle at angle <span class="arithmatex">\(\omega t\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\hat{x}, \hat{y}\)</span></td>
+<td>Unit vectors pointing in the <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span> directions</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\omega t\)</span></td>
+<td>The angle at time <span class="arithmatex">\(t\)</span> (radians), growing at rate <span class="arithmatex">\(\omega\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="53-step-1-velocity-first-derivative-of-position">5.3 Step 1 — Velocity: First Derivative of Position<a class="headerlink" href="#53-step-1-velocity-first-derivative-of-position" title="Permanent link">&para;</a></h3>
+<p>Velocity is "how is position changing with time":</p>
+<div class="arithmatex">\[
+\vec{v}(t) = \frac{d\vec{r}}{dt}
+\]</div>
+<p>Differentiate each component. The chain rule gives a factor of <span class="arithmatex">\(\omega\)</span> from the inner function <span class="arithmatex">\(\omega t\)</span>:</p>
+<div class="arithmatex">\[
+\frac{d}{dt}\Big[r\cos(\omega t)\Big] = -r\omega\sin(\omega t)
+\]</div>
+<div class="arithmatex">\[
+\frac{d}{dt}\Big[r\sin(\omega t)\Big] = r\omega\cos(\omega t)
+\]</div>
+<p>So:</p>
+<div class="arithmatex">\[
+\boxed{\vec{v}(t) = -r\omega\sin(\omega t)\,\hat{x} + r\omega\cos(\omega t)\,\hat{y}}
+\]</div>
+<p><strong>Checking the magnitude:</strong></p>
+<div class="arithmatex">\[
+|\vec{v}| = \sqrt{(-r\omega\sin(\omega t))^2 + (r\omega\cos(\omega t))^2} = r\omega\sqrt{\sin^2(\omega t) + \cos^2(\omega t)} = r\omega
+\]</div>
+<p>We get <span class="arithmatex">\(|\vec{v}| = r\omega = v\)</span>. Constant speed. This matches the "regular" equation <span class="arithmatex">\(v = \omega r\)</span> — the calculus version just also tells us the direction at each instant.</p>
+<p><strong>Checking the direction:</strong></p>
+<div class="arithmatex">\[
+\vec{v}(t) \cdot \vec{r}(t) = -r^2\omega\sin(\omega t)\cos(\omega t) + r^2\omega\cos(\omega t)\sin(\omega t) = 0
+\]</div>
+<p>The dot product is zero → velocity is <strong>perpendicular to the position vector</strong> → tangent to the circle. Exactly what we expect.</p>
+<h3 id="54-step-2-acceleration-second-derivative-of-position">5.4 Step 2 — Acceleration: Second Derivative of Position<a class="headerlink" href="#54-step-2-acceleration-second-derivative-of-position" title="Permanent link">&para;</a></h3>
+<p>Acceleration is "how is velocity changing with time":</p>
+<div class="arithmatex">\[
+\vec{a}(t) = \frac{d\vec{v}}{dt}
+\]</div>
+<p>Differentiate each component of <span class="arithmatex">\(\vec{v}\)</span>:</p>
+<div class="arithmatex">\[
+\frac{d}{dt}\Big[-r\omega\sin(\omega t)\Big] = -r\omega^2\cos(\omega t)
+\]</div>
+<div class="arithmatex">\[
+\frac{d}{dt}\Big[r\omega\cos(\omega t)\Big] = -r\omega^2\sin(\omega t)
+\]</div>
+<p>So:</p>
+<div class="arithmatex">\[
+\vec{a}(t) = -r\omega^2\cos(\omega t)\,\hat{x} - r\omega^2\sin(\omega t)\,\hat{y}
+\]</div>
+<p>Factor:</p>
+<div class="arithmatex">\[
+\boxed{\vec{a}(t) = -\omega^2\Big[r\cos(\omega t)\,\hat{x} + r\sin(\omega t)\,\hat{y}\Big] = -\omega^2\,\vec{r}(t)}
+\]</div>
+<h3 id="55-reading-the-result">5.5 Reading the Result<a class="headerlink" href="#55-reading-the-result" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+\vec{a}(t) = -\omega^2\,\vec{r}(t)
+\]</div>
+<ul>
+<li><span class="arithmatex">\(\vec{r}(t)\)</span> points <strong>outward</strong> (from center to the object).</li>
+<li>The <span class="arithmatex">\(-\)</span> sign <strong>flips it inward</strong> (from object toward the center).</li>
+<li><span class="arithmatex">\(\omega^2\)</span> scales the magnitude.</li>
+</ul>
+<p>So the acceleration is:
+- <strong>Direction:</strong> radially inward (the negative sign).
+- <strong>Magnitude:</strong> <span class="arithmatex">\(|\vec{a}| = \omega^2 r = v^2/r\)</span> (matches the "regular" formula exactly).
+- <strong>Tangential component:</strong> zero. None. The acceleration is purely radial.</p>
+<h3 id="56-summary-regular-vs-calculus">5.6 Summary: Regular vs. Calculus<a class="headerlink" href="#56-summary-regular-vs-calculus" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Regular formula</th>
+<th>Calculus version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Position</td>
+<td>Object is on a circle of radius <span class="arithmatex">\(r\)</span></td>
+<td><span class="arithmatex">\(\vec{r}(t) = r\cos(\omega t)\,\hat{x} + r\sin(\omega t)\,\hat{y}\)</span></td>
+</tr>
+<tr>
+<td>Speed</td>
+<td><span class="arithmatex">\(v = \omega r\)</span></td>
+<td><span class="arithmatex">\(\lvert\vec{v}(t)\rvert = r\omega\)</span> (derived, constant)</td>
+</tr>
+<tr>
+<td>Acceleration magnitude</td>
+<td><span class="arithmatex">\(a = \omega^2 r = v^2/r\)</span></td>
+<td><span class="arithmatex">\(\lvert\vec{a}(t)\rvert = \omega^2 r\)</span> (derived)</td>
+</tr>
+<tr>
+<td>Acceleration direction</td>
+<td>"It points inward" (stated)</td>
+<td><span class="arithmatex">\(\vec{a} = -\omega^2\vec{r}\)</span> — <strong>inward falls out of the math</strong></td>
+</tr>
+<tr>
+<td>Tangential acceleration</td>
+<td>Assumed zero</td>
+<td><strong>Proven</strong> zero by the derivative</td>
+</tr>
+</tbody>
+</table>
+<p>The "regular" equations tell you <em>what</em>. The calculus tells you <em>why</em> — and proves the direction, rather than just asserting it.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

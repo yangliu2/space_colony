@@ -1,0 +1,2576 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Physics-based feasibility analysis for O'Neill cylinder habitats">
+      
+      
+      
+        <link rel="canonical" href="https://docs.spinhabitat.com/plans/mirror_geometry/">
+      
+      
+        <link rel="prev" href="../constraint_micrometeorite/">
+      
+      
+        <link rel="next" href="../interior_space_utilization/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>External Mirrors - Space Colony — Constraint Study</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#oneill-cylinder-external-mirror-geometry" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Space Colony — Constraint Study" class="md-header__button md-logo" aria-label="Space Colony — Constraint Study" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Space Colony — Constraint Study
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              External Mirrors
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/fangfanglai/space_colony" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Space Colony — Constraint Study" class="md-nav__button md-logo" aria-label="Space Colony — Constraint Study" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Space Colony — Constraint Study
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/fangfanglai/space_colony" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. How Does It Work?
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    1. How Does It Work?
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intuition_artificial_gravity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Artificial Gravity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intuition_centripetal_acceleration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Centripetal Acceleration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intuition_angular_velocity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Angular Velocity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../general_relativity_and_artificial_gravity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Does General Relativity Matter?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Can Humans Live There?
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2. Can Humans Live There?
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_vestibular/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vestibular (RPM limit)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_gravity_minimum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gravity Level
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_gravity_gradient/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gravity Gradient (head-to-foot)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_coriolis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coriolis Effect
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_cross_coupling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross-Coupling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_biological/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atmosphere
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Will the Structure Hold?
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3. Will the Structure Hold?
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../structural_engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hoop Stress & Materials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_rim_speed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rim Speed (material limit)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_cylinder_length/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cylinder Length & Counter-Rotation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_rotational_stability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rotational Stability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_spinup_energy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spin-Up Energy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Life Support
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    4. Life Support
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_agriculture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agriculture Area
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_thermal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Thermal Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_energy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Energy Budget
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_water_recycling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Water Recycling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_micrometeorite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Micrometeorite Impact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. The Design
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    5. The Design
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    External Mirrors
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    External Mirrors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Purpose
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strip-layout-cross-section" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strip Layout (Cross-Section)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#law-of-reflection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Law of Reflection
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mirror-construction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mirror Construction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mirror Construction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hinge-attachment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hinge Attachment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mirror-dimensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mirror Dimensions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mirror-placement-side-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mirror Placement — Side View
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mirror Placement — Side View">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mirror-angle-045-from-the-tangent-plane" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mirror Angle: 0°–45° from the Tangent Plane
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-45-is-the-maximum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why 45° is the Maximum
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#three-mirrors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Three Mirrors
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daynight-cycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Day/Night Cycle
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-not-mount-at-the-landwindow-border" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Not Mount at the Land/Window Border?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constant-illumination-axis-points-at-the-sun" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constant Illumination — Axis Points at the Sun
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-the-outer-edge-stays-in-place" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How the Outer Edge Stays in Place
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How the Outer Edge Stays in Place">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-centrifugal-force-holds-the-mirror-open" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Centrifugal force holds the mirror open
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-no-aerodynamic-forces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. No aerodynamic forces
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-structural-stiffener-ribs-prevent-buckling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Structural stiffener ribs prevent buckling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-no-resonance-excitation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. No resonance excitation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-what-if-the-mirror-were-not-co-rotating" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. What if the mirror were NOT co-rotating?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inter-cylinder-spacing-constraint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inter-Cylinder Spacing Constraint
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inter-Cylinder Spacing Constraint">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-constraint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Constraint
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mitigation-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mitigation Strategies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#length-as-a-design-parameter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Length as a Design Parameter
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#threejs-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Three.js Implementation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Three.js Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#coordinate-system-inside-the-rotation-pi2-0-0-group" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coordinate System (inside the rotation={[-PI/2, 0, 0]} group)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mirror-construction-custom-buffergeometry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mirror Construction — Custom BufferGeometry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-custom-geometry-not-euler-rotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Custom Geometry, Not Euler Rotations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inter-cylinder-gap-dynamic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inter-Cylinder Gap (Dynamic)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reflection-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reflection Verification
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interior_space_utilization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interior Space
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../construction_material_estimates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Material Estimates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Findings
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    6. Findings
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../conclusions/001_human_comfort_boundaries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    001: Human Comfort Boundaries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../conclusions/002_full_constraint_analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    002: Full Constraint Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../conclusions/003_biological_constraints_and_monte_carlo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    003: Biological Constraints & Monte Carlo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../conclusions/004_structural_constraints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    004: Structural Constraints
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../conclusions/feasible_habitat_design_space/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Feasible Design Space
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Open Questions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    7. Open Questions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contested_partial_gravity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minimum Gravity Level
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contested_rotation_rate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maximum Rotation Rate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contested_radiation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Radiation Limits & LNT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../literature_review_human_factors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Literature — Human Factors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../literature_review_structural/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Literature — Structural
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qa_structural_design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Q&A — Structural Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="oneill-cylinder-external-mirror-geometry">O'Neill Cylinder External Mirror Geometry<a class="headerlink" href="#oneill-cylinder-external-mirror-geometry" title="Permanent link">&para;</a></h1>
+<h2 id="purpose">Purpose<a class="headerlink" href="#purpose" title="Permanent link">&para;</a></h2>
+<p>Three large external mirrors reflect sunlight through the window strips into the
+cylinder interior, providing illumination to the land strips. Without mirrors,
+only direct sunlight through the windows would light the interior. The mirrors
+approximately triple the effective capture area.</p>
+<h2 id="strip-layout-cross-section">Strip Layout (Cross-Section)<a class="headerlink" href="#strip-layout-cross-section" title="Permanent link">&para;</a></h2>
+<p>Looking from one end of the cylinder, six 60° strips alternate:</p>
+<div class="highlight"><pre><span></span><code>             Land 2
+           (120°–180°)
+          /            \
+    Window 1            Window 3
+   (60°–120°)          (180°–240°)
+   |                          |
+   Land 0              Land 4
+   (0°–60°)            (240°–300°)
+          \            /
+           Window 5
+          (300°–360°)
+</code></pre></div>
+<h2 id="law-of-reflection">Law of Reflection<a class="headerlink" href="#law-of-reflection" title="Permanent link">&para;</a></h2>
+<p><img alt="Law of reflection — basic physics" src="../mirror_law_of_reflection.png" /></p>
+<p>The fundamental physics: when light hits a reflective surface, draw the
+<strong>normal</strong> (perpendicular line) at the point of contact. The angle of incidence
+<span class="arithmatex">\(\theta_i\)</span> equals the angle of reflection <span class="arithmatex">\(\theta_r\)</span>, measured from the normal.
+<strong>Both rays are on the same side</strong> of the mirror — light does not pass through
+a reflective surface.</p>
+<h2 id="mirror-construction">Mirror Construction<a class="headerlink" href="#mirror-construction" title="Permanent link">&para;</a></h2>
+<p>Each mirror is a <strong>flexible reflective surface</strong> — a large sheet of polished
+aluminum or deposited silver on a lightweight substrate. Key properties:</p>
+<ul>
+<li><strong>One-sided reflection:</strong> Only the outward-facing surface is reflective. The
+  back face has thermal management coatings and is not reflective.</li>
+<li><strong>Light does not pass through the mirror.</strong> The mirror is opaque. Incoming and
+  reflected rays are always on the same side (the reflective side).</li>
+<li><strong>Light does not pass through any other opaque part</strong> of the cylinder system —
+  land strips, end caps, structural rings, and the hull are all opaque. Only
+  window strips are transparent.</li>
+</ul>
+<h3 id="hinge-attachment">Hinge Attachment<a class="headerlink" href="#hinge-attachment" title="Permanent link">&para;</a></h3>
+<p>The mirror is attached to a <strong>hinge</strong> on one of its short sides:</p>
+<ul>
+<li>The hinge runs <strong>tangent to the window strip</strong> at the <strong>center</strong> of the
+  window strip (not at the land/window border — see "Why Not Mount at the
+  Land/Window Border?" below). It spans the full width of the window strip
+  (~<span class="arithmatex">\(\pi R / 3\)</span>, where <span class="arithmatex">\(R\)</span> is the cylinder radius).</li>
+<li>The hinge is bolted to the <strong>structural end ring</strong> at the <strong>anti-sunlight end</strong>
+  of the cylinder (<span class="arithmatex">\(Y = -L/2\)</span> in the local coordinate system).</li>
+<li>The hinge is a motorized actuator that controls the mirror tilt angle.</li>
+</ul>
+<h3 id="mirror-dimensions">Mirror Dimensions<a class="headerlink" href="#mirror-dimensions" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Short side</strong> (tangential, at hinge): equal to window strip width</li>
+<li><strong>Long side</strong> (diagonal extent): approximately equal to cylinder length <span class="arithmatex">\(L\)</span></li>
+<li><strong>Thickness:</strong> thin flexible sheet with structural stiffener ribs on the back
+  face, spaced ~50 m apart, to maintain flatness under centrifugal loading</li>
+</ul>
+<h2 id="mirror-placement-side-view">Mirror Placement — Side View<a class="headerlink" href="#mirror-placement-side-view" title="Permanent link">&para;</a></h2>
+<p><img alt="Side view — mirror reflects axial sunlight radially inward" src="../mirror_side_view.png" /></p>
+<p>The cylinder's long axis always points toward the sun. Sunlight arrives
+<strong>parallel to the axis</strong>. The mirrors are mounted at the anti-sun end and
+tilt diagonally outward to catch this axial light.</p>
+<h3 id="mirror-angle-045-from-the-tangent-plane">Mirror Angle: 0°–45° from the Tangent Plane<a class="headerlink" href="#mirror-angle-045-from-the-tangent-plane" title="Permanent link">&para;</a></h3>
+<p>The mirror angle <span class="arithmatex">\(\alpha\)</span> is measured from the <strong>tangent plane</strong> of the cylinder
+surface at the hinge point. The useful range is <span class="arithmatex">\(0° \leq \alpha \leq 45°\)</span>.
+In the side view, the tangent plane is the horizontal surface extending along
+the axis:</p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(\alpha\)</span></th>
+<th>Mirror position</th>
+<th>Light behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0°</td>
+<td>Flat along cylinder surface (closed)</td>
+<td>No light caught — mirror edge-on to axial light</td>
+</tr>
+<tr>
+<td>~25°</td>
+<td>Partially open</td>
+<td>Some light reflected, enters window at an angle</td>
+</tr>
+<tr>
+<td><strong>45°</strong></td>
+<td><strong>Fully open (maximum)</strong></td>
+<td><strong>Axial light deflected 90° radially inward</strong></td>
+</tr>
+</tbody>
+</table>
+<p>There is no reason to tilt beyond 45°. At 45° the reflected light is already
+purely radial — the optimal geometry. Tilting further would direct the
+reflected beam partially back toward the sun rather than into the window.</p>
+<h3 id="why-45-is-the-maximum">Why 45° is the Maximum<a class="headerlink" href="#why-45-is-the-maximum" title="Permanent link">&para;</a></h3>
+<p>In the side view coordinate system (<span class="arithmatex">\(+X\)</span> = along axis toward sun,
+<span class="arithmatex">\(+Y\)</span> = radial outward):</p>
+<p>The mirror surface direction from the hinge:</p>
+<div class="arithmatex">\[\hat{m} = (\cos\alpha,\; \sin\alpha)\]</div>
+<p>The reflective face normal (perpendicular to mirror, pointing toward the sun
+and window):</p>
+<div class="arithmatex">\[\hat{n} = (\sin\alpha,\; -\cos\alpha)\]</div>
+<p>For axial sunlight traveling toward the anti-sun end, <span class="arithmatex">\(\vec{d} = (-1, 0)\)</span>:</p>
+<div class="arithmatex">\[\vec{d} \cdot \hat{n} = (-1)(\sin\alpha) + (0)(-\cos\alpha) = -\sin\alpha\]</div>
+<p>Since <span class="arithmatex">\(\vec{d} \cdot \hat{n} &lt; 0\)</span> for <span class="arithmatex">\(0° &lt; \alpha \leq 45°\)</span>, the light
+correctly hits the reflective face. The reflected ray:</p>
+<div class="arithmatex">\[\vec{r} = \vec{d} - 2(\vec{d} \cdot \hat{n})\hat{n}\]</div>
+<p>At <span class="arithmatex">\(\alpha = 45°\)</span>:</p>
+<div class="arithmatex">\[\hat{n} = \left(\frac{1}{\sqrt{2}},\; -\frac{1}{\sqrt{2}}\right)\]</div>
+<div class="arithmatex">\[\vec{r} = \vec{d} - 2(\vec{d} \cdot \hat{n})\hat{n} = (-1, 0) - 2\left(-\frac{1}{\sqrt{2}}\right)\left(\frac{1}{\sqrt{2}},\; -\frac{1}{\sqrt{2}}\right) = (0, -1)\]</div>
+<p>The reflected ray is <span class="arithmatex">\((0, -1)\)</span> — <strong>purely radially inward</strong> — which passes
+straight through the window strip into the interior. This is the maximum
+useful tilt angle.</p>
+<h3 id="three-mirrors">Three Mirrors<a class="headerlink" href="#three-mirrors" title="Permanent link">&para;</a></h3>
+<p>Three mirrors, one per window strip, each hinged at the <strong>center</strong> of its
+window strip:</p>
+<table>
+<thead>
+<tr>
+<th>Mirror</th>
+<th>Window strip</th>
+<th>Hinge angle (center)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mirror 1</td>
+<td>Window 1 (60°–120°)</td>
+<td>90°</td>
+</tr>
+<tr>
+<td>Mirror 2</td>
+<td>Window 3 (180°–240°)</td>
+<td>210°</td>
+</tr>
+<tr>
+<td>Mirror 3</td>
+<td>Window 5 (300°–360°)</td>
+<td>330°</td>
+</tr>
+</tbody>
+</table>
+<h2 id="daynight-cycle">Day/Night Cycle<a class="headerlink" href="#daynight-cycle" title="Permanent link">&para;</a></h2>
+<p><img alt="Day/night cycle — mirror tilt controls light entry" src="../mirror_daynight_diagram.png" /></p>
+<p>The mirror tilt angle <span class="arithmatex">\(\alpha\)</span> (from the tangent plane) controls the simulated
+day/night cycle:</p>
+<table>
+<thead>
+<tr>
+<th>Mirror state</th>
+<th>Tilt <span class="arithmatex">\(\alpha\)</span></th>
+<th>Light throughput</th>
+<th>Simulated time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nearly closed</td>
+<td>~5°</td>
+<td>0%</td>
+<td>Night</td>
+</tr>
+<tr>
+<td>Partially open</td>
+<td>~25°</td>
+<td>~50%</td>
+<td>Dawn / Dusk</td>
+</tr>
+<tr>
+<td>Fully open</td>
+<td>45°</td>
+<td>~100%</td>
+<td>Noon</td>
+</tr>
+</tbody>
+</table>
+<p>All three mirrors open and close <strong>symmetrically</strong> to avoid unbalanced torque
+on the cylinder.</p>
+<p><strong>Day/night is controlled entirely by the mirror tilt</strong>, not by the cylinder's
+rotation. The transition speed between tilt angles controls dawn/dusk duration.</p>
+<h2 id="why-not-mount-at-the-landwindow-border">Why Not Mount at the Land/Window Border?<a class="headerlink" href="#why-not-mount-at-the-landwindow-border" title="Permanent link">&para;</a></h2>
+<p>The first idea for mirror placement is intuitive: hinge the mirror at the
+<strong>border</strong> between a land strip and a window strip (e.g., at 120°, where
+Window 1 meets Land 2). The mirror opens like a door from the edge, covering
+the window from one side.</p>
+<p>This has two problems:</p>
+<p><strong>1. Off-center illumination.</strong> The reflected light enters the window at an
+angle from the edge, not centered. One side of the window strip receives
+concentrated light while the far side receives little. Residents would see
+a bright band on one side of the land strip and shadow on the other.</p>
+<p><strong>2. The strobing problem.</strong> If the sun shines perpendicular to the cylinder
+axis (the naive orientation), only the mirrors on the sun-facing side catch
+light. As the cylinder rotates at ~1 RPM, each window strip faces the sun
+for only ~10 seconds out of every 63-second rotation. Residents would
+experience a disorienting ~1 Hz light flicker that no mirror arrangement at
+the border could eliminate — because the root cause is geometric, not about
+mirror placement.</p>
+<p>Both problems are solved by O'Neill's design:</p>
+<h2 id="constant-illumination-axis-points-at-the-sun">Constant Illumination — Axis Points at the Sun<a class="headerlink" href="#constant-illumination-axis-points-at-the-sun" title="Permanent link">&para;</a></h2>
+<p><strong>O'Neill's solution: point the cylinder's long axis toward the sun, and
+mount each mirror at the center of its window strip.</strong></p>
+<p>Mounting at the <strong>window center</strong> (90°, 210°, 330°) instead of the border
+means reflected light enters the window symmetrically, illuminating the
+adjacent land strips evenly on both sides.</p>
+<p>Pointing the <strong>axis toward the sun</strong> eliminates strobing entirely:
+- Sunlight arrives <strong>parallel to the rotation axis</strong>, not perpendicular to it
+- As the cylinder rotates, the mirrors maintain the <strong>same orientation</strong> relative
+  to the sun (because rotating around the sun-axis doesn't change the geometry)
+- All three mirrors receive <strong>constant, equal illumination</strong> at all times
+- No strobing, no periodic variation — steady daylight</p>
+<p>This is why the mirrors must be <strong>diagonal</strong> (tilted from the tangent plane).
+Axial sunlight cannot be caught by mirrors flat along the surface — they would
+be edge-on to the light. The tilt intercepts the axial beam and deflects it
+radially inward through the windows.</p>
+<h2 id="how-the-outer-edge-stays-in-place">How the Outer Edge Stays in Place<a class="headerlink" href="#how-the-outer-edge-stays-in-place" title="Permanent link">&para;</a></h2>
+<p>The mirror's outer edge is <strong>free</strong> — it has no mechanical attachment to any
+external structure. This is counterintuitive, but the mirror is inherently
+stable due to the physics of the rotating system:</p>
+<h3 id="1-centrifugal-force-holds-the-mirror-open">1. Centrifugal force holds the mirror open<a class="headerlink" href="#1-centrifugal-force-holds-the-mirror-open" title="Permanent link">&para;</a></h3>
+<p>The cylinder rotates at <span class="arithmatex">\(\omega \approx 0.1\)</span> rad/s. Every point on the
+co-rotating mirror experiences centrifugal acceleration:</p>
+<div class="arithmatex">\[a_{cf} = \omega^2 r\]</div>
+<p>where <span class="arithmatex">\(r\)</span> is the distance from the rotation axis. The outer edge of the mirror
+is at a <strong>larger radius</strong> than the hinge, so centrifugal force pulls it
+<strong>outward</strong> (away from the axis). This force acts like gravity pulling the
+mirror into its open position.</p>
+<p><strong>Key insight:</strong> Centrifugal force <strong>helps</strong> hold the mirror open — it doesn't
+try to close it. The hinge actuator must apply torque to <strong>close</strong> the mirror
+against centrifugal force, not to keep it open.</p>
+<h3 id="2-no-aerodynamic-forces">2. No aerodynamic forces<a class="headerlink" href="#2-no-aerodynamic-forces" title="Permanent link">&para;</a></h3>
+<p>In vacuum, there is no wind loading, no flutter from airflow, and no turbulence.
+The only forces on the mirror are:</p>
+<ul>
+<li>Centrifugal force (outward) — stabilizing when open</li>
+<li>Solar radiation pressure (<span class="arithmatex">\(\sim 9 \times 10^{-6}\)</span> N/m²) — negligible</li>
+<li>Thermal expansion from solar heating — managed by expansion joints</li>
+<li>Hinge actuator torque — controls the opening angle</li>
+</ul>
+<h3 id="3-structural-stiffener-ribs-prevent-buckling">3. Structural stiffener ribs prevent buckling<a class="headerlink" href="#3-structural-stiffener-ribs-prevent-buckling" title="Permanent link">&para;</a></h3>
+<p>The mirror panel has a lattice of lightweight I-beam ribs (aluminum or carbon
+fiber) on the back face, spaced ~50 m apart. These ribs:</p>
+<ul>
+<li>Maintain flatness against centrifugal loading</li>
+<li>Prevent buckling modes from thermal cycling</li>
+<li>Distribute hinge loads across the full panel width</li>
+</ul>
+<p>The mirror is structurally similar to an aircraft wing spar — rigid, lightweight,
+and engineered to resist bending.</p>
+<h3 id="4-no-resonance-excitation">4. No resonance excitation<a class="headerlink" href="#4-no-resonance-excitation" title="Permanent link">&para;</a></h3>
+<p>Because the mirror <strong>co-rotates</strong> with the cylinder, it sits in a constant
+centrifugal field (like sitting in constant gravity). There are no periodic
+forces to excite vibration. The system is inherently stable.</p>
+<h3 id="5-what-if-the-mirror-were-not-co-rotating">5. What if the mirror were NOT co-rotating?<a class="headerlink" href="#5-what-if-the-mirror-were-not-co-rotating" title="Permanent link">&para;</a></h3>
+<p>If the mirror were stationary while the cylinder rotates beneath it, it would:</p>
+<ul>
+<li>Experience no centrifugal force (it's in freefall)</li>
+<li>Need an independent support structure</li>
+<li>Flash alternating sunlight/shadow strips as the cylinder rotates underneath</li>
+<li>Be far more complex to engineer</li>
+</ul>
+<p>This is why O'Neill's design has the mirrors <strong>rigidly attached</strong> to the hull
+and co-rotating. The rotating reference frame makes the mirror behave like a
+simple hinged panel in a gravitational field.</p>
+<h2 id="inter-cylinder-spacing-constraint">Inter-Cylinder Spacing Constraint<a class="headerlink" href="#inter-cylinder-spacing-constraint" title="Permanent link">&para;</a></h2>
+<p>The counter-rotating pair must be spaced far enough apart that the mirrors of
+one cylinder do not collide with the other cylinder or its mirrors. This
+creates a <strong>geometric constraint</strong> that couples cylinder length <span class="arithmatex">\(L\)</span> to the
+minimum center-to-center separation <span class="arithmatex">\(S\)</span>.</p>
+<h3 id="the-constraint">The Constraint<a class="headerlink" href="#the-constraint" title="Permanent link">&para;</a></h3>
+<p>At 45° tilt, each mirror's radial extent (perpendicular to the axis) equals
+its axial extent:</p>
+<div class="arithmatex">\[d_{\text{radial}} = d_{\text{axial}} = L\]</div>
+<p>The outer tip of a mirror on cylinder A is at distance <span class="arithmatex">\(R + L\)</span> from A's axis.
+For clearance from cylinder B (radius <span class="arithmatex">\(R\)</span>), the center-to-center spacing must
+satisfy:</p>
+<div class="arithmatex">\[S &gt; 2R + 2L\]</div>
+<p>or equivalently, the gap between the cylinder surfaces:</p>
+<div class="arithmatex">\[\text{gap} &gt; 2L\]</div>
+<p>For a cylinder with <span class="arithmatex">\(R = 1\,\text{km}\)</span> and <span class="arithmatex">\(L = 32\,\text{km}\)</span> (O'Neill's
+original dimensions), the minimum separation is <span class="arithmatex">\(S &gt; 2 + 64 = 66\,\text{km}\)</span>.
+This is a <strong>hard structural constraint</strong> — the bearing framework connecting
+the pair must span this distance.</p>
+<h3 id="mitigation-strategies">Mitigation Strategies<a class="headerlink" href="#mitigation-strategies" title="Permanent link">&para;</a></h3>
+<p>Three approaches can relax this spacing constraint:</p>
+<p><strong>1. Staggered mirror orientation (60° rotational offset)</strong></p>
+<p>If the two cylinders have their strip patterns offset by one strip width
+(60°), each cylinder's mirrors point into the gaps between the other's
+mirrors. In the cross-section end view:</p>
+<div class="highlight"><pre><span></span><code>    Cylinder A mirrors at:  90°, 210°, 330°  (window centers)
+    Cylinder B mirrors at: 150°, 270°,  30°  (offset by 60°)
+</code></pre></div>
+<p>The mirror fans interleave rather than overlap head-on. This reduces the
+worst-case radial overlap and allows closer spacing — roughly:</p>
+<div class="arithmatex">\[S_{\text{staggered}} &gt; 2R + 2L \sin(30°) = 2R + L\]</div>
+<p>A factor-of-two improvement. In the 3D model, this is achieved by rotating
+the second cylinder's strip pattern by <span class="arithmatex">\(\pi/3\)</span> relative to the first.</p>
+<p><strong>2. Shorter mirrors (reduced tilt angle)</strong></p>
+<p>A tilt angle <span class="arithmatex">\(\alpha &lt; 45°\)</span> reduces the radial extent to
+<span class="arithmatex">\(d_{\text{radial}} = L \sin(\alpha)\)</span> while the axial extent becomes
+<span class="arithmatex">\(L \cos(\alpha)\)</span>. The tradeoff: the reflected light is no longer purely
+radial — it acquires an axial component, reducing illumination efficiency.</p>
+<p>At <span class="arithmatex">\(\alpha = 30°\)</span>: <span class="arithmatex">\(d_{\text{radial}} = L \sin(30°) = 0.5L\)</span>, cutting
+radial extent by 50%. The reflected beam enters at an angle to the radial
+direction rather than straight through the window, but still provides
+useful illumination.</p>
+<p><strong>3. Segmented mirrors</strong></p>
+<p>Instead of one continuous surface per window strip, use multiple shorter
+segments at 45° arranged in a staircase pattern along the cylinder length.
+Each segment is shorter (less radial extent) but the segments collectively
+cover the full window area. This is structurally more complex but
+dramatically reduces the radial envelope.</p>
+<h3 id="length-as-a-design-parameter">Length as a Design Parameter<a class="headerlink" href="#length-as-a-design-parameter" title="Permanent link">&para;</a></h3>
+<p>When cylinder length <span class="arithmatex">\(L\)</span> is a free parameter (as in the interactive demo),
+the inter-cylinder gap <strong>must scale with</strong> <span class="arithmatex">\(L\)</span>:</p>
+<div class="arithmatex">\[\text{gap}(L) = 2L + R \quad \text{(with safety margin)}\]</div>
+<p>This means longer cylinders require proportionally wider separation. The
+bearing framework, tension cables, and any shared infrastructure between
+the pair all scale with this distance, increasing structural mass. This
+creates an <strong>implicit upper bound on useful cylinder length</strong> — beyond a
+certain <span class="arithmatex">\(L\)</span>, the framework mass to span the gap becomes prohibitive.</p>
+<h2 id="threejs-implementation">Three.js Implementation<a class="headerlink" href="#threejs-implementation" title="Permanent link">&para;</a></h2>
+<h3 id="coordinate-system-inside-the-rotation-pi2-0-0-group">Coordinate System (inside the <code>rotation={[-PI/2, 0, 0]}</code> group)<a class="headerlink" href="#coordinate-system-inside-the-rotation-pi2-0-0-group" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Y</strong> = cylinder long axis (rotation axis), sun at +Y end</li>
+<li><strong>XZ</strong> = radial cross-section plane</li>
+<li>Point on rim at angle <span class="arithmatex">\(\theta\)</span>: <code>[cos(θ) × R, 0, sin(θ) × R]</code></li>
+<li>Radial outward at angle <span class="arithmatex">\(\theta\)</span>: direction <code>[cos(θ), 0, sin(θ)]</code></li>
+</ul>
+<h3 id="mirror-construction-custom-buffergeometry">Mirror Construction — Custom BufferGeometry<a class="headerlink" href="#mirror-construction-custom-buffergeometry" title="Permanent link">&para;</a></h3>
+<p>Each mirror is built as an explicit quad with four vertices — <strong>no Euler
+rotations on the mesh</strong>. This avoids the compounding rotation errors that
+plagued earlier implementations (see <code>CLAUDE.md</code> for lessons learned).</p>
+<p>For each window strip <span class="arithmatex">\(i\)</span> (strips 1, 3, 5):</p>
+<ol>
+<li><strong>Center angle</strong> of the window strip:</li>
+<li>
+<p><span class="arithmatex">\(\theta_c = \frac{\pi}{3}(2i + 1) + \frac{\pi}{6}\)</span> → gives
+     <span class="arithmatex">\(\frac{\pi}{2}\)</span>, <span class="arithmatex">\(\frac{7\pi}{6}\)</span>, <span class="arithmatex">\(\frac{11\pi}{6}\)</span> (90°, 210°, 330°)</p>
+</li>
+<li>
+<p><strong>Group position</strong> = hinge point at the anti-sun end, on the cylinder
+   surface at the window center:</p>
+</li>
+<li>
+<p><code>[cos(θ_c) × R, -length/2, sin(θ_c) × R]</code></p>
+</li>
+<li>
+<p><strong>Group rotation</strong> = <code>[0, -θ_c, 0]</code> which establishes local axes:</p>
+</li>
+<li><code>+X</code> = radial outward (verified: <span class="arithmatex">\(R_Y(-\theta)\)</span> maps <span class="arithmatex">\(+X\)</span> to
+     <span class="arithmatex">\((\cos\theta, 0, \sin\theta)\)</span>)</li>
+<li><code>+Y</code> = axial toward sun</li>
+<li>
+<p><code>+Z</code> = tangential</p>
+</li>
+<li>
+<p><strong>Mirror quad</strong> = custom <code>BufferGeometry</code> with four vertices in
+   group-local coordinates:
+   <div class="highlight"><pre><span></span><code>Inner edge (at hinge):  (0, 0, -t)  and  (0, 0, +t)
+Outer edge (diagonal):  (d, d, -t)  and  (d, d, +t)
+</code></pre></div>
+   where <span class="arithmatex">\(d\)</span> = <code>mirrorAxialExtent</code> (= cylinder length) and
+   <span class="arithmatex">\(t\)</span> = <code>mirrorTangent / 2</code> (half the window strip width).</p>
+</li>
+</ol>
+<p>The 45° diagonal is encoded directly in the vertex positions: the outer
+   edge is at <span class="arithmatex">\((d, d)\)</span> — equal parts radial (<span class="arithmatex">\(+X\)</span>) and axial (<span class="arithmatex">\(+Y\)</span>). No
+   mesh-level rotation is needed.</p>
+<ol>
+<li><strong>Hinge rod</strong> = <code>cylinderGeometry</code> at the group origin, rotated to lie
+   along the tangential direction (<span class="arithmatex">\(Z\)</span>), spanning the same width as the
+   mirror's inner edge.</li>
+</ol>
+<h3 id="why-custom-geometry-not-euler-rotations">Why Custom Geometry, Not Euler Rotations<a class="headerlink" href="#why-custom-geometry-not-euler-rotations" title="Permanent link">&para;</a></h3>
+<p>Euler rotations on <code>planeGeometry</code> failed repeatedly because:</p>
+<ul>
+<li><span class="arithmatex">\(R_Y(\alpha)\)</span> maps <span class="arithmatex">\(+X \to (\cos\alpha, 0, -\sin\alpha)\)</span> — the sign of the
+  <span class="arithmatex">\(Z\)</span> component is <strong>opposite</strong> to what intuition suggests. Using <span class="arithmatex">\(+\theta\)</span>
+  instead of <span class="arithmatex">\(-\theta\)</span> sends the mirror radially inward.</li>
+<li>Compound rotations (group + mesh) create 6 interacting angle parameters
+  with no visual ground truth in a space scene.</li>
+<li>Custom vertices eliminate all rotation ambiguity: <code>(d, d, ±t)</code> is
+  unambiguously at 45° outward and sunward.</li>
+</ul>
+<h3 id="inter-cylinder-gap-dynamic">Inter-Cylinder Gap (Dynamic)<a class="headerlink" href="#inter-cylinder-gap-dynamic" title="Permanent link">&para;</a></h3>
+<p>The <code>CounterRotatingPair</code> component computes the gap dynamically:</p>
+<div class="highlight"><pre><span></span><code>mirrorRadialExtent = length
+gap = mirrorRadialExtent × 2 + radius
+sideOffset = radius × 2 + gap
+</code></pre></div>
+<p>This ensures mirrors never collide regardless of the cylinder length
+parameter.</p>
+<h3 id="reflection-verification">Reflection Verification<a class="headerlink" href="#reflection-verification" title="Permanent link">&para;</a></h3>
+<p>With incoming axial light <span class="arithmatex">\(\vec{d} = (0, -1, 0)\)</span> and mirror normal
+<span class="arithmatex">\(\hat{n} = (-0.707, 0.707, 0)\)</span>:</p>
+<div class="arithmatex">\[\vec{r} = \vec{d} - 2(\vec{d} \cdot \hat{n})\hat{n} = (0,-1,0) - 2(-0.707)(-0.707, 0.707, 0) = (-1, 0, 0)\]</div>
+<p>Reflected light goes radially inward (<span class="arithmatex">\(-\hat{X}\)</span>) — through the window ✓</p>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<p>O'Neill, Gerard K. <em>The High Frontier: Human Colonies in Space.</em> William Morrow, 1977.</p>
+<p>Johnson, Richard D., and Charles Holbrow, editors. <em>Space Settlements: A Design Study (SP-413).</em> NASA, 1977.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

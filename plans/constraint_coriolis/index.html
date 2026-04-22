@@ -1,0 +1,2455 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Physics-based feasibility analysis for O'Neill cylinder habitats">
+      
+      
+      
+        <link rel="canonical" href="https://docs.spinhabitat.com/plans/constraint_coriolis/">
+      
+      
+        <link rel="prev" href="../constraint_gravity_gradient/">
+      
+      
+        <link rel="next" href="../constraint_cross_coupling/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Coriolis Effect - Space Colony — Constraint Study</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#coriolis-effect-constraint-why-walking-feels-wrong" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Space Colony — Constraint Study" class="md-header__button md-logo" aria-label="Space Colony — Constraint Study" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Space Colony — Constraint Study
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Coriolis Effect
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/fangfanglai/space_colony" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Space Colony — Constraint Study" class="md-nav__button md-logo" aria-label="Space Colony — Constraint Study" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Space Colony — Constraint Study
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/fangfanglai/space_colony" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. How Does It Work?
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    1. How Does It Work?
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intuition_artificial_gravity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Artificial Gravity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intuition_centripetal_acceleration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Centripetal Acceleration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intuition_angular_velocity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Angular Velocity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../general_relativity_and_artificial_gravity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Does General Relativity Matter?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Can Humans Live There?
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2. Can Humans Live There?
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_vestibular/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vestibular (RPM limit)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_gravity_minimum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gravity Level
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_gravity_gradient/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gravity Gradient (head-to-foot)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coriolis Effect
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coriolis Effect
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-the-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. The Problem
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-the-physics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. The Physics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. The Physics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-coriolis-acceleration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Coriolis acceleration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#magnitude-for-tangential-motion-walking-along-the-floor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Magnitude for tangential motion (walking along the floor)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-what-this-feels-like" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. What This Feels Like
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. What This Feels Like">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#walking-in-the-spin-direction-prograde" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Walking in the spin direction (prograde)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#walking-against-the-spin-direction-retrograde" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Walking against the spin direction (retrograde)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#walking-radially-toward-or-away-from-the-axis-eg-climbing-stairs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Walking radially (toward or away from the axis, e.g., climbing stairs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dropping-an-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dropping an object
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-the-constraint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. The Constraint
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. The Constraint">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-ratio-is-acceptable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What ratio is acceptable?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#historical-note-on-the-25-threshold" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Historical note on the 25% threshold
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solving-for-minimum-radius-at-1g" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solving for minimum radius at 1g
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-reference-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Reference Table
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-when-coriolis-matters-most" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. When Coriolis Matters Most
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. When Coriolis Matters Most">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sports-and-physical-activities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sports and physical activities
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fluid-dynamics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fluid dynamics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#construction-and-precision-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Construction and precision work
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-the-key-insight" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. The Key Insight
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-speculations-growing-up-in-curved-physics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Speculations: Growing Up in Curved Physics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Speculations: Growing Up in Curved Physics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-children-would-never-notice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 Children Would Never Notice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-a-different-intuitive-physics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 A Different Intuitive Physics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-the-uneducated-habitat-dweller" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3 The Uneducated Habitat Dweller
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#84-visiting-earth-or-another-habitat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.4 Visiting Earth (or Another Habitat)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#85-language-and-culture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.5 Language and Culture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#86-the-deeper-question" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.6 The Deeper Question
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-the-one-liner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. The One-Liner
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_cross_coupling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross-Coupling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_biological/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atmosphere
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Will the Structure Hold?
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3. Will the Structure Hold?
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../structural_engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hoop Stress & Materials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_rim_speed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rim Speed (material limit)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_cylinder_length/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cylinder Length & Counter-Rotation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_rotational_stability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rotational Stability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_spinup_energy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spin-Up Energy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Life Support
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    4. Life Support
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_agriculture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agriculture Area
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_thermal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Thermal Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_energy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Energy Budget
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_water_recycling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Water Recycling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraint_micrometeorite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Micrometeorite Impact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. The Design
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    5. The Design
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mirror_geometry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    External Mirrors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interior_space_utilization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interior Space
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../construction_material_estimates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Material Estimates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Findings
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    6. Findings
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../conclusions/001_human_comfort_boundaries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    001: Human Comfort Boundaries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../conclusions/002_full_constraint_analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    002: Full Constraint Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../conclusions/003_biological_constraints_and_monte_carlo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    003: Biological Constraints & Monte Carlo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../conclusions/004_structural_constraints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    004: Structural Constraints
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../conclusions/feasible_habitat_design_space/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Feasible Design Space
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Open Questions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    7. Open Questions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contested_partial_gravity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minimum Gravity Level
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contested_rotation_rate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maximum Rotation Rate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contested_radiation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Radiation Limits & LNT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../literature_review_human_factors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Literature — Human Factors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../literature_review_structural/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Literature — Structural
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qa_structural_design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Q&A — Structural Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="coriolis-effect-constraint-why-walking-feels-wrong">Coriolis Effect Constraint: Why Walking Feels Wrong<a class="headerlink" href="#coriolis-effect-constraint-why-walking-feels-wrong" title="Permanent link">&para;</a></h1>
+<h2 id="1-the-problem">1. The Problem<a class="headerlink" href="#1-the-problem" title="Permanent link">&para;</a></h2>
+<p>In a rotating habitat, any motion relative to the floor produces a sideways force that doesn't exist on Earth. Walk in the direction of rotation — you feel heavier. Walk against it — you feel lighter. Walk radially (toward or away from the axis) — you get pushed sideways. This is the <strong>Coriolis effect</strong>, and it makes every movement in a spinning habitat subtly (or not-so-subtly) wrong.</p>
+<hr />
+<h2 id="2-the-physics">2. The Physics<a class="headerlink" href="#2-the-physics" title="Permanent link">&para;</a></h2>
+<h3 id="the-coriolis-acceleration">The Coriolis acceleration<a class="headerlink" href="#the-coriolis-acceleration" title="Permanent link">&para;</a></h3>
+<p>In a rotating reference frame, any object moving with velocity <span class="arithmatex">\(\vec{v}_{\text{rel}}\)</span> (relative to the rotating floor) experiences a Coriolis acceleration:</p>
+<div class="arithmatex">\[
+\vec{a}_{\text{Cor}} = -2\,\vec{\omega} \times \vec{v}_{\text{rel}}
+\]</div>
+<p>The key features:
+- It's <strong>perpendicular</strong> to both the rotation axis and the direction of motion
+- It's <strong>proportional to speed</strong> — the faster you move, the stronger the effect
+- It's <strong>proportional to the rotation rate</strong> — faster spin = stronger Coriolis
+- It <strong>vanishes when you're stationary</strong> — only moving things feel it</p>
+<h3 id="magnitude-for-tangential-motion-walking-along-the-floor">Magnitude for tangential motion (walking along the floor)<a class="headerlink" href="#magnitude-for-tangential-motion-walking-along-the-floor" title="Permanent link">&para;</a></h3>
+<p>If you walk along the cylinder floor (tangential direction) at speed <span class="arithmatex">\(v_{\text{walk}}\)</span>:</p>
+<div class="arithmatex">\[
+a_{\text{Cor}} = 2 \omega \cdot v_{\text{walk}}
+\]</div>
+<p>Expressed as a fraction of effective gravity (the useful metric for "how noticeable is this?"):</p>
+<div class="arithmatex">\[
+\frac{a_{\text{Cor}}}{g_{\text{eff}}} = \frac{2 \omega \cdot v_{\text{walk}}}{\omega^2 r} = \frac{2 v_{\text{walk}}}{\omega r} = \frac{2 v_{\text{walk}}}{v_{\text{rim}}}
+\]</div>
+<p>This is a beautiful result: <strong>the Coriolis ratio is just twice your walking speed divided by the rim speed.</strong></p>
+<div class="arithmatex">\[
+\boxed{\frac{a_{\text{Cor}}}{g_{\text{eff}}} = \frac{2 v_{\text{rel}}}{v_{\text{rim}}}}
+\]</div>
+<hr />
+<h2 id="3-what-this-feels-like">3. What This Feels Like<a class="headerlink" href="#3-what-this-feels-like" title="Permanent link">&para;</a></h2>
+<h3 id="walking-in-the-spin-direction-prograde">Walking in the spin direction (prograde)<a class="headerlink" href="#walking-in-the-spin-direction-prograde" title="Permanent link">&para;</a></h3>
+<p>You're walking in the same direction the floor is moving. Your total speed relative to the axis increases. Since <span class="arithmatex">\(g \propto \omega^2 r \propto v^2/r\)</span>, and you've effectively increased your tangential velocity, you feel <strong>heavier</strong>. The floor pushes up harder than expected.</p>
+<p>Quantitatively: your apparent weight increases by <span class="arithmatex">\(2\omega v_{\text{walk}} / g\)</span> in fractional terms.</p>
+<h3 id="walking-against-the-spin-direction-retrograde">Walking against the spin direction (retrograde)<a class="headerlink" href="#walking-against-the-spin-direction-retrograde" title="Permanent link">&para;</a></h3>
+<p>Your total tangential velocity decreases. You feel <strong>lighter</strong>. Each step has slightly less traction. If you ran fast enough (<span class="arithmatex">\(v_{\text{rel}} = v_{\text{rim}}\)</span>), you'd reach the point where your tangential speed relative to the axis is zero — and you'd be weightless. (In practice, the rim speed is far too fast for this to happen.)</p>
+<h3 id="walking-radially-toward-or-away-from-the-axis-eg-climbing-stairs">Walking radially (toward or away from the axis, e.g., climbing stairs)<a class="headerlink" href="#walking-radially-toward-or-away-from-the-axis-eg-climbing-stairs" title="Permanent link">&para;</a></h3>
+<p>You experience a <strong>sideways</strong> push. Climbing a ladder, you'd feel pushed to one side. Descending, you'd be pushed the other way. Pouring water out of a cup produces a stream that curves sideways.</p>
+<h3 id="dropping-an-object">Dropping an object<a class="headerlink" href="#dropping-an-object" title="Permanent link">&para;</a></h3>
+<p>An object dropped from shoulder height in a rotating habitat does not fall straight down. It drifts slightly in the prograde direction (the direction of rotation) because the floor is moving faster than the point where you released it. The horizontal drift is:</p>
+<div class="arithmatex">\[
+\Delta x \approx \frac{h}{3r} \cdot h \cdot \omega = \frac{\omega h^2}{3r} \cdot r = \frac{\omega h^2}{3}
+\]</div>
+<p>(Approximate, for <span class="arithmatex">\(h \ll r\)</span>.) At a 1-meter drop height in O'Neill's cylinder:</p>
+<div class="arithmatex">\[
+\Delta x \approx \frac{0.0554 \times 1.0^2}{3} \approx 0.018 \; \text{m} \approx 2 \; \text{cm}
+\]</div>
+<p>At <span class="arithmatex">\(r = 224\)</span> m (minimum vestibular radius): <span class="arithmatex">\(\Delta x \approx 7\)</span> cm. Noticeable.</p>
+<hr />
+<h2 id="4-the-constraint">4. The Constraint<a class="headerlink" href="#4-the-constraint" title="Permanent link">&para;</a></h2>
+<div class="arithmatex">\[
+\frac{2 v_{\text{rel}}}{v_{\text{rim}}} \leq \text{ratio}_{\max}
+\]</div>
+<h3 id="what-ratio-is-acceptable">What ratio is acceptable?<a class="headerlink" href="#what-ratio-is-acceptable" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Year</th>
+<th>Max Coriolis Ratio</th>
+<th>Context</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stone</td>
+<td>1970</td>
+<td>25% (lifting), 30% (climbing)</td>
+<td>Performance-based; generous</td>
+</tr>
+<tr>
+<td>Cramer</td>
+<td>1983</td>
+<td>25% of centripetal acceleration</td>
+<td>Standard engineering reference</td>
+</tr>
+<tr>
+<td>Our model</td>
+<td>—</td>
+<td>25% (default)</td>
+<td>Based on Cramer; may be too generous</td>
+</tr>
+</tbody>
+</table>
+<h3 id="historical-note-on-the-25-threshold">Historical note on the 25% threshold<a class="headerlink" href="#historical-note-on-the-25-threshold" title="Permanent link">&para;</a></h3>
+<p>The 25% value from Cramer (1983) means: when running at 3 m/s, the sideways Coriolis force should be no more than 25% of your apparent weight. This is equivalent to walking on a slope of about 14° — noticeable but not debilitating.</p>
+<p>For more sensitive activities:
+- <strong>5% ratio</strong>: negligible for daily life, barely perceptible
+- <strong>10% ratio</strong>: perceptible when running, negligible when walking
+- <strong>25% ratio</strong>: clearly perceptible when running, noticeable when walking
+- <strong>50% ratio</strong>: disorienting; sports impractical; fluid behavior visibly altered</p>
+<h3 id="solving-for-minimum-radius-at-1g">Solving for minimum radius at 1g<a class="headerlink" href="#solving-for-minimum-radius-at-1g" title="Permanent link">&para;</a></h3>
+<p>From <span class="arithmatex">\(v_{\text{rim}} = \omega r\)</span> and <span class="arithmatex">\(\omega = \sqrt{g/r}\)</span>:</p>
+<div class="arithmatex">\[
+v_{\text{rim}} = \sqrt{g \cdot r}
+\]</div>
+<p>The constraint becomes:</p>
+<div class="arithmatex">\[
+\frac{2 v_{\text{rel}}}{\sqrt{g \cdot r}} \leq \text{ratio}_{\max}
+\]</div>
+<div class="arithmatex">\[
+r \geq \frac{4 v_{\text{rel}}^2}{\text{ratio}_{\max}^2 \cdot g}
+\]</div>
+<p>For running at 3 m/s with 25% ratio:</p>
+<div class="arithmatex">\[
+r \geq \frac{4 \times 9}{0.0625 \times 9.807} = \frac{36}{0.613} = 58.7 \; \text{m}
+\]</div>
+<p>This is very small — at the generous 25% threshold, Coriolis is never the binding constraint. But at a stricter 5% threshold:</p>
+<div class="arithmatex">\[
+r \geq \frac{36}{0.0025 \times 9.807} = \frac{36}{0.0245} = 1{,}469 \; \text{m}
+\]</div>
+<p>Now it's the dominant constraint.</p>
+<hr />
+<h2 id="5-reference-table">5. Reference Table<a class="headerlink" href="#5-reference-table" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Radius (m)</th>
+<th>RPM</th>
+<th>Rim Speed (m/s)</th>
+<th>Walk (1.4 m/s)</th>
+<th>Run (3.0 m/s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>100</td>
+<td>2.99</td>
+<td>31.3</td>
+<td>8.9% of g</td>
+<td>19.2% of g</td>
+</tr>
+<tr>
+<td>224</td>
+<td>2.00</td>
+<td>46.9</td>
+<td>6.0%</td>
+<td>12.8%</td>
+</tr>
+<tr>
+<td>500</td>
+<td>1.34</td>
+<td>70.0</td>
+<td>4.0%</td>
+<td>8.6%</td>
+</tr>
+<tr>
+<td>982</td>
+<td>0.96</td>
+<td>98.1</td>
+<td>2.9%</td>
+<td>6.1%</td>
+</tr>
+<tr>
+<td>2,000</td>
+<td>0.67</td>
+<td>140.0</td>
+<td>2.0%</td>
+<td>4.3%</td>
+</tr>
+<tr>
+<td>3,200</td>
+<td>0.53</td>
+<td>177.1</td>
+<td>1.6%</td>
+<td>3.4%</td>
+</tr>
+<tr>
+<td>5,000</td>
+<td>0.42</td>
+<td>221.4</td>
+<td>1.3%</td>
+<td>2.7%</td>
+</tr>
+</tbody>
+</table>
+<p>At every radius in the feasible range (<span class="arithmatex">\(\geq 982\)</span> m), the walking Coriolis ratio is <span class="arithmatex">\(\leq 2.9\%\)</span> — barely perceptible. Running at 982 m produces 6.1%, which is noticeable but tolerable.</p>
+<hr />
+<h2 id="6-when-coriolis-matters-most">6. When Coriolis Matters Most<a class="headerlink" href="#6-when-coriolis-matters-most" title="Permanent link">&para;</a></h2>
+<h3 id="sports-and-physical-activities">Sports and physical activities<a class="headerlink" href="#sports-and-physical-activities" title="Permanent link">&para;</a></h3>
+<p>Ball sports are particularly affected. A thrown ball in a rotating habitat follows a curved path. A baseball pitch at 40 m/s in O'Neill's cylinder would deflect sideways by about 1.8% of its effective weight per meter of travel. A tennis serve would visibly curve.</p>
+<h3 id="fluid-dynamics">Fluid dynamics<a class="headerlink" href="#fluid-dynamics" title="Permanent link">&para;</a></h3>
+<p>Water flowing through pipes, rain (if the habitat has weather), and even the atmosphere itself experience Coriolis forces. At large scales, this creates Coriolis-driven wind patterns similar to Earth's trade winds, but in a cylindrical geometry.</p>
+<h3 id="construction-and-precision-work">Construction and precision work<a class="headerlink" href="#construction-and-precision-work" title="Permanent link">&para;</a></h3>
+<p>Cranes lifting loads, pouring concrete, precision machining — all affected. The Coriolis force on a crane load being raised at 1 m/s in a 982 m habitat is about 2% of its weight, pushing it sideways. Not catastrophic, but it must be accounted for in engineering.</p>
+<hr />
+<h2 id="7-the-key-insight">7. The Key Insight<a class="headerlink" href="#7-the-key-insight" title="Permanent link">&para;</a></h2>
+<p>The Coriolis ratio <span class="arithmatex">\(2v/v_{\text{rim}}\)</span> has a profound implication: <strong>at any feasible habitat size, people will notice Coriolis effects when they move fast enough.</strong> Even at 5,000 m radius, a sprint produces 2.7% lateral acceleration. This is a feature of rotating habitats that never fully disappears — it can only be reduced to tolerable levels.</p>
+<p>The question is not "can we eliminate Coriolis?" but "what activities can we reasonably do at what radius?"</p>
+<hr />
+<h2 id="8-speculations-growing-up-in-curved-physics">8. Speculations: Growing Up in Curved Physics<a class="headerlink" href="#8-speculations-growing-up-in-curved-physics" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Note:</strong> No human has been born or raised in a rotating habitat. Everything below is extrapolation from motor development research, Coriolis adaptation studies, and informed imagination. This section is clearly speculative.</p>
+</blockquote>
+<h3 id="81-children-would-never-notice">8.1 Children Would Never Notice<a class="headerlink" href="#81-children-would-never-notice" title="Permanent link">&para;</a></h3>
+<p>The most striking finding from Lackner &amp; DiZio's Coriolis adaptation research is that after ~12 reaching movements, adults' nervous systems recalibrate and Coriolis forces become <strong>"transparent"</strong> — no longer consciously perceived even though they're still physically present. Congenitally blind subjects adapt just as quickly, proving the mechanism is proprioceptive, not visual.</p>
+<p>If adults can make Coriolis forces invisible in minutes, a child born in a rotating habitat would never experience them as unusual in the first place. Infants develop expectations about gravity's effects on objects by 2–7 months of age. A habitat-born infant's developing brain would calibrate to roulette-curve trajectories, asymmetric throwing, and direction-dependent weight changes from the very beginning. <strong>Coriolis wouldn't feel like a distortion — it would feel like reality.</strong></p>
+<h3 id="82-a-different-intuitive-physics">8.2 A Different Intuitive Physics<a class="headerlink" href="#82-a-different-intuitive-physics" title="Permanent link">&para;</a></h3>
+<p>On Earth, children build what cognitive scientists call <strong>naive physics</strong> or <strong>intuitive physics</strong> — a set of unconscious expectations about how objects behave. By age 4, Earth children expect:
+- Dropped objects fall straight down
+- Thrown objects follow symmetric parabolas
+- Walking in any direction feels the same
+- Pouring water produces a vertical stream</p>
+<p>A habitat-born child's intuitive physics would include different axioms:</p>
+<table>
+<thead>
+<tr>
+<th>Earth Intuition</th>
+<th>Habitat Intuition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dropped objects fall straight down</td>
+<td>Dropped objects drift in the spin direction (prograde)</td>
+</tr>
+<tr>
+<td>A thrown ball follows a symmetric arc</td>
+<td>A ball curves sideways — more when thrown faster</td>
+</tr>
+<tr>
+<td>Walking feels the same in every direction</td>
+<td>Walking "with the spin" feels heavier; "against the spin" feels lighter</td>
+</tr>
+<tr>
+<td>Pouring water makes a vertical stream</td>
+<td>Poured water curves sideways</td>
+</tr>
+<tr>
+<td>A pendulum swings in a plane</td>
+<td>A pendulum traces an ellipse</td>
+</tr>
+<tr>
+<td>"Up" is the same everywhere</td>
+<td>"Up" changes subtly as you walk around the circumference</td>
+</tr>
+</tbody>
+</table>
+<p>Dipert (2023) derived that thrown objects in rotating habitats follow <strong>roulette curves</strong> — mathematical trajectories generated by a point on a circle rolling along a line. These would be as natural to habitat children as parabolas are to us. They would learn to throw with a compensating curve without being taught, the same way Earth children learn to compensate for gravity without studying <span class="arithmatex">\(F = ma\)</span>.</p>
+<h3 id="83-the-uneducated-habitat-dweller">8.3 The Uneducated Habitat Dweller<a class="headerlink" href="#83-the-uneducated-habitat-dweller" title="Permanent link">&para;</a></h3>
+<p>For people without physics education, the habitat's curved dynamics would simply be "how things work." Consider what this means:</p>
+<p><strong>Directionality becomes fundamental.</strong> On Earth, physics is (locally) the same in every horizontal direction. In a habitat, it is not. Walking prograde vs. retrograde, throwing spinward vs. anti-spinward, climbing vs. descending — all feel different. An uneducated habitat dweller would develop a <strong>strong intuitive sense of direction</strong> relative to the spin that has no Earth analog. They might name the directions: "heavy-ward" and "light-ward" instead of just "left" and "right" along the cylinder.</p>
+<p><strong>Sports would evolve differently.</strong> Ball games would be designed around the curves, not despite them. A habitat-born athlete might develop extraordinary skill at curving throws — and be completely unable to throw straight on Earth. Competitive games might exploit the asymmetry: is it harder to score throwing spinward or anti-spinward?</p>
+<p><strong>Craftsmanship would encode the bias.</strong> Pouring molten metal, laying bricks, aiming projectiles, leveling surfaces — all trades that assume vertical straightness on Earth. Habitat craftspeople would learn "the drift" as part of their skill, the way sailors learn to account for wind. Plumb lines wouldn't hang straight. Levels would need recalibration depending on orientation. A master builder who learned on a small, fast-spinning station would have different instincts than one trained on a large, slow cylinder.</p>
+<p><strong>"Up" has a gradient.</strong> An uneducated person climbing a tall structure would notice getting lighter. They might develop a folk explanation — "the air is thinner up high" or "the sky pulls less" — that's wrong in mechanism but correctly describes the observation (<span class="arithmatex">\(g\)</span> decreases linearly with height). This is not unlike how Earth humans for millennia explained the sky as a dome without understanding atmospheric optics.</p>
+<h3 id="84-visiting-earth-or-another-habitat">8.4 Visiting Earth (or Another Habitat)<a class="headerlink" href="#84-visiting-earth-or-another-habitat" title="Permanent link">&para;</a></h3>
+<p>The most disorienting experience for a habitat-born human would be visiting Earth — or a habitat of a different size.</p>
+<p><strong>On Earth</strong>, every Coriolis compensation their body learned since infancy would be <strong>wrong</strong>. They would throw balls that go where they didn't intend. They would feel strangely unweighted in one direction and overweighted in the other. Lackner &amp; DiZio showed adults can re-adapt in minutes, so the transition wouldn't be permanent — but the first hours would be clumsy and potentially nauseating. Earth would feel "too simple" — objects would fall boringly straight, and throwing would feel unchallenging.</p>
+<p><strong>On a smaller, faster habitat</strong>, their motor calibration would be wrong in the other direction. They'd under-compensate for stronger Coriolis effects. A habitat-born person moving between stations of different sizes would need re-adaptation time, just as we experience jet lag between time zones — except this is "spin lag."</p>
+<p><strong>At the rotation axis</strong> (zero-g zone in their own habitat), they would experience true weightlessness. Habitat children who regularly play near the axis might develop <strong>dual motor programs</strong> — one for the rim and one for the core — analogous to bilingual children who switch fluently between languages. NASA has documented that ISS astronauts develop separate cognitive frameworks for 1g and 0g; habitat children would likely do this more naturally, having grown up with both.</p>
+<h3 id="85-language-and-culture">8.5 Language and Culture<a class="headerlink" href="#85-language-and-culture" title="Permanent link">&para;</a></h3>
+<p>Over generations, a habitat's Coriolis effects would become embedded in language and culture:</p>
+<ul>
+<li>
+<p><strong>Spatial language</strong> would evolve spin-relative terms. English has "left/right/up/down." Habitat languages might add "spinward/anti-spinward" as fundamental directions, or split "heavy-side" from "light-side" the way some Earth languages split "uphill" from "downhill."</p>
+</li>
+<li>
+<p><strong>Mythology and folk science</strong> in a pre-scientific habitat society might personify the spin — a force that makes things curve, that makes one direction heavier than the other. Creation myths might explain why "the world turns" rather than why "things fall down."</p>
+</li>
+<li>
+<p><strong>Navigation</strong> would be inherently rotational. "Three minutes spinward" might be a distance measure (how far the habitat rotates while you walk). The habitat's rotation period could become a natural unit of time, the way Earth's rotation gives us "days."</p>
+</li>
+<li>
+<p><strong>Art and aesthetics</strong> might favor curves over straight lines, since straight-line motion is the exception, not the rule. Architecture might lean into the asymmetry rather than fighting it.</p>
+</li>
+</ul>
+<h3 id="86-the-deeper-question">8.6 The Deeper Question<a class="headerlink" href="#86-the-deeper-question" title="Permanent link">&para;</a></h3>
+<p>There is a philosophical dimension: <strong>would habitat-born humans understand Newtonian mechanics as easily as Earth-born humans?</strong></p>
+<p>Newton's laws are formulated for inertial reference frames. An Earth child's intuition — objects at rest stay at rest, objects in motion travel in straight lines — maps cleanly onto Newton's first law. A habitat child's intuition is calibrated to a <strong>non-inertial frame</strong> where objects curve, forces depend on direction, and "rest" still involves being swept in a circle.</p>
+<p>For habitat-born physics students, Newton's laws might feel as counterintuitive as relativity feels to us. "You mean in <em>your</em> frame, objects just go straight? That's weird." They might find Coriolis and centrifugal terms natural and the simplicity of inertial frames surprising. Their "hard" physics would be our "easy" physics, and vice versa.</p>
+<p>This mirrors a real phenomenon on Earth: indigenous cultures that use absolute cardinal directions (north/south/east/west) rather than relative ones (left/right) develop different spatial cognition than Western populations. The frame of reference you grow up in shapes how you think about space itself.</p>
+<hr />
+<h2 id="9-the-one-liner">9. The One-Liner<a class="headerlink" href="#9-the-one-liner" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Coriolis force is proportional to your speed: walk and it's subtle; run and it's noticeable; throw a ball and it curves. The ratio <span class="arithmatex">\(2v/v_{\text{rim}}\)</span> never reaches zero — you just make it small enough to live with.</p>
+</blockquote>
+<hr />
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Cramer, D. Bryant. "Physiological Considerations of Artificial Gravity." <em>Applications of Tethers in Space</em>, vol. 1, NASA CP-2364, 1983, pp. 3.95–3.107.</p>
+</li>
+<li>
+<p>Dipert, R. Adam. "Simplified Equations for Object Trajectories in Rotating Space Habitats and Space Juggling." <em>npj Microgravity</em>, vol. 9, no. 82, 2023. <em>Nature</em>, https://www.nature.com/articles/s41526-023-00328-6.</p>
+</li>
+<li>
+<p>DiZio, Paul, and James R. Lackner. "Congenitally Blind Individuals Rapidly Adapt to Coriolis Force Perturbations of Their Reaching Movements." <em>Journal of Neurophysiology</em>, vol. 84, no. 4, 2000, pp. 2175–2180. <em>APS</em>, https://journals.physiology.org/doi/full/10.1152/jn.2000.84.4.2175.</p>
+</li>
+<li>
+<p>DiZio, Paul, and James R. Lackner. "Motor Adaptation to Coriolis Force Perturbations of Reaching Movements: Endpoint but Not Trajectory Adaptation Transfers to the Nonexposed Arm." <em>Journal of Neurophysiology</em>, vol. 74, no. 4, 1995, pp. 1787–1792.</p>
+</li>
+<li>
+<p>Hall, Theodore W. "Artificial Gravity and the Architecture of Orbital Habitats." <em>Journal of the British Interplanetary Society</em>, vol. 52, 1999, pp. 455–465.</p>
+</li>
+<li>
+<p>Lackner, James R., and Paul DiZio. "Adaptation in a Rotating Artificial Gravity Environment." <em>Brain Research Reviews</em>, vol. 28, no. 1–2, 1998, pp. 194–202.</p>
+</li>
+<li>
+<p>Pillar, Shari, et al. "Intuitive Physics Learning in a Deep-Learning Model Inspired by Developmental Psychology." <em>Nature Human Behaviour</em>, vol. 6, 2022, pp. 1257–1267. <em>Nature</em>, https://www.nature.com/articles/s41562-022-01394-8.</p>
+</li>
+<li>
+<p>Stone, Ralph W. "An Overview of Artificial Gravity." <em>Fifth Symposium on the Role of the Vestibular Organs in Space Exploration</em>, NASA SP-314, 1970, pp. 23–33.</p>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
